@@ -1,0 +1,23 @@
+Attacks:
+	name
+	mana costs
+	effects
+
+Inventory:
+	array of inventory items
+	treasure, usable items, etc.
+
+Effect:
+	do something to a target
+	damage, armor, etc.
+
+Stats:
+	Enemy turn management
+	doing enemy actions
+	etc.
+		CharacterStats
+		EnemyStats (AI attached methods)
+
+Intent:
+	Icon
+	Text

@@ -1,0 +1,21 @@
+A1: Battle
+	start_battle()
+	turn management methods
+	win/lose conditionals
+
+		B1: EnemyHandler
+			enemy turn management
+			enemy action enactment
+			etc.
+				Enemy Scenes
+
+		B2: PlayerHandler
+			player turn management
+
+		B3: Player
+			displaying stats
+			visual indicators for damage
+			etc.
+	
+		B4: UI
+			tooltips, buttons, etc.
