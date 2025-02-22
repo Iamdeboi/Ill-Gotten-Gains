@@ -13,4 +13,12 @@ config_version=5
 config/name="Ill-Gotten Gains"
 config/description="Game development project dedicated learning to ultlize algorithims in game design, and improving understanding of UI/UX elements within Godot and as a game design principle."
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://devfolder/icon.svg"
+config/icon="res://art/tile_0118.png"
+
+[display]
+
+window/size/viewport_width=256
+window/size/viewport_height=144
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="viewport"
