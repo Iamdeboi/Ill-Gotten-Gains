@@ -12,8 +12,9 @@ config_version=5
 
 config/name="Ill-Gotten Gains"
 config/description="Game development project dedicated learning to ultlize algorithims in game design, and improving understanding of UI/UX elements within Godot and as a game design principle."
+run/main_scene="res://Scenes/Menus/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://art/tile_0118.png"
+config/icon="res://Assets/tile_0118.png"
 
 [display]
 
@@ -22,3 +23,16 @@ window/size/viewport_height=144
 window/size/window_width_override=1280
 window/size/window_height_override=720
 window/stretch/mode="viewport"
+
+[file_customization]
+
+folder_colors={
+"res://Scenes/Combat/": "red",
+"res://Scenes/GUI/": "green",
+"res://Scenes/Menus/": "blue",
+"res://Scenes/Shop/": "yellow"
+}
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

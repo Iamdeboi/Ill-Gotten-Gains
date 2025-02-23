@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://h6viwkmll5iy"]
+
+[ext_resource type="Script" path="res://Scenes/Menus/main_menu.gd" id="1_axsrd"]
+[ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://Assets/Font/pixel_rpg.ttf" id="1_s6fwk"]
+[ext_resource type="PackedScene" uid="uid://cytim5vyarwgy" path="res://Scenes/GUI/basic_button.tscn" id="2_pe0gy"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_axsrd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.28173, 0.29942, 0.40469, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("1_s6fwk")
+theme_override_font_sizes/font_size = 18
+text = "ILL-GOTTEN GAINS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+alignment = 2
+
+[node name="Seperator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="btn_start" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_pe0gy")]
+layout_mode = 2
+text = "Start"
+
+[node name="Seperator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="btn_exit" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_pe0gy")]
+layout_mode = 2
+text = "Exit"
+
+[connection signal="click_end" from="MarginContainer/HBoxContainer/VBoxContainer/btn_start" to="." method="_on_btn_start_click_end"]
+[connection signal="click_end" from="MarginContainer/HBoxContainer/VBoxContainer/btn_exit" to="." method="_on_btn_exit_click_end"]
