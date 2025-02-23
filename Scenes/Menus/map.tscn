@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://do6vp5o7wugt"]
+
+[ext_resource type="Script" path="res://Scenes/Menus/map.gd" id="1_5mxxx"]
+[ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://Assets/Font/pixel_rpg.ttf" id="2_lqihj"]
+[ext_resource type="PackedScene" uid="uid://cytim5vyarwgy" path="res://Scenes/GUI/basic_button.tscn" id="3_asvp8"]
+[ext_resource type="Script" path="res://Scenes/Menus/map_generator.gd" id="4_p8ua3"]
+
+[node name="Map" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5mxxx")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.896145, 0.762124, 0.730715, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_lqihj")
+text = "Map"
+
+[node name="Button" parent="VBoxContainer" instance=ExtResource("3_asvp8")]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+text = "Go Back"
+
+[node name="MapGenerator" type="Node" parent="."]
+script = ExtResource("4_p8ua3")
+
+[connection signal="click_end" from="VBoxContainer/Button" to="." method="_on_button_click_end"]
