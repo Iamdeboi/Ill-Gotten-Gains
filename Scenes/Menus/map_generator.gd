@@ -28,12 +28,23 @@ func _ready() -> void:
 #GENERATING THE MAP AFTER GRID GENERATION
 func generate_map() -> Array[Array]:
 	map_data = _generate_initial_grid()
+	var starting_points := _get_random_starting_points()
 	
+	for j in starting_points:
+		var current_j := j
+		for i in FLOORS - 1: #Loops from index 0 to 14
+			current_j = _setup_connection(i, current_j)
+	
+	#DEBUGGING CODE: Ensures setting up the connections and avoiding crossing paths is working correctly
 	var i := 0
-	for floor in map_data: #Checks if the Grid Generator is working properly
-		print("floor %s:\t%s" % [i, floor])
+	for floor in map_data:
+		print("floor %s" % i)
+		var used_rooms = floor.filter(
+			func(room: Room): return room.next_rooms.size() > 0
+		)
+		print(used_rooms)
 		i += 1
-	
+		
 	return []
 
 #INITIAL GRID GENERATION
@@ -60,10 +71,62 @@ func _generate_initial_grid() -> Array[Array]:
 		result.append(adjacent_rooms) #Floor complete, repeat for 15 floors total!
 	
 	return result
+
+
+#GENERATING INITIAL STARTING POINT ARRAY
+func _get_random_starting_points() -> Array[int]:
+	var y_coordinates: Array[int]
+	var unique_points: int = 0
 	
+	while unique_points < 2: #Use 2 as the minimum amount of starting points a player will experience in a map, never 1!
+		unique_points = 0
+		y_coordinates = []
+		for i in PATHS: # Repeats for each unique Node in each floor
+			var starting_point := randi_range(0, MAP_WIDTH - 1) # Indicies would go from 0 to 6 (7 Columns)
+			if not y_coordinates.has(starting_point):
+				unique_points += 1
+			
+			y_coordinates.append(starting_point)
 	
+	return y_coordinates
+
+
+func _setup_connection(i: int, j: int) -> int:
+	var next_room: Room
+	var current_room := map_data[i][j] as Room
+	#Pick next room if you dont have one, or pick a new candidate if next room would CROSS PATHS...
+	while not next_room or _would_cross_existing_path(i, j, next_room):
+		#New column index chosen, given a range, yet clamped to the MAP_WIDTH - 1, no negative indicies, and no indicies over MAP_WIDTH!
+		var random_j := clampi(randi_range(j - 1, j + 1), 0, MAP_WIDTH - 1)
+		next_room = map_data[i + 1][random_j] #Next room will be 1 level above current, and the random_j will be its respective column
+		
+	#Loop breaks when the next room is found, and is confirmed that it will not cross existing paths, append to the next_room Array!
+	current_room.next_rooms.append(next_room)
 	
+	return next_room.column
+
+
+func _would_cross_existing_path(i: int, j: int, room: Room) -> bool:
+	var left_neighbour: Room
+	var right_neighbour: Room
 	
+	# if j == 0, there is no left neighbour
+	if j > 0:
+		left_neighbour = map_data[i][j - 1]
+	# if j == MAP_WIDTH, there is no right neighbour
+	if j < MAP_WIDTH - 1:
+		right_neighbour = map_data[i][j + 1]
 	
+	# Cannot cross right dir if right_neighbour goes left
+	if right_neighbour and room.column > j:
+		for next_room: Room in right_neighbour.next_rooms:
+			if next_room.column < room.column:
+				return true
 	
+	# Cannot cross left dir if left_neighbour goes right
+	if left_neighbour and room.column < j:
+		for next_room: Room in left_neighbour.next_rooms:
+			if next_room.column < room.column:
+				return true
 	
+	return false
