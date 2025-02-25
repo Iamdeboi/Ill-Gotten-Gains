@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/Menus/map.gd" id="1_5mxxx"]
 [ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://Assets/Font/pixel_rpg.ttf" id="2_lqihj"]
 [ext_resource type="PackedScene" uid="uid://cytim5vyarwgy" path="res://Scenes/GUI/basic_button.tscn" id="3_asvp8"]
-[ext_resource type="Script" path="res://Scenes/Menus/map_generator.gd" id="4_p8ua3"]
+[ext_resource type="Script" path="res://Scenes/Utility/map_generator.gd" id="4_u2fqt"]
 
 [node name="Map" type="Control"]
 layout_mode = 3
@@ -45,6 +45,6 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 text = "Go Back"
 
 [node name="MapGenerator" type="Node" parent="."]
-script = ExtResource("4_p8ua3")
+script = ExtResource("4_u2fqt")
 
 [connection signal="click_end" from="VBoxContainer/Button" to="." method="_on_button_click_end"]

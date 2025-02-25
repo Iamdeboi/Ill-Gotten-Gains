@@ -11,8 +11,8 @@ enum Type {NOT_ASSIGNED, MONSTER, TREASURE, CAMPFIRE, SHOP, BOSS}
 @export var selected := false 
 
 #DEBUGGING
-func _to_string() -> String: #Instead of a visual, use this to test withiin the console
-	return "%s (%s)" % [column, Type.keys()[type][0]]
+#func _to_string() -> String: #Instead of a visual, use this to test withiin the console
+	#return "%s (%s)" % [column, Type.keys()[type][0]]
 	# Only first letter of Type enums, for cleanliness in messaging
 	# LOGIC FOR STATEMENT ABOVE:
 	# var type = Type.SHOP

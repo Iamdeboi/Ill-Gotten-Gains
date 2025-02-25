@@ -30,7 +30,8 @@ folder_colors={
 "res://Scenes/Combat/": "red",
 "res://Scenes/GUI/": "green",
 "res://Scenes/Menus/": "blue",
-"res://Scenes/Shop/": "yellow"
+"res://Scenes/Shop/": "yellow",
+"res://Scenes/Utility/": "purple"
 }
 
 [rendering]
