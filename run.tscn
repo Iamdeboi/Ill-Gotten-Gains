@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b6s6sqsv00wkw"]
+
+[ext_resource type="Script" path="res://run.gd" id="1_xssar"]
+
+[node name="Run" type="Node"]
+script = ExtResource("1_xssar")

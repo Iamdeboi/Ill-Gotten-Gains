@@ -1,21 +1,107 @@
-A1: Battle
+Battle
 	start_battle()
 	turn management methods
 	win/lose conditionals
 
-		B1: EnemyHandler
+		EnemyHandler
 			enemy turn management
 			enemy action enactment
 			etc.
 				Enemy Scenes
 
-		B2: PlayerHandler
+		PlayerHandler
 			player turn management
 
-		B3: Player
+		Player
 			displaying stats
 			visual indicators for damage
 			etc.
 	
-		B4: UI
+		UI
 			tooltips, buttons, etc.
+
+***BATTLE GAMEPLAY LOOP***
+	Player turn:
+		1. Start of turn equipment effects
+		2. Start of turn status effects (player)
+		3. Player's turn
+		4. End of turn equipment effects
+		5. End of turn status effects (player)
+		Confirm end of turn
+	Enemy turn:
+		1. Start of turn status effects (enemy)
+		2. Enemy actions
+		3. End of turn status effects (enemy)
+		4. Once all enemies have taken their turns... restart the loop
+
+	Win/Lose State:
+		kill all enemies (WIN)
+		lose all HP (LOSE)
+
+
+
+
+
+
+***TOP LEVEL***
+A1: Main Menu
+	B1: Character Selector
+		C1: New Game
+			D1: Run Game
+	B2: Load Game
+		C1: Run Game
+
+***RUN SCENE*** (core function)
+A1: Run
+		EquipmentHandler
+		Map
+		Battle
+		Shop
+		Treasure
+		BattleRewards
+		Campfire
+
+***MAP***
+Map [DONE]
+	converting data to visuals
+	interactivity + logic
+	signaling room picks
+
+	Map Generator [DONE]
+		procedural generation
+		tweakable constant values
+		map relies on generated data from here
+	
+		Room [PARTIALLY DONE]
+			data container (room.gd)
+			gameplay-related data (room type)
+			map/graph-related data (map_data, positioning of floors)
+
+	MapRoom [DONE]
+	
+	Camera [DONE]
+	
+	Visuals [DONE]
+
+
+***EQUIPMENTHANDLERr***
+EquipmentHandler
+	adding new equipment
+	removing equipment
+	activating equipment
+
+		Run
+			view equipment at any time
+			save/load equipment in the run
+
+		BattleRewards + TreasureRoom
+			Allows aquisition of new equipment
+
+		Battle
+			Start/end of turn
+			Start/end of combat
+			equipment modify the flow
+
+		Shop
+			Buying Equipment
+			One item that gives a discount (does it count as equipment or not?)

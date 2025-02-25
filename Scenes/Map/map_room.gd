@@ -8,7 +8,7 @@ const ICONS := {
 	Room.Type.MONSTER: [preload("res://Assets/tile_0103.png"), Vector2.ONE],
 	Room.Type.TREASURE: [preload("res://Assets/tile_0089.png"), Vector2.ONE],
 	Room.Type.CAMPFIRE: [preload("res://Assets/player_heart.png"), Vector2(0.6, 0.6)],
-	Room.Type.SHOP: [preload("res://Assets/tile_0082.png"), Vector2(0.6, 0.6)],
+	Room.Type.SHOP: [preload("res://Assets/gold.png"), Vector2(0.6, 0.6)],
 	Room.Type.BOSS: [preload("res://Assets/tile_0118.png"), Vector2(1.25, 1.25)],
 }
 
@@ -18,16 +18,6 @@ const ICONS := {
 
 var available := false : set = set_available
 var room: Room : set = set_room
-
-
-func _ready() -> void:
-	var test_room := Room.new()
-	test_room.type = Room.Type.CAMPFIRE
-	test_room.position = Vector2(100,100)
-	room = test_room
-	
-	await get_tree().create_timer(3).timeout
-	available = true
 
 
 func set_available(new_value: bool) -> void:
