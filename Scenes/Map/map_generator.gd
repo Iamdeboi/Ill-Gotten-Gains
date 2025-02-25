@@ -21,10 +21,6 @@ var random_room_type_total_weight := 0
 var map_data: Array[Array] #Matrix of the map data; map_data[14][3] = row 15, column 4
 
 
-func _ready() -> void:
-	generate_map()
-
-
 #GENERATING THE MAP AFTER GRID GENERATION
 func generate_map() -> Array[Array]:
 	map_data = _generate_initial_grid()
@@ -40,15 +36,6 @@ func generate_map() -> Array[Array]:
 	_setup_random_room_weights()
 	_setup_room_types()
 	
-	var i := 0
-	for floor in map_data:
-		print("floor %s" % i)
-		var used_rooms = floor.filter(
-			func(room: Room): return room.next_rooms.size() > 0
-			)
-		print(used_rooms)
-		i += 1
-		
 	return map_data
 
 #INITIAL GRID GENERATION
