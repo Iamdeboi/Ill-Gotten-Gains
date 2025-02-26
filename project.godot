@@ -24,9 +24,10 @@ EventBus="*res://Globals/event_bus.gd"
 
 window/size/viewport_width=256
 window/size/viewport_height=144
-window/size/window_width_override=1280
-window/size/window_height_override=720
+window/size/window_width_override=1980
+window/size/window_height_override=1080
 window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"
 
 [file_customization]
 
