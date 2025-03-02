@@ -1,14 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://beq6os1qypmat"]
+[gd_scene load_steps=2 format=3 uid="uid://beq6os1qypmat"]
 
-[ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://Assets/background.png" id="1_txb8x"]
-[ext_resource type="PackedScene" uid="uid://b5w2tv81h6nmi" path="res://enemy.tscn" id="2_w4kg7"]
+[ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://Assets/art/background.png" id="1_txb8x"]
 
 [node name="BattleScene" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.359069, 0.359069, 0.359069, 1)
+scale = Vector2(1.875, 1.66667)
 texture = ExtResource("1_txb8x")
 centered = false
 
-[node name="Enemy" parent="." instance=ExtResource("2_w4kg7")]
-position = Vector2(130, 87)
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(240, 120)

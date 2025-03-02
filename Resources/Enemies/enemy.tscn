@@ -1,0 +1,80 @@
+[gd_scene load_steps=5 format=3 uid="uid://csrqkvxjanx4w"]
+
+[ext_resource type="Texture2D" uid="uid://cgopx2ponr1qi" path="res://Assets/art/tile_0121.png" id="2_kyeyu"]
+[ext_resource type="PackedScene" uid="uid://ikjatqjcn61n" path="res://Scenes/GUI/stats_ui.tscn" id="3_geymo"]
+
+[sub_resource type="GDScript" id="GDScript_tqg6k"]
+script/source = "class_name Enemy
+extends Area2D
+
+@export var stats: Stats : set = set_enemy_stats
+
+@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var stats_ui: StatsUI = %StatsUI
+
+
+
+func _ready() -> void:
+	set_enemy_stats(stats)
+	update_stats(stats)
+
+
+func set_enemy_stats(value: Stats) -> void:
+	stats = value.create_instance()
+	
+	if not stats.stats_changed.is_connected(update_stats):
+		stats.stats_changed.connect(update_stats)
+	
+	update_enemy()
+
+
+func update_stats(stats) -> void:
+	stats_ui.update_stats(stats)
+
+
+func update_enemy() -> void:
+	if not stats is Stats:
+		return
+	if not is_inside_tree():
+		await ready
+
+	sprite_2d.texture = stats.art
+	update_stats(stats)
+
+
+func take_damage(damage: int) -> void:
+	if stats.health <= 0:
+		return
+		
+	stats.take_damage(damage)
+	
+	if stats.health <= 0:
+		queue_free()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q3t1i"]
+
+[node name="Enemy" type="Area2D"]
+light_mask = 2
+visibility_layer = 2
+script = SubResource("GDScript_tqg6k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_q3t1i")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -9)
+texture = ExtResource("2_kyeyu")
+
+[node name="StatsUI" parent="." instance=ExtResource("3_geymo")]
+unique_name_in_owner = true
+visible = false
+anchor_left = 0.0
+anchor_right = 0.0
+offset_left = -23.0
+offset_right = 24.0
+offset_bottom = 16.0
+grow_horizontal = 1
+size_flags_horizontal = 4
+size_flags_vertical = 4

@@ -1,20 +1,23 @@
 [gd_scene load_steps=6 format=3 uid="uid://ikjatqjcn61n"]
 
 [ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://Assets/Font/pixel_rpg.ttf" id="1_cuvgx"]
-[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://Assets/tile_0102.png" id="1_j3o2s"]
+[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://Assets/art/tile_0102.png" id="1_j3o2s"]
 [ext_resource type="Script" path="res://Scenes/GUI/stats_ui.gd" id="2_jg2hf"]
-[ext_resource type="Texture2D" uid="uid://d0edy7thj8ce6" path="res://Assets/heart.png" id="3_y3qb5"]
+[ext_resource type="Texture2D" uid="uid://d0edy7thj8ce6" path="res://Assets/art/heart.png" id="3_y3qb5"]
 
 [sub_resource type="Theme" id="Theme_8g032"]
 default_font = ExtResource("1_cuvgx")
 
 [node name="StatsUI" type="HBoxContainer"]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -23.5
-offset_right = 23.5
-offset_bottom = 16.0
+light_mask = 2
+visibility_layer = 2
+anchors_preset = -1
+anchor_left = 0.451
+anchor_right = 0.549
+anchor_bottom = 0.067
+offset_left = 0.019989
+offset_right = -0.0200195
+offset_bottom = -0.0799999
 grow_horizontal = 2
 theme = SubResource("Theme_8g032")
 alignment = 1
@@ -33,7 +36,7 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 6
-text = "6"
+text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -50,6 +53,6 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 6
-text = "6"
+text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
