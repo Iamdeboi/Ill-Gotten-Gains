@@ -1,0 +1,102 @@
+[gd_scene load_steps=2 format=3 uid="uid://xukg5i2r6xwj"]
+
+[ext_resource type="Texture2D" uid="uid://c80eb5segqqnd" path="res://Assets/art/Attribute Background.png" id="1_rwtng"]
+
+[node name="AttributeWindow" type="Control"]
+layout_mode = 3
+anchor_right = 0.077
+anchor_bottom = 0.175
+offset_right = 0.0399971
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.004
+anchor_bottom = 1.0
+offset_right = -1.148
+scale = Vector2(1.032, 1)
+texture = ExtResource("1_rwtng")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+anchor_left = 0.004
+anchor_top = 0.008
+anchor_right = 1.027
+anchor_bottom = 1.0
+offset_left = -0.148
+offset_top = -0.336
+offset_right = 1.001
+theme_override_constants/separation = 1
+alignment = 1
+
+[node name="AttributeNames" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="STRLabel" type="Label" parent="HBoxContainer/AttributeNames"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "STR:"
+
+[node name="DEXLabel" type="Label" parent="HBoxContainer/AttributeNames"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "DEX:"
+
+[node name="INTLabel" type="Label" parent="HBoxContainer/AttributeNames"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "INT:"
+
+[node name="WISLabel" type="Label" parent="HBoxContainer/AttributeNames"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "WIS:"
+
+[node name="CHALabel" type="Label" parent="HBoxContainer/AttributeNames"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "CHA:"
+
+[node name="CONLabel" type="Label" parent="HBoxContainer/AttributeNames"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "CON:"
+
+[node name="AttributeLabels" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="STRCount" type="Label" parent="HBoxContainer/AttributeLabels"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "000"
+
+[node name="DEXCount" type="Label" parent="HBoxContainer/AttributeLabels"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "000"
+
+[node name="INTCount" type="Label" parent="HBoxContainer/AttributeLabels"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "000"
+
+[node name="WISCount" type="Label" parent="HBoxContainer/AttributeLabels"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "000"
+
+[node name="CHACount" type="Label" parent="HBoxContainer/AttributeLabels"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "000"
+
+[node name="CONCount" type="Label" parent="HBoxContainer/AttributeLabels"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "000"

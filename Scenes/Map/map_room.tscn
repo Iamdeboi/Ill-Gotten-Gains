@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://c7luipxsmw3h"]
 
 [ext_resource type="Texture2D" uid="uid://bfvi02kojsa00" path="res://Assets/art/tile_0103.png" id="1_fxsgn"]
-[ext_resource type="Script" path="res://Scenes/Map/map_room.gd" id="1_x23wn"]
+[ext_resource type="Script" uid="uid://bd5jw88ti6rsi" path="res://Scenes/Map/map_room.gd" id="1_x23wn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j2ecl"]
 radius = 11.0454
@@ -81,9 +81,9 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ehn40"]
 _data = {
-"RESET": SubResource("Animation_s548y"),
-"highlight": SubResource("Animation_mj6r6"),
-"select": SubResource("Animation_dgyjb")
+&"RESET": SubResource("Animation_s548y"),
+&"highlight": SubResource("Animation_mj6r6"),
+&"select": SubResource("Animation_dgyjb")
 }
 
 [node name="MapRoom" type="Area2D"]

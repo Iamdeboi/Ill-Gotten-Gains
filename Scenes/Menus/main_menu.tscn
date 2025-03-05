@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://h6viwkmll5iy"]
 
-[ext_resource type="Script" path="res://Scenes/Menus/main_menu.gd" id="1_axsrd"]
+[ext_resource type="Script" uid="uid://c5lek2faoscfu" path="res://Scenes/Menus/main_menu.gd" id="1_axsrd"]
 [ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://Assets/Font/pixel_rpg.ttf" id="1_s6fwk"]
-[ext_resource type="PackedScene" uid="uid://cytim5vyarwgy" path="res://Scenes/GUI/basic_button.tscn" id="2_pe0gy"]
+[ext_resource type="PackedScene" uid="uid://cytim5vyarwgy" path="res://Scenes/GUI/Misc/basic_button.tscn" id="2_pe0gy"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3

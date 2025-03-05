@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://beq6os1qypmat"]
+[gd_scene load_steps=3 format=3 uid="uid://beq6os1qypmat"]
 
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://Assets/art/background.png" id="1_txb8x"]
+[ext_resource type="PackedScene" uid="uid://43xkdnm2fpla" path="res://Scenes/Player/player.tscn" id="2_20ps0"]
 
 [node name="BattleScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_20ps0")]
 
 [node name="Background" type="Sprite2D" parent="."]
 modulate = Color(0.359069, 0.359069, 0.359069, 1)

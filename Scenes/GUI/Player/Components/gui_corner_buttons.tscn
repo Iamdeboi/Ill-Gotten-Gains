@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqdpva7bojf3w"]
+
+[ext_resource type="Script" uid="uid://c663fdb60e808" path="res://Scenes/GUI/Player/Components/gui_corner_buttons.gd" id="1_i5p77"]
+[ext_resource type="Texture2D" uid="uid://cya3wf6rbweih" path="res://Assets/art/MapButton.png" id="2_x3cwc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsl0y"]
+atlas = ExtResource("2_x3cwc")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5gq1"]
+atlas = ExtResource("2_x3cwc")
+region = Rect2(16, 0, 16, 16)
+
+[node name="GUICornerButtons" type="Control"]
+custom_minimum_size = Vector2(64, 16)
+layout_mode = 3
+anchor_right = 0.133
+anchor_bottom = 0.067
+offset_right = 0.16
+offset_bottom = -0.0799999
+grow_vertical = 2
+script = ExtResource("1_i5p77")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/separation = 0
+
+[node name="MapButton" type="TextureButton" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_bsl0y")
+texture_pressed = SubResource("AtlasTexture_l5gq1")
+ignore_texture_size = true
+
+[node name="SpellBookButton" type="TextureButton" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_bsl0y")
+texture_pressed = SubResource("AtlasTexture_l5gq1")
+ignore_texture_size = true
+
+[node name="EquipmentButton" type="TextureButton" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_bsl0y")
+texture_pressed = SubResource("AtlasTexture_l5gq1")
+ignore_texture_size = true
+
+[node name="BagButton" type="TextureButton" parent="HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_bsl0y")
+texture_pressed = SubResource("AtlasTexture_l5gq1")
+ignore_texture_size = true

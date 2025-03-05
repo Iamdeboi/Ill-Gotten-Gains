@@ -7,9 +7,6 @@ extends HBoxContainer
 @onready var health_label: Label = %HealthLabel
 
 
-func update_stats(stats: BaseStats) -> void:
-	armor_label.text = str(stats.armor)
+func update_health(stats: BaseStats) -> void:
 	health_label.text = str(stats.health)
-	
-	armor.visible = stats.armor > 0
-	health.visible = stats.health > 0
+	armor_label.text = str(stats.armor)

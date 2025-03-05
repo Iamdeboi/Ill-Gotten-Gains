@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://cvy0l0u8nf5oj"]
+
+[ext_resource type="Script" uid="uid://do03ojrvk5joa" path="res://Scenes/GUI/Player/player_stats_ui.gd" id="1_2cjtq"]
+[ext_resource type="Texture2D" uid="uid://62rqx1tby8gm" path="res://Assets/art/PortraitSampleGromm.png" id="2_wgukn"]
+[ext_resource type="PackedScene" uid="uid://cqdpva7bojf3w" path="res://Scenes/GUI/Player/Components/gui_corner_buttons.tscn" id="3_pde77"]
+[ext_resource type="PackedScene" uid="uid://d052i5tw5ian" path="res://Scenes/GUI/Player/Components/gui_corner_bars.tscn" id="4_wuf4o"]
+[ext_resource type="Texture2D" uid="uid://dpcpuscyn57sa" path="res://Assets/art/Bars and Armor Outline.png" id="5_faeip"]
+[ext_resource type="PackedScene" uid="uid://feqymksvvm4k" path="res://Scenes/GUI/Player/Components/gui_armor_label.tscn" id="6_rsaa2"]
+[ext_resource type="PackedScene" uid="uid://xukg5i2r6xwj" path="res://Scenes/GUI/Player/Components/attribute_window.tscn" id="7_wgukn"]
+
+[node name="PlayerStatsUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2cjtq")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.733
+anchor_right = 0.133
+anchor_bottom = 1.0
+offset_top = 24.08
+offset_right = -23.84
+grow_vertical = 0
+texture = ExtResource("2_wgukn")
+
+[node name="GUICornerButtons" parent="." instance=ExtResource("3_pde77")]
+unique_name_in_owner = true
+layout_mode = 1
+offset_top = 159.96
+offset_bottom = 159.88
+
+[node name="GUICornerBars" parent="." instance=ExtResource("4_wuf4o")]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_left = 0.133333
+anchor_top = 0.733333
+anchor_right = 0.166333
+anchor_bottom = 0.992
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="GUICornerBars"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.062
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.992
+offset_top = -17.0
+offset_right = 1.00001
+offset_bottom = 3.00002
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_faeip")
+
+[node name="GUIArmorLabel" parent="." instance=ExtResource("6_rsaa2")]
+unique_name_in_owner = true
+layout_mode = 1
+anchor_left = 0.133333
+anchor_top = 0.666667
+anchor_right = 0.168333
+anchor_bottom = 0.733667
+metadata/_edit_use_anchors_ = true
+
+[node name="AttributeWindow" parent="." instance=ExtResource("7_wgukn")]
+layout_mode = 1
+anchor_left = 0.170833
+anchor_top = 0.733333
+anchor_right = 0.247833
+anchor_bottom = 0.908333
+metadata/_edit_use_anchors_ = true

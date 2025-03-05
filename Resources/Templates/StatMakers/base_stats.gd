@@ -7,11 +7,7 @@ signal stats_changed #Notifies UI about stat changes
 @export var max_health: int = 1
 @export var starting_armor: int = 1
 @export var max_mana: int = 1
-@export var damage: int = 1
 
-@export_category("Other")
-@export var name: String
-@export var art: Texture
 
 var health: int : set = set_health
 var mana: int : set = set_mana
@@ -30,9 +26,8 @@ func set_mana(value : int) -> void:
 
 
 func set_armor(value : int) -> void:
-	health = clampi(value, 0, 999) # the value recieved can't let the health go under 0 or above max_health
+	armor = clampi(value, 0, 999) # the value recieved can't let the health go under 0 or above max_health
 	stats_changed.emit()
-
 
 # Stat Changing Functions
 func take_damage(damage : int) -> void: # Processes armor before taking the true amount of damage to the entity's health
@@ -44,10 +39,18 @@ func take_damage(damage : int) -> void: # Processes armor before taking the true
 	self.health -= damage
 
 
-func heal(amount : int) -> void: # Restores health based on amount passed through the method "Stats.heal"
+func heal(amount : int) -> void: # Restores health based on amount passed through the method "BaseStats.heal"
 	self.health += amount
 
 
 func restore_mana(amount : int) -> void: #Restores mana based on value
 	mana = clampi(amount, 0, max_mana)
 	self.mana += amount
+
+
+func create_instance() -> Resource: #Allows for individual instances of the stats for enemies or the player character (which will be saved after combat and reappplied in the next instance via code)
+	var instance: BaseStats = self.duplicate()
+	instance.health = max_health
+	instance.armor = starting_armor
+	instance.mana = max_mana
+	return instance

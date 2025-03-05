@@ -1,12 +1,12 @@
 [gd_scene load_steps=6 format=3 uid="uid://ikjatqjcn61n"]
 
-[ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://Assets/Font/pixel_rpg.ttf" id="1_cuvgx"]
-[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://Assets/art/tile_0102.png" id="1_j3o2s"]
-[ext_resource type="Script" path="res://Scenes/GUI/stats_ui.gd" id="2_jg2hf"]
-[ext_resource type="Texture2D" uid="uid://d0edy7thj8ce6" path="res://Assets/art/heart.png" id="3_y3qb5"]
+[ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://Assets/Font/pixel_rpg.ttf" id="1_tj7sk"]
+[ext_resource type="Script" uid="uid://ro3nvchgm1vh" path="res://Scenes/GUI/Enemies/stats_ui.gd" id="2_ap273"]
+[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://Assets/art/tile_0102.png" id="3_y0l2x"]
+[ext_resource type="Texture2D" uid="uid://d0edy7thj8ce6" path="res://Assets/art/heart.png" id="4_ntgrm"]
 
 [sub_resource type="Theme" id="Theme_8g032"]
-default_font = ExtResource("1_cuvgx")
+default_font = ExtResource("1_tj7sk")
 
 [node name="StatsUI" type="HBoxContainer"]
 light_mask = 2
@@ -21,14 +21,14 @@ offset_bottom = -0.0799999
 grow_horizontal = 2
 theme = SubResource("Theme_8g032")
 alignment = 1
-script = ExtResource("2_jg2hf")
+script = ExtResource("2_ap273")
 
 [node name="Armor" type="HBoxContainer" parent="."]
 layout_mode = 2
 
 [node name="ArmorImage" type="TextureRect" parent="Armor"]
 layout_mode = 2
-texture = ExtResource("1_j3o2s")
+texture = ExtResource("3_y0l2x")
 stretch_mode = 5
 
 [node name="ArmorLabel" type="Label" parent="Armor"]
@@ -45,7 +45,7 @@ layout_mode = 2
 
 [node name="HealthImage" type="TextureRect" parent="Health"]
 layout_mode = 2
-texture = ExtResource("3_y3qb5")
+texture = ExtResource("4_ntgrm")
 stretch_mode = 5
 
 [node name="HealthLabel" type="Label" parent="Health"]
