@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://feqymksvvm4k"]
+[gd_scene load_steps=3 format=3 uid="uid://feqymksvvm4k"]
 
+[ext_resource type="Script" uid="uid://fj43g82rbvti" path="res://Scenes/GUI/Player/Components/gui_armor_label.gd" id="1_r33rq"]
 [ext_resource type="Texture2D" uid="uid://drry6mw413cvw" path="res://Assets/art/ArmorCounter.png" id="1_tr1me"]
 
 [node name="GUIArmorLabel" type="Control"]
@@ -8,6 +9,7 @@ anchor_right = 0.035
 anchor_bottom = 0.067
 offset_right = 0.200001
 offset_bottom = -0.0799999
+script = ExtResource("1_r33rq")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1

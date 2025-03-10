@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="PlayerStats" load_steps=2 format=3 uid="uid://bwpvvr63u1g71"]
+
+[ext_resource type="Script" uid="uid://xfic0g5mx1j7" path="res://Resources/Templates/StatMakers/player_stats.gd" id="1_lpqxb"]
+
+[resource]
+script = ExtResource("1_lpqxb")
+start_strength = 5
+start_dexterity = 5
+start_intellect = 5
+start_wisdom = 7
+start_charisma = 3
+start_constitution = 10
+max_health = 110
+starting_armor = 20
+max_mana = 25
+metadata/_custom_type_script = "uid://xfic0g5mx1j7"

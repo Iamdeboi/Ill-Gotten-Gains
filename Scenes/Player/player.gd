@@ -3,13 +3,13 @@ extends Node
 
 #Statblocks
 @export var stats: PlayerStats : set = set_player_stats #Attach the statblock resource
-#UI Elements
-@onready var player_stats_ui: PlayerStatsUI = $PlayerStatsUI #Connect UI elements for stats to update
+# GUI Collection
+@onready var player_stats_ui: PlayerStatsUI = $PlayerStatsUI
 
 
 
 func set_player_stats(value: PlayerStats) -> void:
-	stats.create_instance()
+	stats = value.create_instance()
 	
 	if not stats.stats_changed.is_connected(update_stats):
 		stats.stats_changed.connect(update_stats)

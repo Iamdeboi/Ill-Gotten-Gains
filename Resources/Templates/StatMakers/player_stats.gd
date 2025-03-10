@@ -46,6 +46,9 @@ func set_con(value: int) -> void:
 
 func create_instance() -> Resource:
 	var instance : PlayerStats = self.duplicate()
+	instance.health = max_health
+	instance.armor = starting_armor
+	instance.mana = max_mana
 	instance.strength = start_strength
 	instance.dexterity = start_dexterity
 	instance.intellect = start_intellect

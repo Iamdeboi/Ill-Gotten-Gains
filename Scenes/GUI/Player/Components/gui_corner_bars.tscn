@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://d052i5tw5ian"]
+[gd_scene load_steps=9 format=3 uid="uid://d052i5tw5ian"]
 
 [ext_resource type="Texture2D" uid="uid://cmx54tc5t4uyj" path="res://Assets/art/Player Health + Mana.png" id="1_442ml"]
+[ext_resource type="Script" uid="uid://datbttkn4nmrh" path="res://Scenes/GUI/Player/Components/gui_corner_bars.gd" id="1_r5cr3"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qnayl"]
 atlas = ExtResource("1_442ml")
@@ -36,6 +37,7 @@ offset_right = 0.16
 offset_bottom = -0.0800018
 size_flags_horizontal = 0
 size_flags_vertical = 0
+script = ExtResource("1_r5cr3")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
@@ -50,7 +52,7 @@ theme_override_constants/separation = 0
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
-value = 100.0
+value = 50.0
 fill_mode = 3
 texture_under = SubResource("AtlasTexture_qnayl")
 texture_over = SubResource("AtlasTexture_bv8ja")
@@ -59,9 +61,8 @@ texture_progress_offset = Vector2(1, 0)
 
 [node name="ManaBar" type="TextureProgressBar" parent="HBoxContainer"]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(8, 64)
 layout_mode = 2
-value = 100.0
+value = 50.0
 fill_mode = 3
 texture_under = SubResource("AtlasTexture_dlpl5")
 texture_over = SubResource("AtlasTexture_cu175")
