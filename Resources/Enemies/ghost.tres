@@ -1,10 +1,13 @@
-[gd_resource type="Resource" script_class="BaseStats" load_steps=2 format=3 uid="uid://c4bq58733ekcp"]
+[gd_resource type="Resource" script_class="BaseStats" load_steps=3 format=3 uid="uid://c4bq58733ekcp"]
 
 [ext_resource type="Script" uid="uid://dt260m0mpxt3r" path="res://Resources/Templates/StatMakers/base_stats.gd" id="1_aywnr"]
+[ext_resource type="Texture2D" uid="uid://cgopx2ponr1qi" path="res://Assets/art/tile_0121.png" id="2_h1biu"]
 
 [resource]
 script = ExtResource("1_aywnr")
-max_health = 1
-starting_armor = 1
-max_mana = 1
+max_health = 10
+starting_armor = 0
+max_mana = 5
+name = "Ghost"
+sprite = ExtResource("2_h1biu")
 metadata/_custom_type_script = "uid://dt260m0mpxt3r"

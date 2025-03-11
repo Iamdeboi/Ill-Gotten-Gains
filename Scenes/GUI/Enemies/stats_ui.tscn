@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ikjatqjcn61n"]
+[gd_scene load_steps=7 format=3 uid="uid://ikjatqjcn61n"]
 
 [ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://Assets/Font/pixel_rpg.ttf" id="1_tj7sk"]
 [ext_resource type="Script" uid="uid://ro3nvchgm1vh" path="res://Scenes/GUI/Enemies/stats_ui.gd" id="2_ap273"]
 [ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://Assets/art/tile_0102.png" id="3_y0l2x"]
 [ext_resource type="Texture2D" uid="uid://d0edy7thj8ce6" path="res://Assets/art/heart.png" id="4_ntgrm"]
+[ext_resource type="Texture2D" uid="uid://c2xhttrclo1r7" path="res://Assets/art/tile_0116.png" id="5_ap273"]
 
 [sub_resource type="Theme" id="Theme_8g032"]
 default_font = ExtResource("1_tj7sk")
@@ -12,19 +13,21 @@ default_font = ExtResource("1_tj7sk")
 light_mask = 2
 visibility_layer = 2
 anchors_preset = -1
-anchor_left = 0.451
-anchor_right = 0.549
+anchor_left = 0.439
+anchor_right = 0.561
 anchor_bottom = 0.067
-offset_left = 0.019989
-offset_right = -0.0200195
+offset_left = 5.77998
+offset_right = -5.78003
 offset_bottom = -0.0799999
 grow_horizontal = 2
 theme = SubResource("Theme_8g032")
+theme_override_constants/separation = 1
 alignment = 1
 script = ExtResource("2_ap273")
 
 [node name="Armor" type="HBoxContainer" parent="."]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="ArmorImage" type="TextureRect" parent="Armor"]
 layout_mode = 2
@@ -42,6 +45,7 @@ vertical_alignment = 1
 
 [node name="Health" type="HBoxContainer" parent="."]
 layout_mode = 2
+theme_override_constants/separation = 2
 
 [node name="HealthImage" type="TextureRect" parent="Health"]
 layout_mode = 2
@@ -56,3 +60,17 @@ theme_override_font_sizes/font_size = 6
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Mana" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ManaImage" type="TextureRect" parent="Mana"]
+layout_mode = 2
+texture = ExtResource("5_ap273")
+
+[node name="ManaLabel" type="Label" parent="Mana"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "0"

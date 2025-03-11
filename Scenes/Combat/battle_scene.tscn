@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://Assets/art/background.png" id="1_txb8x"]
 [ext_resource type="PackedScene" uid="uid://43xkdnm2fpla" path="res://Scenes/Player/player.tscn" id="2_20ps0"]
-[ext_resource type="Resource" uid="uid://bwpvvr63u1g71" path="res://Resources/Player/sample_player.tres" id="2_et6ub"]
+[ext_resource type="PackedScene" uid="uid://cc0r5lmc5gi4r" path="res://Scenes/Enemy/enemy.tscn" id="3_et6ub"]
 
 [node name="BattleScene" type="Node2D"]
 
@@ -16,4 +16,6 @@ centered = false
 position = Vector2(240, 120)
 
 [node name="Player" parent="." instance=ExtResource("2_20ps0")]
-stats = ExtResource("2_et6ub")
+
+[node name="Enemy" parent="." instance=ExtResource("3_et6ub")]
+position = Vector2(240, 120)

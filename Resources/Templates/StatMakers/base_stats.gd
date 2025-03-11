@@ -8,6 +8,9 @@ signal stats_changed #Notifies UI about stat changes
 @export var starting_armor: int = 1
 @export var max_mana: int = 1
 
+@export_category("Data + Assets")
+@export var name: String = ""
+@export var sprite: Texture
 
 var health: int : set = set_health
 var mana: int : set = set_mana

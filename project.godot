@@ -46,6 +46,7 @@ folder_colors={
 [global_group]
 
 Player=""
+Enemy=""
 
 [gui]
 
@@ -77,6 +78,7 @@ scroll_down={
 [layer_names]
 
 2d_render/layer_1="Background"
+2d_physics/layer_3="enemy"
 2d_physics/layer_4="map_rooms"
 
 [rendering]

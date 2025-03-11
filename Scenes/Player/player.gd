@@ -6,8 +6,6 @@ extends Node
 # GUI Collection
 @onready var player_stats_ui: PlayerStatsUI = $PlayerStatsUI
 
-
-
 func set_player_stats(value: PlayerStats) -> void:
 	stats = value.create_instance()
 	

@@ -13,4 +13,5 @@ start_constitution = 10
 max_health = 110
 starting_armor = 20
 max_mana = 25
+name = "Iamdeboi"
 metadata/_custom_type_script = "uid://xfic0g5mx1j7"
