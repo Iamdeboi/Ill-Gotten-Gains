@@ -1,4 +1,4 @@
-extends Button
+extends TextureButton
 
 signal click_end()
 
@@ -6,8 +6,6 @@ signal click_end()
 
 func _on_mouse_entered() -> void:
 	$snd_hover.play()
-	
-
 
 
 func _on_pressed() -> void:

@@ -1,33 +1,39 @@
 [gd_scene load_steps=2 format=3 uid="uid://xukg5i2r6xwj"]
 
-[ext_resource type="Texture2D" uid="uid://c80eb5segqqnd" path="res://Assets/art/Attribute Background.png" id="1_rwtng"]
+[ext_resource type="Texture2D" uid="uid://cy8pnq7fmoqtg" path="res://Assets/Themes/9patchUIOne.png" id="1_rwtng"]
 
 [node name="AttributeWindow" type="Control"]
 layout_mode = 3
-anchor_right = 0.077
-anchor_bottom = 0.175
-offset_right = 0.0399971
-grow_horizontal = 2
-grow_vertical = 2
+anchors_preset = 0
+offset_right = 38.0
+offset_bottom = 42.0
+pivot_offset = Vector2(0, 42)
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Background" type="NinePatchRect" parent="."]
+texture_filter = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.004
 anchor_bottom = 1.0
-offset_right = -1.148
-scale = Vector2(1.032, 1)
+offset_right = -0.151997
 texture = ExtResource("1_rwtng")
+region_rect = Rect2(0, 0, 15, 15)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 2
-anchor_left = 0.004
-anchor_top = 0.008
-anchor_right = 1.027
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -0.148
-offset_top = -0.336
-offset_right = 1.001
+offset_left = 3.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/separation = 1
 alignment = 1
 

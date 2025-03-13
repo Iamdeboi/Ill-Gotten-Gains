@@ -1,62 +1,56 @@
 [gd_scene load_steps=9 format=3 uid="uid://d052i5tw5ian"]
 
-[ext_resource type="Texture2D" uid="uid://cmx54tc5t4uyj" path="res://Assets/art/Player Health + Mana.png" id="1_442ml"]
+[ext_resource type="Texture2D" uid="uid://00pivdtcd7tj" path="res://Assets/art/Player Health + Mana.png" id="1_442ml"]
 [ext_resource type="Script" uid="uid://datbttkn4nmrh" path="res://Scenes/GUI/Player/Components/gui_corner_bars.gd" id="1_r5cr3"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qnayl"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5cr3"]
 atlas = ExtResource("1_442ml")
-region = Rect2(57, 0, 6, 64)
+region = Rect2(33, 0, 5, 64)
 margin = Rect2(1, 0, 0, 0)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bv8ja"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_evsia"]
 atlas = ExtResource("1_442ml")
-region = Rect2(9, 0, 8, 64)
+region = Rect2(9, 0, 7, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nfu3o"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rleus"]
 atlas = ExtResource("1_442ml")
-region = Rect2(19, 0, 6, 64)
+region = Rect2(2, 0, 5, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dlpl5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8ogin"]
 atlas = ExtResource("1_442ml")
-region = Rect2(57, 0, 6, 64)
+region = Rect2(33, 0, 5, 64)
 margin = Rect2(1, 0, 0, 0)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cu175"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2vv2"]
 atlas = ExtResource("1_442ml")
-region = Rect2(38, 0, 8, 64)
+region = Rect2(25, 0, 7, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u8v4v"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogal7"]
 atlas = ExtResource("1_442ml")
-region = Rect2(48, 0, 6, 64)
+region = Rect2(17, 0, 7, 64)
 
 [node name="GUICornerBars" type="Control"]
 layout_mode = 3
-anchor_right = 0.033
-anchor_bottom = 0.267
-offset_right = 0.16
-offset_bottom = -0.0800018
-size_flags_horizontal = 0
-size_flags_vertical = 0
+anchors_preset = 0
+offset_left = -16.0
+offset_bottom = 64.0
 script = ExtResource("1_r5cr3")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = -0.941
-offset_bottom = -14.04
-theme_override_constants/separation = 0
+offset_right = 16.0
+offset_bottom = 64.0
+theme_override_constants/separation = 2
 
 [node name="HealthBar" type="TextureProgressBar" parent="HBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-size_flags_horizontal = 4
 value = 50.0
 fill_mode = 3
-texture_under = SubResource("AtlasTexture_qnayl")
-texture_over = SubResource("AtlasTexture_bv8ja")
-texture_progress = SubResource("AtlasTexture_nfu3o")
+texture_under = SubResource("AtlasTexture_r5cr3")
+texture_over = SubResource("AtlasTexture_evsia")
+texture_progress = SubResource("AtlasTexture_rleus")
 texture_progress_offset = Vector2(1, 0)
 
 [node name="ManaBar" type="TextureProgressBar" parent="HBoxContainer"]
@@ -64,7 +58,6 @@ unique_name_in_owner = true
 layout_mode = 2
 value = 50.0
 fill_mode = 3
-texture_under = SubResource("AtlasTexture_dlpl5")
-texture_over = SubResource("AtlasTexture_cu175")
-texture_progress = SubResource("AtlasTexture_u8v4v")
-texture_progress_offset = Vector2(1, 0)
+texture_under = SubResource("AtlasTexture_8ogin")
+texture_over = SubResource("AtlasTexture_y2vv2")
+texture_progress = SubResource("AtlasTexture_ogal7")

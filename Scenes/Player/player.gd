@@ -27,6 +27,7 @@ func update_player() -> void:
 func update_stats() -> void:
 	player_stats_ui.update_corner_bars(stats)
 	player_stats_ui.update_armor_label(stats)
+	player_stats_ui.update_portrait(stats)
 
 
 func take_damage(damage: int) -> void:

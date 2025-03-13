@@ -1,6 +1,12 @@
 class_name Events
 extends Node
 
+# Player-related Events
+signal player_turn_ended
+
+# Enemy-related Events
+signal enemy_action_completed(enemy: Enemy)
+
 # Map-related Events
 signal map_exited
 

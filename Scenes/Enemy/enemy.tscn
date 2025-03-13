@@ -1,9 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cc0r5lmc5gi4r"]
+[gd_scene load_steps=5 format=3 uid="uid://cc0r5lmc5gi4r"]
 
 [ext_resource type="Script" uid="uid://dowp0h2niefo6" path="res://Scenes/Enemy/enemy.gd" id="1_2t2r4"]
-[ext_resource type="Resource" uid="uid://c4bq58733ekcp" path="res://Resources/Enemies/ghost.tres" id="2_2t2r4"]
 [ext_resource type="PackedScene" uid="uid://ikjatqjcn61n" path="res://Scenes/GUI/Enemies/stats_ui.tscn" id="3_d40jh"]
-[ext_resource type="Texture2D" uid="uid://bb3rcs5nqntir" path="res://Assets/art/arrow.png" id="3_dmwl5"]
 [ext_resource type="Texture2D" uid="uid://ukld5o613i0a" path="res://Assets/art/tile_0122.png" id="3_gx76c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pqgp3"]
@@ -11,7 +9,6 @@
 [node name="Enemy" type="Area2D" groups=["Enemy"]]
 collision_layer = 4
 script = ExtResource("1_2t2r4")
-enemy_stats = ExtResource("2_2t2r4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_pqgp3")
@@ -19,11 +16,6 @@ shape = SubResource("RectangleShape2D_pqgp3")
 [node name="EnemySprite" type="Sprite2D" parent="."]
 position = Vector2(0, -1)
 texture = ExtResource("3_gx76c")
-
-[node name="SelectArrow" type="Sprite2D" parent="."]
-position = Vector2(56, 1)
-rotation = -1.5708
-texture = ExtResource("3_dmwl5")
 
 [node name="StatsUI" parent="." instance=ExtResource("3_d40jh")]
 offset_left = -30.0

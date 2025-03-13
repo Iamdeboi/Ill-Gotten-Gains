@@ -14,17 +14,18 @@ grow_vertical = 2
 script = ExtResource("1_axsrd")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+texture_filter = 1
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = -0.00012207
 color = Color(0.28173, 0.29942, 0.40469, 1)
+metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
@@ -33,6 +34,7 @@ theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 12
 theme_override_constants/margin_bottom = 16
+metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -47,7 +49,7 @@ theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_y = 0
 theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("1_s6fwk")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 24
 text = "ILL-GOTTEN GAINS"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -57,23 +59,49 @@ layout_mode = 2
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(48, 0)
 layout_mode = 2
-theme_override_constants/separation = 4
+theme_override_constants/separation = 12
 alignment = 2
 
 [node name="Seperator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="btn_start" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_pe0gy")]
+[node name="StartButton" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_pe0gy")]
 layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/StartButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 6
 text = "Start"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Seperator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="btn_exit" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_pe0gy")]
+[node name="ExitButton" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_pe0gy")]
 layout_mode = 2
-text = "Exit"
+size_flags_horizontal = 4
 
-[connection signal="click_end" from="MarginContainer/HBoxContainer/VBoxContainer/btn_start" to="." method="_on_btn_start_click_end"]
-[connection signal="click_end" from="MarginContainer/HBoxContainer/VBoxContainer/btn_exit" to="." method="_on_btn_exit_click_end"]
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/ExitButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Exit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="click_end" from="MarginContainer/HBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_click_end"]
+[connection signal="click_end" from="MarginContainer/HBoxContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_click_end"]

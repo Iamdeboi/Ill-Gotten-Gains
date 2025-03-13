@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://62rqx1tby8gm"
-path="res://.godot/imported/PortraitSampleGromm.png-0e44bc26e62e646b965cb6adc9bf5fcb.ctex"
+uid="uid://3irjme3yj00b"
+path="res://.godot/imported/ButtonLayoutDraft1.png-52de2ad7d50a4ca5c076ae2011cc95fc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/art/PortraitSampleGromm.png"
-dest_files=["res://.godot/imported/PortraitSampleGromm.png-0e44bc26e62e646b965cb6adc9bf5fcb.ctex"]
+source_file="res://Assets/Themes/ButtonLayoutDraft1.png"
+dest_files=["res://.godot/imported/ButtonLayoutDraft1.png-52de2ad7d50a4ca5c076ae2011cc95fc.ctex"]
 
 [params]
 

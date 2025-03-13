@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpcpuscyn57sa"
-path="res://.godot/imported/Bars and Armor Outline.png-68d0b17aadaffa0da5c123263f207232.ctex"
+uid="uid://w8mw6eyddoq7"
+path="res://.godot/imported/GUIOverlay.png-c53ea272b5d3faaac2ec8bdcb065b276.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/art/Bars and Armor Outline.png"
-dest_files=["res://.godot/imported/Bars and Armor Outline.png-68d0b17aadaffa0da5c123263f207232.ctex"]
+source_file="res://Assets/art/GUIOverlay.png"
+dest_files=["res://.godot/imported/GUIOverlay.png-c53ea272b5d3faaac2ec8bdcb065b276.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

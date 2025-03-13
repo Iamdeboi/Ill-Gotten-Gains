@@ -1,16 +1,42 @@
-[gd_scene load_steps=5 format=3 uid="uid://cytim5vyarwgy"]
+[gd_scene load_steps=11 format=3 uid="uid://cytim5vyarwgy"]
 
 [ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://Assets/Font/pixel_rpg.ttf" id="1_qay3w"]
+[ext_resource type="Texture2D" uid="uid://3irjme3yj00b" path="res://Assets/Themes/ButtonLayoutDraft1.png" id="1_v7gk4"]
 [ext_resource type="Script" uid="uid://b8wj1bxajytir" path="res://Scenes/GUI/Misc/basic_button.gd" id="2_cfl3w"]
 [ext_resource type="AudioStream" uid="uid://cs6fy5f4jvnqx" path="res://Assets/Audio/click.wav" id="3_3ipeu"]
 [ext_resource type="AudioStream" uid="uid://b6idei52033kq" path="res://Assets/Audio/hover.wav" id="4_8pho7"]
 
-[node name="Button" type="Button"]
-offset_right = 42.0
-offset_bottom = 17.0
-theme_override_fonts/font = ExtResource("1_qay3w")
-theme_override_font_sizes/font_size = 12
-text = "Sample"
+[sub_resource type="Theme" id="Theme_qowtc"]
+default_font = ExtResource("1_qay3w")
+default_font_size = 6
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qowtc"]
+atlas = ExtResource("1_v7gk4")
+region = Rect2(80, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcbp1"]
+atlas = ExtResource("1_v7gk4")
+region = Rect2(80, 16, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jba81"]
+atlas = ExtResource("1_v7gk4")
+region = Rect2(80, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_owggy"]
+atlas = ExtResource("1_v7gk4")
+region = Rect2(80, 32, 32, 16)
+
+[node name="Button" type="TextureButton"]
+custom_minimum_size = Vector2(32, 16)
+anchors_preset = -1
+anchor_right = 0.1
+anchor_bottom = 0.089
+offset_bottom = -0.0200005
+theme = SubResource("Theme_qowtc")
+texture_normal = SubResource("AtlasTexture_qowtc")
+texture_pressed = SubResource("AtlasTexture_mcbp1")
+texture_hover = SubResource("AtlasTexture_jba81")
+texture_disabled = SubResource("AtlasTexture_owggy")
 script = ExtResource("2_cfl3w")
 
 [node name="snd_click" type="AudioStreamPlayer2D" parent="."]
