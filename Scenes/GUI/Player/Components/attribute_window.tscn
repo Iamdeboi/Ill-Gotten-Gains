@@ -1,21 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://xukg5i2r6xwj"]
+[gd_scene load_steps=3 format=3 uid="uid://xukg5i2r6xwj"]
 
+[ext_resource type="Script" uid="uid://dsd4bh3wprxn1" path="res://Scenes/GUI/Player/Components/attribute_window.gd" id="1_4mqy0"]
 [ext_resource type="Texture2D" uid="uid://cy8pnq7fmoqtg" path="res://Assets/Themes/9patchUIOne.png" id="1_rwtng"]
 
 [node name="AttributeWindow" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 38.0
-offset_bottom = 42.0
-pivot_offset = Vector2(0, 42)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -283.0
+offset_bottom = -139.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4mqy0")
 
 [node name="Background" type="NinePatchRect" parent="."]
-texture_filter = 1
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.004
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -0.151997
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("1_rwtng")
 region_rect = Rect2(0, 0, 15, 15)
 patch_margin_left = 3
@@ -30,8 +35,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 3.0
 offset_top = 3.0
-offset_right = -3.0
-offset_bottom = -3.0
+offset_right = -2.0
+offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 1
@@ -40,7 +45,6 @@ alignment = 1
 [node name="AttributeNames" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 0
-alignment = 1
 
 [node name="STRLabel" type="Label" parent="HBoxContainer/AttributeNames"]
 layout_mode = 2
@@ -74,35 +78,41 @@ text = "CON:"
 
 [node name="AttributeLabels" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 0
 theme_override_constants/separation = 0
-alignment = 1
 
 [node name="STRCount" type="Label" parent="HBoxContainer/AttributeLabels"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 6
 text = "000"
 
 [node name="DEXCount" type="Label" parent="HBoxContainer/AttributeLabels"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 6
 text = "000"
 
 [node name="INTCount" type="Label" parent="HBoxContainer/AttributeLabels"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 6
 text = "000"
 
 [node name="WISCount" type="Label" parent="HBoxContainer/AttributeLabels"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 6
 text = "000"
 
 [node name="CHACount" type="Label" parent="HBoxContainer/AttributeLabels"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 6
 text = "000"
 
 [node name="CONCount" type="Label" parent="HBoxContainer/AttributeLabels"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 6
 text = "000"

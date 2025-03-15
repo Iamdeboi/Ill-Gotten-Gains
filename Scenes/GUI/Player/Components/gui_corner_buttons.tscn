@@ -1,24 +1,79 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqdpva7bojf3w"]
+[gd_scene load_steps=19 format=3 uid="uid://cqdpva7bojf3w"]
 
 [ext_resource type="Script" uid="uid://c663fdb60e808" path="res://Scenes/GUI/Player/Components/gui_corner_buttons.gd" id="1_i5p77"]
-[ext_resource type="Texture2D" uid="uid://cya3wf6rbweih" path="res://Assets/art/MapButton.png" id="2_x3cwc"]
+[ext_resource type="Texture2D" uid="uid://3irjme3yj00b" path="res://Assets/Themes/ButtonLayoutDraft1.png" id="2_rkx6w"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bsl0y"]
-atlas = ExtResource("2_x3cwc")
-region = Rect2(0, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnjkb"]
+atlas = ExtResource("2_rkx6w")
+region = Rect2(0, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_l5gq1"]
-atlas = ExtResource("2_x3cwc")
-region = Rect2(16, 0, 16, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_h54c5"]
+atlas = ExtResource("2_rkx6w")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0jrc"]
+atlas = ExtResource("2_rkx6w")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mvnxm"]
+atlas = ExtResource("2_rkx6w")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x4nwm"]
+atlas = ExtResource("2_rkx6w")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6l646"]
+atlas = ExtResource("2_rkx6w")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hkw1x"]
+atlas = ExtResource("2_rkx6w")
+region = Rect2(32, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p58rb"]
+atlas = ExtResource("2_rkx6w")
+region = Rect2(48, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5p77"]
+atlas = ExtResource("2_rkx6w")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3cwc"]
+atlas = ExtResource("2_rkx6w")
+region = Rect2(16, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkx6w"]
+atlas = ExtResource("2_rkx6w")
+region = Rect2(32, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ix6h"]
+atlas = ExtResource("2_rkx6w")
+region = Rect2(48, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecisi"]
+atlas = ExtResource("2_rkx6w")
+region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xuhuh"]
+atlas = ExtResource("2_rkx6w")
+region = Rect2(16, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5qmdr"]
+atlas = ExtResource("2_rkx6w")
+region = Rect2(32, 64, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6elh2"]
+atlas = ExtResource("2_rkx6w")
+region = Rect2(48, 64, 16, 16)
 
 [node name="GUICornerButtons" type="Control"]
 custom_minimum_size = Vector2(64, 16)
 layout_mode = 3
-anchor_right = 0.133
-anchor_bottom = 0.067
-offset_right = 0.16
-offset_bottom = -0.0799999
-grow_vertical = 2
+anchors_preset = 0
+offset_left = -1.0
+offset_right = 63.0
+offset_bottom = 16.0
 script = ExtResource("1_i5p77")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -26,36 +81,46 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
 theme_override_constants/separation = 0
 
 [node name="MapButton" type="TextureButton" parent="HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-texture_normal = SubResource("AtlasTexture_bsl0y")
-texture_pressed = SubResource("AtlasTexture_l5gq1")
+texture_normal = SubResource("AtlasTexture_gnjkb")
+texture_pressed = SubResource("AtlasTexture_h54c5")
+texture_hover = SubResource("AtlasTexture_b0jrc")
+texture_disabled = SubResource("AtlasTexture_mvnxm")
 ignore_texture_size = true
 
 [node name="SpellBookButton" type="TextureButton" parent="HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-texture_normal = SubResource("AtlasTexture_bsl0y")
-texture_pressed = SubResource("AtlasTexture_l5gq1")
+texture_normal = SubResource("AtlasTexture_x4nwm")
+texture_pressed = SubResource("AtlasTexture_6l646")
+texture_hover = SubResource("AtlasTexture_hkw1x")
+texture_disabled = SubResource("AtlasTexture_p58rb")
 ignore_texture_size = true
 
 [node name="EquipmentButton" type="TextureButton" parent="HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-texture_normal = SubResource("AtlasTexture_bsl0y")
-texture_pressed = SubResource("AtlasTexture_l5gq1")
+texture_normal = SubResource("AtlasTexture_i5p77")
+texture_pressed = SubResource("AtlasTexture_x3cwc")
+texture_hover = SubResource("AtlasTexture_rkx6w")
+texture_disabled = SubResource("AtlasTexture_3ix6h")
 ignore_texture_size = true
 
 [node name="BagButton" type="TextureButton" parent="HBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
-texture_normal = SubResource("AtlasTexture_bsl0y")
-texture_pressed = SubResource("AtlasTexture_l5gq1")
+texture_normal = SubResource("AtlasTexture_ecisi")
+texture_pressed = SubResource("AtlasTexture_xuhuh")
+texture_hover = SubResource("AtlasTexture_5qmdr")
+texture_disabled = SubResource("AtlasTexture_6elh2")
 ignore_texture_size = true

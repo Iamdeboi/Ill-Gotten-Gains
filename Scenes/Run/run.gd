@@ -1,2 +1,2 @@
 class_name Run
-extends Node
+extends Control

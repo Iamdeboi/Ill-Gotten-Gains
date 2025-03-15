@@ -1,16 +1,13 @@
 [gd_scene load_steps=8 format=3 uid="uid://cvy0l0u8nf5oj"]
 
 [ext_resource type="Script" uid="uid://do03ojrvk5joa" path="res://Scenes/GUI/Player/player_stats_ui.gd" id="1_2cjtq"]
-[ext_resource type="Texture2D" uid="uid://w8mw6eyddoq7" path="res://Assets/art/GUIOverlay.png" id="2_uk8cp"]
+[ext_resource type="Texture2D" uid="uid://qn173bqpjgpd" path="res://Assets/art/IGG_Gromm.png" id="3_2cjtq"]
 [ext_resource type="PackedScene" uid="uid://cqdpva7bojf3w" path="res://Scenes/GUI/Player/Components/gui_corner_buttons.tscn" id="3_pde77"]
 [ext_resource type="PackedScene" uid="uid://d052i5tw5ian" path="res://Scenes/GUI/Player/Components/gui_corner_bars.tscn" id="4_wuf4o"]
+[ext_resource type="PackedScene" uid="uid://xukg5i2r6xwj" path="res://Scenes/GUI/Player/Components/attribute_window.tscn" id="6_2cjtq"]
 [ext_resource type="PackedScene" uid="uid://feqymksvvm4k" path="res://Scenes/GUI/Player/Components/gui_armor_label.tscn" id="6_rsaa2"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uk8cp"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2cjtq"]
-atlas = ExtResource("2_uk8cp")
-region = Rect2(16, 288, 64, 64)
 
 [node name="PlayerStatsUI" type="Control"]
 layout_mode = 3
@@ -20,7 +17,7 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -160.0
-offset_top = -80.0
+offset_top = -82.0
 offset_right = 160.0
 grow_horizontal = 2
 grow_vertical = 0
@@ -41,7 +38,7 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_top = -80.0
-offset_right = 65.0
+offset_right = 320.0
 grow_vertical = 0
 theme_override_constants/separation = 1
 
@@ -55,17 +52,33 @@ layout_mode = 2
 
 [node name="Portrait" type="TextureRect" parent="Panel/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(66, 66)
 layout_mode = 2
-texture = SubResource("AtlasTexture_2cjtq")
+texture = ExtResource("3_2cjtq")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Panel/HBoxContainer"]
 layout_mode = 2
-theme_override_constants/separation = 16
+theme_override_constants/separation = 1
 
 [node name="GUIArmorLabel" parent="Panel/HBoxContainer/VBoxContainer2" instance=ExtResource("6_rsaa2")]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 
 [node name="GUICornerBars" parent="Panel/HBoxContainer/VBoxContainer2" instance=ExtResource("4_wuf4o")]
 unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="AttributeWindow" parent="Panel/HBoxContainer/VBoxContainer3" instance=ExtResource("6_2cjtq")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(37, 41)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="Panel/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(37, 23)
 layout_mode = 2

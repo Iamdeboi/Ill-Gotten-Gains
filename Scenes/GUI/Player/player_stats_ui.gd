@@ -5,7 +5,7 @@ extends Control
 @onready var gui_corner_buttons: GUICornerButtons = %GUICornerButtons
 @onready var gui_corner_bars: GUICornerBars = %GUICornerBars
 @onready var gui_armor_label: ArmorLabel = %GUIArmorLabel
-
+@onready var attribute_window: AttributeWindow = %AttributeWindow
 
 
 
@@ -20,3 +20,7 @@ func update_armor_label(stats: PlayerStats) -> void:
 
 func update_portrait(stats: PlayerStats) -> void:
 	portrait.texture = stats.sprite
+
+
+func update_attribute_window(stats: PlayerStats) -> void:
+	attribute_window.update_attribute_window_ui(stats)

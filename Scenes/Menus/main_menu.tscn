@@ -67,11 +67,11 @@ alignment = 2
 [node name="Seperator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="StartButton" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_pe0gy")]
+[node name="ContinueButton" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_pe0gy")]
 layout_mode = 2
 size_flags_horizontal = 4
 
-[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/StartButton"]
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/ContinueButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -80,12 +80,26 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 6
-text = "Start"
+text = "Continue"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Seperator3" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="NewRunButton" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_pe0gy")]
 layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/NewRunButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 6
+text = "New Run"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ExitButton" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_pe0gy")]
 layout_mode = 2
@@ -103,5 +117,6 @@ text = "Exit"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="click_end" from="MarginContainer/HBoxContainer/VBoxContainer/StartButton" to="." method="_on_start_button_click_end"]
+[connection signal="click_end" from="MarginContainer/HBoxContainer/VBoxContainer/ContinueButton" to="." method="_on_continue_button_click_end"]
+[connection signal="click_end" from="MarginContainer/HBoxContainer/VBoxContainer/NewRunButton" to="." method="_on_new_run_button_click_end"]
 [connection signal="click_end" from="MarginContainer/HBoxContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_click_end"]
