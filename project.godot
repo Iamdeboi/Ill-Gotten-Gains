@@ -39,10 +39,9 @@ window/snap/snap_2d_transforms_to_pixel=false
 [file_customization]
 
 folder_colors={
-"res://Scenes/Combat/": "red",
+"res://Scenes/Battle/": "red",
 "res://Scenes/GUI/": "green",
 "res://Scenes/Menus/": "blue",
-"res://Scenes/Shop/": "yellow",
 "res://Scenes/Utility/": "purple"
 }
 

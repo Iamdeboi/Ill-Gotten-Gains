@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PlayerStats" load_steps=3 format=3 uid="uid://cc5yyifcehi1i"]
+
+[ext_resource type="Script" uid="uid://xfic0g5mx1j7" path="res://Resources/Templates/StatMakers/player_stats.gd" id="1_u6gn3"]
+[ext_resource type="Texture2D" uid="uid://qn173bqpjgpd" path="res://Assets/art/IGG_Gromm.png" id="2_l3tuw"]
+
+[resource]
+script = ExtResource("1_u6gn3")
+start_strength = 2
+start_dexterity = 3
+start_intellect = 10
+start_wisdom = 5
+start_charisma = 3
+start_constitution = 7
+max_health = 80
+starting_armor = 20
+max_mana = 40
+name = "Istlah Naja"
+sprite = ExtResource("2_l3tuw")
+metadata/_custom_type_script = "uid://xfic0g5mx1j7"

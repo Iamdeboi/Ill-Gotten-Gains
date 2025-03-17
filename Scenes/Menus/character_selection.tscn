@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://c3kdu44jehf85"]
+[gd_scene load_steps=6 format=3 uid="uid://c3kdu44jehf85"]
 
 [ext_resource type="Texture2D" uid="uid://qn173bqpjgpd" path="res://Assets/art/IGG_Gromm.png" id="1_iljvx"]
 [ext_resource type="Script" uid="uid://2xmwl085amvl" path="res://Scenes/Menus/character_selection.gd" id="1_ltbvc"]
+[ext_resource type="Resource" uid="uid://c2yni6jomw66r" path="res://Scenes/Run/run_startup.tres" id="2_n1gnf"]
 [ext_resource type="PackedScene" uid="uid://cytim5vyarwgy" path="res://Scenes/GUI/Misc/basic_button.tscn" id="3_w07ih"]
+[ext_resource type="Theme" uid="uid://bxj3jchl1trm8" path="res://Assets/Themes/default.tres" id="4_vmxpj"]
 
 [node name="CharacterSelection" type="Control"]
 layout_mode = 3
@@ -12,6 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ltbvc")
+run_startup = ExtResource("2_n1gnf")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(320, 0)
@@ -30,38 +33,41 @@ grow_vertical = 2
 theme_override_constants/separation = 8
 alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+[node name="Warrior" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
+[node name="WarriorPortrait" type="TextureRect" parent="HBoxContainer/Warrior"]
+modulate = Color(1, 0.0833333, 0, 1)
 layout_mode = 2
 texture = ExtResource("1_iljvx")
 
-[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer"]
+[node name="WarriorButton" type="Button" parent="HBoxContainer/Warrior"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 6
 text = "Select"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+[node name="Mage" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer2"]
+[node name="MagePortrait" type="TextureRect" parent="HBoxContainer/Mage"]
+modulate = Color(0, 0.4, 1, 1)
 layout_mode = 2
 texture = ExtResource("1_iljvx")
 
-[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer2"]
+[node name="MageButton" type="Button" parent="HBoxContainer/Mage"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 6
 text = "Select"
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer"]
+[node name="Thief" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/VBoxContainer3"]
+[node name="ThiefPortrait" type="TextureRect" parent="HBoxContainer/Thief"]
+modulate = Color(0, 1, 0.533333, 1)
 layout_mode = 2
 texture = ExtResource("1_iljvx")
 
-[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer3"]
+[node name="ThiefButton" type="Button" parent="HBoxContainer/Thief"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 6
 text = "Select"
@@ -98,14 +104,16 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -45.0
-offset_top = -40.0
-offset_right = 45.0
-offset_bottom = -10.0
+offset_left = -32.0
+offset_top = -38.0
+offset_right = 32.0
+offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 0
+theme = ExtResource("4_vmxpj")
 
-[node name="Button" parent="Panel2" instance=ExtResource("3_w07ih")]
+[node name="StartRunButton" parent="Panel2" instance=ExtResource("3_w07ih")]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -113,5 +121,23 @@ anchor_bottom = 1.0
 offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("4_vmxpj")
+disabled = true
 
-[connection signal="click_end" from="Panel2/Button" to="." method="_on_button_click_end"]
+[node name="Label" type="Label" parent="Panel2/StartRunButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_vmxpj")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Start Run"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="HBoxContainer/Warrior/WarriorButton" to="." method="_on_warrior_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Mage/MageButton" to="." method="_on_mage_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/Thief/ThiefButton" to="." method="_on_thief_button_pressed"]
+[connection signal="click_end" from="Panel2/StartRunButton" to="." method="_on_start_run_button_click_end"]

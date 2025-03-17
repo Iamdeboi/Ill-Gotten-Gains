@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PlayerStats" load_steps=3 format=3 uid="uid://dwydrtslgh45j"]
+
+[ext_resource type="Script" uid="uid://xfic0g5mx1j7" path="res://Resources/Templates/StatMakers/player_stats.gd" id="1_tt0wu"]
+[ext_resource type="Texture2D" uid="uid://qn173bqpjgpd" path="res://Assets/art/IGG_Gromm.png" id="2_fwt8h"]
+
+[resource]
+script = ExtResource("1_tt0wu")
+start_strength = 3
+start_dexterity = 10
+start_intellect = 2
+start_wisdom = 2
+start_charisma = 5
+start_constitution = 8
+max_health = 100
+starting_armor = 20
+max_mana = 30
+name = "Gromm Briarroots"
+sprite = ExtResource("2_fwt8h")
+metadata/_custom_type_script = "uid://xfic0g5mx1j7"

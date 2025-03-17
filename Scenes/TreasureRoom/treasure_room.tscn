@@ -1,19 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://ivfg1els5vo5"]
+[gd_scene load_steps=3 format=3 uid="uid://cwiv60pv3ea73"]
 
-[ext_resource type="Theme" uid="uid://bxj3jchl1trm8" path="res://Assets/Themes/default.tres" id="1_78vcx"]
-[ext_resource type="Script" uid="uid://ctchmku01gupe" path="res://Scenes/Shop/shop.gd" id="1_dqdqq"]
+[ext_resource type="Script" uid="uid://p8dyc2xyrgp6" path="res://Scenes/TreasureRoom/treasure_room.gd" id="1_8m7yq"]
+[ext_resource type="Theme" uid="uid://bxj3jchl1trm8" path="res://Assets/Themes/default.tres" id="2_p885g"]
 
-[node name="Shop" type="Control"]
+[node name="TreasureRoom" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-mouse_filter = 2
-script = ExtResource("1_dqdqq")
+script = ExtResource("1_8m7yq")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -22,7 +19,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.00024, 1)
+scale = Vector2(0.99896, 1)
 mouse_filter = 2
 color = Color(0.0768358, 0.0768358, 0.0768358, 1)
 
@@ -43,13 +40,13 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 6
-text = "Shop"
+text = "Treasure Room!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-theme = ExtResource("1_78vcx")
+theme = ExtResource("2_p885g")
 theme_override_font_sizes/font_size = 6
 text = "Go Back"
 

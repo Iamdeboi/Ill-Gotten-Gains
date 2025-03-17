@@ -1,14 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://cytim5vyarwgy"]
+[gd_scene load_steps=9 format=3 uid="uid://cytim5vyarwgy"]
 
-[ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://Assets/Font/pixel_rpg.ttf" id="1_qay3w"]
 [ext_resource type="Texture2D" uid="uid://3irjme3yj00b" path="res://Assets/Themes/ButtonLayoutDraft1.png" id="1_v7gk4"]
 [ext_resource type="Script" uid="uid://b8wj1bxajytir" path="res://Scenes/GUI/Misc/basic_button.gd" id="2_cfl3w"]
 [ext_resource type="AudioStream" uid="uid://cs6fy5f4jvnqx" path="res://Assets/Audio/click.wav" id="3_3ipeu"]
 [ext_resource type="AudioStream" uid="uid://b6idei52033kq" path="res://Assets/Audio/hover.wav" id="4_8pho7"]
-
-[sub_resource type="Theme" id="Theme_qowtc"]
-default_font = ExtResource("1_qay3w")
-default_font_size = 6
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qowtc"]
 atlas = ExtResource("1_v7gk4")
@@ -32,11 +27,11 @@ anchors_preset = -1
 anchor_right = 0.1
 anchor_bottom = 0.089
 offset_bottom = -0.0200005
-theme = SubResource("Theme_qowtc")
 texture_normal = SubResource("AtlasTexture_qowtc")
 texture_pressed = SubResource("AtlasTexture_mcbp1")
 texture_hover = SubResource("AtlasTexture_jba81")
 texture_disabled = SubResource("AtlasTexture_owggy")
+stretch_mode = 4
 script = ExtResource("2_cfl3w")
 
 [node name="snd_click" type="AudioStreamPlayer2D" parent="."]

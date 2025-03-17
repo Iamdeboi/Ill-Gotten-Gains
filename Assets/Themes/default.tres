@@ -43,7 +43,7 @@ region_rect = Rect2(16, 0, 16, 16)
 
 [resource]
 default_font = ExtResource("1_limub")
-default_font_size = 12
+default_font_size = 6
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_disabled_color = Color(0.477881, 0.47788, 0.47788, 0.5)
 Button/colors/font_focus_color = Color(0, 0, 0, 0.996078)

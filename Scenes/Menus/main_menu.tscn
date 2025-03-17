@@ -38,7 +38,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 20
+theme_override_constants/separation = 8
 
 [node name="Seperator" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -59,17 +59,18 @@ layout_mode = 2
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(48, 0)
+custom_minimum_size = Vector2(64, 32)
 layout_mode = 2
-theme_override_constants/separation = 12
+theme_override_constants/separation = 2
 alignment = 2
 
 [node name="Seperator2" type="Control" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="ContinueButton" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_pe0gy")]
+custom_minimum_size = Vector2(64, 32)
 layout_mode = 2
-size_flags_horizontal = 4
+stretch_mode = 6
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/ContinueButton"]
 layout_mode = 1
@@ -85,8 +86,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="NewRunButton" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_pe0gy")]
+custom_minimum_size = Vector2(64, 32)
 layout_mode = 2
-size_flags_horizontal = 4
+stretch_mode = 0
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/NewRunButton"]
 layout_mode = 1
@@ -102,8 +104,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ExitButton" parent="MarginContainer/HBoxContainer/VBoxContainer" instance=ExtResource("2_pe0gy")]
+custom_minimum_size = Vector2(64, 32)
 layout_mode = 2
-size_flags_horizontal = 4
+stretch_mode = 1
 
 [node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/ExitButton"]
 layout_mode = 1
@@ -113,6 +116,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 6
 text = "Exit"
 horizontal_alignment = 1
 vertical_alignment = 1

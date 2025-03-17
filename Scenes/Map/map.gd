@@ -19,9 +19,7 @@ var camera_edge_y: float
 
 func _ready() -> void:
 	camera_edge_y = MapGenerator.Y_DIST * (MapGenerator.FLOORS - 1) #Calculate camera edge
-	
-	generate_new_map()
-	unlock_floor(0)
+
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("scroll_up"):
@@ -106,4 +104,4 @@ func _on_map_room_selected(room: Room) -> void:
 	
 	last_room = room
 	floors_climbed += 1
-	#Events.map_exited.emit(room)
+	EventBus.map_exited.emit(room)

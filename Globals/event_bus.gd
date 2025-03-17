@@ -1,4 +1,3 @@
-class_name Events
 extends Node
 
 # Player-related Events
@@ -8,7 +7,7 @@ signal player_turn_ended
 signal enemy_action_completed(enemy: Enemy)
 
 # Map-related Events
-signal map_exited
+signal map_exited(room: Room)
 
 # Shop-related Events
 signal shop_exited
@@ -22,3 +21,6 @@ signal battle_reward_exited
 
 # Treaure-related Events
 signal treasure_room_exited
+
+#Campfire Related Events
+signal campfire_exited

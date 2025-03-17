@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="PlayerStats" load_steps=3 format=3 uid="uid://ls7ennmh2elu"]
+
+[ext_resource type="Script" uid="uid://xfic0g5mx1j7" path="res://Resources/Templates/StatMakers/player_stats.gd" id="1_hgkd1"]
+[ext_resource type="Texture2D" uid="uid://qn173bqpjgpd" path="res://Assets/art/IGG_Gromm.png" id="2_kdn0w"]
+
+[resource]
+script = ExtResource("1_hgkd1")
+start_strength = 8
+start_dexterity = 4
+start_intellect = 2
+start_wisdom = 2
+start_charisma = 2
+start_constitution = 12
+max_health = 120
+starting_armor = 30
+max_mana = 20
+name = "Kraggan Onyxsmith"
+sprite = ExtResource("2_kdn0w")
+metadata/_custom_type_script = "uid://xfic0g5mx1j7"
