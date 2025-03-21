@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://beq6os1qypmat"]
+[gd_scene load_steps=8 format=3 uid="uid://beq6os1qypmat"]
 
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://Assets/art/background.png" id="1_4nlbu"]
 [ext_resource type="Script" uid="uid://i2lqgiy6iiwu" path="res://Scenes/Battle/battle_scene.gd" id="1_lcoea"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://43xkdnm2fpla" path="res://Scenes/Player/player.tscn" id="2_lcoea"]
 [ext_resource type="PackedScene" uid="uid://cc0r5lmc5gi4r" path="res://Scenes/Enemy/enemy.tscn" id="3_jp0ri"]
 [ext_resource type="Resource" uid="uid://c4bq58733ekcp" path="res://Resources/Enemies/Ghost/ghost.tres" id="4_cbixj"]
+[ext_resource type="PackedScene" uid="uid://ba7hfljytxc3x" path="res://Scenes/GUI/Misc/tooltip.tscn" id="7_cbixj"]
 
 [node name="BattleScene" type="Node2D"]
 script = ExtResource("1_lcoea")
@@ -37,3 +38,16 @@ position = Vector2(160, 90)
 stats = ExtResource("4_cbixj")
 
 [node name="PlayerHandler" type="Node" parent="."]
+
+[node name="BattleUI" type="CanvasLayer" parent="."]
+
+[node name="Tooltip" parent="BattleUI" instance=ExtResource("7_cbixj")]
+offset_top = 4.0
+offset_bottom = 64.0
+
+[node name="WinButton" type="Button" parent="."]
+offset_right = 8.0
+offset_bottom = 8.0
+text = "Win"
+
+[connection signal="pressed" from="WinButton" to="." method="_on_win_button_pressed"]

@@ -42,43 +42,58 @@ offset_right = 320.0
 grow_vertical = 0
 theme_override_constants/separation = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/HBoxContainer"]
+[node name="Portrait&Buttons" type="VBoxContainer" parent="Panel/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="GUICornerButtons" parent="Panel/HBoxContainer/VBoxContainer" instance=ExtResource("3_pde77")]
+[node name="GUICornerButtons" parent="Panel/HBoxContainer/Portrait&Buttons" instance=ExtResource("3_pde77")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Portrait" type="TextureRect" parent="Panel/HBoxContainer/VBoxContainer"]
+[node name="Portrait" type="TextureRect" parent="Panel/HBoxContainer/Portrait&Buttons"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(66, 66)
 layout_mode = 2
 texture = ExtResource("3_2cjtq")
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="Panel/HBoxContainer"]
+[node name="HM&A" type="VBoxContainer" parent="Panel/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 1
 
-[node name="GUIArmorLabel" parent="Panel/HBoxContainer/VBoxContainer2" instance=ExtResource("6_rsaa2")]
+[node name="GUIArmorLabel" parent="Panel/HBoxContainer/HM&A" instance=ExtResource("6_rsaa2")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 
-[node name="GUICornerBars" parent="Panel/HBoxContainer/VBoxContainer2" instance=ExtResource("4_wuf4o")]
+[node name="GUICornerBars" parent="Panel/HBoxContainer/HM&A" instance=ExtResource("4_wuf4o")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="Panel/HBoxContainer"]
+[node name="Attributes&Statuses" type="VBoxContainer" parent="Panel/HBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 0
 alignment = 2
 
-[node name="AttributeWindow" parent="Panel/HBoxContainer/VBoxContainer3" instance=ExtResource("6_2cjtq")]
+[node name="Panel" type="Panel" parent="Panel/HBoxContainer/Attributes&Statuses"]
+custom_minimum_size = Vector2(37, 23)
+layout_mode = 2
+
+[node name="AttributeWindow" parent="Panel/HBoxContainer/Attributes&Statuses" instance=ExtResource("6_2cjtq")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(37, 41)
 layout_mode = 2
 
-[node name="Panel" type="Panel" parent="Panel/HBoxContainer/VBoxContainer3"]
-custom_minimum_size = Vector2(37, 23)
+[node name="Ability Selection" type="HBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="SkillSlots" type="VBoxContainer" parent="Panel/Ability Selection"]
+layout_mode = 2
+
+[node name="SpellSlots" type="VBoxContainer" parent="Panel/Ability Selection"]
 layout_mode = 2
