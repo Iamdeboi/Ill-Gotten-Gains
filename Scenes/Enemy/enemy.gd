@@ -5,8 +5,10 @@ const ARROW_OFFSET := 5
 
 # Statblock + Assets + StatsUI
 @export var stats: BaseStats : set = set_stats
+
 @onready var enemy_sprite: Sprite2D = $EnemySprite
 @onready var stats_ui: StatsUI = $StatsUI
+@onready var target_arrow: Sprite2D = %TargetArrow
 
 
 func set_stats(value: BaseStats) -> void:
@@ -40,3 +42,11 @@ func take_damage(damage: int) -> void:
 
 	if stats.health <= 0:
 		queue_free()
+
+
+func _on_area_entered(_area: Area2D) -> void:
+	target_arrow.show()
+
+
+func _on_area_exited(_area: Area2D) -> void:
+	target_arrow.hide()

@@ -26,8 +26,8 @@ settings/stdout/verbose_stdout=true
 
 [display]
 
-window/size/viewport_width=320
-window/size/viewport_height=180
+window/size/viewport_width=640
+window/size/viewport_height=360
 window/size/mode=3
 window/size/window_width_override=1920
 window/size/window_height_override=1080
@@ -101,7 +101,11 @@ scroll_down={
 
 [layer_names]
 
-2d_render/layer_1="Background"
+2d_render/layer_1="AbilityTargetSelector"
+2d_render/layer_2="Player"
+2d_render/layer_3="Enemies"
+2d_physics/layer_1="card_target_selector"
+2d_physics/layer_2="card_drop_area"
 2d_physics/layer_3="enemy"
 2d_physics/layer_4="map_rooms"
 

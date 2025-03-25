@@ -1,8 +1,8 @@
 class_name MapGenerator
 extends Node
 
-const X_DIST := 40 # X Margin for map nodes
-const Y_DIST := 25 # Y Margin for map nodes
+const X_DIST := 80 # X Margin for map nodes
+const Y_DIST := 50 # Y Margin for map nodes
 const PLACEMENT_RANDOMNESS := 10 # Trick for making the nodes' placement more organic
 const FLOORS := 15 # Rows
 const MAP_WIDTH := 7 # Columns

@@ -11,6 +11,8 @@ signal ability_used(ability: Ability)
 signal ability_targetting_started()
 signal ability_targetting_ended()
 signal ability_tooltip_requested(ability: Ability)
+signal ability_cooldown_started(ability: Ability)
+signal ability_cooldown_ended(ability: Ability)
 signal tooltip_hide_requested
 
 # Map-related Events

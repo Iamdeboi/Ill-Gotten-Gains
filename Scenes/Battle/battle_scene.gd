@@ -7,5 +7,7 @@ extends Node2D
 @onready var player: Player = $Player
 
 
+
+
 func _on_win_button_pressed() -> void:
 	EventBus.battle_won.emit()
