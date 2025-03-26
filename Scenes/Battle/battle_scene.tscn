@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://beq6os1qypmat"]
+[gd_scene load_steps=11 format=3 uid="uid://beq6os1qypmat"]
 
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://Assets/art/background.png" id="1_4nlbu"]
 [ext_resource type="Script" uid="uid://i2lqgiy6iiwu" path="res://Scenes/Battle/battle_scene.gd" id="1_lcoea"]
@@ -7,9 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://cc0r5lmc5gi4r" path="res://Scenes/Enemy/enemy.tscn" id="3_jp0ri"]
 [ext_resource type="Resource" uid="uid://c4bq58733ekcp" path="res://Resources/Enemies/Ghost/ghost.tres" id="4_cbixj"]
 [ext_resource type="PackedScene" uid="uid://ba7hfljytxc3x" path="res://Scenes/GUI/Misc/tooltip.tscn" id="7_cbixj"]
+[ext_resource type="Script" uid="uid://bn5xivf7rao85" path="res://Scenes/Battle/ability_container.gd" id="8_02hj4"]
+[ext_resource type="PackedScene" uid="uid://bfw2fydvlmuqa" path="res://Scenes/AbilityUI/ability_slot.tscn" id="8_imn02"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbixj"]
-size = Vector2(413, 81)
+size = Vector2(640, 270)
 
 [node name="BattleScene" type="Node2D"]
 script = ExtResource("1_lcoea")
@@ -29,9 +31,10 @@ texture = ExtResource("1_4nlbu")
 metadata/_edit_lock_ = true
 
 [node name="AbilityDropArea" type="Area2D" parent="."]
+collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AbilityDropArea"]
-position = Vector2(320, 278)
+position = Vector2(320, 135)
 shape = SubResource("RectangleShape2D_cbixj")
 
 [node name="Player" parent="." instance=ExtResource("2_lcoea")]
@@ -49,9 +52,57 @@ stats = ExtResource("4_cbixj")
 
 [node name="PlayerHandler" type="Node" parent="."]
 
-[node name="BattleUI" type="CanvasLayer" parent="."]
+[node name="BattleUI" type="CanvasLayer" parent="." groups=["UI_Layer"]]
 
 [node name="Tooltip" parent="BattleUI" instance=ExtResource("7_cbixj")]
+offset_left = -139.0
+offset_top = -90.0
+
+[node name="AbilityContainer" type="GridContainer" parent="BattleUI"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = -68.0
+offset_right = 88.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 5
+script = ExtResource("8_02hj4")
+
+[node name="AbilitySlot" parent="BattleUI/AbilityContainer" instance=ExtResource("8_imn02")]
+layout_mode = 2
+
+[node name="AbilitySlot2" parent="BattleUI/AbilityContainer" instance=ExtResource("8_imn02")]
+layout_mode = 2
+
+[node name="AbilitySlot3" parent="BattleUI/AbilityContainer" instance=ExtResource("8_imn02")]
+layout_mode = 2
+
+[node name="AbilitySlot4" parent="BattleUI/AbilityContainer" instance=ExtResource("8_imn02")]
+layout_mode = 2
+
+[node name="AbilitySlot5" parent="BattleUI/AbilityContainer" instance=ExtResource("8_imn02")]
+layout_mode = 2
+
+[node name="AbilitySlot6" parent="BattleUI/AbilityContainer" instance=ExtResource("8_imn02")]
+layout_mode = 2
+
+[node name="AbilitySlot7" parent="BattleUI/AbilityContainer" instance=ExtResource("8_imn02")]
+layout_mode = 2
+
+[node name="AbilitySlot8" parent="BattleUI/AbilityContainer" instance=ExtResource("8_imn02")]
+layout_mode = 2
+
+[node name="AbilitySlot9" parent="BattleUI/AbilityContainer" instance=ExtResource("8_imn02")]
+layout_mode = 2
+
+[node name="AbilitySlot10" parent="BattleUI/AbilityContainer" instance=ExtResource("8_imn02")]
+layout_mode = 2
 
 [node name="WinButton" type="Button" parent="."]
 offset_left = 4.0
