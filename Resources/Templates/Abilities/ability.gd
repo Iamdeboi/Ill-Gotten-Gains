@@ -4,7 +4,7 @@ extends Resource
 enum Type {SKILL, SPELL}
 enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
 enum CostType {MANA, HEALTH, GOLD}
-enum Scaling {STRENGTH, DEXTERITY, INTELLECT, WISDOM, CHARISMA, CONSTITUTION, NONE}
+enum Scaling {NONE, STRENGTH, DEXTERITY, INTELLECT, WISDOM, CHARISMA, CONSTITUTION}
 
 @export_group("Ability Attributes")
 @export var id: String
@@ -13,7 +13,8 @@ enum Scaling {STRENGTH, DEXTERITY, INTELLECT, WISDOM, CHARISMA, CONSTITUTION, NO
 @export var cost: int
 @export var cost_type: CostType
 @export var cooldown: int
-@export var scaling: Scaling
+@export var primary_scaling: Scaling
+@export var secondary_scaling: Scaling
 
 @export_group("Ability Visuals")
 @export var icon: Texture
@@ -42,7 +43,7 @@ func _get_targets(targets: Array[Node]) -> Array[Node]:
 
 
 func play(targets: Array[Node], char_stats: PlayerStats) -> void:
-	EventBus.ability_used.emit(self)
+	#EventBus.ability_used.emit(self)
 	match cost_type:
 		CostType.MANA:
 			char_stats.mana -= cost

@@ -1,12 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://bfw2fydvlmuqa"]
+[gd_scene load_steps=11 format=3 uid="uid://bfw2fydvlmuqa"]
 
 [ext_resource type="Script" uid="uid://elf3bnr3nlw0" path="res://Scenes/AbilityUI/ability_slot.gd" id="1_63x3o"]
-[ext_resource type="Theme" uid="uid://bxj3jchl1trm8" path="res://Assets/Themes/default.tres" id="2_7xwvf"]
-[ext_resource type="Script" uid="uid://bodbr4heo4ugo" path="res://Scenes/AbilityUI/ability_state_machine.gd" id="3_7xwvf"]
-[ext_resource type="Script" uid="uid://8o7gecn47306" path="res://Scenes/AbilityUI/ability_base_state.gd" id="4_f4uar"]
-[ext_resource type="Script" uid="uid://ta47fxr5gldd" path="res://Scenes/AbilityUI/ability_clicked_state.gd" id="5_othpb"]
-[ext_resource type="Script" uid="uid://ugvo2ri73wwy" path="res://Scenes/AbilityUI/ability_dragging_state.gd" id="6_3vy14"]
-[ext_resource type="Script" uid="uid://bratox4jig5wo" path="res://Scenes/AbilityUI/ability_released_state.gd" id="7_mw30w"]
+[ext_resource type="Texture2D" uid="uid://bfvi02kojsa00" path="res://Assets/art/tile_0103.png" id="2_7y7um"]
+[ext_resource type="StyleBox" uid="uid://cefwekevxs7eg" path="res://Scenes/AbilityUI/ability_slot_base.stylebox" id="2_r0hbs"]
+[ext_resource type="Script" uid="uid://bodbr4heo4ugo" path="res://Scenes/AbilityUI/AbilityStateMachine/ability_state_machine.gd" id="3_7xwvf"]
+[ext_resource type="Script" uid="uid://8o7gecn47306" path="res://Scenes/AbilityUI/AbilityStateMachine/ability_base_state.gd" id="4_f4uar"]
+[ext_resource type="Script" uid="uid://ta47fxr5gldd" path="res://Scenes/AbilityUI/AbilityStateMachine/ability_clicked_state.gd" id="5_othpb"]
+[ext_resource type="Script" uid="uid://ugvo2ri73wwy" path="res://Scenes/AbilityUI/AbilityStateMachine/ability_dragging_state.gd" id="6_3vy14"]
+[ext_resource type="Script" uid="uid://bratox4jig5wo" path="res://Scenes/AbilityUI/AbilityStateMachine/ability_released_state.gd" id="7_mw30w"]
+[ext_resource type="Script" uid="uid://dsoeqsr3f0c4g" path="res://Scenes/AbilityUI/AbilityStateMachine/ability_aiming_state.gd" id="8_7y7um"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc6sc"]
 size = Vector2(32, 32)
@@ -23,31 +25,50 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_63x3o")
 
-[node name="Color" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
+[node name="Background" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
+theme_override_styles/panel = ExtResource("2_r0hbs")
 
-[node name="State" type="Label" parent="."]
-layout_mode = 2
-offset_left = 4.0
-offset_top = 4.0
-offset_right = 28.0
-offset_bottom = 28.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("2_7xwvf")
-text = "State"
+[node name="CostCount" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.062
+anchor_top = 0.062
+anchor_right = 0.062
+anchor_bottom = 0.062
+offset_left = 0.0159999
+offset_top = 0.0159999
+offset_right = 6.016
+offset_bottom = 6.016
+theme_override_font_sizes/font_size = 6
+text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -5.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7y7um")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="DropPointDetector" type="Area2D" parent="."]
+visible = false
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DropPointDetector"]
@@ -72,6 +93,10 @@ state = 2
 [node name="AbilityReleasedState" type="Node" parent="AbilityStateMachine"]
 script = ExtResource("7_mw30w")
 state = 4
+
+[node name="AbilityAimingState" type="Node" parent="AbilityStateMachine"]
+script = ExtResource("8_7y7um")
+state = 3
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

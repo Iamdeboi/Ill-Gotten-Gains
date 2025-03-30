@@ -8,8 +8,8 @@ signal enemy_action_completed(enemy: Enemy)
 
 # Ability-related Events
 signal ability_used(ability: Ability)
-signal ability_targetting_started()
-signal ability_targetting_ended()
+signal ability_targeting_started(ability_slot: AbilitySlot)
+signal ability_targeting_ended(ability_slot: AbilitySlot)
 signal ability_tooltip_requested(ability: Ability)
 signal ability_cooldown_started(ability: Ability)
 signal ability_cooldown_ended(ability: Ability)

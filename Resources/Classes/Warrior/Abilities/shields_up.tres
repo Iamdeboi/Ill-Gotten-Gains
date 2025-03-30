@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=3 format=3 uid="uid://ja3in6craswg"]
+
+[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://Assets/art/tile_0102.png" id="1_031h3"]
+[ext_resource type="Script" uid="uid://smcmjjy50miu" path="res://Resources/Templates/Abilities/ability.gd" id="2_5qdnu"]
+
+[resource]
+script = ExtResource("2_5qdnu")
+id = "2"
+type = 0
+target = 0
+cost = 0
+cost_type = 0
+cooldown = 0
+primary_scaling = 1
+secondary_scaling = 6
+icon = ExtResource("1_031h3")
+tooltip_text = "Raise your shield, increasing armor by 5"
+metadata/_custom_type_script = "uid://smcmjjy50miu"

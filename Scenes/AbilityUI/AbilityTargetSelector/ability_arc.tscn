@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bti15y1duok20"]
+
+[sub_resource type="Curve" id="Curve_b0r6s"]
+_limits = [0.2, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 0.2), 0.0, 0.0, 0, 0, Vector2(0.5, 0.604494), 0.0, 0.0, 0, 0, Vector2(0.746269, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.2), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[node name="AbilityArc" type="Line2D"]
+width_curve = SubResource("Curve_b0r6s")
