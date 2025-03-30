@@ -3,6 +3,10 @@ extends BaseStats
 
 signal attributes_changed #To notify UI about attribute value changes
 
+@export_category("Player Actions")
+@export var action_points : int
+@export var maximum_action_points : int
+
 @export_category("Player Attributes")
 @export var start_strength : int
 @export var start_dexterity : int
@@ -10,6 +14,7 @@ signal attributes_changed #To notify UI about attribute value changes
 @export var start_wisdom : int
 @export var start_charisma : int
 @export var start_constitution : int
+
 
 var strength: int : set = set_str
 var dexterity: int : set = set_dex
@@ -42,6 +47,26 @@ func set_cha(value: int) -> void:
 func set_con(value: int) -> void:
 	constituion = clampi(value, 0, 999)
 	attributes_changed.emit()
+
+func set_action_points(value: int) -> void:
+	action_points = value
+	stats_changed.emit()
+
+
+func reset_action_points() -> void:
+	self.action_points = maximum_action_points
+
+
+func can_play_ability(ability: Ability) -> bool:
+	match ability.cost_type:
+		ability.CostType.MANA:
+			return mana >= ability.cost
+		ability.CostType.HEALTH:
+			return health >= ability.cost
+		ability.CostType.GOLD:
+			return true
+		_:
+			return true
 
 
 func create_instance() -> Resource:

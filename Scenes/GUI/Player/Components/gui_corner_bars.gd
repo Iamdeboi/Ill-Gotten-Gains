@@ -5,7 +5,6 @@ extends Control
 @onready var mana_bar: TextureProgressBar = %ManaBar
 
 
-
 func set_health_bar(stats: PlayerStats) -> void:
 	health_bar.max_value = stats.max_health
 	health_bar.value = stats.health

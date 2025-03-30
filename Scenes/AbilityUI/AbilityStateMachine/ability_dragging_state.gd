@@ -9,13 +9,17 @@ func enter() -> void:
 	var ui_layer := get_tree().get_first_node_in_group("UI_Layer")
 	if ui_layer:
 		ability_slot.reparent(ui_layer)
-
-	ability_slot.color.color = Color.NAVY_BLUE
-	ability_slot.state.text = "DRAGGING"
+	
+	ability_slot.background.set("theme_override_styles/panel", ability_slot.DRAG_STYLEBOX)
+	EventBus.ability_drag_started.emit(ability_slot)
 	
 	minimum_drag_time_elasped = false
 	var threshold_timer := get_tree().create_timer(DRAG_MINIMUM_THRESHOLD, false)
 	threshold_timer.timeout.connect(func(): minimum_drag_time_elasped = true)
+
+
+func exit() -> void:
+	EventBus.ability_drag_ended.emit(ability_slot)
 
 
 func on_input(event: InputEvent) -> void:

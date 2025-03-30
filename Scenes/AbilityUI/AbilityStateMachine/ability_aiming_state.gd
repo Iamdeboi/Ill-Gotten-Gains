@@ -4,8 +4,6 @@ const MOUSE_Y_SNAPBACK_THRESHOLD := 300
 
 
 func enter() -> void:
-	ability_slot.color.color = Color.WEB_PURPLE
-	ability_slot.state.text = "AIMING"
 	ability_slot.targets.clear()
 	var offset := Vector2(ability_slot.parent.size.x / 2, -ability_slot.size.y / 2)
 	offset.x -= ability_slot.size.x / 2

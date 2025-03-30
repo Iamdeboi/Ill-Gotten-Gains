@@ -1,10 +1,10 @@
-[gd_resource type="Resource" script_class="Ability" load_steps=3 format=3 uid="uid://b6034lga1hc4g"]
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://b6034lga1hc4g"]
 
 [ext_resource type="Texture2D" uid="uid://c6rme2o6dyaoj" path="res://Assets/art/tile_0104.png" id="1_gnwdc"]
-[ext_resource type="Script" uid="uid://smcmjjy50miu" path="res://Resources/Templates/Abilities/ability.gd" id="2_tupqt"]
+[ext_resource type="Script" uid="uid://cj58xyk2jkirc" path="res://Resources/Classes/Warrior/Abilities/slash.gd" id="1_sc24d"]
 
 [resource]
-script = ExtResource("2_tupqt")
+script = ExtResource("1_sc24d")
 id = "1"
 type = 0
 target = 1

@@ -2,8 +2,6 @@ extends AbilityState
 
 
 func enter() -> void:
-	ability_slot.color.color = Color.ORANGE
-	ability_slot.state.text = "CLICKED"
 	ability_slot.drop_point_detector.monitoring = true
 
 

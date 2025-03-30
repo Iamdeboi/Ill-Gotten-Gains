@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://dujeyjg48m3ys"]
+
+[ext_resource type="Texture2D" uid="uid://cy8pnq7fmoqtg" path="res://Assets/Themes/9patchUIOne.png" id="1_2j5i4"]
+[ext_resource type="Script" uid="uid://cv6aeqlavwtnl" path="res://Scenes/GUI/Player/Components/action_point_ui.gd" id="1_e47se"]
+
+[node name="ActionPointUI" type="Control"]
+custom_minimum_size = Vector2(37, 24)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -603.0
+offset_bottom = -336.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e47se")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2j5i4")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 3
+
+[node name="ActionPointLabel" type="Label" parent="NinePatchRect/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 12
+text = "0/3"
+horizontal_alignment = 1
+vertical_alignment = 1

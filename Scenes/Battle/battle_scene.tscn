@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://beq6os1qypmat"]
+[gd_scene load_steps=17 format=3 uid="uid://beq6os1qypmat"]
 
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://Assets/art/background.png" id="1_4nlbu"]
 [ext_resource type="Script" uid="uid://i2lqgiy6iiwu" path="res://Scenes/Battle/battle_scene.gd" id="1_lcoea"]
@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://brnkqcr6gd3j8" path="res://Scenes/Battle/ability_container.tscn" id="9_02hj4"]
 [ext_resource type="Resource" uid="uid://b6034lga1hc4g" path="res://Resources/Classes/Warrior/Abilities/slash.tres" id="11_6tvrj"]
 [ext_resource type="Resource" uid="uid://ja3in6craswg" path="res://Resources/Classes/Warrior/Abilities/shields_up.tres" id="12_68j0i"]
+[ext_resource type="Resource" uid="uid://ls7ennmh2elu" path="res://Resources/Player/warrior_stats.tres" id="12_ik5sk"]
+[ext_resource type="Resource" uid="uid://coapnwodmdehg" path="res://Resources/Classes/Warrior/Abilities/bash.tres" id="13_6tvrj"]
+[ext_resource type="Resource" uid="uid://ixpdsnnhgoa3" path="res://Resources/Classes/Warrior/Abilities/cleave_through.tres" id="14_ik5sk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbixj"]
 size = Vector2(640, 270)
@@ -68,22 +71,22 @@ offset_top = -90.0
 [node name="AbilitySlot" parent="BattleUI/AbilityContainer" instance=ExtResource("8_imn02")]
 layout_mode = 2
 ability = ExtResource("11_6tvrj")
+player_stats = ExtResource("12_ik5sk")
 
 [node name="AbilitySlot2" parent="BattleUI/AbilityContainer" instance=ExtResource("8_imn02")]
 layout_mode = 2
-ability = ExtResource("11_6tvrj")
+ability = ExtResource("12_68j0i")
+player_stats = ExtResource("12_ik5sk")
 
 [node name="AbilitySlot3" parent="BattleUI/AbilityContainer" instance=ExtResource("8_imn02")]
 layout_mode = 2
-ability = ExtResource("12_68j0i")
+ability = ExtResource("13_6tvrj")
+player_stats = ExtResource("12_ik5sk")
 
 [node name="AbilitySlot4" parent="BattleUI/AbilityContainer" instance=ExtResource("8_imn02")]
 layout_mode = 2
-ability = ExtResource("12_68j0i")
-
-[node name="AbilitySlot5" parent="BattleUI/AbilityContainer" instance=ExtResource("8_imn02")]
-layout_mode = 2
-ability = ExtResource("11_6tvrj")
+ability = ExtResource("14_ik5sk")
+player_stats = ExtResource("12_ik5sk")
 
 [node name="WinButton" type="Button" parent="."]
 offset_left = 4.0

@@ -42,13 +42,13 @@ func _get_targets(targets: Array[Node]) -> Array[Node]:
 			return []
 
 
-func play(targets: Array[Node], char_stats: PlayerStats) -> void:
-	#EventBus.ability_used.emit(self)
+func play(targets: Array[Node], player_stats: PlayerStats) -> void:
+	EventBus.ability_used.emit(self)
 	match cost_type:
 		CostType.MANA:
-			char_stats.mana -= cost
+			player_stats.mana-= cost
 		CostType.HEALTH:
-			char_stats.health -= cost
+			player_stats.health -= cost
 		CostType.GOLD:
 			pass
 	
