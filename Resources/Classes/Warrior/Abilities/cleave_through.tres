@@ -14,5 +14,6 @@ cooldown = 0
 primary_scaling = 1
 secondary_scaling = 0
 icon = ExtResource("1_ke6bc")
+title = "Cleave Through"
 tooltip_text = "Carve through all enemies, dealing 20 damage to all targets"
 metadata/_custom_type_script = "uid://smcmjjy50miu"

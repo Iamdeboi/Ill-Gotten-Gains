@@ -16,11 +16,12 @@ const HOVER_STYLEBOX := preload("res://Scenes/AbilityUI/ability_slot_hover.style
 @onready var drop_point_detector: Area2D = $DropPointDetector
 @onready var ability_state_machine: AbilityStateMachine = $AbilityStateMachine as AbilityStateMachine
 @onready var targets: Array[Node] = []
+@onready var original_index := self.get_index()
 
 var parent: Control
 var tween: Tween
 var playable := true: set = _set_playable # Checks if enough resource is available to play ability
-var disabled := false
+var disabled := false # Locked from interacting via clicking, dragging, moving
 
 func _ready() -> void:
 	EventBus.ability_targeting_started.connect(_on_ability_drag_or_targeting_started)
@@ -43,7 +44,6 @@ func play() -> void:
 		return
 	
 	ability.play(targets, player_stats)
-	queue_free()
 
 func _on_gui_input(event: InputEvent) -> void:
 	ability_state_machine.on_gui_input(event)
@@ -80,10 +80,10 @@ func _set_playable(value: bool) -> void:
 	playable = value
 	if not playable:
 		cost.add_theme_color_override("font_color", Color.RED)
-		icon.modulate = Color(1, 1, 1, 0.5)
+		icon.modulate = Color(1, 1, 1, 0.5) #Adds transparancy to the ability slot
 	else:
 		cost.remove_theme_color_override("font_color")
-		icon.modulate = Color(1, 1, 1, 1)
+		icon.modulate = Color(1, 1, 1, 1) #Default look
 
 func _set_player_stats(value: PlayerStats) -> void:
 	player_stats = value

@@ -43,7 +43,7 @@ func take_damage(damage : int) -> void: # Processes armor before taking the true
 
 
 func heal(amount : int) -> void: # Restores health based on amount passed through the method "BaseStats.heal"
-	self.health += amount
+	self.health += clampi(amount, 0, max_health)
 
 
 func restore_mana(amount : int) -> void: #Restores mana based on value

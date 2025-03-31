@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://beq6os1qypmat"]
+[gd_scene load_steps=16 format=3 uid="uid://beq6os1qypmat"]
 
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://Assets/art/background.png" id="1_4nlbu"]
 [ext_resource type="Script" uid="uid://i2lqgiy6iiwu" path="res://Scenes/Battle/battle_scene.gd" id="1_lcoea"]
@@ -8,14 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://cjgiis2rgupwn" path="res://Scenes/AbilityUI/AbilityTargetSelector/ability_target_selector.tscn" id="7_5mge4"]
 [ext_resource type="PackedScene" uid="uid://ba7hfljytxc3x" path="res://Scenes/GUI/Misc/tooltip.tscn" id="7_cbixj"]
 [ext_resource type="PackedScene" uid="uid://bfw2fydvlmuqa" path="res://Scenes/AbilityUI/ability_slot.tscn" id="8_imn02"]
-[ext_resource type="Script" uid="uid://bft6q2ldklwwi" path="res://Scenes/Battle/battle_ui.gd" id="8_sufya"]
 [ext_resource type="PackedScene" uid="uid://brnkqcr6gd3j8" path="res://Scenes/Battle/ability_container.tscn" id="9_02hj4"]
 [ext_resource type="Resource" uid="uid://b6034lga1hc4g" path="res://Resources/Classes/Warrior/Abilities/slash.tres" id="11_6tvrj"]
 [ext_resource type="Resource" uid="uid://ja3in6craswg" path="res://Resources/Classes/Warrior/Abilities/shields_up.tres" id="12_68j0i"]
 [ext_resource type="Resource" uid="uid://ls7ennmh2elu" path="res://Resources/Player/warrior_stats.tres" id="12_ik5sk"]
 [ext_resource type="Resource" uid="uid://coapnwodmdehg" path="res://Resources/Classes/Warrior/Abilities/bash.tres" id="13_6tvrj"]
 [ext_resource type="Resource" uid="uid://ixpdsnnhgoa3" path="res://Resources/Classes/Warrior/Abilities/cleave_through.tres" id="14_ik5sk"]
-[ext_resource type="PackedScene" uid="uid://dujeyjg48m3ys" path="res://Scenes/GUI/Player/Components/action_point_ui.tscn" id="15_ik5sk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbixj"]
 size = Vector2(640, 270)
@@ -45,6 +43,7 @@ position = Vector2(320, 135)
 shape = SubResource("RectangleShape2D_cbixj")
 
 [node name="Player" parent="." instance=ExtResource("2_lcoea")]
+unique_name_in_owner = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(320, 180)
@@ -62,17 +61,12 @@ stats = ExtResource("4_cbixj")
 [node name="AbilityTargetSelector" parent="." instance=ExtResource("7_5mge4")]
 
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["UI_Layer"]]
-script = ExtResource("8_sufya")
 
 [node name="Tooltip" parent="BattleUI" instance=ExtResource("7_cbixj")]
 offset_left = -139.0
 offset_top = -90.0
 
 [node name="AbilityContainer" parent="BattleUI" instance=ExtResource("9_02hj4")]
-offset_left = -87.0
-offset_top = -89.0
-offset_right = 89.0
-offset_bottom = -21.0
 
 [node name="AbilitySlot" parent="BattleUI/AbilityContainer" instance=ExtResource("8_imn02")]
 layout_mode = 2
@@ -93,18 +87,6 @@ player_stats = ExtResource("12_ik5sk")
 layout_mode = 2
 ability = ExtResource("14_ik5sk")
 player_stats = ExtResource("12_ik5sk")
-
-[node name="ActionPointUI" parent="BattleUI" instance=ExtResource("15_ik5sk")]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-offset_left = -18.5
-offset_top = -24.0
-offset_right = 18.5
-offset_bottom = 0.0
-grow_vertical = 0
-stats = ExtResource("12_ik5sk")
 
 [node name="WinButton" type="Button" parent="."]
 offset_left = 4.0

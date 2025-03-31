@@ -4,7 +4,6 @@ extends BaseStats
 signal attributes_changed #To notify UI about attribute value changes
 
 @export_category("Player Actions")
-@export var action_points : int
 @export var maximum_action_points : int
 
 @export_category("Player Attributes")
@@ -15,7 +14,7 @@ signal attributes_changed #To notify UI about attribute value changes
 @export var start_charisma : int
 @export var start_constitution : int
 
-
+var action_points : int : set = set_action_points
 var strength: int : set = set_str
 var dexterity: int : set = set_dex
 var intellect: int : set = set_int
@@ -52,21 +51,23 @@ func set_action_points(value: int) -> void:
 	action_points = value
 	stats_changed.emit()
 
-
 func reset_action_points() -> void:
 	self.action_points = maximum_action_points
 
 
 func can_play_ability(ability: Ability) -> bool:
-	match ability.cost_type:
-		ability.CostType.MANA:
-			return mana >= ability.cost
-		ability.CostType.HEALTH:
-			return health >= ability.cost
-		ability.CostType.GOLD:
-			return true
-		_:
-			return true
+	if self.action_points <= 0:
+		return false
+	else:
+		match ability.cost_type:
+			ability.CostType.MANA:
+				return mana >= ability.cost
+			ability.CostType.HEALTH:
+				return health >= ability.cost
+			ability.CostType.GOLD:
+				return true
+			_:
+				return false
 
 
 func create_instance() -> Resource:
@@ -74,6 +75,8 @@ func create_instance() -> Resource:
 	instance.health = max_health
 	instance.armor = starting_armor
 	instance.mana = max_mana
+	instance.action_points = maximum_action_points
+	instance.reset_action_points()
 	instance.strength = start_strength
 	instance.dexterity = start_dexterity
 	instance.intellect = start_intellect

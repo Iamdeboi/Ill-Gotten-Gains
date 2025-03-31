@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_tt0wu")
+maximum_action_points = 0
 start_strength = 3
 start_dexterity = 10
 start_intellect = 2

@@ -18,6 +18,7 @@ enum Scaling {NONE, STRENGTH, DEXTERITY, INTELLECT, WISDOM, CHARISMA, CONSTITUTI
 
 @export_group("Ability Visuals")
 @export var icon: Texture
+@export var title: String
 @export_multiline var tooltip_text: String
 
 
@@ -44,13 +45,13 @@ func _get_targets(targets: Array[Node]) -> Array[Node]:
 
 func play(targets: Array[Node], player_stats: PlayerStats) -> void:
 	EventBus.ability_used.emit(self)
-	match cost_type:
-		CostType.MANA:
-			player_stats.mana-= cost
-		CostType.HEALTH:
-			player_stats.health -= cost
-		CostType.GOLD:
-			pass
+	player_stats.action_points -= 1
+	if CostType.MANA:
+		player_stats.mana -= cost
+	elif CostType.HEALTH:
+		player_stats.health -= cost
+	else:
+		pass
 	
 	if is_single_targeted():
 		apply_effects(targets)

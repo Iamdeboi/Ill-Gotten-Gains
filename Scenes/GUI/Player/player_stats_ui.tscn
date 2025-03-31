@@ -1,13 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://cvy0l0u8nf5oj"]
+[gd_scene load_steps=9 format=3 uid="uid://cvy0l0u8nf5oj"]
 
 [ext_resource type="Script" uid="uid://do03ojrvk5joa" path="res://Scenes/GUI/Player/player_stats_ui.gd" id="1_2cjtq"]
 [ext_resource type="Texture2D" uid="uid://qn173bqpjgpd" path="res://Assets/art/IGG_Gromm.png" id="3_2cjtq"]
 [ext_resource type="PackedScene" uid="uid://cqdpva7bojf3w" path="res://Scenes/GUI/Player/Components/gui_corner_buttons.tscn" id="3_pde77"]
 [ext_resource type="PackedScene" uid="uid://d052i5tw5ian" path="res://Scenes/GUI/Player/Components/gui_corner_bars.tscn" id="4_wuf4o"]
+[ext_resource type="Script" uid="uid://fj43g82rbvti" path="res://Scenes/GUI/Player/Components/gui_armor_label.gd" id="5_pde77"]
 [ext_resource type="PackedScene" uid="uid://xukg5i2r6xwj" path="res://Scenes/GUI/Player/Components/attribute_window.tscn" id="6_2cjtq"]
 [ext_resource type="PackedScene" uid="uid://feqymksvvm4k" path="res://Scenes/GUI/Player/Components/gui_armor_label.tscn" id="6_rsaa2"]
-[ext_resource type="PackedScene" uid="uid://dujeyjg48m3ys" path="res://Scenes/GUI/Player/Components/action_point_ui.tscn" id="7_wgukn"]
-[ext_resource type="Resource" uid="uid://ls7ennmh2elu" path="res://Resources/Player/warrior_stats.tres" id="8_pde77"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uk8cp"]
 
@@ -62,6 +61,7 @@ theme_override_constants/separation = 1
 unique_name_in_owner = true
 custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
+script = ExtResource("5_pde77")
 
 [node name="GUICornerBars" parent="Panel/HBoxContainer/HM&A" instance=ExtResource("4_wuf4o")]
 unique_name_in_owner = true
@@ -74,7 +74,3 @@ layout_mode = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(37, 41)
 layout_mode = 2
-
-[node name="ActionPointUI" parent="Panel/HBoxContainer/Attributes&AP" instance=ExtResource("7_wgukn")]
-layout_mode = 2
-player_stats = ExtResource("8_pde77")

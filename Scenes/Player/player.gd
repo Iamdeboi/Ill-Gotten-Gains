@@ -6,9 +6,10 @@ extends Node
 # GUI Collection
 @onready var player_stats_ui: PlayerStatsUI = $PlayerStatsUI
 
+
 func set_player_stats(value: PlayerStats) -> void:
 	stats = value.create_instance()
-	
+	# Connect stats_changed signal to this class's "update_stats" method
 	if not stats.stats_changed.is_connected(update_stats):
 		stats.stats_changed.connect(update_stats)
 	
@@ -25,10 +26,7 @@ func update_player() -> void:
 
 
 func update_stats() -> void:
-	player_stats_ui.update_corner_bars(stats)
-	player_stats_ui.update_armor_label(stats)
-	player_stats_ui.update_portrait(stats)
-	player_stats_ui.update_attribute_window(stats)
+	player_stats_ui.update_stats(stats)
 
 
 func take_damage(damage: int) -> void:
@@ -39,3 +37,9 @@ func take_damage(damage: int) -> void:
 
 	if stats.health <= 0:
 		queue_free()
+
+func heal(amount: int) -> void:
+	if stats.health >= stats.max_health:
+		return
+	
+	stats.heal(amount)

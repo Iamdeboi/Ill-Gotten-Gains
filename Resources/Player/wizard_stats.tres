@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_u6gn3")
+maximum_action_points = 0
 start_strength = 2
 start_dexterity = 3
 start_intellect = 10

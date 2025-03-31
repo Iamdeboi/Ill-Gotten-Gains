@@ -8,19 +8,11 @@ extends Control
 @onready var attribute_window: AttributeWindow = %AttributeWindow
 
 
-
-func update_corner_bars(stats: PlayerStats) -> void:
-	gui_corner_bars.update_health_bar(stats)
-	gui_corner_bars.update_mana_bar(stats)
-
-
-func update_armor_label(stats: PlayerStats) -> void:
-	gui_armor_label.update_armor_label(stats)
-
-
-func update_portrait(stats: PlayerStats) -> void:
+func update_stats(stats: PlayerStats) -> void:
 	portrait.texture = stats.sprite
-
-
-func update_attribute_window(stats: PlayerStats) -> void:
+	gui_corner_bars.health_bar.max_value = stats.max_health
+	gui_corner_bars.health_bar.value = stats.health
+	gui_corner_bars.mana_bar.max_value = stats.max_mana
+	gui_corner_bars.mana_bar.value = stats.mana
+	gui_armor_label.armor_label.text = str(stats.armor)
 	attribute_window.update_attribute_window_ui(stats)
