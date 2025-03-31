@@ -1,7 +1,10 @@
 class_name AbilityContainer
 extends GridContainer
 
+@export var player_stats: PlayerStats
+
 var abilities_played_this_turn := 0
+
 
 func _ready() -> void:
 	EventBus.ability_used.connect(_on_ability_used)

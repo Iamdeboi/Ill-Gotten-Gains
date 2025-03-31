@@ -73,6 +73,7 @@ offset_left = -87.0
 offset_top = -89.0
 offset_right = 89.0
 offset_bottom = -21.0
+player_stats = ExtResource("12_ik5sk")
 
 [node name="AbilitySlot" parent="BattleUI/AbilityContainer" instance=ExtResource("8_imn02")]
 layout_mode = 2
