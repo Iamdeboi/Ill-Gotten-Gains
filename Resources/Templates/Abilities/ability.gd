@@ -46,12 +46,14 @@ func _get_targets(targets: Array[Node]) -> Array[Node]:
 func play(targets: Array[Node], player_stats: PlayerStats) -> void:
 	EventBus.ability_used.emit(self)
 	player_stats.action_points -= 1
-	if CostType.MANA:
-		player_stats.mana -= cost
-	elif CostType.HEALTH:
-		player_stats.health -= cost
-	else:
-		pass
+	match cost_type:
+		CostType.MANA:
+			player_stats.mana -= cost
+		CostType.HEALTH:
+			player_stats.health -= cost
+		CostType.GOLD:
+			print("You will spend %s gold pieces" % cost)
+	print("player_stats: " + str(player_stats.health) + " " + str(player_stats.mana) + " " + str(player_stats.armor) + ".")
 	
 	if is_single_targeted():
 		apply_effects(targets)

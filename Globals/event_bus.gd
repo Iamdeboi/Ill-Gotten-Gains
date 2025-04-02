@@ -1,6 +1,7 @@
 extends Node
 
 # Player-related Events
+signal player_hotbar_loaded
 signal player_turn_ended
 
 # Enemy-related Events

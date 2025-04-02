@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://beq6os1qypmat"]
+[gd_scene load_steps=14 format=3 uid="uid://beq6os1qypmat"]
 
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://Assets/art/background.png" id="1_4nlbu"]
 [ext_resource type="Script" uid="uid://i2lqgiy6iiwu" path="res://Scenes/Battle/battle_scene.gd" id="1_lcoea"]
@@ -7,14 +7,10 @@
 [ext_resource type="Resource" uid="uid://c4bq58733ekcp" path="res://Resources/Enemies/Ghost/ghost.tres" id="4_cbixj"]
 [ext_resource type="PackedScene" uid="uid://cjgiis2rgupwn" path="res://Scenes/AbilityUI/AbilityTargetSelector/ability_target_selector.tscn" id="7_5mge4"]
 [ext_resource type="PackedScene" uid="uid://ba7hfljytxc3x" path="res://Scenes/GUI/Misc/tooltip.tscn" id="7_cbixj"]
-[ext_resource type="PackedScene" uid="uid://bfw2fydvlmuqa" path="res://Scenes/AbilityUI/ability_slot.tscn" id="8_imn02"]
+[ext_resource type="Script" uid="uid://b66pvl7x1j7be" path="res://Scenes/Player/player_handler.gd" id="7_n1ain"]
 [ext_resource type="Script" uid="uid://bft6q2ldklwwi" path="res://Scenes/Battle/battle_ui.gd" id="8_sufya"]
 [ext_resource type="PackedScene" uid="uid://brnkqcr6gd3j8" path="res://Scenes/Battle/ability_container.tscn" id="9_02hj4"]
-[ext_resource type="Resource" uid="uid://b6034lga1hc4g" path="res://Resources/Classes/Warrior/Abilities/slash.tres" id="11_6tvrj"]
-[ext_resource type="Resource" uid="uid://ja3in6craswg" path="res://Resources/Classes/Warrior/Abilities/shields_up.tres" id="12_68j0i"]
 [ext_resource type="Resource" uid="uid://ls7ennmh2elu" path="res://Resources/Player/warrior_stats.tres" id="12_ik5sk"]
-[ext_resource type="Resource" uid="uid://coapnwodmdehg" path="res://Resources/Classes/Warrior/Abilities/bash.tres" id="13_6tvrj"]
-[ext_resource type="Resource" uid="uid://ixpdsnnhgoa3" path="res://Resources/Classes/Warrior/Abilities/cleave_through.tres" id="14_ik5sk"]
 [ext_resource type="PackedScene" uid="uid://dujeyjg48m3ys" path="res://Scenes/GUI/Player/Components/action_point_ui.tscn" id="15_ik5sk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbixj"]
@@ -57,43 +53,20 @@ position = Vector2(320, 180)
 scale = Vector2(2, 2)
 stats = ExtResource("4_cbixj")
 
-[node name="PlayerHandler" type="Node" parent="."]
+[node name="PlayerHandler" type="Node" parent="." node_paths=PackedStringArray("ability_container")]
+script = ExtResource("7_n1ain")
+ability_container = NodePath("../BattleUI/AbilityContainer")
 
 [node name="AbilityTargetSelector" parent="." instance=ExtResource("7_5mge4")]
 
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["UI_Layer"]]
 script = ExtResource("8_sufya")
 
-[node name="Tooltip" parent="BattleUI" instance=ExtResource("7_cbixj")]
-offset_left = -139.0
-offset_top = -90.0
-
 [node name="AbilityContainer" parent="BattleUI" instance=ExtResource("9_02hj4")]
 offset_left = -87.0
 offset_top = -89.0
 offset_right = 89.0
 offset_bottom = -21.0
-player_stats = ExtResource("12_ik5sk")
-
-[node name="AbilitySlot" parent="BattleUI/AbilityContainer" instance=ExtResource("8_imn02")]
-layout_mode = 2
-ability = ExtResource("11_6tvrj")
-player_stats = ExtResource("12_ik5sk")
-
-[node name="AbilitySlot2" parent="BattleUI/AbilityContainer" instance=ExtResource("8_imn02")]
-layout_mode = 2
-ability = ExtResource("12_68j0i")
-player_stats = ExtResource("12_ik5sk")
-
-[node name="AbilitySlot3" parent="BattleUI/AbilityContainer" instance=ExtResource("8_imn02")]
-layout_mode = 2
-ability = ExtResource("13_6tvrj")
-player_stats = ExtResource("12_ik5sk")
-
-[node name="AbilitySlot4" parent="BattleUI/AbilityContainer" instance=ExtResource("8_imn02")]
-layout_mode = 2
-ability = ExtResource("14_ik5sk")
-player_stats = ExtResource("12_ik5sk")
 
 [node name="ActionPointUI" parent="BattleUI" instance=ExtResource("15_ik5sk")]
 anchors_preset = 7
@@ -105,7 +78,10 @@ offset_top = -24.0
 offset_right = 18.5
 offset_bottom = 0.0
 grow_vertical = 0
-stats = ExtResource("12_ik5sk")
+
+[node name="Tooltip" parent="BattleUI" instance=ExtResource("7_cbixj")]
+offset_left = -139.0
+offset_top = -90.0
 
 [node name="WinButton" type="Button" parent="."]
 offset_left = 4.0

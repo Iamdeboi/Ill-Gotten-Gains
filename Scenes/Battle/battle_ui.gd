@@ -10,3 +10,4 @@ extends CanvasLayer
 func _set_player_stats(value: PlayerStats) -> void:
 	player_stats = value
 	action_point_ui.stats = player_stats
+	ability_container.player_stats = player_stats

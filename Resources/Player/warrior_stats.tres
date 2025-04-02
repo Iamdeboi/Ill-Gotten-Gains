@@ -1,12 +1,13 @@
-[gd_resource type="Resource" script_class="PlayerStats" load_steps=3 format=3 uid="uid://ls7ennmh2elu"]
+[gd_resource type="Resource" script_class="PlayerStats" load_steps=4 format=3 uid="uid://ls7ennmh2elu"]
 
 [ext_resource type="Script" uid="uid://xfic0g5mx1j7" path="res://Resources/Templates/StatMakers/player_stats.gd" id="1_hgkd1"]
 [ext_resource type="Texture2D" uid="uid://qn173bqpjgpd" path="res://Assets/art/IGG_Gromm.png" id="2_kdn0w"]
+[ext_resource type="Resource" uid="uid://bvh6g13h4j7yv" path="res://Resources/Classes/Warrior/warrior_starting_abilities.tres" id="3_mf774"]
 
 [resource]
 script = ExtResource("1_hgkd1")
-action_points = 1
 maximum_action_points = 3
+starting_abilities = ExtResource("3_mf774")
 start_strength = 8
 start_dexterity = 4
 start_intellect = 2

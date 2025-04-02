@@ -81,9 +81,16 @@ func _set_playable(value: bool) -> void:
 	if not playable:
 		cost.add_theme_color_override("font_color", Color.RED)
 		icon.modulate = Color(1, 1, 1, 0.5) #Adds transparancy to the ability slot
-	else:
+	else: # Reset font_color based on their disabled status, and cost_type color
 		cost.remove_theme_color_override("font_color")
 		icon.modulate = Color(1, 1, 1, 1) #Default look
+		match ability.cost_type: # Color the cost number to quickly show if it costs MANA, HEALTH, or GOLD
+			ability.CostType.MANA:
+				cost.add_theme_color_override("font_color", Color.DARK_TURQUOISE)
+			ability.CostType.HEALTH:
+				cost.add_theme_color_override("font_color", Color.SALMON)
+			ability.CostType.GOLD:
+				cost.add_theme_color_override("font_color", Color.GOLD)
 
 func _set_player_stats(value: PlayerStats) -> void:
 	player_stats = value

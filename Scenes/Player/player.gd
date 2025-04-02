@@ -8,10 +8,11 @@ extends Node
 
 
 func set_player_stats(value: PlayerStats) -> void:
-	stats = value.create_instance()
+	stats = value
 	# Connect stats_changed signal to this class's "update_stats" method
 	if not stats.stats_changed.is_connected(update_stats):
 		stats.stats_changed.connect(update_stats)
+	
 	
 	update_player()
 

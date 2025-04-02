@@ -41,6 +41,9 @@ func take_damage(damage : int) -> void: # Processes armor before taking the true
 	self.armor = clampi(armor - initial_damage, 0, armor)
 	self.health -= damage
 
+func restore_armor(amount : int) -> void:
+	self.armor += amount
+
 
 func heal(amount : int) -> void: # Restores health based on amount passed through the method "BaseStats.heal"
 	self.health += clampi(amount, 0, max_health)
