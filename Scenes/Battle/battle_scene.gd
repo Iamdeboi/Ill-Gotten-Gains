@@ -15,6 +15,9 @@ func _ready() -> void:
 	player.stats = new_stats
 	battle_ui.player_stats = new_stats
 	
+	EventBus.player_turn_ended.connect(player_handler.end_turn)
+	EventBus.enemy_action_completed.connect(player_handler.start_turn)
+	
 	start_battle(new_stats)
 
 
@@ -24,3 +27,7 @@ func start_battle(stats: PlayerStats) -> void:
 
 func _on_win_button_pressed() -> void:
 	EventBus.battle_won.emit()
+
+
+func _on_enemy_turn_played_button_pressed() -> void:
+	EventBus.enemy_action_completed.emit()

@@ -25,8 +25,8 @@ enum Scaling {NONE, STRENGTH, DEXTERITY, INTELLECT, WISDOM, CHARISMA, CONSTITUTI
 @export var title: String
 @export_multiline var tooltip_text: String
 
-var primary_scaling_mod: float = 1
-var secondary_scaling_mod: float = 1
+var primary_scaling_mod: float = 0
+var secondary_scaling_mod: float = 0
 
 func is_single_targeted() -> bool:
 	return target == Target.SINGLE_ENEMY

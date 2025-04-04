@@ -13,15 +13,26 @@ func start_battle(player_stats: PlayerStats) -> void:
 	player = player_stats
 	player.prepared_abilities = player.prepared_abilities.duplicate(true)
 	set_up_hotbar(player.prepared_abilities.abilities.size())
+	player.armor = player.starting_armor # At combat start, replenish your armor equal to your starting_armor variable + additional_armor from equipment (TODO)
+	
+	
 	start_turn()
 
 
 func set_up_ability_slot() -> void:
 	ability_container.add_ability(player.prepared_abilities.place_ability_slot())
 
+
 func start_turn() -> void:
-		player.armor = player.starting_armor #At every turn, replenish your armor equal to your starting_armor variable + additional_armor from equipment (TODO)
-		player.reset_action_points()
+	player.reset_action_points()
+	ability_container.enable_hotbar()
+	ability_container.abilities_played_this_turn = 0
+	EventBus.player_turn_started.emit()
+
+
+func end_turn() -> void:
+	ability_container.disable_hotbar()
+
 
 func set_up_hotbar(amount: int) -> void:
 	var tween := create_tween()

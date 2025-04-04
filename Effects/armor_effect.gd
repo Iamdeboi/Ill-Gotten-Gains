@@ -10,8 +10,7 @@ func execute(targets: Array[Node], ability: Ability, primary_scaling_mod: float,
 			continue
 		if target is Enemy or target is Player:
 			print("Amount: " + str(amount))
-			amount *= primary_scaling_mod 
-			amount *= secondary_scaling_mod
+			amount += primary_scaling_mod + secondary_scaling_mod
 			print("Primary Scaling Mod: " + str(primary_scaling_mod))
 			print("Secondary Scaling Mod: " + str(secondary_scaling_mod))
 			print("Calculated Amount: " + str(amount))

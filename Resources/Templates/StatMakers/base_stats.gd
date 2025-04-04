@@ -51,7 +51,7 @@ var wisdom: int : set = set_wis
 var charisma: int : set = set_cha
 var constituion: int : set = set_con
 
-# Setting Functions
+# Setter Functions: Core Stats amd Attributes
 func set_health(value : int) -> void:
 	health = clampi(value, 0, max_health) # the value recieved can't let the health go under 0 or above max_health
 	stats_changed.emit()
@@ -88,7 +88,7 @@ func set_con(value: int) -> void:
 	constituion = clampi(value, 0, 999)
 	attributes_changed.emit()
 
-
+# Setter Functions: Vulnerabilities
 func set_physical_vuln(value: float) -> void:
 	physical_vuln = clampf(value, 0.00, 2.00)
 	stats_changed.emit()
@@ -123,8 +123,9 @@ func set_holy_vuln(value: float) -> void:
 
 
 # Stat Changing Functions
+# (Original Damage * Elemental_Vulnerability_Mod) + (Primary Scaling * Primary Scaling Factor) + (Secondary Scaling * Secondary Scaling Factor)
 func calculate_damage(amount: int, dmg_mod: float, primary_scaling_mod: float, secondary_scaling_mod: float) -> int:
-	var new_damage = amount * dmg_mod * primary_scaling_mod * secondary_scaling_mod
+	var new_damage = (amount * dmg_mod) + primary_scaling_mod + secondary_scaling_mod
 	return new_damage
 
 

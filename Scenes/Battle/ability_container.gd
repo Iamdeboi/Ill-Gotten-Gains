@@ -24,10 +24,21 @@ func add_ability(ability: Ability) -> void:
 	new_ability_slot.player_stats = player_stats #Dependency from own
 
 
+func disable_hotbar() -> void:
+	for ability_slot in get_children():
+		ability_slot.disabled = true
+
+
+func enable_hotbar() -> void:
+	for ability_slot in get_children():
+		ability_slot.disabled = false
+
+
 func _on_ability_used(_ability: Ability) -> void:
 	abilities_played_this_turn += 1
 	if abilities_played_this_turn > player_stats.maximum_action_points:
 		print("Greedy...")	
+
 
 func _on_ability_ui_reparent_requested(child: AbilitySlot) -> void:
 	child.disabled = true
