@@ -36,8 +36,8 @@ func update_stats() -> void:
 	stats_ui.update_stats(stats)
 
 
-func calculate_damage(amount: int, dmg_mod: float) -> int:
-	return stats.calculate_damage(amount, dmg_mod)
+func calculate_damage(amount: int, dmg_mod: float, primary_scaling_mod: float, secondary_scaling_mod: float) -> int:
+	return stats.calculate_damage(amount, dmg_mod, primary_scaling_mod, secondary_scaling_mod)
 
 
 func take_damage(amount: int) -> void:

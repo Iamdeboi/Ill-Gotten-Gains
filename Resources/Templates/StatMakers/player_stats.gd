@@ -1,54 +1,16 @@
 class_name PlayerStats
 extends BaseStats
 
-signal attributes_changed #To notify UI about attribute value changes
 
 @export_category("Player Combat Features")
 @export var maximum_action_points : int
 @export var starting_abilities : AbilityList #Abilities given at the start of a run dependant on class selected
 
-@export_category("Player Attributes")
-@export var start_strength : int
-@export var start_dexterity : int
-@export var start_intellect : int
-@export var start_wisdom : int
-@export var start_charisma : int
-@export var start_constitution : int
 
 var action_points : int : set = set_action_points
 var known_abilities : AbilityList # All abilities known, starting with the chosen class's starting_abilities
 var prepared_abilities : AbilityList # Abilities selected for the hotbar, should not be more than 10
-var strength: int : set = set_str
-var dexterity: int : set = set_dex
-var intellect: int : set = set_int
-var wisdom: int : set = set_wis
-var charisma: int : set = set_cha
-var constituion: int : set = set_con
 
-#Setting Functions:
-func set_str(value: int) -> void:
-	strength = clampi(value, 0, 999)
-	attributes_changed.emit()
-
-func set_dex(value: int) -> void:
-	dexterity = clampi(value, 0, 999)
-	attributes_changed.emit()
-
-func set_int(value: int) -> void:
-	intellect = clampi(value, 0, 999)
-	attributes_changed.emit()
-
-func set_wis(value: int) -> void:
-	wisdom = clampi(value, 0, 999)
-	attributes_changed.emit()
-
-func set_cha(value: int) -> void:
-	charisma = clampi(value, 0, 999)
-	attributes_changed.emit()
-
-func set_con(value: int) -> void:
-	constituion = clampi(value, 0, 999)
-	attributes_changed.emit()
 
 func set_action_points(value: int) -> void:
 	action_points = value

@@ -40,8 +40,8 @@ func take_damage(damage: int) -> void:
 		queue_free()
 
 
-func calculate_damage(amount: int, dmg_mod: float) -> int:
-	return stats.calculate_damage(amount, dmg_mod)
+func calculate_damage(amount: int, dmg_mod: float, primary_scaling_mod: float, secondary_scaling_mod: float) -> int:
+	return stats.calculate_damage(amount, dmg_mod, primary_scaling_mod, secondary_scaling_mod)
 
 
 func heal(amount: int) -> void:

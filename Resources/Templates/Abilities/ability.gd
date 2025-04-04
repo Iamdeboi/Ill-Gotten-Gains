@@ -15,7 +15,9 @@ enum Scaling {NONE, STRENGTH, DEXTERITY, INTELLECT, WISDOM, CHARISMA, CONSTITUTI
 @export var cost_type: CostType
 @export var cooldown: int
 @export var primary_scaling: Scaling
+@export var ps_factor: float = 1
 @export var secondary_scaling: Scaling
+@export var ss_factor: float = 1
 @export var element_type : ElementType
 
 @export_group("Ability Visuals")
@@ -23,6 +25,8 @@ enum Scaling {NONE, STRENGTH, DEXTERITY, INTELLECT, WISDOM, CHARISMA, CONSTITUTI
 @export var title: String
 @export_multiline var tooltip_text: String
 
+var primary_scaling_mod: float = 1
+var secondary_scaling_mod: float = 1
 
 func is_single_targeted() -> bool:
 	return target == Target.SINGLE_ENEMY
@@ -55,13 +59,45 @@ func play(targets: Array[Node], player_stats: PlayerStats, ability: Ability) -> 
 			player_stats.health -= cost
 		CostType.GOLD:
 			print("You will spend %s gold pieces" % cost)
-	
+	# Calculate Primary Scaling Damage Mod
+	match primary_scaling:
+		Scaling.NONE:
+			pass
+		Scaling.STRENGTH:
+			primary_scaling_mod = player_stats.strength * ps_factor
+		Scaling.DEXTERITY:
+			primary_scaling_mod = player_stats.dexterity * ps_factor
+		Scaling.INTELLECT:
+			primary_scaling_mod = player_stats.intellect * ps_factor
+		Scaling.CHARISMA:
+			primary_scaling_mod = player_stats.charisma * ps_factor
+		Scaling.WISDOM:
+			primary_scaling_mod = player_stats.wisdom * ps_factor
+		Scaling.CONSTITUTION:
+			primary_scaling_mod = player_stats.constituion * ps_factor
+	# Calculate Secondary Scaling Damage Mod
+	match secondary_scaling_mod:
+		Scaling.NONE:
+			pass
+		Scaling.STRENGTH:
+			secondary_scaling_mod = player_stats.strength * ss_factor
+		Scaling.DEXTERITY:
+			secondary_scaling_mod = player_stats.dexterity * ss_factor
+		Scaling.INTELLECT:
+			secondary_scaling_mod = player_stats.intellect * ss_factor
+		Scaling.CHARISMA:
+			secondary_scaling_mod = player_stats.charisma * ss_factor
+		Scaling.WISDOM:
+			secondary_scaling_mod = player_stats.wisdom * ss_factor
+		Scaling.CONSTITUTION:
+			secondary_scaling_mod = player_stats.constituion * ss_factor
+			
 	if is_single_targeted():
-		apply_effects(targets, ability)
+		apply_effects(targets, ability, primary_scaling_mod, secondary_scaling_mod)
 	else:
-		apply_effects(_get_targets(targets), ability)
+		apply_effects(_get_targets(targets), ability, primary_scaling_mod, secondary_scaling_mod)
 	print("player_stats: " + str(player_stats.health) + " " + str(player_stats.mana) + " " + str(player_stats.armor) + ".")
 
 
-func apply_effects(_targets: Array[Node], _ability: Ability) -> void:
+func apply_effects(_targets: Array[Node], _ability: Ability, _primary_scaling_mod: float, _secondary_scaling_mod: float) -> void:
 	pass #Each individual ability has their own overidden version of this function, this is a "virtual function"
