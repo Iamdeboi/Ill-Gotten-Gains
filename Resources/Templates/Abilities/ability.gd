@@ -1,20 +1,22 @@
 class_name Ability
 extends Resource
 
-enum Type {SKILL, SPELL}
+enum AbilityType {ATTACK, DEFENSE}
 enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
 enum CostType {MANA, HEALTH, GOLD}
+enum ElementType {NONE, PHYSICAL, FIRE, FROST, STORM, TOXIC, ARCANE, SHADOW, HOLY}
 enum Scaling {NONE, STRENGTH, DEXTERITY, INTELLECT, WISDOM, CHARISMA, CONSTITUTION}
 
 @export_group("Ability Attributes")
 @export var id: String
-@export var type: Type
+@export var ability_type: AbilityType
 @export var target: Target
 @export var cost: int
 @export var cost_type: CostType
 @export var cooldown: int
 @export var primary_scaling: Scaling
 @export var secondary_scaling: Scaling
+@export var element_type : ElementType
 
 @export_group("Ability Visuals")
 @export var icon: Texture
@@ -43,7 +45,7 @@ func _get_targets(targets: Array[Node]) -> Array[Node]:
 			return []
 
 
-func play(targets: Array[Node], player_stats: PlayerStats) -> void:
+func play(targets: Array[Node], player_stats: PlayerStats, ability: Ability) -> void:
 	EventBus.ability_used.emit(self)
 	player_stats.action_points -= 1
 	match cost_type:
@@ -53,13 +55,13 @@ func play(targets: Array[Node], player_stats: PlayerStats) -> void:
 			player_stats.health -= cost
 		CostType.GOLD:
 			print("You will spend %s gold pieces" % cost)
-	print("player_stats: " + str(player_stats.health) + " " + str(player_stats.mana) + " " + str(player_stats.armor) + ".")
 	
 	if is_single_targeted():
-		apply_effects(targets)
+		apply_effects(targets, ability)
 	else:
-		apply_effects(_get_targets(targets))
+		apply_effects(_get_targets(targets), ability)
+	print("player_stats: " + str(player_stats.health) + " " + str(player_stats.mana) + " " + str(player_stats.armor) + ".")
 
 
-func apply_effects(_targets: Array[Node]) -> void:
-	pass #Each individual card has their own overidden version of this function, this is a "virtual function"
+func apply_effects(_targets: Array[Node], _ability: Ability) -> void:
+	pass #Each individual ability has their own overidden version of this function, this is a "virtual function"

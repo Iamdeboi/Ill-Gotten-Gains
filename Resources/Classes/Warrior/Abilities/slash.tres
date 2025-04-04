@@ -6,14 +6,15 @@
 [resource]
 script = ExtResource("1_sc24d")
 id = "1"
-type = 0
+ability_type = 0
 target = 1
 cost = 0
 cost_type = 0
 cooldown = 0
 primary_scaling = 1
 secondary_scaling = 0
+element_type = 0
 icon = ExtResource("1_gnwdc")
 title = "Slash"
-tooltip_text = "Slash your enemy, dealing 5 damage"
+tooltip_text = "Slash your enemy, dealing 5 normal damage"
 metadata/_custom_type_script = "uid://smcmjjy50miu"

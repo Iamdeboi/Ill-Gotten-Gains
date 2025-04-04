@@ -75,10 +75,19 @@ func can_play_ability(ability: Ability) -> bool:
 
 func create_instance() -> Resource:
 	var instance : PlayerStats = self.duplicate()
-	# Base Stats Instances and Setup
+	# BaseStats: Core Stats
 	instance.health = max_health
 	instance.armor = starting_armor
 	instance.mana = max_mana
+	# BaseStats: Element Vulnerabilities
+	instance.physical_vuln = starting_physical_vuln
+	instance.fire_vuln = starting_fire_vuln
+	instance.frost_vuln = starting_frost_vuln
+	instance.storm_vuln = starting_storm_vuln
+	instance.toxic_vuln = starting_toxic_vuln
+	instance.arcane_vuln = starting_arcane_vuln
+	instance.shadow_vuln = starting_shadow_vuln
+	instance.holy_vuln = starting_holy_vuln
 	# AbilityList Instances and Setup
 	instance.known_abilities = instance.starting_abilities.duplicate()
 	instance.prepared_abilities = instance.starting_abilities.duplicate()

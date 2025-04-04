@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_hgkd1")
-maximum_action_points = 3
+maximum_action_points = 20
 starting_abilities = ExtResource("3_mf774")
 start_strength = 8
 start_dexterity = 4
@@ -19,4 +19,12 @@ starting_armor = 30
 max_mana = 20
 name = "Kraggan Onyxsmith"
 sprite = ExtResource("2_kdn0w")
+starting_physical_vuln = 1.0
+starting_fire_vuln = 1.0
+starting_frost_vuln = 1.0
+starting_storm_vuln = 1.0
+starting_toxic_vuln = 1.0
+starting_arcane_vuln = 1.0
+starting_shadow_vuln = 1.0
+starting_holy_vuln = 1.0
 metadata/_custom_type_script = "uid://xfic0g5mx1j7"

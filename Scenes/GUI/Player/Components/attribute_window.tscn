@@ -5,9 +5,9 @@
 
 [node name="AttributeWindow" type="Control"]
 layout_mode = 3
-anchor_right = 0.0578125
+anchor_right = 0.059
 anchor_bottom = 0.613889
-offset_right = 1.0
+offset_right = 0.239998
 offset_bottom = -180.0
 grow_horizontal = 2
 grow_vertical = 2

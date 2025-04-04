@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_lpqxb")
+maximum_action_points = 3
 start_strength = 5
 start_dexterity = 10
 start_intellect = 5
@@ -16,4 +17,12 @@ starting_armor = 20
 max_mana = 20
 name = "Gromm Briarroots"
 sprite = ExtResource("2_r3rt3")
+starting_physical_vuln = 1.0
+starting_fire_vuln = 1.0
+starting_frost_vuln = 1.0
+starting_storm_vuln = 1.0
+starting_toxic_vuln = 1.0
+starting_arcane_vuln = 1.0
+starting_shadow_vuln = 1.0
+starting_holy_vuln = 1.0
 metadata/_custom_type_script = "uid://xfic0g5mx1j7"

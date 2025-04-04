@@ -39,6 +39,11 @@ func take_damage(damage: int) -> void:
 	if stats.health <= 0:
 		queue_free()
 
+
+func calculate_damage(amount: int, dmg_mod: float) -> int:
+	return stats.calculate_damage(amount, dmg_mod)
+
+
 func heal(amount: int) -> void:
 	if stats.health >= stats.max_health:
 		return

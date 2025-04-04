@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="BaseStats" load_steps=3 format=3 uid="uid://c1g3jl3xp20b0"]
+
+[ext_resource type="Script" uid="uid://dt260m0mpxt3r" path="res://Resources/Templates/StatMakers/base_stats.gd" id="1_32ack"]
+[ext_resource type="Texture2D" uid="uid://1u3b3hwqd8yh" path="res://Assets/art/tile_0110.png" id="2_2mij7"]
+
+[resource]
+script = ExtResource("1_32ack")
+max_health = 30
+starting_armor = 25
+max_mana = 0
+name = "Crab"
+sprite = ExtResource("2_2mij7")
+starting_physical_vuln = 0.5
+starting_fire_vuln = 1.0
+starting_frost_vuln = 1.0
+starting_storm_vuln = 1.0
+starting_toxic_vuln = 1.0
+starting_arcane_vuln = 1.0
+starting_shadow_vuln = 1.0
+starting_holy_vuln = 1.0
+metadata/_custom_type_script = "uid://dt260m0mpxt3r"

@@ -6,8 +6,16 @@
 [resource]
 script = ExtResource("1_aywnr")
 max_health = 10
-starting_armor = 0
+starting_armor = 5
 max_mana = 5
 name = "Ghost"
 sprite = ExtResource("2_h1biu")
+starting_physical_vuln = 1.0
+starting_fire_vuln = 1.0
+starting_frost_vuln = 1.0
+starting_storm_vuln = 1.0
+starting_toxic_vuln = 1.0
+starting_arcane_vuln = 1.0
+starting_shadow_vuln = 1.0
+starting_holy_vuln = 1.0
 metadata/_custom_type_script = "uid://dt260m0mpxt3r"

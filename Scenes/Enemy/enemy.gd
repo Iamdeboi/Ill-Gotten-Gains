@@ -10,6 +10,8 @@ const ARROW_OFFSET := 5
 @onready var stats_ui: StatsUI = $StatsUI
 @onready var target_arrow: Sprite2D = %TargetArrow
 
+func _ready() -> void:
+	print("Physical: " + str(stats.physical_vuln))
 
 func set_stats(value: BaseStats) -> void:
 	stats = value.create_instance()
@@ -34,11 +36,15 @@ func update_stats() -> void:
 	stats_ui.update_stats(stats)
 
 
-func take_damage(damage: int) -> void:
+func calculate_damage(amount: int, dmg_mod: float) -> int:
+	return stats.calculate_damage(amount, dmg_mod)
+
+
+func take_damage(amount: int) -> void:
 	if stats.health <= 0:
 		return
 		
-	stats.take_damage(damage)
+	stats.take_damage(amount)
 
 	if stats.health <= 0:
 		queue_free()

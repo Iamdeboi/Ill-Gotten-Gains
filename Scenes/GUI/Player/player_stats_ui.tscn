@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvy0l0u8nf5oj"]
+[gd_scene load_steps=10 format=3 uid="uid://cvy0l0u8nf5oj"]
 
 [ext_resource type="Script" uid="uid://do03ojrvk5joa" path="res://Scenes/GUI/Player/player_stats_ui.gd" id="1_2cjtq"]
 [ext_resource type="Texture2D" uid="uid://qn173bqpjgpd" path="res://Assets/art/IGG_Gromm.png" id="3_2cjtq"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://fj43g82rbvti" path="res://Scenes/GUI/Player/Components/gui_armor_label.gd" id="5_pde77"]
 [ext_resource type="PackedScene" uid="uid://xukg5i2r6xwj" path="res://Scenes/GUI/Player/Components/attribute_window.tscn" id="6_2cjtq"]
 [ext_resource type="PackedScene" uid="uid://feqymksvvm4k" path="res://Scenes/GUI/Player/Components/gui_armor_label.tscn" id="6_rsaa2"]
+[ext_resource type="PackedScene" uid="uid://1in8ljk5xpok" path="res://Scenes/GUI/Player/Components/resource_count.tscn" id="8_pde77"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uk8cp"]
 
@@ -67,10 +68,15 @@ script = ExtResource("5_pde77")
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Attributes&AP" type="VBoxContainer" parent="Panel/HBoxContainer"]
+[node name="Attributes&ResourceCount" type="VBoxContainer" parent="Panel/HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 2
 
-[node name="AttributeWindow" parent="Panel/HBoxContainer/Attributes&AP" instance=ExtResource("6_2cjtq")]
+[node name="AttributeWindow" parent="Panel/HBoxContainer/Attributes&ResourceCount" instance=ExtResource("6_2cjtq")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(37, 41)
+layout_mode = 2
+
+[node name="ResourceCount" parent="Panel/HBoxContainer/Attributes&ResourceCount" instance=ExtResource("8_pde77")]
+unique_name_in_owner = true
 layout_mode = 2

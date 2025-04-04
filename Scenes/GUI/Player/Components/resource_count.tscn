@@ -1,0 +1,111 @@
+[gd_scene load_steps=3 format=3 uid="uid://1in8ljk5xpok"]
+
+[ext_resource type="Texture2D" uid="uid://cy8pnq7fmoqtg" path="res://Assets/Themes/9patchUIOne.png" id="1_jmnd1"]
+[ext_resource type="Script" uid="uid://dm8espq2udh8i" path="res://Scenes/GUI/Player/Components/resource_count.gd" id="1_k73f1"]
+
+[node name="ResourceCount" type="Control"]
+custom_minimum_size = Vector2(38, 32)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_k73f1")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_jmnd1")
+region_rect = Rect2(0, 0, 15, 15)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 1
+
+[node name="ResourceTitle" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="HPLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/ResourceTitle"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "HP:"
+
+[node name="MPLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/ResourceTitle"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "MP:"
+
+[node name="Count" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="HPCount" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Count"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "000"
+
+[node name="MPCount" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/Count"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "000"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 1
+alignment = 1
+
+[node name="MaxResourceTitle" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MaxHPLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/MaxResourceTitle"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "MHP:"
+
+[node name="MaxMPLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/MaxResourceTitle"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "MMP:"
+
+[node name="MaxCount" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MaxHPCount" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/MaxCount"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "000"
+
+[node name="MaxMPCount" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2/MaxCount"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "000"

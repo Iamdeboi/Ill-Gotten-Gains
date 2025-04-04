@@ -1,7 +1,7 @@
 extends Ability
 
 
-func apply_effects(targets: Array[Node]) -> void:
+func apply_effects(targets: Array[Node], ability: Ability) -> void:
 	var armor_effect := ArmorEffect.new()
 	armor_effect.amount = 10
-	armor_effect.execute(targets)
+	armor_effect.execute(targets, ability)
