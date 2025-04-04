@@ -1,21 +1,27 @@
-[gd_resource type="Resource" script_class="BaseStats" load_steps=3 format=3 uid="uid://c4bq58733ekcp"]
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=3 format=3 uid="uid://bnhcn42a1v4mi"]
 
-[ext_resource type="Script" uid="uid://dt260m0mpxt3r" path="res://Resources/Templates/StatMakers/base_stats.gd" id="1_aywnr"]
-[ext_resource type="Texture2D" uid="uid://cgopx2ponr1qi" path="res://Assets/art/tile_0121.png" id="2_h1biu"]
+[ext_resource type="Script" uid="uid://go2fqkkn8066" path="res://Resources/Templates/StatMakers/enemy_stats.gd" id="1_bkssf"]
+[ext_resource type="Texture2D" uid="uid://cgopx2ponr1qi" path="res://Assets/art/tile_0121.png" id="2_0kh80"]
 
 [resource]
-script = ExtResource("1_aywnr")
-max_health = 10
+script = ExtResource("1_bkssf")
+max_health = 15
 starting_armor = 5
-max_mana = 5
+max_mana = 20
 name = "Ghost"
-sprite = ExtResource("2_h1biu")
-starting_physical_vuln = 1.0
+sprite = ExtResource("2_0kh80")
+start_strength = 3
+start_dexterity = 3
+start_intellect = 8
+start_wisdom = 6
+start_charisma = 5
+start_constitution = 5
+starting_physical_vuln = 0.25
 starting_fire_vuln = 1.0
 starting_frost_vuln = 1.0
 starting_storm_vuln = 1.0
 starting_toxic_vuln = 1.0
 starting_arcane_vuln = 1.0
-starting_shadow_vuln = 1.0
-starting_holy_vuln = 1.0
-metadata/_custom_type_script = "uid://dt260m0mpxt3r"
+starting_shadow_vuln = 0.5
+starting_holy_vuln = 1.5
+metadata/_custom_type_script = "uid://go2fqkkn8066"

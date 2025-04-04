@@ -40,4 +40,5 @@ func execute(targets: Array[Node], ability: Ability, primary_scaling_mod: float,
 			print("Primary Scaling Mod: " + str(primary_scaling_mod))
 			print("Secondary Scaling Mod: " + str(secondary_scaling_mod))
 			print("Calculated Damage: " + str(damage))
+			print("====-----------------====")
 			target.take_damage(damage)

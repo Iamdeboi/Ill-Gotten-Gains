@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=3 uid="uid://klehi6llnmgb"]
+
+[ext_resource type="Script" uid="uid://3v76pa028tf4" path="res://Scenes/Enemy/enemy_action_picker.gd" id="1_w0dpo"]
+[ext_resource type="Script" uid="uid://bpxwbs51tgcoo" path="res://Resources/Enemies/Crab/crab_attack_action.gd" id="2_8fglq"]
+[ext_resource type="Script" uid="uid://smcmjjy50miu" path="res://Resources/Templates/Abilities/ability.gd" id="3_mqc26"]
+[ext_resource type="Script" uid="uid://dyrqovuht8jdr" path="res://Resources/Enemies/Crab/crab_block_action.gd" id="3_rd5hf"]
+[ext_resource type="Script" uid="uid://dtireeunht2ns" path="res://Resources/Enemies/Crab/crab_super_block_action.gd" id="4_mqc26"]
+
+[sub_resource type="Resource" id="Resource_n6fpb"]
+script = ExtResource("3_mqc26")
+id = ""
+ability_type = 0
+target = 1
+cost = 0
+cost_type = 0
+cooldown = 0
+primary_scaling = 1
+ps_factor = 1.0
+secondary_scaling = 0
+ss_factor = 1.0
+element_type = 1
+title = ""
+tooltip_text = ""
+metadata/_custom_type_script = "uid://smcmjjy50miu"
+
+[sub_resource type="Resource" id="Resource_rd5hf"]
+script = ExtResource("3_mqc26")
+id = ""
+ability_type = 1
+target = 0
+cost = 0
+cost_type = 0
+cooldown = 0
+primary_scaling = 0
+ps_factor = 1.0
+secondary_scaling = 0
+ss_factor = 1.0
+element_type = 0
+title = ""
+tooltip_text = ""
+metadata/_custom_type_script = "uid://smcmjjy50miu"
+
+[sub_resource type="Resource" id="Resource_mqc26"]
+script = ExtResource("3_mqc26")
+id = ""
+ability_type = 1
+target = 0
+cost = 0
+cost_type = 0
+cooldown = 0
+primary_scaling = 6
+ps_factor = 1.0
+secondary_scaling = 0
+ss_factor = 1.0
+element_type = 0
+title = ""
+tooltip_text = ""
+metadata/_custom_type_script = "uid://smcmjjy50miu"
+
+[node name="CrabEnemyAI" type="Node"]
+script = ExtResource("1_w0dpo")
+
+[node name="AttackAction" type="Node" parent="."]
+script = ExtResource("2_8fglq")
+damage = 10
+ability_ref = SubResource("Resource_n6fpb")
+type = 1
+chance_weight = 1.0
+
+[node name="BlockAction" type="Node" parent="."]
+script = ExtResource("3_rd5hf")
+armor = 8
+ability_ref = SubResource("Resource_rd5hf")
+type = 1
+chance_weight = 1.0
+
+[node name="SuperBlockAction" type="Node" parent="."]
+script = ExtResource("4_mqc26")
+ability_ref = SubResource("Resource_mqc26")

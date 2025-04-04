@@ -13,7 +13,5 @@ func enter() -> void:
 func on_input(_event: InputEvent) -> void:
 	if played:
 		played = false
-		transition_requested.emit(self, AbilityState.State.BASE)
-	#If no valid target, return to BASE state
-	print("Cancelled: Going back to base state")
+	
 	transition_requested.emit(self, AbilityState.State.BASE)

@@ -1,15 +1,23 @@
-[gd_resource type="Resource" script_class="BaseStats" load_steps=3 format=3 uid="uid://c1g3jl3xp20b0"]
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://c1g3jl3xp20b0"]
 
-[ext_resource type="Script" uid="uid://dt260m0mpxt3r" path="res://Resources/Templates/StatMakers/base_stats.gd" id="1_32ack"]
+[ext_resource type="Script" uid="uid://go2fqkkn8066" path="res://Resources/Templates/StatMakers/enemy_stats.gd" id="1_32ack"]
+[ext_resource type="PackedScene" uid="uid://klehi6llnmgb" path="res://Resources/Enemies/Crab/crab_enemy_ai.tscn" id="1_qbglh"]
 [ext_resource type="Texture2D" uid="uid://1u3b3hwqd8yh" path="res://Assets/art/tile_0110.png" id="2_2mij7"]
 
 [resource]
 script = ExtResource("1_32ack")
+ai = ExtResource("1_qbglh")
 max_health = 30
 starting_armor = 25
 max_mana = 0
 name = "Crab"
 sprite = ExtResource("2_2mij7")
+start_strength = 6
+start_dexterity = 0
+start_intellect = 2
+start_wisdom = 2
+start_charisma = 4
+start_constitution = 12
 starting_physical_vuln = 0.5
 starting_fire_vuln = 1.0
 starting_frost_vuln = 1.0

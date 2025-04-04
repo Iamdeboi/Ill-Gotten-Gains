@@ -1,9 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://beq6os1qypmat"]
+[gd_scene load_steps=19 format=3 uid="uid://beq6os1qypmat"]
 
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://Assets/art/background.png" id="1_4nlbu"]
 [ext_resource type="Script" uid="uid://i2lqgiy6iiwu" path="res://Scenes/Battle/battle_scene.gd" id="1_lcoea"]
 [ext_resource type="PackedScene" uid="uid://43xkdnm2fpla" path="res://Scenes/Player/player.tscn" id="2_lcoea"]
 [ext_resource type="PackedScene" uid="uid://cc0r5lmc5gi4r" path="res://Scenes/Enemy/enemy.tscn" id="3_jp0ri"]
+[ext_resource type="Script" uid="uid://bgob53ycfxb58" path="res://Scenes/Enemy/enemy_handler.gd" id="5_6tvrj"]
 [ext_resource type="Resource" uid="uid://c1g3jl3xp20b0" path="res://Resources/Enemies/Crab/crab.tres" id="6_68j0i"]
 [ext_resource type="PackedScene" uid="uid://cjgiis2rgupwn" path="res://Scenes/AbilityUI/AbilityTargetSelector/ability_target_selector.tscn" id="7_5mge4"]
 [ext_resource type="PackedScene" uid="uid://ba7hfljytxc3x" path="res://Scenes/GUI/Misc/tooltip.tscn" id="7_cbixj"]
@@ -60,6 +61,7 @@ position = Vector2(320, 180)
 scale = Vector2(0.8, 0.8)
 
 [node name="EnemyHandler" type="Node2D" parent="."]
+script = ExtResource("5_6tvrj")
 
 [node name="Enemy" parent="EnemyHandler" instance=ExtResource("3_jp0ri")]
 position = Vector2(320, 180)
@@ -136,12 +138,4 @@ offset_right = 44.0
 offset_bottom = 29.0
 text = "Win"
 
-[node name="EnemyTurnPlayedButton" type="Button" parent="."]
-offset_left = 4.0
-offset_top = 29.0
-offset_right = 202.0
-offset_bottom = 54.0
-text = "Enemy Turn Played"
-
 [connection signal="pressed" from="WinButton" to="." method="_on_win_button_pressed"]
-[connection signal="pressed" from="EnemyTurnPlayedButton" to="." method="_on_enemy_turn_played_button_pressed"]

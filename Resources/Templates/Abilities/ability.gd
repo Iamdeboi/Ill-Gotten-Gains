@@ -76,7 +76,7 @@ func play(targets: Array[Node], player_stats: PlayerStats, ability: Ability) -> 
 		Scaling.CONSTITUTION:
 			primary_scaling_mod = player_stats.constituion * ps_factor
 	# Calculate Secondary Scaling Damage Mod
-	match secondary_scaling_mod:
+	match secondary_scaling:
 		Scaling.NONE:
 			pass
 		Scaling.STRENGTH:

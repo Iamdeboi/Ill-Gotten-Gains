@@ -4,9 +4,12 @@ extends Node
 signal player_hotbar_loaded
 signal player_turn_started
 signal player_turn_ended
+signal player_end_turn_delay_elasped
+signal player_died
 
 # Enemy-related Events
 signal enemy_action_completed(enemy: Enemy)
+signal enemy_turn_ended
 
 # Ability-related Events
 signal ability_drag_started(ability_slot: AbilitySlot)

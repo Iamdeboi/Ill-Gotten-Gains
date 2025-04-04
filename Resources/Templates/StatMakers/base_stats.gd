@@ -125,7 +125,7 @@ func set_holy_vuln(value: float) -> void:
 # Stat Changing Functions
 # (Original Damage * Elemental_Vulnerability_Mod) + (Primary Scaling * Primary Scaling Factor) + (Secondary Scaling * Secondary Scaling Factor)
 func calculate_damage(amount: int, dmg_mod: float, primary_scaling_mod: float, secondary_scaling_mod: float) -> int:
-	var new_damage = (amount * dmg_mod) + primary_scaling_mod + secondary_scaling_mod
+	var new_damage = dmg_mod * ((amount) + (primary_scaling_mod) + (secondary_scaling_mod))
 	return new_damage
 
 

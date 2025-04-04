@@ -32,6 +32,8 @@ func start_turn() -> void:
 
 func end_turn() -> void:
 	ability_container.disable_hotbar()
+	await get_tree().create_timer(2).timeout
+	EventBus.player_end_turn_delay_elasped.emit()
 
 
 func set_up_hotbar(amount: int) -> void:

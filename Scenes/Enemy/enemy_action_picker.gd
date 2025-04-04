@@ -1,8 +1,9 @@
 class_name EnemyActionPicker
 extends Node
+# The "brain" of the AI, requires a ref for the enemy using the actions, and its target; set the total weight of all actions to configure chances
 
 @export var enemy: Enemy: set = _set_enemy
-@export var target: Node2D: set = _set_target
+@export var target: Node: set = _set_target
 
 @onready var total_weight := 0.0
 
@@ -20,7 +21,7 @@ func get_action() -> EnemyAction:
 	return get_chance_based_action()
 
 
-func get_first_conditional_action() -> EnemyAction:
+func get_first_conditional_action() -> EnemyAction: # Always has priority over Chance-Based-Actions
 	var action: EnemyAction
 	
 	for child in get_children():
@@ -31,7 +32,7 @@ func get_first_conditional_action() -> EnemyAction:
 		if action.is_performable():
 			return action
 	
-	return null
+	return null # After all iterations, not a single action was conditional
 
 
 func get_chance_based_action() -> EnemyAction:
@@ -57,8 +58,8 @@ func setup_chances() -> void:
 		if not action or action.type != EnemyAction.Type.CHANCE_BASED:
 			continue
 		
-		total_weight += action.chance_weight
-		action.accumulated_weight = total_weight
+		total_weight += action.chance_weight # Add all assigned weight values from each action
+		action.accumulated_weight = total_weight # Accumulated weight is calculated after all actions and their individual weights are collected
 
 
 func _set_enemy(value: Enemy) -> void:
@@ -67,7 +68,7 @@ func _set_enemy(value: Enemy) -> void:
 	for action in get_children():
 		action.enemy = enemy
 
-func _set_target(value: Node2D) -> void:
+func _set_target(value: Node) -> void: 
 	target = value
 	
 	for action in get_children():

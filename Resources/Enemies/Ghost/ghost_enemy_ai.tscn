@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyh37racbhaix"]
+
+[ext_resource type="Script" uid="uid://3v76pa028tf4" path="res://Scenes/Enemy/enemy_action_picker.gd" id="1_mvqko"]
+
+[sub_resource type="GDScript" id="GDScript_g8x5n"]
+script/source = "extends EnemyAction
+
+@export var damage := 7
+
+
+func perform_action() -> void:
+	if not enemy or not target:
+		return
+	
+	#var tween := create_tween().set_trans(Tween.TRANS_QUINT)
+	#var start := enemy.global_position
+	#var end := enemy.global_position
+	# var damage_effect := DamageEffect.new()
+	#var target_array: Array[Node] = [target]
+	#damage_effect.amount = damage
+	
+	#tween.tween_property(enemy, \"global_position\", end, 0.4)
+	# tween.tween_callback(damage_effect.execute.bind(target_array))
+	#tween.tween_interval(0.25)
+	#tween.tween_property(enemy, \"global_position\", start, 0.4)
+	
+	#tween.finished.connect(
+	#	func():
+	#		Events.enemy_action_completed.emit(enemy)
+#)
+"
+
+[sub_resource type="GDScript" id="GDScript_6h3uf"]
+script/source = "extends EnemyAction
+"
+
+[sub_resource type="GDScript" id="GDScript_qy22a"]
+script/source = "extends EnemyAction
+"
+
+[node name="GhostEnemyAI" type="Node"]
+script = ExtResource("1_mvqko")
+
+[node name="AttackAction" type="Node" parent="."]
+script = SubResource("GDScript_g8x5n")
+
+[node name="BlockAction" type="Node" parent="."]
+script = SubResource("GDScript_6h3uf")
+
+[node name="ManaRestoreAction" type="Node" parent="."]
+script = SubResource("GDScript_qy22a")

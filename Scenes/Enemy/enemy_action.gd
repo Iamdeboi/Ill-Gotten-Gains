@@ -9,12 +9,12 @@ enum Type {CONDITIONAL, CHANCE_BASED}
 @onready var accumulated_weight := 0.0
 
 var enemy: Enemy
-var target: Node2D
+var target: Node
 
 
-func is_performable() -> bool: #Must be overwritten through checks on attacks or abilities cast
+func is_performable() -> bool: #Must be overwritten through checks on attacks or abilities cast, used with Conditionals
 	return false
 
 
-func perform_action() -> void: #All logic behind enemy actions is done here
+func perform_action() -> void: #All logic behind enemy actions is done here; tweens, animations, etc.
 	pass
