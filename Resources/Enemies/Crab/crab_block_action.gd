@@ -6,6 +6,7 @@ extends EnemyAction
 var p_s_mod: float
 var s_s_mod: float
 
+
 func perform_action() -> void:
 	if not enemy or not target:
 		return
@@ -57,3 +58,14 @@ func calculate_secondary_scaling_mod(ability_ref: Ability) -> float:
 		ability_ref.Scaling.CONSTITUTION:
 			s_s_mod = enemy.stats.constituion * ability_ref.ss_factor
 	return s_s_mod
+
+
+func calculate_action() -> int: # For Intent "number" String updates
+	if not enemy or not target:
+		return 0
+	
+	var calc_target_array : Array[Node] = [target]
+	var calc_p_s_mod = calculate_primary_scaling_mod(ability_ref)
+	var calc_s_s_mod = calculate_secondary_scaling_mod(ability_ref)
+	var calculation =  armor + calc_p_s_mod + calc_s_s_mod
+	return int(calculation)

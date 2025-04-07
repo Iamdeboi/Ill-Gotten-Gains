@@ -3,9 +3,9 @@ extends EnemyAction
 @export var damage := 1
 @export var ability_ref: Ability
 
-
-var p_s_mod: float 
+var p_s_mod : float 
 var s_s_mod : float
+
 
 func perform_action() -> void:
 	if not enemy or not target:
@@ -31,6 +31,9 @@ func perform_action() -> void:
 			EventBus.enemy_action_completed.emit(enemy)
 	)
 
+
+
+# Calculation Methods
 func calculate_primary_scaling_mod(ability_ref: Ability) -> float:
 	match ability_ref.primary_scaling:
 		ability_ref.Scaling.NONE:
@@ -67,3 +70,39 @@ func calculate_secondary_scaling_mod(ability_ref: Ability) -> float:
 		ability_ref.Scaling.CONSTITUTION:
 			s_s_mod = enemy.stats.constituion * ability_ref.ss_factor
 	return s_s_mod
+
+
+func calculate_action() -> int: # For Intent "Number" string updating
+	if not enemy or not target:
+		return 0
+	
+	var calc_target_array : Array[Node] = [target]
+	var calc_p_s_mod = calculate_primary_scaling_mod(ability_ref)
+	var calc_s_s_mod = calculate_secondary_scaling_mod(ability_ref)
+	var calc_dmg_mod: float = 1
+
+	if target is Enemy or target is Player:
+		var element = ability_ref.element_type
+		# Elemental Damage Mod
+		match ability_ref.element_type:
+			0: # None
+				calc_dmg_mod = 1
+			1: # Physical
+				calc_dmg_mod = target.stats.physical_vuln
+			2: # Fire
+				calc_dmg_mod = target.stats.fire_vuln
+			3: # Frost
+				calc_dmg_mod = target.stats.frost_vuln
+			4: # Storm
+				calc_dmg_mod = target.stats.storm_vuln
+			5: # Toxic
+				calc_dmg_mod = target.stats.toxic_vuln
+			6: # Arcane
+				calc_dmg_mod = target.stats.arcane_vuln
+			7: # Shadow
+				calc_dmg_mod = target.stats.shadow_vuln
+			8: # Holy
+				calc_dmg_mod = target.stats.holy_vuln
+			
+	var calculation = calc_dmg_mod * ((damage) + (calc_p_s_mod) + (calc_s_s_mod))
+	return int(calculation)

@@ -1,10 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://klehi6llnmgb"]
+[gd_scene load_steps=16 format=3 uid="uid://klehi6llnmgb"]
 
 [ext_resource type="Script" uid="uid://3v76pa028tf4" path="res://Scenes/Enemy/enemy_action_picker.gd" id="1_w0dpo"]
 [ext_resource type="Script" uid="uid://bpxwbs51tgcoo" path="res://Resources/Enemies/Crab/crab_attack_action.gd" id="2_8fglq"]
 [ext_resource type="Script" uid="uid://smcmjjy50miu" path="res://Resources/Templates/Abilities/ability.gd" id="3_mqc26"]
 [ext_resource type="Script" uid="uid://dyrqovuht8jdr" path="res://Resources/Enemies/Crab/crab_block_action.gd" id="3_rd5hf"]
+[ext_resource type="Texture2D" uid="uid://c6rme2o6dyaoj" path="res://Assets/art/tile_0104.png" id="4_gs6hi"]
 [ext_resource type="Script" uid="uid://dtireeunht2ns" path="res://Resources/Enemies/Crab/crab_super_block_action.gd" id="4_mqc26"]
+[ext_resource type="Script" uid="uid://75vkhkjo518y" path="res://Resources/Templates/Intent/intent.gd" id="5_fsaxf"]
+[ext_resource type="Texture2D" uid="uid://bi6pfjs32f820" path="res://Assets/art/tile_0101.png" id="7_rne0m"]
+[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://Assets/art/tile_0102.png" id="9_wku0f"]
 
 [sub_resource type="Resource" id="Resource_n6fpb"]
 script = ExtResource("3_mqc26")
@@ -23,6 +27,12 @@ title = ""
 tooltip_text = ""
 metadata/_custom_type_script = "uid://smcmjjy50miu"
 
+[sub_resource type="Resource" id="Resource_400le"]
+script = ExtResource("5_fsaxf")
+number = ""
+icon = ExtResource("4_gs6hi")
+metadata/_custom_type_script = "uid://75vkhkjo518y"
+
 [sub_resource type="Resource" id="Resource_rd5hf"]
 script = ExtResource("3_mqc26")
 id = ""
@@ -39,6 +49,12 @@ element_type = 0
 title = ""
 tooltip_text = ""
 metadata/_custom_type_script = "uid://smcmjjy50miu"
+
+[sub_resource type="Resource" id="Resource_51jku"]
+script = ExtResource("5_fsaxf")
+number = ""
+icon = ExtResource("7_rne0m")
+metadata/_custom_type_script = "uid://75vkhkjo518y"
 
 [sub_resource type="Resource" id="Resource_mqc26"]
 script = ExtResource("3_mqc26")
@@ -57,6 +73,12 @@ title = ""
 tooltip_text = ""
 metadata/_custom_type_script = "uid://smcmjjy50miu"
 
+[sub_resource type="Resource" id="Resource_olkmx"]
+script = ExtResource("5_fsaxf")
+number = ""
+icon = ExtResource("9_wku0f")
+metadata/_custom_type_script = "uid://75vkhkjo518y"
+
 [node name="CrabEnemyAI" type="Node"]
 script = ExtResource("1_w0dpo")
 
@@ -64,6 +86,7 @@ script = ExtResource("1_w0dpo")
 script = ExtResource("2_8fglq")
 damage = 10
 ability_ref = SubResource("Resource_n6fpb")
+intent = SubResource("Resource_400le")
 type = 1
 chance_weight = 1.0
 
@@ -71,9 +94,11 @@ chance_weight = 1.0
 script = ExtResource("3_rd5hf")
 armor = 8
 ability_ref = SubResource("Resource_rd5hf")
+intent = SubResource("Resource_51jku")
 type = 1
 chance_weight = 1.0
 
 [node name="SuperBlockAction" type="Node" parent="."]
 script = ExtResource("4_mqc26")
 ability_ref = SubResource("Resource_mqc26")
+intent = SubResource("Resource_olkmx")

@@ -3,22 +3,25 @@ extends Node2D
 
 const ARROW_OFFSET := 5
 
-# Statblock + Assets + StatsUI
+# Statblock + Assets + StatsUI + Intents
 @export var stats: EnemyStats : set = set_enemy_stats
 
 @onready var enemy_sprite: Sprite2D = $EnemySprite
 @onready var stats_ui: StatsUI = $StatsUI
 @onready var target_arrow: Sprite2D = %TargetArrow
+@onready var intent_ui: IntentUI = $IntentUI
+
 
 var enemy_action_picker: EnemyActionPicker
 var current_action: EnemyAction: set = set_current_action
 
-func _ready() -> void:
-	print("Physical: " + str(stats.physical_vuln))
-
 
 func set_current_action(value: EnemyAction) -> void:
 	current_action = value
+	if current_action:
+		if current_action.has_method("calculate_action"):
+			current_action.intent.set_number(str(current_action.calculate_action()))
+		intent_ui.update_intent(current_action.intent)
 
 
 func set_enemy_stats(value: EnemyStats) -> void:
