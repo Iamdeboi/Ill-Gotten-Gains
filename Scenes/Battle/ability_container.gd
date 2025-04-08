@@ -20,6 +20,7 @@ func add_ability(ability: Ability) -> void:
 	add_child(new_ability_slot)
 	new_ability_slot.reparent_requested.connect(_on_ability_ui_reparent_requested)
 	new_ability_slot.ability = ability
+	new_ability_slot.ability.tooltip_text = new_ability_slot.ability.update_tooltip(player_stats)
 	new_ability_slot.parent = self
 	new_ability_slot.player_stats = player_stats #Dependency from own
 

@@ -74,7 +74,7 @@ func play(targets: Array[Node], player_stats: PlayerStats, ability: Ability) -> 
 		Scaling.WISDOM:
 			primary_scaling_mod = player_stats.wisdom * ps_factor
 		Scaling.CONSTITUTION:
-			primary_scaling_mod = player_stats.constituion * ps_factor
+			primary_scaling_mod = player_stats.constitution * ps_factor
 	# Calculate Secondary Scaling Damage Mod
 	match secondary_scaling:
 		Scaling.NONE:
@@ -90,7 +90,7 @@ func play(targets: Array[Node], player_stats: PlayerStats, ability: Ability) -> 
 		Scaling.WISDOM:
 			secondary_scaling_mod = player_stats.wisdom * ss_factor
 		Scaling.CONSTITUTION:
-			secondary_scaling_mod = player_stats.constituion * ss_factor
+			secondary_scaling_mod = player_stats.constitution * ss_factor
 			
 	if is_single_targeted():
 		apply_effects(targets, ability, primary_scaling_mod, secondary_scaling_mod)
@@ -101,3 +101,7 @@ func play(targets: Array[Node], player_stats: PlayerStats, ability: Ability) -> 
 
 func apply_effects(_targets: Array[Node], _ability: Ability, _primary_scaling_mod: float, _secondary_scaling_mod: float) -> void:
 	pass #Each individual ability has their own overidden version of this function, this is a "virtual function"
+
+
+func update_tooltip(stats: PlayerStats) -> String:
+	return ""

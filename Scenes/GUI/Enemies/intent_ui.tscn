@@ -16,7 +16,7 @@ alignment = 1
 script = ExtResource("1_qojsn")
 
 [node name="Icon" type="TextureRect" parent="."]
-custom_minimum_size = Vector2(16, 16)
+custom_minimum_size = Vector2(14, 14)
 layout_mode = 2
 texture = ExtResource("1_5n76v")
 expand_mode = 1
@@ -25,7 +25,7 @@ stretch_mode = 3
 [node name="Number" type="Label" parent="."]
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 6
 text = "8"
 horizontal_alignment = 1
 vertical_alignment = 1

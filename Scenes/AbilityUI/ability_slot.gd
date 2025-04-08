@@ -18,7 +18,7 @@ const HOVER_STYLEBOX := preload("res://Scenes/AbilityUI/ability_slot_hover.style
 @onready var targets: Array[Node] = []
 @onready var original_index := self.get_index()
 
-
+var tooltip_string: String
 var parent: Control
 var tween: Tween
 var playable := true: set = _set_playable # Checks if enough resource is available to play ability
@@ -75,6 +75,8 @@ func _set_ability(value: Ability) -> void:
 		ability.CostType.GOLD:
 			cost.add_theme_color_override("font_color", Color.GOLD)
 	icon.texture = ability.icon
+
+
 
 func _set_playable(value: bool) -> void:
 	playable = value

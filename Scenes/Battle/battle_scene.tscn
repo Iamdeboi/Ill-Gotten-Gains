@@ -96,7 +96,7 @@ grow_vertical = 0
 
 [node name="Tooltip" parent="BattleUI" instance=ExtResource("7_cbixj")]
 offset_left = -139.0
-offset_top = -90.0
+offset_top = -129.0
 
 [node name="EndTurnButton" type="TextureButton" parent="BattleUI"]
 unique_name_in_owner = true

@@ -49,7 +49,7 @@ var dexterity: int : set = set_dex
 var intellect: int : set = set_int
 var wisdom: int : set = set_wis
 var charisma: int : set = set_cha
-var constituion: int : set = set_con
+var constitution: int : set = set_con
 
 # Setter Functions: Core Stats amd Attributes
 func set_health(value : int) -> void:
@@ -85,7 +85,7 @@ func set_cha(value: int) -> void:
 	attributes_changed.emit()
 
 func set_con(value: int) -> void:
-	constituion = clampi(value, 0, 999)
+	constitution = clampi(value, 0, 999)
 	attributes_changed.emit()
 
 # Setter Functions: Vulnerabilities
@@ -171,5 +171,5 @@ func create_instance() -> Resource: #Allows for individual instances of the stat
 	instance.intellect = start_intellect
 	instance.wisdom = start_wisdom
 	instance.charisma = start_charisma
-	instance.constituion = start_constitution
+	instance.constitution = start_constitution
 	return instance

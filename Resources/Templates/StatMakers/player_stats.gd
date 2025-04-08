@@ -62,5 +62,5 @@ func create_instance() -> Resource:
 	instance.intellect = start_intellect
 	instance.wisdom = start_wisdom
 	instance.charisma = start_charisma
-	instance.constituion = start_constitution
+	instance.constitution = start_constitution
 	return instance

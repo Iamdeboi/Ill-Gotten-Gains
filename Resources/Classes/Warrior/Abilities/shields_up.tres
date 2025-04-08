@@ -6,17 +6,17 @@
 [resource]
 script = ExtResource("1_x4cpn")
 id = "2"
-ability_type = 0
+ability_type = 1
 target = 0
-cost = 0
+cost = null
 cost_type = 0
-cooldown = 0
+cooldown = null
 primary_scaling = 6
 ps_factor = 0.5
 secondary_scaling = 0
-ss_factor = 1.0
+ss_factor = null
 element_type = 0
 icon = ExtResource("1_031h3")
 title = "Shields Up"
-tooltip_text = "Raise your shield, increasing armor by 10"
+tooltip_text = "Raise your shield, increasing armor by (10 + 50% CON)."
 metadata/_custom_type_script = "uid://smcmjjy50miu"

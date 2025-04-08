@@ -84,7 +84,7 @@ script = ExtResource("1_w0dpo")
 
 [node name="AttackAction" type="Node" parent="."]
 script = ExtResource("2_8fglq")
-damage = 10
+damage = 8
 ability_ref = SubResource("Resource_n6fpb")
 intent = SubResource("Resource_400le")
 type = 1

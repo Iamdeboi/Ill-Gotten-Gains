@@ -10,6 +10,7 @@ signal ability_list_size_changed(ability_amount)
 func empty() -> bool:
 	return abilities.is_empty()
 
+
 func place_ability_slot() -> Ability:
 	var ability = abilities.pop_front()
 	ability_list_size_changed.emit(abilities.size())

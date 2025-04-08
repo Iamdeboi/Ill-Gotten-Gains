@@ -15,4 +15,4 @@ func update_attribute_window_ui(stats: PlayerStats) -> void:
 	int_count.text = str(stats.intellect)
 	wis_count.text = str(stats.wisdom)
 	cha_count.text = str(stats.charisma)
-	con_count.text = str(stats.constituion)
+	con_count.text = str(stats.constitution)

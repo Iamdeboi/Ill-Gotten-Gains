@@ -22,7 +22,7 @@ func perform_action() -> void:
 	s_s_mod = calculate_secondary_scaling_mod(ability_ref)
 	
 	tween.tween_property(enemy, "global_position", end, 0.4)
-	tween.tween_interval(0.25)
+	tween.tween_interval(0.15)
 	tween.tween_property(enemy, "global_position", start, 0.4)
 	tween.tween_callback(damage_effect.execute.bind(target_array, ability_ref, p_s_mod, s_s_mod))
 	
@@ -49,7 +49,7 @@ func calculate_primary_scaling_mod(ability_ref: Ability) -> float:
 		ability_ref.Scaling.WISDOM:
 			p_s_mod = enemy.stats.wisdom * ability_ref.ps_factor
 		ability_ref.Scaling.CONSTITUTION:
-			p_s_mod = enemy.stats.constituion * ability_ref.ps_factor
+			p_s_mod = enemy.stats.constitution * ability_ref.ps_factor
 	return p_s_mod
 
 
@@ -68,7 +68,7 @@ func calculate_secondary_scaling_mod(ability_ref: Ability) -> float:
 		ability_ref.Scaling.WISDOM:
 			s_s_mod = enemy.stats.wisdom * ability_ref.ss_factor
 		ability_ref.Scaling.CONSTITUTION:
-			s_s_mod = enemy.stats.constituion * ability_ref.ss_factor
+			s_s_mod = enemy.stats.constitution * ability_ref.ss_factor
 	return s_s_mod
 
 
@@ -76,7 +76,6 @@ func calculate_action() -> int: # For Intent "Number" string updating
 	if not enemy or not target:
 		return 0
 	
-	var calc_target_array : Array[Node] = [target]
 	var calc_p_s_mod = calculate_primary_scaling_mod(ability_ref)
 	var calc_s_s_mod = calculate_secondary_scaling_mod(ability_ref)
 	var calc_dmg_mod: float = 1
