@@ -19,6 +19,9 @@ config/icon="res://Assets/art/tile_0118.png"
 [autoload]
 
 EventBus="*res://Globals/event_bus.gd"
+Shaker="*res://Globals/shaker.gd"
+MusicPlayer="*res://Globals/music_player.tscn"
+SfxPlayer="*res://Globals/sfx_player.tscn"
 
 [debug]
 

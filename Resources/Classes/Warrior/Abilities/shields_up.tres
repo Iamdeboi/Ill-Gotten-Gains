@@ -1,22 +1,24 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://ja3in6craswg"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://ja3in6craswg"]
 
 [ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://Assets/art/tile_0102.png" id="1_031h3"]
 [ext_resource type="Script" uid="uid://cdirwmr0o7sdy" path="res://Resources/Classes/Warrior/Abilities/shields_up.gd" id="1_x4cpn"]
+[ext_resource type="AudioStream" uid="uid://df64e7qat73gs" path="res://Assets/Audio/block.ogg" id="3_5qdnu"]
 
 [resource]
 script = ExtResource("1_x4cpn")
 id = "2"
 ability_type = 1
 target = 0
-cost = null
+cost = 0
 cost_type = 0
-cooldown = null
+cooldown = 0
 primary_scaling = 6
 ps_factor = 0.5
 secondary_scaling = 0
-ss_factor = null
+ss_factor = 1.0
 element_type = 0
 icon = ExtResource("1_031h3")
 title = "Shields Up"
 tooltip_text = "Raise your shield, increasing armor by (10 + 50% CON)."
+sound = ExtResource("3_5qdnu")
 metadata/_custom_type_script = "uid://smcmjjy50miu"

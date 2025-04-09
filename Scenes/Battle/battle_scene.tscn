@@ -1,8 +1,9 @@
-[gd_scene load_steps=19 format=3 uid="uid://beq6os1qypmat"]
+[gd_scene load_steps=20 format=3 uid="uid://beq6os1qypmat"]
 
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://Assets/art/background.png" id="1_4nlbu"]
 [ext_resource type="Script" uid="uid://i2lqgiy6iiwu" path="res://Scenes/Battle/battle_scene.gd" id="1_lcoea"]
 [ext_resource type="PackedScene" uid="uid://43xkdnm2fpla" path="res://Scenes/Player/player.tscn" id="2_lcoea"]
+[ext_resource type="AudioStream" uid="uid://dpdenqqbovwfq" path="res://Assets/Audio/8_bit_iced_village_lofi.mp3" id="3_ik5sk"]
 [ext_resource type="PackedScene" uid="uid://cc0r5lmc5gi4r" path="res://Scenes/Enemy/enemy.tscn" id="3_jp0ri"]
 [ext_resource type="Script" uid="uid://bgob53ycfxb58" path="res://Scenes/Enemy/enemy_handler.gd" id="5_6tvrj"]
 [ext_resource type="Resource" uid="uid://c1g3jl3xp20b0" path="res://Resources/Enemies/Crab/crab.tres" id="6_68j0i"]
@@ -33,6 +34,7 @@ region = Rect2(80, 32, 32, 16)
 [node name="BattleScene" type="Node2D"]
 script = ExtResource("1_lcoea")
 player_stats = ExtResource("12_ik5sk")
+music = ExtResource("3_ik5sk")
 metadata/_edit_lock_ = true
 
 [node name="Background" type="TextureRect" parent="."]

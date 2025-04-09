@@ -24,6 +24,7 @@ enum Scaling {NONE, STRENGTH, DEXTERITY, INTELLECT, WISDOM, CHARISMA, CONSTITUTI
 @export var icon: Texture
 @export var title: String
 @export_multiline var tooltip_text: String
+@export var sound: AudioStream
 
 var primary_scaling_mod: float = 0
 var secondary_scaling_mod: float = 0

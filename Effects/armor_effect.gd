@@ -15,3 +15,4 @@ func execute(targets: Array[Node], ability: Ability, primary_scaling_mod: float,
 			print("Secondary Scaling Mod: " + str(secondary_scaling_mod))
 			print("Calculated Amount: " + str(amount))
 			target.stats.restore_armor(amount)
+			SfxPlayer.play(sound)

@@ -1,6 +1,9 @@
 class_name Player
 extends Node
 
+
+const WHITE_SPRITE_MATERIAL := preload("res://Assets/art/white_sprite_material.tres")
+const RED_SPRITE_MATERIAL :=preload("res://Assets/art/red_sprite_material.tres")
 #Statblocks
 @export var stats: PlayerStats : set = set_player_stats #Attach the statblock resource
 # GUI Collection
@@ -34,11 +37,25 @@ func take_damage(damage: int) -> void:
 	if stats.health <= 0:
 		return
 		
-	stats.take_damage(damage)
-
-	if stats.health <= 0:
-		EventBus.player_died.emit()
-		queue_free()
+	if stats.armor <= damage: # Damage will reduce health
+		player_stats_ui.portrait.material = RED_SPRITE_MATERIAL
+	else: # Armor will block damage before reducing health
+		player_stats_ui.portrait.material = WHITE_SPRITE_MATERIAL
+		
+	var tween := create_tween()
+	tween.tween_callback(Shaker.control_node_shake.bind(player_stats_ui.portrait, 16, 0.15))
+	tween.tween_callback(stats.take_damage.bind(damage))
+	tween.tween_interval(0.15)
+	
+	tween.finished.connect(
+		func():
+			player_stats_ui.portrait.material = null
+			
+			if stats.health <= 0:
+				EventBus.player_died.emit()
+				await get_tree().create_timer(0.05).timeout
+				queue_free()
+	)
 
 
 func calculate_damage(amount: int, dmg_mod: float, primary_scaling_mod: float, secondary_scaling_mod: float) -> int:

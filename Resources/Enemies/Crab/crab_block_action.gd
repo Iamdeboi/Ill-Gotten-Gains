@@ -12,7 +12,9 @@ func perform_action() -> void:
 		return
 	
 	var armor_effect := ArmorEffect.new()
+	armor_effect.sound = sound
 	armor_effect.amount = armor
+	
 	calculate_primary_scaling_mod(ability_ref)
 	calculate_secondary_scaling_mod(ability_ref)
 	armor_effect.execute([enemy], ability_ref, p_s_mod, s_s_mod)

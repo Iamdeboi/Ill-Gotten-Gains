@@ -2,6 +2,8 @@ class_name Enemy
 extends Node2D
 
 const ARROW_OFFSET := 5
+const RED_SPRITE_MATERIAL :=preload("res://Assets/art/red_sprite_material.tres")
+const WHITE_SPRITE_MATERIAL := preload("res://Assets/art/white_sprite_material.tres")
 
 # Statblock + Assets + StatsUI + Intents
 @export var stats: EnemyStats : set = set_enemy_stats
@@ -87,10 +89,24 @@ func take_damage(amount: int) -> void:
 	if stats.health <= 0:
 		return
 		
-	stats.take_damage(amount)
-
-	if stats.health <= 0:
-		queue_free()
+	if stats.armor <= amount: # Damage will reduce health
+		enemy_sprite.material = RED_SPRITE_MATERIAL
+	else: # Damage will be fully absorbed by armor before reducing health
+		enemy_sprite.material = WHITE_SPRITE_MATERIAL
+	
+	var tween := create_tween()
+	tween.tween_callback(Shaker.shake.bind(self, 16, 0.15))
+	tween.tween_callback(stats.take_damage.bind(amount))
+	tween.tween_interval(0.15)
+	
+	tween.finished.connect(
+		func():
+			enemy_sprite.material = null
+			
+			if stats.health <= 0:
+				await get_tree().create_timer(0.05).timeout
+				queue_free()
+	)
 
 
 func _on_area_entered(_area: Area2D) -> void:

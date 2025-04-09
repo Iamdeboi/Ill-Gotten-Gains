@@ -18,6 +18,8 @@ func perform_action() -> void:
 	var target_array : Array[Node] = [target]
 	
 	damage_effect.amount = damage
+	damage_effect.sound = sound
+	
 	p_s_mod = calculate_primary_scaling_mod(ability_ref)
 	s_s_mod = calculate_secondary_scaling_mod(ability_ref)
 	

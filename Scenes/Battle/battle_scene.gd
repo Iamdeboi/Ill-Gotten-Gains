@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var player_stats: PlayerStats #Only place where character stats needs to be for the rest of the scene
+@export var music: AudioStream
 
 @onready var player_handler: Node = $PlayerHandler
 @onready var enemy_handler: Node2D = $EnemyHandler
@@ -25,6 +26,7 @@ func _ready() -> void:
 
 
 func start_battle(stats: PlayerStats) -> void:
+	MusicPlayer.play(music, true)
 	enemy_handler.reset_enemy_actions()
 	player_handler.start_battle(stats)
 

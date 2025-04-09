@@ -1,7 +1,8 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://coapnwodmdehg"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://coapnwodmdehg"]
 
 [ext_resource type="Texture2D" uid="uid://44jbm5bqr4k" path="res://Assets/art/tile_0117.png" id="1_0gyj4"]
 [ext_resource type="Script" uid="uid://cwvm14arfuu7l" path="res://Resources/Classes/Warrior/Abilities/bash.gd" id="1_exv3l"]
+[ext_resource type="AudioStream" uid="uid://b1vpjjmi5cj3n" path="res://Assets/Audio/axe.ogg" id="3_osqq0"]
 
 [resource]
 script = ExtResource("1_exv3l")
@@ -19,4 +20,5 @@ element_type = 1
 icon = ExtResource("1_0gyj4")
 title = "Bash"
 tooltip_text = "Whack an enemy on the head, dealing (15 plus 50% STR) Physical damage and inflicting 2 Weakness."
+sound = ExtResource("3_osqq0")
 metadata/_custom_type_script = "uid://smcmjjy50miu"

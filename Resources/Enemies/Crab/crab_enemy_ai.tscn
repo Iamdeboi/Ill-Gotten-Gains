@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://klehi6llnmgb"]
+[gd_scene load_steps=19 format=3 uid="uid://klehi6llnmgb"]
 
 [ext_resource type="Script" uid="uid://3v76pa028tf4" path="res://Scenes/Enemy/enemy_action_picker.gd" id="1_w0dpo"]
 [ext_resource type="Script" uid="uid://bpxwbs51tgcoo" path="res://Resources/Enemies/Crab/crab_attack_action.gd" id="2_8fglq"]
@@ -7,8 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://c6rme2o6dyaoj" path="res://Assets/art/tile_0104.png" id="4_gs6hi"]
 [ext_resource type="Script" uid="uid://dtireeunht2ns" path="res://Resources/Enemies/Crab/crab_super_block_action.gd" id="4_mqc26"]
 [ext_resource type="Script" uid="uid://75vkhkjo518y" path="res://Resources/Templates/Intent/intent.gd" id="5_fsaxf"]
+[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://Assets/Audio/enemy_attack.ogg" id="6_wku0f"]
 [ext_resource type="Texture2D" uid="uid://bi6pfjs32f820" path="res://Assets/art/tile_0101.png" id="7_rne0m"]
+[ext_resource type="AudioStream" uid="uid://df64e7qat73gs" path="res://Assets/Audio/block.ogg" id="9_400le"]
 [ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://Assets/art/tile_0102.png" id="9_wku0f"]
+[ext_resource type="AudioStream" uid="uid://k8m4o3hlwm7l" path="res://Assets/Audio/enemy_block.ogg" id="12_51jku"]
 
 [sub_resource type="Resource" id="Resource_n6fpb"]
 script = ExtResource("3_mqc26")
@@ -87,6 +90,7 @@ script = ExtResource("2_8fglq")
 damage = 8
 ability_ref = SubResource("Resource_n6fpb")
 intent = SubResource("Resource_400le")
+sound = ExtResource("6_wku0f")
 type = 1
 chance_weight = 1.0
 
@@ -95,6 +99,7 @@ script = ExtResource("3_rd5hf")
 armor = 8
 ability_ref = SubResource("Resource_rd5hf")
 intent = SubResource("Resource_51jku")
+sound = ExtResource("9_400le")
 type = 1
 chance_weight = 1.0
 
@@ -102,3 +107,4 @@ chance_weight = 1.0
 script = ExtResource("4_mqc26")
 ability_ref = SubResource("Resource_mqc26")
 intent = SubResource("Resource_olkmx")
+sound = ExtResource("12_51jku")

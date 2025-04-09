@@ -8,4 +8,5 @@ func update_tooltip(stats: PlayerStats) -> String:
 func apply_effects(targets: Array[Node], ability: Ability, p_s_mod: float, s_s_mod: float) -> void:
 	var damage_effect = DamageEffect.new()
 	damage_effect.amount = 15
+	damage_effect.sound = sound
 	damage_effect.execute(targets, ability, p_s_mod, s_s_mod)
