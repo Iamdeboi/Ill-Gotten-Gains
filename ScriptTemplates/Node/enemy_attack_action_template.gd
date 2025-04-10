@@ -1,3 +1,5 @@
+# meta-name: EnemyAttackAction
+# meta-description: An offensive action which can be performed by an enemy during its turn
 extends EnemyAction
 
 @export var damage := 1

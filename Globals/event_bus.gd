@@ -30,7 +30,7 @@ signal map_exited(room: Room)
 signal shop_exited
 
 # Combat-related Events
-#signal battle_over_screen_requested(text: String, type: BattleOverPanel.Type)
+signal battle_over_screen_requested(text: String, type: BattleOverPanel.Type)
 signal battle_won
 
 # Combat-rewards Events

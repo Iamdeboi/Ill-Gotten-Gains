@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d1unq1vs3bd4u" path="res://Scenes/Player/player.gd" id="1_a3d8c"]
 [ext_resource type="PackedScene" uid="uid://cvy0l0u8nf5oj" path="res://Scenes/GUI/Player/player_stats_ui.tscn" id="1_uvnfx"]
-[ext_resource type="Resource" uid="uid://ls7ennmh2elu" path="res://Resources/Player/warrior_stats.tres" id="2_xpcdj"]
+[ext_resource type="Resource" uid="uid://ls7ennmh2elu" path="res://Resources/Classes/Warrior/warrior_stats.tres" id="2_xpcdj"]
 
 [node name="Player" type="Node" groups=["Player"]]
 script = ExtResource("1_a3d8c")

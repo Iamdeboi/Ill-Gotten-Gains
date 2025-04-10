@@ -1,0 +1,78 @@
+[gd_scene load_steps=14 format=3 uid="uid://drcv1xta5ebpv"]
+
+[ext_resource type="Script" uid="uid://3v76pa028tf4" path="res://Scenes/Enemy/enemy_action_picker.gd" id="1_apxam"]
+[ext_resource type="Script" uid="uid://bqs1o7pqenmfo" path="res://Resources/Enemies/Bat/bat_attack_action.gd" id="2_o0nhy"]
+[ext_resource type="Script" uid="uid://smcmjjy50miu" path="res://Resources/Templates/Abilities/ability.gd" id="3_ynj3i"]
+[ext_resource type="Texture2D" uid="uid://bfvi02kojsa00" path="res://Assets/art/tile_0103.png" id="4_5lq8t"]
+[ext_resource type="Script" uid="uid://75vkhkjo518y" path="res://Resources/Templates/Intent/intent.gd" id="5_n2sx7"]
+[ext_resource type="AudioStream" uid="uid://dixklg6g4jnsq" path="res://Assets/Audio/slash.ogg" id="6_jug4i"]
+[ext_resource type="Script" uid="uid://vxd02tej2cun" path="res://Resources/Enemies/Bat/bat_block_action.gd" id="7_r8h4b"]
+[ext_resource type="Texture2D" uid="uid://bi6pfjs32f820" path="res://Assets/art/tile_0101.png" id="8_5lq8t"]
+[ext_resource type="AudioStream" uid="uid://df64e7qat73gs" path="res://Assets/Audio/block.ogg" id="9_n2sx7"]
+
+[sub_resource type="Resource" id="Resource_emr20"]
+script = ExtResource("3_ynj3i")
+id = ""
+ability_type = 0
+target = 1
+cost = 0
+cost_type = 0
+cooldown = 0
+primary_scaling = 2
+ps_factor = 0.5
+secondary_scaling = 0
+ss_factor = 1.0
+element_type = 1
+title = ""
+tooltip_text = ""
+metadata/_custom_type_script = "uid://smcmjjy50miu"
+
+[sub_resource type="Resource" id="Resource_masar"]
+script = ExtResource("5_n2sx7")
+number = ""
+icon = ExtResource("4_5lq8t")
+metadata/_custom_type_script = "uid://75vkhkjo518y"
+
+[sub_resource type="Resource" id="Resource_jug4i"]
+script = ExtResource("3_ynj3i")
+id = ""
+ability_type = 1
+target = 0
+cost = 0
+cost_type = 0
+cooldown = 0
+primary_scaling = 6
+ps_factor = 0.5
+secondary_scaling = 0
+ss_factor = 1.0
+element_type = 0
+title = ""
+tooltip_text = ""
+metadata/_custom_type_script = "uid://smcmjjy50miu"
+
+[sub_resource type="Resource" id="Resource_r8h4b"]
+script = ExtResource("5_n2sx7")
+number = ""
+icon = ExtResource("8_5lq8t")
+metadata/_custom_type_script = "uid://75vkhkjo518y"
+
+[node name="BatEnemyAI" type="Node"]
+script = ExtResource("1_apxam")
+
+[node name="BatAttackAction" type="Node" parent="."]
+script = ExtResource("2_o0nhy")
+damage = 2
+ability_ref = SubResource("Resource_emr20")
+intent = SubResource("Resource_masar")
+sound = ExtResource("6_jug4i")
+type = 1
+chance_weight = 3.0
+
+[node name="BatBlockAction" type="Node" parent="."]
+script = ExtResource("7_r8h4b")
+armor = 4
+ability_ref = SubResource("Resource_jug4i")
+intent = SubResource("Resource_r8h4b")
+sound = ExtResource("9_n2sx7")
+type = 1
+chance_weight = 1.0

@@ -1,16 +1,16 @@
 [gd_resource type="Resource" script_class="PlayerStats" load_steps=3 format=3 uid="uid://dwydrtslgh45j"]
 
-[ext_resource type="Script" uid="uid://xfic0g5mx1j7" path="res://Resources/Templates/StatMakers/player_stats.gd" id="1_tt0wu"]
-[ext_resource type="Texture2D" uid="uid://qn173bqpjgpd" path="res://Assets/art/IGG_Gromm.png" id="2_fwt8h"]
+[ext_resource type="Script" uid="uid://xfic0g5mx1j7" path="res://Resources/Templates/StatMakers/player_stats.gd" id="1_006hn"]
+[ext_resource type="Texture2D" uid="uid://qn173bqpjgpd" path="res://Assets/art/IGG_Gromm.png" id="2_r0ohq"]
 
 [resource]
-script = ExtResource("1_tt0wu")
+script = ExtResource("1_006hn")
 maximum_action_points = 3
 max_health = 100
 starting_armor = 20
 max_mana = 30
-name = "Gromm Briarroots"
-sprite = ExtResource("2_fwt8h")
+name = "Thief"
+sprite = ExtResource("2_r0ohq")
 start_strength = 3
 start_dexterity = 10
 start_intellect = 2

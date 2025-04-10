@@ -3,7 +3,7 @@ extends BaseStats
 
 
 @export_category("Player Combat Features")
-@export var maximum_action_points : int
+@export var maximum_action_points : int = 3
 @export var starting_abilities : AbilityList #Abilities given at the start of a run dependant on class selected
 
 

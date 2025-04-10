@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://beq6os1qypmat"]
+[gd_scene load_steps=22 format=3 uid="uid://beq6os1qypmat"]
 
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://Assets/art/background.png" id="1_4nlbu"]
 [ext_resource type="Script" uid="uid://i2lqgiy6iiwu" path="res://Scenes/Battle/battle_scene.gd" id="1_lcoea"]
@@ -12,9 +12,11 @@
 [ext_resource type="Script" uid="uid://b66pvl7x1j7be" path="res://Scenes/Player/player_handler.gd" id="7_n1ain"]
 [ext_resource type="Script" uid="uid://bft6q2ldklwwi" path="res://Scenes/Battle/battle_ui.gd" id="8_sufya"]
 [ext_resource type="PackedScene" uid="uid://brnkqcr6gd3j8" path="res://Scenes/Battle/ability_container.tscn" id="9_02hj4"]
-[ext_resource type="Resource" uid="uid://ls7ennmh2elu" path="res://Resources/Player/warrior_stats.tres" id="12_ik5sk"]
+[ext_resource type="Resource" uid="uid://b400i7oa1687j" path="res://Resources/Enemies/Bat/bat_enemy.tres" id="9_n1ain"]
+[ext_resource type="Resource" uid="uid://ls7ennmh2elu" path="res://Resources/Classes/Warrior/warrior_stats.tres" id="12_ik5sk"]
 [ext_resource type="Texture2D" uid="uid://3irjme3yj00b" path="res://Assets/Themes/ButtonLayoutDraft1.png" id="13_36cr5"]
 [ext_resource type="PackedScene" uid="uid://dujeyjg48m3ys" path="res://Scenes/GUI/Player/Components/action_point_ui.tscn" id="15_ik5sk"]
+[ext_resource type="PackedScene" uid="uid://cgx6m3nsu4lnh" path="res://Scenes/GUI/Misc/battle_over_panel.tscn" id="16_sufya"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbixj"]
 size = Vector2(640, 270)
@@ -65,10 +67,20 @@ scale = Vector2(0.8, 0.8)
 [node name="EnemyHandler" type="Node2D" parent="."]
 script = ExtResource("5_6tvrj")
 
-[node name="Enemy" parent="EnemyHandler" instance=ExtResource("3_jp0ri")]
+[node name="CrabEnemy" parent="EnemyHandler" instance=ExtResource("3_jp0ri")]
 position = Vector2(320, 180)
 scale = Vector2(2, 2)
 stats = ExtResource("6_68j0i")
+
+[node name="BatEnemy" parent="EnemyHandler" instance=ExtResource("3_jp0ri")]
+position = Vector2(191, 150)
+scale = Vector2(2, 2)
+stats = ExtResource("9_n1ain")
+
+[node name="BatEnemy2" parent="EnemyHandler" instance=ExtResource("3_jp0ri")]
+position = Vector2(449, 150)
+scale = Vector2(2, 2)
+stats = ExtResource("9_n1ain")
 
 [node name="PlayerHandler" type="Node" parent="." node_paths=PackedStringArray("ability_container")]
 script = ExtResource("7_n1ain")
@@ -132,6 +144,11 @@ theme_override_font_sizes/font_size = 6
 text = "End Turn"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="BattleOverLayer" type="CanvasLayer" parent="."]
+
+[node name="BattleOverPanel" parent="BattleOverLayer" instance=ExtResource("16_sufya")]
+visible = false
 
 [node name="WinButton" type="Button" parent="."]
 offset_left = 4.0

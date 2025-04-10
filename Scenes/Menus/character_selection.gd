@@ -2,9 +2,9 @@ class_name CharacterSelection
 extends Control
 
 const RUN_SCENE := preload("res://Scenes/Run/run.tscn")
-const WARRIOR_STATS := preload("res://Resources/Player/warrior_stats.tres")
-const WIZARD_STATS := preload("res://Resources/Player/wizard_stats.tres")
-const THIEF_STATS := preload("res://Resources/Player/thief_stats.tres")
+const WARRIOR_STATS := preload("res://Resources/Classes/Warrior/warrior_stats.tres")
+const MAGE_STATS := preload("res://Resources/Classes/Mage/mage_stats.tres")
+const THIEF_STATS := preload("res://Resources/Classes/Thief/thief_stats.tres")
 
 @export var run_startup : RunStartup
 
@@ -32,7 +32,7 @@ func _on_warrior_button_pressed() -> void:
 	start_run_button.disabled = false
 
 func _on_mage_button_pressed() -> void:
-	current_character = WIZARD_STATS
+	current_character = MAGE_STATS
 	start_run_button.disabled = false
 
 func _on_thief_button_pressed() -> void:

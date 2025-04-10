@@ -1,4 +1,4 @@
-class_name  Intent
+class_name Intent
 extends Resource
 
 @export var number: String : set = set_number

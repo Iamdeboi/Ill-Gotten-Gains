@@ -2,7 +2,7 @@ class_name Enemy
 extends Node2D
 
 const ARROW_OFFSET := 5
-const RED_SPRITE_MATERIAL :=preload("res://Assets/art/red_sprite_material.tres")
+const RED_SPRITE_MATERIAL := preload("res://Assets/art/red_sprite_material.tres")
 const WHITE_SPRITE_MATERIAL := preload("res://Assets/art/white_sprite_material.tres")
 
 # Statblock + Assets + StatsUI + Intents
@@ -21,7 +21,9 @@ var current_action: EnemyAction: set = set_current_action
 func set_current_action(value: EnemyAction) -> void:
 	current_action = value
 	if current_action:
-		if current_action.has_method("calculate_action"):
+		if current_action.has_method("calculate_action") and current_action.effect_count > 1:
+			current_action.intent.set_number(str(current_action.calculate_action()) + " x " + str(current_action.effect_count))
+		elif current_action.has_method("calculate_action"):
 			current_action.intent.set_number(str(current_action.calculate_action()))
 		intent_ui.update_intent(current_action.intent)
 

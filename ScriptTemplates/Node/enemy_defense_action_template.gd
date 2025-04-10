@@ -1,22 +1,13 @@
+# meta-name: EnemyDefenseAction
+# meta-description: A defensive action which can be performed by an enemy during its turn
 extends EnemyAction
 
-@export var armor := 15
+@export var armor := 1
 @export var effect_count := 1
-@export var hp_threshold := 20
-@export var ability_ref : Ability
+@export var ability_ref: Ability
 
-var already_used := false
-var p_s_mod : float
-var s_s_mod : float
-
-func is_performable() -> bool:
-	if not enemy or already_used:
-		return false
-	
-	var is_low := enemy.stats.health <= hp_threshold
-	already_used = is_low
-	
-	return is_low
+var p_s_mod: float
+var s_s_mod: float
 
 
 func perform_action() -> void:
