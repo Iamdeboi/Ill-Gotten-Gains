@@ -3,14 +3,15 @@ extends Control
 
 signal reparent_requested(which_ability: AbilitySlot)
 
-const BASE_STYLEBOX := preload("res://Scenes/AbilityUI/ability_slot_base.stylebox")
-const DRAG_STYLEBOX := preload("res://Scenes/AbilityUI/ability_slot_dragging.stylebox")
-const HOVER_STYLEBOX := preload("res://Scenes/AbilityUI/ability_slot_hover.stylebox")
+const ATTACK_SLOT_BG := preload("res://Assets/art/AttackAbilityIcon.png")
+const DEFENSE_SLOT_BG := preload("res://Assets/art/DefenseAbilityIcon.png")
+const BUFF_SLOT_BG := preload("res://Assets/art/BuffAbilityIcon.png")
+const DEBUFF_SLOT_BG := preload("res://Assets/art/DebuffAbilityIcon.png")
 
 @export var ability: Ability: set = _set_ability
 @export var player_stats: PlayerStats : set = _set_player_stats
 
-@onready var background: Panel = $Background
+@onready var background: TextureRect = $Background
 @onready var cost: Label = $CostCount
 @onready var icon: TextureRect = $Icon
 @onready var drop_point_detector: Area2D = $DropPointDetector
@@ -74,9 +75,18 @@ func _set_ability(value: Ability) -> void:
 			cost.add_theme_color_override("font_color", Color.SALMON)
 		ability.CostType.GOLD:
 			cost.add_theme_color_override("font_color", Color.GOLD)
+	
+	match ability.ability_type:
+		ability.AbilityType.ATTACK:
+			background.texture = ATTACK_SLOT_BG
+		ability.AbilityType.DEFENSE:
+			background.texture = DEFENSE_SLOT_BG
+		ability.AbilityType.BUFF:
+			background.texture = BUFF_SLOT_BG
+		ability.AbilityType.DEBUFF:
+			background.texture = DEBUFF_SLOT_BG
+
 	icon.texture = ability.icon
-
-
 
 func _set_playable(value: bool) -> void:
 	playable = value

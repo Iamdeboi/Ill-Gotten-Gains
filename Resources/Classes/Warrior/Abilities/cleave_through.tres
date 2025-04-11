@@ -1,7 +1,8 @@
-[gd_resource type="Resource" load_steps=4 format=3 uid="uid://ixpdsnnhgoa3"]
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://ixpdsnnhgoa3"]
 
 [ext_resource type="Texture2D" uid="uid://cqcal03735mv8" path="res://Assets/art/tile_0118.png" id="1_ke6bc"]
 [ext_resource type="Script" uid="uid://c4wcwspfasgt7" path="res://Resources/Classes/Warrior/Abilities/cleave_through.gd" id="1_ufs65"]
+[ext_resource type="AudioStream" uid="uid://c6ilhjij0dt0a" path="res://Assets/Audio/50_RPG_Battle_Magic_SFX/41_Charge_01.wav" id="2_p5oua"]
 [ext_resource type="AudioStream" uid="uid://b1vpjjmi5cj3n" path="res://Assets/Audio/axe.ogg" id="3_5mtpc"]
 
 [resource]
@@ -21,4 +22,5 @@ icon = ExtResource("1_ke6bc")
 title = "Cleave Through"
 tooltip_text = "Carve through all enemies, dealing (20 + 150% STR) Physical damage to all targets."
 sound = ExtResource("3_5mtpc")
+pickup_audio = ExtResource("2_p5oua")
 metadata/_custom_type_script = "uid://smcmjjy50miu"

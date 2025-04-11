@@ -10,11 +10,12 @@ func enter() -> void:
 	ability_slot.animate_to_position(ability_slot.parent.global_position + offset, 0.2)
 	ability_slot.drop_point_detector.monitoring = false
 	EventBus.ability_targeting_started.emit(ability_slot)
+	SfxPlayer.play(ability_slot.ability.aiming_audio)
 
 
 func exit() -> void:
 	EventBus.ability_targeting_ended.emit(ability_slot)
-
+	SfxPlayer.stop()
 
 func on_input(event: InputEvent) -> void:
 	var mouse_motion := event is InputEventMouseMotion

@@ -7,11 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://c6rme2o6dyaoj" path="res://Assets/art/tile_0104.png" id="4_gs6hi"]
 [ext_resource type="Script" uid="uid://dtireeunht2ns" path="res://Resources/Enemies/Crab/crab_super_block_action.gd" id="4_mqc26"]
 [ext_resource type="Script" uid="uid://75vkhkjo518y" path="res://Resources/Templates/Intent/intent.gd" id="5_fsaxf"]
-[ext_resource type="AudioStream" uid="uid://de2ryat1pxq6" path="res://Assets/Audio/enemy_attack.ogg" id="6_wku0f"]
+[ext_resource type="AudioStream" uid="uid://corn0541b3vck" path="res://Assets/Audio/Retro_RPG_Fight_Effects/02_Claw_02.wav" id="6_wku0f"]
 [ext_resource type="Texture2D" uid="uid://bi6pfjs32f820" path="res://Assets/art/tile_0101.png" id="7_rne0m"]
-[ext_resource type="AudioStream" uid="uid://df64e7qat73gs" path="res://Assets/Audio/block.ogg" id="9_400le"]
+[ext_resource type="AudioStream" uid="uid://ghs5gvshwdxi" path="res://Assets/Audio/Retro_RPG_Fight_Effects/37_Block_01.wav" id="9_400le"]
 [ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://Assets/art/tile_0102.png" id="9_wku0f"]
-[ext_resource type="AudioStream" uid="uid://k8m4o3hlwm7l" path="res://Assets/Audio/enemy_block.ogg" id="12_51jku"]
+[ext_resource type="AudioStream" uid="uid://cheiykrl8mof5" path="res://Assets/Audio/Retro_RPG_Fight_Effects/40_Block_04.wav" id="12_51jku"]
 
 [sub_resource type="Resource" id="Resource_n6fpb"]
 script = ExtResource("3_mqc26")

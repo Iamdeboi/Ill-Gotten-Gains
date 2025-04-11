@@ -1,7 +1,7 @@
 class_name Ability
 extends Resource
 
-enum AbilityType {ATTACK, DEFENSE}
+enum AbilityType {ATTACK, DEFENSE, BUFF, DEBUFF}
 enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
 enum CostType {MANA, HEALTH, GOLD}
 enum ElementType {NONE, PHYSICAL, FIRE, FROST, STORM, TOXIC, ARCANE, SHADOW, HOLY}
@@ -25,6 +25,8 @@ enum Scaling {NONE, STRENGTH, DEXTERITY, INTELLECT, WISDOM, CHARISMA, CONSTITUTI
 @export var title: String
 @export_multiline var tooltip_text: String
 @export var sound: AudioStream
+@export var pickup_audio: AudioStream
+@export var aiming_audio: AudioStream
 
 var primary_scaling_mod: float = 0
 var secondary_scaling_mod: float = 0
@@ -104,5 +106,5 @@ func apply_effects(_targets: Array[Node], _ability: Ability, _primary_scaling_mo
 	pass #Each individual ability has their own overidden version of this function, this is a "virtual function"
 
 
-func update_tooltip(stats: PlayerStats) -> String:
+func update_tooltip(_stats: PlayerStats) -> String:
 	return ""

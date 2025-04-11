@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://bfw2fydvlmuqa"]
+[gd_scene load_steps=10 format=3 uid="uid://bfw2fydvlmuqa"]
 
 [ext_resource type="Script" uid="uid://elf3bnr3nlw0" path="res://Scenes/AbilityUI/ability_slot.gd" id="1_63x3o"]
 [ext_resource type="Texture2D" uid="uid://bfvi02kojsa00" path="res://Assets/art/tile_0103.png" id="2_7y7um"]
-[ext_resource type="StyleBox" uid="uid://cefwekevxs7eg" path="res://Scenes/AbilityUI/ability_slot_base.stylebox" id="2_r0hbs"]
 [ext_resource type="Script" uid="uid://bodbr4heo4ugo" path="res://Scenes/AbilityUI/AbilityStateMachine/ability_state_machine.gd" id="3_7xwvf"]
 [ext_resource type="Script" uid="uid://8o7gecn47306" path="res://Scenes/AbilityUI/AbilityStateMachine/ability_base_state.gd" id="4_f4uar"]
 [ext_resource type="Script" uid="uid://ta47fxr5gldd" path="res://Scenes/AbilityUI/AbilityStateMachine/ability_clicked_state.gd" id="5_othpb"]
@@ -25,7 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_63x3o")
 
-[node name="Background" type="Panel" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,7 +32,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_styles/panel = ExtResource("2_r0hbs")
 
 [node name="Icon" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(12, 12)
@@ -50,7 +48,6 @@ offset_bottom = 5.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_7y7um")
-expand_mode = 1
 stretch_mode = 5
 
 [node name="CostCount" type="Label" parent="."]

@@ -17,8 +17,8 @@ func shake(object: Node2D, shake_strength: float, duration: float = 0.2) -> void
 		tween.tween_property(object, "position", target, duration / float(shake_count))
 		shake_strength *= 0.75 #Eases shakes by 25% each time
 	
-	await tween.finished
 	object.position = original_pos
+
 
 func control_node_shake(object: Control, shake_strength: float, duration: float = 0.2) -> void:
 	if not object:

@@ -10,7 +10,6 @@ func enter() -> void:
 	if ui_layer:
 		ability_slot.reparent(ui_layer)
 	
-	ability_slot.background.set("theme_override_styles/panel", ability_slot.DRAG_STYLEBOX)
 	EventBus.ability_drag_started.emit(ability_slot)
 	
 	minimum_drag_time_elasped = false

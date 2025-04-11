@@ -8,7 +8,6 @@ func enter() -> void:
 	if ability_slot.tween and ability_slot.tween.is_running():
 		ability_slot.tween.kill()
 	
-	ability_slot.background.set("theme_override_styles/panel", ability_slot.BASE_STYLEBOX)
 	ability_slot.reparent_requested.emit(ability_slot)
 	ability_slot.pivot_offset = Vector2.ZERO
 	EventBus.tooltip_hide_requested.emit()
@@ -27,12 +26,10 @@ func on_mouse_entered() -> void:
 	if not ability_slot.playable or ability_slot.disabled:
 		return
 	
-	ability_slot.background.set("theme_override_styles/panel", ability_slot.HOVER_STYLEBOX)
 	EventBus.ability_tooltip_requested.emit(ability_slot.ability.icon, ability_slot.ability.title, ability_slot.ability.tooltip_text)
 
 func on_mouse_exited() -> void:
 	if not ability_slot.playable or ability_slot.disabled:
 		return
 	
-	ability_slot.background.set("theme_override_styles/panel", ability_slot.BASE_STYLEBOX)
 	EventBus.tooltip_hide_requested.emit()

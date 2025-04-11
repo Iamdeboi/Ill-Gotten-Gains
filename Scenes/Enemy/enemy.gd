@@ -97,6 +97,7 @@ func take_damage(amount: int) -> void:
 		enemy_sprite.material = WHITE_SPRITE_MATERIAL
 	
 	var tween := create_tween()
+	SfxPlayer.play(stats.hit_sound)
 	tween.tween_callback(Shaker.shake.bind(self, 16, 0.15))
 	tween.tween_callback(stats.take_damage.bind(amount))
 	tween.tween_interval(0.15)
@@ -106,7 +107,7 @@ func take_damage(amount: int) -> void:
 			enemy_sprite.material = null
 			
 			if stats.health <= 0:
-				await get_tree().create_timer(0.05).timeout
+				await SfxPlayer.play(stats.death_sound)
 				queue_free()
 	)
 

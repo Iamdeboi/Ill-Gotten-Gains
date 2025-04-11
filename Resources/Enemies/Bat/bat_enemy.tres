@@ -1,12 +1,16 @@
-[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://b400i7oa1687j"]
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=6 format=3 uid="uid://b400i7oa1687j"]
 
 [ext_resource type="Script" uid="uid://go2fqkkn8066" path="res://Resources/Templates/StatMakers/enemy_stats.gd" id="1_4uit6"]
 [ext_resource type="PackedScene" uid="uid://drcv1xta5ebpv" path="res://Resources/Enemies/Bat/bat_enemy_ai.tscn" id="1_c2wjr"]
+[ext_resource type="AudioStream" uid="uid://cgmuvtn07m610" path="res://Assets/Audio/Retro_RPG_Fight_Effects/69_Enemy_death_01.wav" id="2_bgcwx"]
 [ext_resource type="Texture2D" uid="uid://con6y7mc74c5a" path="res://Assets/art/tile_0120.png" id="3_8tiyr"]
+[ext_resource type="AudioStream" uid="uid://dmrvnhcjs7cqi" path="res://Assets/Audio/Minifantasy_Creatures_SFX_v3.0/Beasts/Bat/03_Bat_cry_long.wav" id="3_51rcq"]
 
 [resource]
 script = ExtResource("1_4uit6")
 ai = ExtResource("1_c2wjr")
+hit_sound = ExtResource("3_51rcq")
+death_sound = ExtResource("2_bgcwx")
 max_health = 15
 starting_armor = 5
 max_mana = 10

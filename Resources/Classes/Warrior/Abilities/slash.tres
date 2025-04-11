@@ -1,8 +1,9 @@
-[gd_resource type="Resource" load_steps=4 format=3 uid="uid://b6034lga1hc4g"]
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://b6034lga1hc4g"]
 
 [ext_resource type="Texture2D" uid="uid://c6rme2o6dyaoj" path="res://Assets/art/tile_0104.png" id="1_gnwdc"]
 [ext_resource type="Script" uid="uid://cj58xyk2jkirc" path="res://Resources/Classes/Warrior/Abilities/slash.gd" id="1_sc24d"]
-[ext_resource type="AudioStream" uid="uid://dixklg6g4jnsq" path="res://Assets/Audio/slash.ogg" id="3_tupqt"]
+[ext_resource type="AudioStream" uid="uid://drpdwrvxn24rv" path="res://Assets/Audio/Inventory_SFX_Pack/Inventory_SFX/Managing/Item_Pick.wav" id="2_tcimh"]
+[ext_resource type="AudioStream" uid="uid://bhlxrcwotblbo" path="res://Assets/Audio/Retro_RPG_Fight_Effects/19_Slash_01.wav" id="4_tcimh"]
 
 [resource]
 script = ExtResource("1_sc24d")
@@ -20,5 +21,6 @@ element_type = 0
 icon = ExtResource("1_gnwdc")
 title = "Slash"
 tooltip_text = "Slash your enemy, dealing (5 + 50% STR) neutral damage."
-sound = ExtResource("3_tupqt")
+sound = ExtResource("4_tcimh")
+pickup_audio = ExtResource("2_tcimh")
 metadata/_custom_type_script = "uid://smcmjjy50miu"
