@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=5 format=3 uid="uid://dnq7qqmyyubjh"]
 
-[ext_resource type="Texture2D" uid="uid://d0edy7thj8ce6" path="res://Assets/art/heart.png" id="1_2tqe8"]
+[ext_resource type="Texture2D" uid="uid://k0oey86j5bw" path="res://Assets/art/IGGAbilityIcons/005-Second_wind.png" id="1_7ie3o"]
 [ext_resource type="Script" uid="uid://cv2thvlj8moon" path="res://Resources/Classes/Warrior/Abilities/second_wind.gd" id="2_2tqe8"]
 [ext_resource type="AudioStream" uid="uid://ybi3lnqdgmwy" path="res://Assets/Audio/Minifantasy_MagicAndSorcery_SFX/Buffs/Buff_Start.wav" id="3_8jqcl"]
 [ext_resource type="AudioStream" uid="uid://bn561va0j6ess" path="res://Assets/Audio/50_RPG_Heals_Buffs_SFX/01_Heal_01.wav" id="4_7ie3o"]
@@ -18,7 +18,7 @@ ps_factor = 0.5
 secondary_scaling = 6
 ss_factor = 0.5
 element_type = 0
-icon = ExtResource("1_2tqe8")
+icon = ExtResource("1_7ie3o")
 title = "Second Wind"
 tooltip_text = "Catch your breath, restoring 15 + (0.50 STR) + (0.50 CON) health."
 sound = ExtResource("4_7ie3o")

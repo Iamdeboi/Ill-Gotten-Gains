@@ -1,9 +1,9 @@
 [gd_resource type="Resource" load_steps=6 format=3 uid="uid://coapnwodmdehg"]
 
-[ext_resource type="Texture2D" uid="uid://44jbm5bqr4k" path="res://Assets/art/tile_0117.png" id="1_0gyj4"]
 [ext_resource type="Script" uid="uid://cwvm14arfuu7l" path="res://Resources/Classes/Warrior/Abilities/bash.gd" id="1_exv3l"]
 [ext_resource type="AudioStream" uid="uid://c6htgvyk6xi77" path="res://Assets/Audio/Minifantasy_Creatures_SFX_v3.0/Humanoids/Human/07_human_charging_2_loop.wav" id="1_qv5j5"]
 [ext_resource type="AudioStream" uid="uid://drpdwrvxn24rv" path="res://Assets/Audio/Inventory_SFX_Pack/Inventory_SFX/Managing/Item_Pick.wav" id="2_cq6gj"]
+[ext_resource type="Texture2D" uid="uid://c0w7dy5fffi8s" path="res://Assets/art/IGGAbilityIcons/003-Bash.png" id="2_qv5j5"]
 [ext_resource type="AudioStream" uid="uid://j1onxauj2rki" path="res://Assets/Audio/Minifantasy_TrueHeroes_SFX/Barbarian/General_Sounds/Barbarian_Attack.wav" id="5_qv5j5"]
 
 [resource]
@@ -19,7 +19,7 @@ ps_factor = 0.5
 secondary_scaling = 0
 ss_factor = 1.0
 element_type = 1
-icon = ExtResource("1_0gyj4")
+icon = ExtResource("2_qv5j5")
 title = "Bash"
 tooltip_text = "Whack an enemy on the head, dealing (15 plus 50% STR) Physical damage and inflicting 2 Weakness."
 sound = ExtResource("5_qv5j5")

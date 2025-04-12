@@ -1,6 +1,6 @@
 [gd_resource type="Resource" load_steps=5 format=3 uid="uid://ja3in6craswg"]
 
-[ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://Assets/art/tile_0102.png" id="1_031h3"]
+[ext_resource type="Texture2D" uid="uid://5oavlt25m76y" path="res://Assets/art/IGGAbilityIcons/002-Shields_up.png" id="1_gxrv3"]
 [ext_resource type="Script" uid="uid://cdirwmr0o7sdy" path="res://Resources/Classes/Warrior/Abilities/shields_up.gd" id="1_x4cpn"]
 [ext_resource type="AudioStream" uid="uid://drpdwrvxn24rv" path="res://Assets/Audio/Inventory_SFX_Pack/Inventory_SFX/Managing/Item_Pick.wav" id="2_gxrv3"]
 [ext_resource type="AudioStream" uid="uid://ghs5gvshwdxi" path="res://Assets/Audio/Retro_RPG_Fight_Effects/37_Block_01.wav" id="4_8ytuq"]
@@ -18,7 +18,7 @@ ps_factor = 0.5
 secondary_scaling = 0
 ss_factor = 1.0
 element_type = 0
-icon = ExtResource("1_031h3")
+icon = ExtResource("1_gxrv3")
 title = "Shields Up"
 tooltip_text = "Raise your shield, increasing armor by (10 + 50% CON)."
 sound = ExtResource("4_8ytuq")

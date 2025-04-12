@@ -1,5 +1,9 @@
 extends Node2D
 
+const VICTORY_THEME := preload("res://Assets/Audio/Jingles_Fanfares_SFX_Pack/Jingles_and_Fanfares/Battle/Battle_Victory_Fanfare.wav")
+const DEFEAT_THEME := preload("res://Assets/Audio/Jingles_Fanfares_SFX_Pack/Jingles_and_Fanfares/Battle/Defeat.wav")
+
+
 @export var player_stats: PlayerStats #Only place where character stats needs to be for the rest of the scene
 @export var music: AudioStream
 
@@ -35,6 +39,8 @@ func start_battle(stats: PlayerStats) -> void:
 func _on_enemies_child_order_changed() -> void:
 	if enemy_handler.get_child_count() == 0:
 		EventBus.battle_over_screen_requested.emit("Combat Won!", BattleOverPanel.Type.WIN)
+		MusicPlayer.stop()
+		MusicPlayer.play(VICTORY_THEME)
 
 
 func _on_win_button_pressed() -> void:
@@ -49,3 +55,5 @@ func _on_enemy_turn_ended() -> void:
 func _on_player_died() -> void:
 	await get_tree().create_timer(0.20).timeout # Delay to ensure all SFX, Tweens, and Animations are done
 	EventBus.battle_over_screen_requested.emit("Too Greedy...", BattleOverPanel.Type.LOSE)
+	MusicPlayer.stop()
+	MusicPlayer.play(DEFEAT_THEME)

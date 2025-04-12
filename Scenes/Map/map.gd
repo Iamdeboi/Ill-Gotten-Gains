@@ -1,7 +1,7 @@
 class_name Map
 extends Node2D
 
-const SCROLL_SPEED := 15
+const SCROLL_SPEED := 25
 const MAP_ROOM = preload("res://Scenes/Map/map_room.tscn")
 const MAP_LINE = preload("res://Scenes/Map/map_line.tscn")
 

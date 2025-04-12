@@ -72,6 +72,7 @@ func _setup_event_connections() -> void:
 	shop_button.pressed.connect(_change_view.bind(SHOP_SCENE))
 	treasure_button.pressed.connect(_change_view.bind(TREASURE_ROOM_SCENE))
 
+
 func _on_battle_won() -> void:
 	print("TODO: Conifgure battle_rewards_scene and battle_scene scripts to this one")
 

@@ -4,7 +4,7 @@ extends Node
 const X_DIST := 80 # X Margin for map nodes
 const Y_DIST := 50 # Y Margin for map nodes
 const PLACEMENT_RANDOMNESS := 10 # Trick for making the nodes' placement more organic
-const FLOORS := 15 # Rows
+const FLOORS := 20 # Rows
 const MAP_WIDTH := 7 # Columns
 const PATHS := 6 # Maximum number of paths for the whole map
 const MONSTER_ROOM_WEIGHT := 10.0 
@@ -150,13 +150,23 @@ func _setup_room_types() -> void:
 		if room.next_rooms.size() > 0:
 			room.type = Room.Type.MONSTER
 	
-	# 9th floor is always a treasure room
-	for room: Room in map_data[8]:
+	# 5th floor is always a treasure room
+	for room: Room in map_data[4]:
+		if room.next_rooms.size() > 0:
+			room.type = Room.Type.TREASURE
+	
+	# 10th floor is always a treasure room
+	for room: Room in map_data[9]:
+		if room.next_rooms.size() > 0:
+			room.type = Room.Type.TREASURE
+	
+	# 15th floor is always a treasure room
+	for room: Room in map_data[14]:
 		if room.next_rooms.size() > 0:
 			room.type = Room.Type.TREASURE
 	
 	# Last floor before the boss will always be a campfire (maybe a point of retreat too, as a later project)
-	for room: Room in map_data[13]:
+	for room: Room in map_data[FLOORS - 2]:
 		if room.next_rooms.size() > 0:
 			room.type = Room.Type.CAMPFIRE
 	
@@ -172,11 +182,11 @@ func _set_room_randomly(room_to_set: Room) -> void:
 	var campfire_below_4 := true #No campfires beflow floor 4
 	var consecutive_campfire := true
 	var consecutive_shop := true
-	var campfire_on_13 := 13 # No campfires right before the boss-room prep campfire (assigned earlier)
+	var campfire_on_last_room := int(FLOORS - 2) # No campfires right before the boss-room prep campfire (assigned earlier)
 	
 	var type_candidate: Room.Type
 	
-	while campfire_below_4 or consecutive_campfire or consecutive_shop or campfire_on_13:
+	while campfire_below_4 or consecutive_campfire or consecutive_shop or campfire_on_last_room:
 		type_candidate = _get_random_room_type_by_weight()
 		
 		var is_campfire := type_candidate == Room.Type.CAMPFIRE
@@ -187,7 +197,7 @@ func _set_room_randomly(room_to_set: Room) -> void:
 		campfire_below_4 = is_campfire and room_to_set.row < 3 # Only true if the room is a campfire, and is below row index 3
 		consecutive_campfire = is_campfire and has_campfire_parent
 		consecutive_shop = is_shop and has_shop_parent
-		campfire_on_13 = is_campfire and room_to_set.row == 12
+		campfire_on_last_room = is_campfire and room_to_set.row == int(FLOORS-3)
 	
 	room_to_set.type = type_candidate
 
