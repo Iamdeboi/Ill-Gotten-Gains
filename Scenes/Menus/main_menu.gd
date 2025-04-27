@@ -1,6 +1,7 @@
 class_name MainMenu
 extends Control
 
+# TODO: Update character selection screen with animations and details on starting abilities, attributes, etc.
 
 @onready var start_level = preload("res://Scenes/Battle/battle_scene.tscn")
 const CHAR_SELECT_SCENE := preload("res://Scenes/Menus/character_selection.tscn")

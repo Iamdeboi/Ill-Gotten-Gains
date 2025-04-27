@@ -20,7 +20,7 @@ anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -0.00012207
-color = Color(0.28173, 0.29942, 0.40469, 1)
+color = Color(0.301312, 0.274291, 0.476021, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
