@@ -51,8 +51,8 @@ func create_instance() -> Resource:
 	instance.shadow_vuln = starting_shadow_vuln
 	instance.holy_vuln = starting_holy_vuln
 	# AbilityList Instances and Setup
-	instance.known_abilities = instance.starting_abilities.duplicate()
-	instance.prepared_abilities = instance.starting_abilities.duplicate()
+	instance.known_abilities = instance.starting_abilities.duplicate() # All known abilities a player has
+	instance.prepared_abilities = instance.starting_abilities.duplicate() # Abilities found in the hotbar selection, and are able to be used in combat
 	# Action Point Instances + Setup
 	instance.action_points = maximum_action_points
 	instance.reset_action_points()

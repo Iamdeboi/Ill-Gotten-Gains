@@ -1,0 +1,123 @@
+[gd_scene load_steps=4 format=3 uid="uid://bad1g5i0fh84w"]
+
+[ext_resource type="PackedScene" uid="uid://ipwgkmpww5uh" path="res://Scenes/GUI/ability_menu_ui.tscn" id="1_ktcea"]
+[ext_resource type="Theme" uid="uid://b845uab77o0un" path="res://Assets/Themes/GUI_Theme.theme" id="2_hj3ta"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_hj3ta"]
+font_size = 24
+
+[node name="AbilityMenuView" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.509804)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Spellbook"
+label_settings = SubResource("LabelSettings_hj3ta")
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 2
+
+[node name="KnownAbilities" type="GridContainer" parent="MarginContainer/VBoxContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/v_separation = 32
+columns = 8
+
+[node name="AbilityMenuUI" parent="MarginContainer/VBoxContainer/ScrollContainer/KnownAbilities" instance=ExtResource("1_ktcea")]
+layout_mode = 2
+
+[node name="AbilityMenuUI2" parent="MarginContainer/VBoxContainer/ScrollContainer/KnownAbilities" instance=ExtResource("1_ktcea")]
+layout_mode = 2
+
+[node name="AbilityMenuUI3" parent="MarginContainer/VBoxContainer/ScrollContainer/KnownAbilities" instance=ExtResource("1_ktcea")]
+layout_mode = 2
+
+[node name="AbilityMenuUI4" parent="MarginContainer/VBoxContainer/ScrollContainer/KnownAbilities" instance=ExtResource("1_ktcea")]
+layout_mode = 2
+
+[node name="AbilityMenuUI5" parent="MarginContainer/VBoxContainer/ScrollContainer/KnownAbilities" instance=ExtResource("1_ktcea")]
+layout_mode = 2
+
+[node name="AbilityMenuUI6" parent="MarginContainer/VBoxContainer/ScrollContainer/KnownAbilities" instance=ExtResource("1_ktcea")]
+layout_mode = 2
+
+[node name="AbilityMenuUI7" parent="MarginContainer/VBoxContainer/ScrollContainer/KnownAbilities" instance=ExtResource("1_ktcea")]
+layout_mode = 2
+
+[node name="AbilityMenuUI8" parent="MarginContainer/VBoxContainer/ScrollContainer/KnownAbilities" instance=ExtResource("1_ktcea")]
+layout_mode = 2
+
+[node name="AbilityMenuUI9" parent="MarginContainer/VBoxContainer/ScrollContainer/KnownAbilities" instance=ExtResource("1_ktcea")]
+layout_mode = 2
+
+[node name="AbilityMenuUI10" parent="MarginContainer/VBoxContainer/ScrollContainer/KnownAbilities" instance=ExtResource("1_ktcea")]
+layout_mode = 2
+
+[node name="AbilityMenuUI11" parent="MarginContainer/VBoxContainer/ScrollContainer/KnownAbilities" instance=ExtResource("1_ktcea")]
+layout_mode = 2
+
+[node name="AbilityMenuUI12" parent="MarginContainer/VBoxContainer/ScrollContainer/KnownAbilities" instance=ExtResource("1_ktcea")]
+layout_mode = 2
+
+[node name="AbilityMenuUI13" parent="MarginContainer/VBoxContainer/ScrollContainer/KnownAbilities" instance=ExtResource("1_ktcea")]
+layout_mode = 2
+
+[node name="AbilityMenuUI14" parent="MarginContainer/VBoxContainer/ScrollContainer/KnownAbilities" instance=ExtResource("1_ktcea")]
+layout_mode = 2
+
+[node name="AbilityMenuUI15" parent="MarginContainer/VBoxContainer/ScrollContainer/KnownAbilities" instance=ExtResource("1_ktcea")]
+layout_mode = 2
+
+[node name="AbilityMenuUI16" parent="MarginContainer/VBoxContainer/ScrollContainer/KnownAbilities" instance=ExtResource("1_ktcea")]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -86.0
+offset_top = 25.0
+offset_right = -22.0
+offset_bottom = 57.0
+grow_horizontal = 0
+theme = ExtResource("2_hj3ta")
+text = "Back"

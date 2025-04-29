@@ -13,7 +13,6 @@ const THIEF_STATS := preload("res://Resources/Classes/Thief/thief_stats.tres")
 var current_character: PlayerStats : set = set_current_character
 
 func _ready() -> void:
-	set_current_character(WARRIOR_STATS)
 	start_run_button.disabled = true
 
 func set_current_character(new_character: PlayerStats) -> void:

@@ -76,7 +76,7 @@ func _set_ability(value: Ability) -> void:
 		ability.CostType.GOLD:
 			cost.add_theme_color_override("font_color", Color.GOLD)
 	
-	match ability.ability_type:
+	match ability.ability_type: # Set the background of the ability for simple readability for its function
 		ability.AbilityType.ATTACK:
 			background.texture = ATTACK_SLOT_BG
 		ability.AbilityType.DEFENSE:
