@@ -20,7 +20,12 @@ ss_factor = 1.0
 element_type = 1
 icon = ExtResource("1_p5oua")
 title = "Cleave Through"
-tooltip_text = "Carve through all enemies, dealing (20 + 150% STR) Physical damage to all targets."
+tooltip_text = "Carve through all enemies, dealing [color=firebrick]20 + 150% STR[/color] [color=slate_gray]Physical[/color] damage to all targets.
+
+Ability Type: [color=firebrick]Attack[/color]
+
+Cost: [color=salmon]10 HP[/color]
+"
 sound = ExtResource("3_5mtpc")
 pickup_audio = ExtResource("2_p5oua")
 metadata/_custom_type_script = "uid://smcmjjy50miu"

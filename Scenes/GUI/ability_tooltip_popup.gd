@@ -12,8 +12,6 @@ func _ready() -> void:
 		ability.queue_free()
 	
 	hide_tooltip()
-	await get_tree().create_timer(3.0).timeout
-	show_tooltip(preload("res://Resources/Classes/Warrior/Abilities/slash.tres"))
 
 
 func show_tooltip(ability: Ability) -> void:

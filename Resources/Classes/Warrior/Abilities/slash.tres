@@ -20,7 +20,11 @@ ss_factor = 1.0
 element_type = 0
 icon = ExtResource("1_tcimh")
 title = "Slash"
-tooltip_text = "Slash your enemy, dealing (5 + 50% STR) neutral damage."
+tooltip_text = "Slash your enemy, dealing [color=firebrick]5 + 50% STR[/color] neutral damage.
+
+Ability Type: [color=firebrick]Attack[/color]
+
+Cost: None"
 sound = ExtResource("4_tcimh")
 pickup_audio = ExtResource("2_tcimh")
 metadata/_custom_type_script = "uid://smcmjjy50miu"

@@ -15,7 +15,6 @@ func start_battle(player_stats: PlayerStats) -> void:
 	set_up_hotbar(player.prepared_abilities.abilities.size())
 	player.armor = player.starting_armor # At combat start, replenish your armor equal to your starting_armor variable + additional_armor from equipment (TODO)
 	
-	
 	start_turn()
 
 

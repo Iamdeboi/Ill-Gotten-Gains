@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ipwgkmpww5uh"]
+[gd_scene load_steps=5 format=3 uid="uid://ipwgkmpww5uh"]
 
 [ext_resource type="Script" uid="uid://drjo2h507h7rf" path="res://Scenes/GUI/ability_menu_ui.gd" id="1_j6jq0"]
 [ext_resource type="Resource" uid="uid://b6034lga1hc4g" path="res://Resources/Classes/Warrior/Abilities/slash.tres" id="2_6x41t"]
 [ext_resource type="Texture2D" uid="uid://bfvi02kojsa00" path="res://Assets/art/tile_0103.png" id="2_e1h2s"]
+[ext_resource type="Texture2D" uid="uid://dsrevh80am58g" path="res://Assets/art/AttackAbilityIcon.png" id="3_6krt8"]
 
 [node name="AbilityMenuUI" type="CenterContainer"]
 offset_right = 32.0
@@ -23,6 +24,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+texture = ExtResource("3_6krt8")
 
 [node name="Icon" type="TextureRect" parent="Visuals"]
 custom_minimum_size = Vector2(12, 12)

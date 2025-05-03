@@ -5,7 +5,7 @@ extends Resource
 
 signal ability_list_size_changed(ability_amount)
 
-@export var abilities : Array[Ability] = []
+@export var abilities: Array[Ability] = []
 
 func empty() -> bool:
 	return abilities.is_empty()

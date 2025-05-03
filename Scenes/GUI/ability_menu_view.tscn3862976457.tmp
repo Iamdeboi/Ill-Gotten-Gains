@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bad1g5i0fh84w"]
+[gd_scene load_steps=7 format=3 uid="uid://bad1g5i0fh84w"]
 
 [ext_resource type="PackedScene" uid="uid://ipwgkmpww5uh" path="res://Scenes/GUI/ability_menu_ui.tscn" id="1_ktcea"]
 [ext_resource type="Script" uid="uid://bsd0qfj50du7w" path="res://Scenes/GUI/ability_menu_view.gd" id="1_rncw5"]
+[ext_resource type="Resource" uid="uid://bvh6g13h4j7yv" path="res://Resources/Classes/Warrior/warrior_starting_abilities.tres" id="2_h8s3k"]
 [ext_resource type="Theme" uid="uid://b845uab77o0un" path="res://Assets/Themes/GUI_Theme.theme" id="2_hj3ta"]
 [ext_resource type="PackedScene" uid="uid://du4wficbqnycu" path="res://Scenes/GUI/ability_tooltip_popup.tscn" id="4_h8s3k"]
 
@@ -16,6 +17,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rncw5")
+ability_list = ExtResource("2_h8s3k")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1

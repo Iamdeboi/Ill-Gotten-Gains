@@ -20,7 +20,12 @@ ss_factor = 1.0
 element_type = 0
 icon = ExtResource("1_gxrv3")
 title = "Shields Up"
-tooltip_text = "Raise your shield, increasing armor by (10 + 50% CON)."
+tooltip_text = "Raise your shield, increasing armor by [color=blue]10 + 50% CON[/color].
+
+Ability Type: [color=blue]Defense[/color]
+
+Cost: None
+"
 sound = ExtResource("4_8ytuq")
 pickup_audio = ExtResource("2_gxrv3")
 metadata/_custom_type_script = "uid://smcmjjy50miu"

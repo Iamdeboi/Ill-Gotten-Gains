@@ -27,6 +27,7 @@ func _ready() -> void:
 	EventBus.player_died.connect(_on_player_died)
 	
 	start_battle(new_stats)
+	player.player_stats_ui.update_ability_view_ui(new_stats)
 
 
 func start_battle(stats: PlayerStats) -> void:
@@ -41,10 +42,6 @@ func _on_enemies_child_order_changed() -> void:
 		EventBus.battle_over_screen_requested.emit("Combat Won!", BattleOverPanel.Type.WIN)
 		MusicPlayer.stop()
 		MusicPlayer.play(VICTORY_THEME)
-
-
-func _on_win_button_pressed() -> void:
-	EventBus.battle_won.emit()
 
 
 func _on_enemy_turn_ended() -> void:

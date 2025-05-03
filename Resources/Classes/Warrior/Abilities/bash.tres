@@ -21,7 +21,11 @@ ss_factor = 1.0
 element_type = 1
 icon = ExtResource("2_qv5j5")
 title = "Bash"
-tooltip_text = "Whack an enemy on the head, dealing (15 plus 50% STR) Physical damage and inflicting 2 Weakness."
+tooltip_text = "Whack an enemy on the head, dealing [color=firebrick]15 + 50% STR[/color] [color=slate_gray]Physical[/color] damage and inflicting 2 Weakness.
+
+Ability Type: [color=firebrick]Attack[/color]
+
+Cost: [color=salmon]10 HP[/color]"
 sound = ExtResource("5_qv5j5")
 pickup_audio = ExtResource("2_cq6gj")
 aiming_audio = ExtResource("1_qv5j5")
