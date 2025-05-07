@@ -10,7 +10,7 @@ const TREASURE_ROOM_SCENE := preload("res://Scenes/TreasureRoom/treasure_room.ts
 @export var run_startup: RunStartup
 @onready var map: Map = $Map
 @onready var current_view: Node = $CurrentView
-
+@onready var gold_ui: GoldUI = %GoldUI
 @onready var top_bar_spell_book_button: SpellbookButton = %TopBarSpellBookButton
 @onready var spellbook_view: AbilityMenuView = %SpellbookView
 @onready var map_button: Button = %MapButton
@@ -20,6 +20,7 @@ const TREASURE_ROOM_SCENE := preload("res://Scenes/TreasureRoom/treasure_room.ts
 @onready var rewards_button: Button = %RewardsButton
 @onready var campfire_button: Button = %CampfireButton
 
+var run_stats: RunStats
 var character: PlayerStats
 
 
@@ -36,6 +37,8 @@ func _ready() -> void:
 
 
 func _start_run() -> void:
+	run_stats = RunStats.new()
+	
 	_setup_event_connections()
 	_setup_top_bar()
 	map.generate_new_map()
@@ -77,6 +80,7 @@ func _setup_event_connections() -> void:
 
 
 func _setup_top_bar():
+	gold_ui.run_stats = run_stats
 	top_bar_spell_book_button.ability_list = character.known_abilities
 	spellbook_view.ability_list = character.known_abilities
 	top_bar_spell_book_button.pressed.connect(spellbook_view.show_current_view.bind("Spellbook"))

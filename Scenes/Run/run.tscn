@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6s6sqsv00wkw"]
+[gd_scene load_steps=9 format=3 uid="uid://b6s6sqsv00wkw"]
 
 [ext_resource type="Script" uid="uid://c56iaajfhugxm" path="res://Scenes/Run/run.gd" id="1_m8kbj"]
 [ext_resource type="Resource" uid="uid://c2yni6jomw66r" path="res://Scenes/Run/run_startup.tres" id="2_7g7cm"]
 [ext_resource type="PackedScene" uid="uid://do6vp5o7wugt" path="res://Scenes/Map/map.tscn" id="2_q1vqy"]
 [ext_resource type="Theme" uid="uid://bxj3jchl1trm8" path="res://Assets/Themes/default.tres" id="3_xspjj"]
+[ext_resource type="PackedScene" uid="uid://b0ogpq1vvud04" path="res://Scenes/GUI/gold_ui.tscn" id="5_3lri4"]
 [ext_resource type="PackedScene" uid="uid://cbe3k3gxc4bnu" path="res://Scenes/GUI/top_bar_spell_book.tscn" id="5_vqvxu"]
 [ext_resource type="Script" uid="uid://buymp1p7fy8uk" path="res://Scenes/GUI/Player/Components/spell_book_button.gd" id="6_73a50"]
 [ext_resource type="PackedScene" uid="uid://bad1g5i0fh84w" path="res://Scenes/GUI/ability_menu_view.tscn" id="7_3lri4"]
@@ -75,6 +76,10 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 16.0
 grow_horizontal = 2
+
+[node name="GoldUI" parent="TopBarUI/TopBarElements" instance=ExtResource("5_3lri4")]
+unique_name_in_owner = true
+layout_mode = 2
 
 [node name="Placeholder" type="Control" parent="TopBarUI/TopBarElements"]
 layout_mode = 2

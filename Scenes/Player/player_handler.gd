@@ -1,7 +1,7 @@
 class_name PlayerHandler
 extends Node
 
-const HOTBAR_PLACEMENT_INTERVAL := 0.15
+const HOTBAR_PLACEMENT_INTERVAL := 0.00
 
 
 @export var ability_container: AbilityContainer
