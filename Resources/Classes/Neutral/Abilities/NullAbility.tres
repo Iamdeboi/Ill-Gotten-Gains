@@ -1,0 +1,22 @@
+[gd_resource type="Resource" load_steps=3 format=3 uid="uid://oghuqyhqsv43"]
+
+[ext_resource type="Texture2D" uid="uid://bxa8pkakcodgw" path="res://Assets/art/tile_0082.png" id="1_obf3p"]
+[ext_resource type="Script" uid="uid://dtas1vvts78d2" path="res://Resources/Classes/Neutral/Abilities/null_ability.gd" id="2_xofc4"]
+
+[resource]
+script = ExtResource("2_xofc4")
+id = ""
+ability_type = 0
+target = 0
+cost = 0
+cost_type = 0
+cooldown = 0
+primary_scaling = 0
+ps_factor = 1.0
+secondary_scaling = 0
+ss_factor = 1.0
+element_type = 0
+icon = ExtResource("1_obf3p")
+title = "Null Barrel"
+tooltip_text = "This is a null-ability, cannot be casted"
+metadata/_custom_type_script = "uid://smcmjjy50miu"

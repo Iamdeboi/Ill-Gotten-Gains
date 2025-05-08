@@ -1,22 +1,31 @@
-[gd_resource type="Resource" script_class="PlayerStats" load_steps=3 format=3 uid="uid://bwpvvr63u1g71"]
+[gd_resource type="Resource" script_class="PlayerStats" load_steps=7 format=3 uid="uid://bwpvvr63u1g71"]
 
 [ext_resource type="Script" uid="uid://xfic0g5mx1j7" path="res://Resources/Templates/StatMakers/player_stats.gd" id="1_lpqxb"]
 [ext_resource type="Texture2D" uid="uid://qn173bqpjgpd" path="res://Assets/art/IGG_Gromm.png" id="2_r3rt3"]
+[ext_resource type="Script" uid="uid://smcmjjy50miu" path="res://Resources/Templates/Abilities/ability.gd" id="3_mj5fu"]
+[ext_resource type="Resource" uid="uid://b6034lga1hc4g" path="res://Resources/Classes/Warrior/Abilities/slash.tres" id="4_3g8ul"]
+[ext_resource type="Script" uid="uid://dj0e7vxllw5u7" path="res://Scenes/AbilityUI/ability_list.gd" id="4_eelmo"]
+
+[sub_resource type="Resource" id="Resource_3g8ul"]
+script = ExtResource("4_eelmo")
+abilities = Array[ExtResource("3_mj5fu")]([ExtResource("4_3g8ul"), ExtResource("4_3g8ul"), ExtResource("4_3g8ul"), ExtResource("4_3g8ul"), null, ExtResource("4_3g8ul"), ExtResource("4_3g8ul"), ExtResource("4_3g8ul"), ExtResource("4_3g8ul"), ExtResource("4_3g8ul")])
+metadata/_custom_type_script = "uid://dj0e7vxllw5u7"
 
 [resource]
 script = ExtResource("1_lpqxb")
 maximum_action_points = 3
+starting_abilities = SubResource("Resource_3g8ul")
+max_health = 100
+starting_armor = 20
+max_mana = 20
+name = "Gromm Briarroots"
+sprite = ExtResource("2_r3rt3")
 start_strength = 5
 start_dexterity = 10
 start_intellect = 5
 start_wisdom = 8
 start_charisma = 6
 start_constitution = 10
-max_health = 100
-starting_armor = 20
-max_mana = 20
-name = "Gromm Briarroots"
-sprite = ExtResource("2_r3rt3")
 starting_physical_vuln = 1.0
 starting_fire_vuln = 1.0
 starting_frost_vuln = 1.0

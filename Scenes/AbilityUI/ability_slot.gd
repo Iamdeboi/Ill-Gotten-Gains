@@ -3,17 +3,10 @@ extends Control
 
 signal reparent_requested(which_ability: AbilitySlot)
 
-const ATTACK_SLOT_BG := preload("res://Assets/art/AttackAbilityIcon.png")
-const DEFENSE_SLOT_BG := preload("res://Assets/art/DefenseAbilityIcon.png")
-const BUFF_SLOT_BG := preload("res://Assets/art/BuffAbilityIcon.png")
-const DEBUFF_SLOT_BG := preload("res://Assets/art/DebuffAbilityIcon.png")
-
 @export var ability: Ability: set = _set_ability
 @export var player_stats: PlayerStats : set = _set_player_stats
 
-@onready var background: TextureRect = $Background
-@onready var cost: Label = $CostCount
-@onready var icon: TextureRect = $Icon
+@onready var ability_visuals: AbilityVisuals = $AbilityVisuals
 @onready var drop_point_detector: Area2D = $DropPointDetector
 @onready var ability_state_machine: AbilityStateMachine = $AbilityStateMachine as AbilityStateMachine
 @onready var targets: Array[Node] = []
@@ -63,46 +56,23 @@ func _set_ability(value: Ability) -> void:
 		await ready
 	
 	ability = value
-	
-	if ability.cost == 0: # Dont show a cost number if it already equals nothing
-		cost.hide()
-	cost.text = str(ability.cost)
-	
-	match ability.cost_type: # Color the cost number to quickly show if it costs MANA, HEALTH, or GOLD
-		ability.CostType.MANA:
-			cost.add_theme_color_override("font_color", Color.DARK_TURQUOISE)
-		ability.CostType.HEALTH:
-			cost.add_theme_color_override("font_color", Color.SALMON)
-		ability.CostType.GOLD:
-			cost.add_theme_color_override("font_color", Color.GOLD)
-	
-	match ability.ability_type: # Set the background of the ability for simple readability for its function
-		ability.AbilityType.ATTACK:
-			background.texture = ATTACK_SLOT_BG
-		ability.AbilityType.DEFENSE:
-			background.texture = DEFENSE_SLOT_BG
-		ability.AbilityType.BUFF:
-			background.texture = BUFF_SLOT_BG
-		ability.AbilityType.DEBUFF:
-			background.texture = DEBUFF_SLOT_BG
-
-	icon.texture = ability.icon
+	ability_visuals.set_ability(ability)
 
 func _set_playable(value: bool) -> void:
 	playable = value
 	if not playable:
-		cost.add_theme_color_override("font_color", Color.RED)
-		icon.modulate = Color(1, 1, 1, 0.5) #Adds transparancy to the ability slot
+		ability_visuals.cost_count.add_theme_color_override("font_color", Color.RED)
+		ability_visuals.icon.modulate = Color(1, 1, 1, 0.5) #Adds transparancy to the ability slot
 	else: # Reset font_color based on their disabled status, and cost_type color
-		cost.remove_theme_color_override("font_color")
-		icon.modulate = Color(1, 1, 1, 1) #Default look
+		ability_visuals.cost_count.remove_theme_color_override("font_color")
+		ability_visuals.icon.modulate = Color(1, 1, 1, 1) #Default look
 		match ability.cost_type: # Color the cost number to quickly show if it costs MANA, HEALTH, or GOLD
 			ability.CostType.MANA:
-				cost.add_theme_color_override("font_color", Color.DARK_TURQUOISE)
+				ability_visuals.cost_count.add_theme_color_override("font_color", Color.DARK_TURQUOISE)
 			ability.CostType.HEALTH:
-				cost.add_theme_color_override("font_color", Color.SALMON)
+				ability_visuals.cost_count.add_theme_color_override("font_color", Color.SALMON)
 			ability.CostType.GOLD:
-				cost.add_theme_color_override("font_color", Color.GOLD)
+				ability_visuals.cost_count.add_theme_color_override("font_color", Color.GOLD)
 
 
 func _set_player_stats(value: PlayerStats) -> void:

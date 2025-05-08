@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bn5xivf7rao85" path="res://Scenes/Battle/ability_container.gd" id="1_osr0m"]
 
 [node name="AbilityContainer" type="GridContainer"]
+top_level = true
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0

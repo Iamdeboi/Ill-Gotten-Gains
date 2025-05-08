@@ -1,0 +1,220 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvjeyni8ig2or"]
+
+[ext_resource type="Script" uid="uid://cpd5r44n5mg6t" path="res://Scenes/GUI/ability_hotbar.gd" id="1_a0ytb"]
+[ext_resource type="Resource" uid="uid://bwpvvr63u1g71" path="res://Resources/Classes/Player/sample_player.tres" id="2_2wd7l"]
+[ext_resource type="Theme" uid="uid://b845uab77o0un" path="res://Assets/Themes/GUI_Theme.theme" id="3_34k5e"]
+[ext_resource type="Texture2D" uid="uid://c8h3ci38ndvpj" path="res://Assets/Themes/9patchUITwo.png" id="4_p7ulm"]
+[ext_resource type="Texture2D" uid="uid://cy8pnq7fmoqtg" path="res://Assets/Themes/9patchUIOne.png" id="5_ppdq7"]
+
+[node name="AbilityHotbar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a0ytb")
+player_stats = ExtResource("2_2wd7l")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -98.0
+offset_top = -84.0
+offset_right = 98.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel" type="Panel" parent="HBoxContainer"]
+custom_minimum_size = Vector2(176, 68)
+layout_mode = 2
+theme = ExtResource("3_34k5e")
+
+[node name="HotbarOne" type="GridContainer" parent="HBoxContainer/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/Panel/HotbarOne"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer/Panel/HotbarOne"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="PanelContainer3" type="PanelContainer" parent="HBoxContainer/Panel/HotbarOne"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="PanelContainer4" type="PanelContainer" parent="HBoxContainer/Panel/HotbarOne"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="PanelContainer5" type="PanelContainer" parent="HBoxContainer/Panel/HotbarOne"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="PanelContainer6" type="PanelContainer" parent="HBoxContainer/Panel/HotbarOne"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="PanelContainer7" type="PanelContainer" parent="HBoxContainer/Panel/HotbarOne"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="PanelContainer8" type="PanelContainer" parent="HBoxContainer/Panel/HotbarOne"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="PanelContainer9" type="PanelContainer" parent="HBoxContainer/Panel/HotbarOne"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="PanelContainer10" type="PanelContainer" parent="HBoxContainer/Panel/HotbarOne"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="HotbarTwo" type="GridContainer" parent="HBoxContainer/Panel"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/Panel/HotbarTwo"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer/Panel/HotbarTwo"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="PanelContainer3" type="PanelContainer" parent="HBoxContainer/Panel/HotbarTwo"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="PanelContainer4" type="PanelContainer" parent="HBoxContainer/Panel/HotbarTwo"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="PanelContainer5" type="PanelContainer" parent="HBoxContainer/Panel/HotbarTwo"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="PanelContainer6" type="PanelContainer" parent="HBoxContainer/Panel/HotbarTwo"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="PanelContainer7" type="PanelContainer" parent="HBoxContainer/Panel/HotbarTwo"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="PanelContainer8" type="PanelContainer" parent="HBoxContainer/Panel/HotbarTwo"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="PanelContainer9" type="PanelContainer" parent="HBoxContainer/Panel/HotbarTwo"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="PanelContainer10" type="PanelContainer" parent="HBoxContainer/Panel/HotbarTwo"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="HotbarThree" type="GridContainer" parent="HBoxContainer/Panel"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer/Panel/HotbarThree"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="PanelContainer2" type="PanelContainer" parent="HBoxContainer/Panel/HotbarThree"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="PanelContainer3" type="PanelContainer" parent="HBoxContainer/Panel/HotbarThree"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="PanelContainer4" type="PanelContainer" parent="HBoxContainer/Panel/HotbarThree"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="PanelContainer5" type="PanelContainer" parent="HBoxContainer/Panel/HotbarThree"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="PanelContainer6" type="PanelContainer" parent="HBoxContainer/Panel/HotbarThree"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="PanelContainer7" type="PanelContainer" parent="HBoxContainer/Panel/HotbarThree"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="PanelContainer8" type="PanelContainer" parent="HBoxContainer/Panel/HotbarThree"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="PanelContainer9" type="PanelContainer" parent="HBoxContainer/Panel/HotbarThree"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="PanelContainer10" type="PanelContainer" parent="HBoxContainer/Panel/HotbarThree"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="HotbarOneButton" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("4_p7ulm")
+texture_pressed = ExtResource("5_ppdq7")
+stretch_mode = 5
+
+[node name="HotbarTwoButton" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("4_p7ulm")
+texture_pressed = ExtResource("5_ppdq7")
+stretch_mode = 5
+
+[node name="HotbarThreeButton" type="TextureButton" parent="HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture_normal = ExtResource("4_p7ulm")
+texture_pressed = ExtResource("5_ppdq7")
+stretch_mode = 5
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HotbarOneButton" to="." method="_on_hotbar_one_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HotbarTwoButton" to="." method="_on_hotbar_two_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/HotbarThreeButton" to="." method="_on_hotbar_three_button_pressed"]
