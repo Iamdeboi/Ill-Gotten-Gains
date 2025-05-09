@@ -4,18 +4,19 @@
 
 [node name="AbilityContainer" type="GridContainer"]
 top_level = true
+custom_minimum_size = Vector2(176, 68)
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -88.0
-offset_top = -72.0
-offset_right = 88.0
-offset_bottom = -4.0
+offset_left = -320.0
+offset_top = -360.0
+offset_right = -144.0
+offset_bottom = -292.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
-size_flags_vertical = 4
+size_flags_vertical = 10
 columns = 5
 script = ExtResource("1_osr0m")

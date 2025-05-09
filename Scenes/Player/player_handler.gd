@@ -38,8 +38,6 @@ func end_turn() -> void:
 func set_up_hotbar(amount: int) -> void:
 	var tween := create_tween()
 	for i in range(amount):
-		if i > 9:
-			break
 		tween.tween_callback(set_up_ability_slot)
 		tween.tween_interval(HOTBAR_PLACEMENT_INTERVAL)
 		

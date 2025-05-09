@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://beq6os1qypmat"]
+[gd_scene load_steps=22 format=3 uid="uid://beq6os1qypmat"]
 
 [ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://Assets/art/background.png" id="1_4nlbu"]
 [ext_resource type="Script" uid="uid://i2lqgiy6iiwu" path="res://Scenes/Battle/battle_scene.gd" id="1_lcoea"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://brnkqcr6gd3j8" path="res://Scenes/Battle/ability_container.tscn" id="9_02hj4"]
 [ext_resource type="Resource" uid="uid://b400i7oa1687j" path="res://Resources/Enemies/Bat/bat_enemy.tres" id="9_n1ain"]
 [ext_resource type="Resource" uid="uid://ls7ennmh2elu" path="res://Resources/Classes/Warrior/warrior_stats.tres" id="12_ik5sk"]
-[ext_resource type="Theme" uid="uid://bxj3jchl1trm8" path="res://Assets/Themes/default.tres" id="13_4pmf7"]
 [ext_resource type="Texture2D" uid="uid://3irjme3yj00b" path="res://Assets/Themes/ButtonLayoutDraft1.png" id="13_36cr5"]
 [ext_resource type="PackedScene" uid="uid://dujeyjg48m3ys" path="res://Scenes/GUI/Player/Components/action_point_ui.tscn" id="15_ik5sk"]
 [ext_resource type="PackedScene" uid="uid://cgx6m3nsu4lnh" path="res://Scenes/GUI/Misc/battle_over_panel.tscn" id="16_sufya"]
@@ -83,54 +82,16 @@ position = Vector2(449, 150)
 scale = Vector2(2, 2)
 stats = ExtResource("9_n1ain")
 
-[node name="PlayerHandler" type="Node" parent="." node_paths=PackedStringArray("ability_container")]
+[node name="PlayerHandler" type="Node" parent="."]
 script = ExtResource("7_n1ain")
-ability_container = NodePath("../BattleUI/HotbarUI/AbilityContainer")
 
 [node name="AbilityTargetSelector" parent="." instance=ExtResource("7_5mge4")]
 
 [node name="BattleUI" type="CanvasLayer" parent="." groups=["UI_Layer"]]
 script = ExtResource("8_sufya")
 
-[node name="HotbarUI" type="Control" parent="BattleUI"]
-layout_mode = 3
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -190.0
-offset_top = -76.0
-offset_right = 180.0
-offset_bottom = -8.0
-grow_horizontal = 2
-grow_vertical = 0
-size_flags_vertical = 3
-
-[node name="Panel" type="PanelContainer" parent="BattleUI/HotbarUI"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 8.0
-offset_bottom = 4.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("13_4pmf7")
-
-[node name="AbilityContainer" parent="BattleUI/HotbarUI" instance=ExtResource("9_02hj4")]
+[node name="AbilityContainer" parent="BattleUI" instance=ExtResource("9_02hj4")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(362, 60)
-layout_mode = 1
-anchors_preset = 8
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = -182.0
-offset_top = 110.0
-offset_right = 180.0
-offset_bottom = 170.0
-grow_vertical = 2
-columns = 10
 
 [node name="ActionPointUI" parent="BattleUI" instance=ExtResource("15_ik5sk")]
 unique_name_in_owner = true
@@ -138,14 +99,15 @@ anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
-offset_left = -236.0
-offset_top = -107.0
-offset_right = -198.0
-offset_bottom = -83.0
+offset_left = -182.0
+offset_top = -65.0
+offset_right = -145.0
+offset_bottom = -41.0
 grow_vertical = 0
+metadata/_edit_use_anchors_ = true
 
 [node name="Tooltip" parent="BattleUI" instance=ExtResource("7_cbixj")]
-offset_left = -130.0
+offset_left = -139.0
 offset_top = -129.0
 
 [node name="EndTurnButton" type="TextureButton" parent="BattleUI"]
@@ -153,10 +115,10 @@ unique_name_in_owner = true
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
-offset_top = -122.0
-offset_right = 34.0
-offset_bottom = -106.0
+offset_left = 125.0
+offset_top = -39.0
+offset_right = 157.0
+offset_bottom = -23.0
 grow_vertical = 0
 scale = Vector2(2, 2)
 disabled = true
@@ -180,6 +142,12 @@ theme_override_font_sizes/font_size = 6
 text = "End Turn"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Control" type="Control" parent="BattleUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 176.0
+offset_bottom = 68.0
 
 [node name="BattleOverLayer" type="CanvasLayer" parent="."]
 

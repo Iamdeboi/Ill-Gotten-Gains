@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://bsaiddrax3uph"]
+
+[ext_resource type="Script" uid="uid://csxmvl7d0vjsn" path="res://Scenes/GUI/hotbar_ui.gd" id="1_e1nlv"]
+[ext_resource type="PackedScene" uid="uid://brnkqcr6gd3j8" path="res://Scenes/Battle/ability_container.tscn" id="1_h08f5"]
+[ext_resource type="Texture2D" uid="uid://cy8pnq7fmoqtg" path="res://Assets/Themes/9patchUIOne.png" id="1_mupio"]
+
+[node name="HotbarUI" type="Control"]
+custom_minimum_size = Vector2(180, 80)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -460.0
+offset_bottom = -280.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e1nlv")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_mupio")
+region_rect = Rect2(0, 0, 15, 15)
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
+layout_mode = 2
+
+[node name="AbilityContainer" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_h08f5")]
+unique_name_in_owner = true
+layout_mode = 2

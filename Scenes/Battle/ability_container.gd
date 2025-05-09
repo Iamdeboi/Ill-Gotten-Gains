@@ -6,6 +6,7 @@ extends GridContainer
 
 @export var player_stats: PlayerStats
 
+@onready var ability_container: AbilityContainer = %AbilityContainer
 @onready var ability_slot := preload("res://Scenes/AbilityUI/ability_slot.tscn")
 
 var abilities_played_this_turn := 0
