@@ -1,0 +1,286 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2vuahaak2f83"]
+
+[ext_resource type="Texture2D" uid="uid://cy8pnq7fmoqtg" path="res://Assets/Themes/9patchUIOne.png" id="1_gwyd1"]
+[ext_resource type="Script" uid="uid://bjp87yuq7nw72" path="res://Scenes/GUI/Inventory/inventory.gd" id="1_j1ywh"]
+[ext_resource type="Theme" uid="uid://b845uab77o0un" path="res://Assets/Themes/GUI_Theme.theme" id="2_j1ywh"]
+[ext_resource type="Script" uid="uid://c2sx5s4ceho4o" path="res://Scenes/GUI/Inventory/inv_slot.gd" id="4_1frgc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1frgc"]
+atlas = ExtResource("1_gwyd1")
+region = Rect2(2, 3, 11, 9)
+
+[node name="Inventory" type="Node2D"]
+script = ExtResource("1_j1ywh")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0.458405, 0.458405, 0.458405, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -150.0
+offset_right = 240.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_1frgc")
+
+[node name="InventorySlots" type="GridContainer" parent="TextureRect"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -236.0
+offset_top = -136.0
+offset_right = -12.0
+offset_bottom = 136.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 5
+
+[node name="InvSlot1" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot2" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot3" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot4" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot5" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot6" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot7" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot8" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot9" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot10" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot11" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot12" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot13" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot14" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot15" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot16" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot17" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot18" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot19" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot20" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot21" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot22" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot23" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot24" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot25" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot26" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot27" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot28" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot29" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")
+
+[node name="InvSlot30" type="Panel" parent="TextureRect/InventorySlots"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_j1ywh")
+script = ExtResource("4_1frgc")

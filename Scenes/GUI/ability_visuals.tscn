@@ -1,16 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://7mar8xfbofgo"]
+[gd_scene load_steps=4 format=3 uid="uid://7mar8xfbofgo"]
 
 [ext_resource type="Script" uid="uid://cgaakx7indaoe" path="res://Scenes/GUI/ability_visuals.gd" id="1_nenju"]
 [ext_resource type="Texture2D" uid="uid://dsrevh80am58g" path="res://Assets/art/AttackAbilityIcon.png" id="1_s008x"]
 [ext_resource type="Texture2D" uid="uid://bfvi02kojsa00" path="res://Assets/art/tile_0103.png" id="2_0ymv0"]
-[ext_resource type="Resource" uid="uid://coapnwodmdehg" path="res://Resources/Classes/Warrior/Abilities/bash.tres" id="2_nenju"]
 
 [node name="AbilityVisuals" type="Control"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_nenju")
-ability = ExtResource("2_nenju")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1

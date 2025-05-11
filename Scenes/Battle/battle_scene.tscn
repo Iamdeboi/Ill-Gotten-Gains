@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://cgx6m3nsu4lnh" path="res://Scenes/GUI/Misc/battle_over_panel.tscn" id="16_sufya"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbixj"]
-size = Vector2(640, 270)
+size = Vector2(640, 238)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6tvrj"]
 atlas = ExtResource("13_36cr5")
@@ -56,7 +56,7 @@ metadata/_edit_lock_ = true
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AbilityDropArea"]
-position = Vector2(320, 135)
+position = Vector2(320, 119)
 shape = SubResource("RectangleShape2D_cbixj")
 
 [node name="Player" parent="." instance=ExtResource("2_lcoea")]

@@ -1,0 +1,39 @@
+{
+	"Iron Sword": {
+		"item_type": "main_hand",
+		"item_strength": 2,
+		"gold_value": 5,
+		"stack_size": 1,
+		"description": "A simple iron sword."
+	},
+	"Weak Mana Potion": {
+		"item_type": "consumable",
+		"restore_mana_val": 20,
+		"gold_value": 1,
+		"stack_size": 5,
+		"description": "A simplistic mana potion. Restores 20 mana on use."
+	},
+	"Iron Buckler": {
+		"item_type": "off_hand",
+		"item_constitution:": 4,
+		"gold_value": 5,
+		"stack_size": 1,
+		"description": "A hefty iron buckler."
+	},
+	"Weak Health Potion": {
+		"item_type": "consumable",
+		"restore_health_val": 30,
+		"gold_value": 1,
+		"stack_size": 5,
+		"description": "A simplistic healing potion. Restores 30 health on use."
+	},
+	"Weak Energy Potion": {
+		"item_type": "consumable",
+		"restore_ap_val": 1,
+		"gold_value": 1,
+		"stack_size": 5,
+		"description": "A refreshing potion. Restores 1 action on use."
+	}
+}
+		
+		
