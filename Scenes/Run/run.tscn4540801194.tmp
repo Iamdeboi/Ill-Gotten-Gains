@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b6s6sqsv00wkw"]
+[gd_scene load_steps=12 format=3 uid="uid://b6s6sqsv00wkw"]
 
 [ext_resource type="Script" uid="uid://c56iaajfhugxm" path="res://Scenes/Run/run.gd" id="1_m8kbj"]
 [ext_resource type="Resource" uid="uid://c2yni6jomw66r" path="res://Scenes/Run/run_startup.tres" id="2_7g7cm"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bad1g5i0fh84w" path="res://Scenes/GUI/ability_menu_view.tscn" id="7_3lri4"]
 [ext_resource type="Script" uid="uid://7by2po2pt085" path="res://Scenes/GUI/top_bar_spell_book.gd" id="7_5riug"]
 [ext_resource type="PackedScene" uid="uid://35xleqyaeykb" path="res://Scenes/GUI/top_bar_bag.tscn" id="9_5riug"]
+[ext_resource type="Script" uid="uid://f4l3vgar3g40" path="res://Scenes/GUI/top_bar_bag.gd" id="9_r6wr3"]
 [ext_resource type="PackedScene" uid="uid://b8xuri88urynr" path="res://Scenes/GUI/inventory_view.tscn" id="10_vwusp"]
 
 [node name="Run" type="Node"]
@@ -95,17 +96,15 @@ script = ExtResource("7_5riug")
 [node name="TopBarBag" parent="TopBarUI/TopBarElements" instance=ExtResource("9_5riug")]
 unique_name_in_owner = true
 layout_mode = 2
+script = ExtResource("9_r6wr3")
 
 [node name="SpellbookLayer" type="CanvasLayer" parent="."]
 layer = 3
 
 [node name="SpellbookView" parent="SpellbookLayer" instance=ExtResource("7_3lri4")]
 unique_name_in_owner = true
-visible = false
 
 [node name="InventoryLayer" type="CanvasLayer" parent="."]
-layer = 3
 
 [node name="InventoryView" parent="InventoryLayer" instance=ExtResource("10_vwusp")]
 unique_name_in_owner = true
-visible = false

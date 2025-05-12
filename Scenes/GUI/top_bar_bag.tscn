@@ -1,25 +1,25 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbe3k3gxc4bnu"]
+[gd_scene load_steps=7 format=3 uid="uid://35xleqyaeykb"]
 
-[ext_resource type="Texture2D" uid="uid://3irjme3yj00b" path="res://Assets/Themes/ButtonLayoutDraft1.png" id="1_a205s"]
-[ext_resource type="Script" uid="uid://buymp1p7fy8uk" path="res://Scenes/GUI/Player/Components/spell_book_button.gd" id="2_jwsyq"]
+[ext_resource type="Texture2D" uid="uid://3irjme3yj00b" path="res://Assets/Themes/ButtonLayoutDraft1.png" id="1_6r0yl"]
+[ext_resource type="Script" uid="uid://f4l3vgar3g40" path="res://Scenes/GUI/top_bar_bag.gd" id="2_gntue"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jwsyq"]
-atlas = ExtResource("1_a205s")
-region = Rect2(0, 32, 16, 16)
+atlas = ExtResource("1_6r0yl")
+region = Rect2(0, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pd5u1"]
-atlas = ExtResource("1_a205s")
-region = Rect2(16, 32, 16, 16)
+atlas = ExtResource("1_6r0yl")
+region = Rect2(16, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2omyp"]
-atlas = ExtResource("1_a205s")
-region = Rect2(32, 32, 16, 16)
+atlas = ExtResource("1_6r0yl")
+region = Rect2(32, 64, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8ww4g"]
-atlas = ExtResource("1_a205s")
-region = Rect2(48, 32, 16, 16)
+atlas = ExtResource("1_6r0yl")
+region = Rect2(48, 64, 16, 16)
 
-[node name="TopBarSpellBook" type="TextureButton"]
+[node name="TopBarBag" type="TextureButton"]
 custom_minimum_size = Vector2(32, 32)
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,4 +33,4 @@ texture_pressed = SubResource("AtlasTexture_pd5u1")
 texture_hover = SubResource("AtlasTexture_2omyp")
 texture_disabled = SubResource("AtlasTexture_8ww4g")
 stretch_mode = 0
-script = ExtResource("2_jwsyq")
+script = ExtResource("2_gntue")

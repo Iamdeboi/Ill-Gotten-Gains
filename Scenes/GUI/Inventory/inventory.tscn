@@ -25,27 +25,40 @@ offset_right = 240.0
 offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
 texture = SubResource("AtlasTexture_1frgc")
 
-[node name="InventorySlots" type="GridContainer" parent="TextureRect"]
-unique_name_in_owner = true
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
 layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
+anchors_preset = 15
 anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -236.0
-offset_top = -136.0
-offset_right = -12.0
-offset_bottom = 136.0
-grow_horizontal = 0
+anchor_bottom = 1.0
+offset_right = 4.0
+grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="TextureRect/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(232, 284)
+layout_mode = 2
+
+[node name="InventorySlots" type="GridContainer" parent="TextureRect/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(224, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
 theme_override_constants/h_separation = 16
 theme_override_constants/v_separation = 16
 columns = 5
 
-[node name="InvSlot1" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot1" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -53,7 +66,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot2" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot2" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -61,7 +74,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot3" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot3" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -69,7 +82,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot4" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot4" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -77,7 +90,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot5" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot5" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -85,7 +98,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot6" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot6" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -93,7 +106,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot7" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot7" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -101,7 +114,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot8" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot8" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -109,7 +122,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot9" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot9" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -117,7 +130,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot10" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot10" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -125,7 +138,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot11" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot11" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -133,7 +146,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot12" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot12" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -141,7 +154,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot13" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot13" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -149,7 +162,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot14" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot14" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -157,7 +170,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot15" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot15" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -165,7 +178,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot16" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot16" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -173,7 +186,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot17" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot17" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -181,7 +194,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot18" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot18" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -189,7 +202,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot19" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot19" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -197,7 +210,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot20" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot20" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -205,7 +218,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot21" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot21" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -213,7 +226,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot22" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot22" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -221,7 +234,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot23" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot23" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -229,7 +242,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot24" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot24" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -237,7 +250,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot25" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot25" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -245,7 +258,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot26" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot26" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -253,7 +266,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot27" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot27" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -261,7 +274,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot28" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot28" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -269,7 +282,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot29" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot29" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -277,7 +290,7 @@ size_flags_vertical = 4
 theme = ExtResource("2_j1ywh")
 script = ExtResource("4_1frgc")
 
-[node name="InvSlot30" type="Panel" parent="TextureRect/InventorySlots"]
+[node name="InvSlot30" type="Panel" parent="TextureRect/MarginContainer/HBoxContainer/InventorySlots"]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4

@@ -8,7 +8,7 @@
 
 [sub_resource type="Resource" id="Resource_3g8ul"]
 script = ExtResource("4_eelmo")
-abilities = Array[ExtResource("3_mj5fu")]([ExtResource("4_3g8ul"), ExtResource("4_3g8ul"), ExtResource("4_3g8ul"), ExtResource("4_3g8ul"), null, ExtResource("4_3g8ul"), ExtResource("4_3g8ul"), ExtResource("4_3g8ul"), ExtResource("4_3g8ul"), ExtResource("4_3g8ul")])
+abilities = Array[ExtResource("3_mj5fu")]([ExtResource("4_3g8ul"), ExtResource("4_3g8ul"), ExtResource("4_3g8ul"), ExtResource("4_3g8ul"), ExtResource("4_3g8ul"), ExtResource("4_3g8ul"), ExtResource("4_3g8ul"), ExtResource("4_3g8ul"), ExtResource("4_3g8ul")])
 metadata/_custom_type_script = "uid://dj0e7vxllw5u7"
 
 [resource]

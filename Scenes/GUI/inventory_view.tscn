@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8xuri88urynr"]
+
+[ext_resource type="PackedScene" uid="uid://c2vuahaak2f83" path="res://Scenes/GUI/Inventory/inventory.tscn" id="1_bem41"]
+[ext_resource type="Script" uid="uid://bc1suwx6ymteu" path="res://Scenes/GUI/inventory_view.gd" id="1_bogcm"]
+[ext_resource type="Theme" uid="uid://b845uab77o0un" path="res://Assets/Themes/GUI_Theme.theme" id="2_t6cwo"]
+
+[node name="InventoryView" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bogcm")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.509804)
+
+[node name="Inventory" parent="." instance=ExtResource("1_bem41")]
+
+[node name="BackButton" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -70.0
+offset_top = 25.0
+offset_right = -22.0
+offset_bottom = 57.0
+grow_horizontal = 0
+theme = ExtResource("2_t6cwo")
+text = "Back"

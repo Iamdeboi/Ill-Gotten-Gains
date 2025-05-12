@@ -10,9 +10,13 @@ const TREASURE_ROOM_SCENE := preload("res://Scenes/TreasureRoom/treasure_room.ts
 @export var run_startup: RunStartup
 @onready var map: Map = $Map
 @onready var current_view: Node = $CurrentView
+#Top-bar UI
 @onready var gold_ui: GoldUI = %GoldUI
-@onready var top_bar_spell_book_button: SpellbookButton = %TopBarSpellBookButton
+@onready var top_bar_spell_book: TopBarSpellBook = %TopBarSpellBook
+@onready var top_bar_bag: TopBarBag = %TopBarBag
 @onready var spellbook_view: AbilityMenuView = %SpellbookView
+@onready var inventory_view: InventoryView = %InventoryView
+#Debug Buttons
 @onready var map_button: Button = %MapButton
 @onready var battle_button: Button = %BattleButton
 @onready var shop_button: Button = %ShopButton
@@ -81,9 +85,9 @@ func _setup_event_connections() -> void:
 
 func _setup_top_bar():
 	gold_ui.run_stats = run_stats
-	top_bar_spell_book_button.ability_list = character.known_abilities
 	spellbook_view.ability_list = character.known_abilities
-	top_bar_spell_book_button.pressed.connect(spellbook_view.show_current_view.bind("Spellbook"))
+	top_bar_spell_book.pressed.connect(spellbook_view.show_current_view.bind("Spellbook"))
+	top_bar_bag.pressed.connect(inventory_view.show)
 
 func _on_battle_won() -> void:
 	print("TODO: Conifgure battle_rewards_scene and battle_scene scripts to this one")

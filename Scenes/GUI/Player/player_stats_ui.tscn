@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" uid="uid://do03ojrvk5joa" path="res://Scenes/GUI/Player/player_stats_ui.gd" id="1_2cjtq"]
 [ext_resource type="Texture2D" uid="uid://qn173bqpjgpd" path="res://Assets/art/IGG_Gromm.png" id="3_2cjtq"]
-[ext_resource type="PackedScene" uid="uid://cqdpva7bojf3w" path="res://Scenes/GUI/Player/Components/gui_corner_buttons.tscn" id="3_pde77"]
 [ext_resource type="PackedScene" uid="uid://d052i5tw5ian" path="res://Scenes/GUI/Player/Components/gui_corner_bars.tscn" id="4_wuf4o"]
 [ext_resource type="Script" uid="uid://fj43g82rbvti" path="res://Scenes/GUI/Player/Components/gui_armor_label.gd" id="5_pde77"]
 [ext_resource type="PackedScene" uid="uid://xukg5i2r6xwj" path="res://Scenes/GUI/Player/Components/attribute_window.tscn" id="6_2cjtq"]
 [ext_resource type="PackedScene" uid="uid://feqymksvvm4k" path="res://Scenes/GUI/Player/Components/gui_armor_label.tscn" id="6_rsaa2"]
 [ext_resource type="PackedScene" uid="uid://1in8ljk5xpok" path="res://Scenes/GUI/Player/Components/resource_count.tscn" id="8_pde77"]
 [ext_resource type="PackedScene" uid="uid://bad1g5i0fh84w" path="res://Scenes/GUI/ability_menu_view.tscn" id="9_wuf4o"]
+[ext_resource type="PackedScene" uid="uid://b8xuri88urynr" path="res://Scenes/GUI/inventory_view.tscn" id="10_faeip"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uk8cp"]
 
@@ -45,14 +45,11 @@ theme_override_constants/separation = 1
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="GUICornerButtons" parent="Panel/HBoxContainer/Portrait&Buttons" instance=ExtResource("3_pde77")]
-unique_name_in_owner = true
-layout_mode = 2
-
 [node name="Portrait" type="TextureRect" parent="Panel/HBoxContainer/Portrait&Buttons"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(66, 66)
 layout_mode = 2
+size_flags_vertical = 10
 texture = ExtResource("3_2cjtq")
 
 [node name="HM&A" type="VBoxContainer" parent="Panel/HBoxContainer"]
@@ -84,8 +81,16 @@ layout_mode = 2
 
 [node name="SpellbookLayer" type="CanvasLayer" parent="."]
 layer = 3
+visible = false
 
 [node name="SpellbookView" parent="SpellbookLayer" instance=ExtResource("9_wuf4o")]
 unique_name_in_owner = true
-visible = false
 size_flags_horizontal = 4
+
+[node name="InventoryLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="InventoryView" parent="InventoryLayer" instance=ExtResource("10_faeip")]
+unique_name_in_owner = true
+offset_top = 360.0
+offset_bottom = 360.0
