@@ -11,6 +11,7 @@ var inventory = {
 	3: ["Weak Mana Potion", 4],
 	4: ["Weak Mana Potion", 3],
 	5: ["Weak Mana Potion", 2],
+	6: ["Iron Buckler", 1],
 	29: ["Weak Mana Potion", 1],
 }
 
@@ -36,6 +37,11 @@ func add_item(item_name: String, item_quantity: int): # To use: PlayerInventory.
 
 func add_item_to_empty_slot(item: Item, slot: InvSlot): # Add to item dictionary
 	inventory[slot.slot_index] = [item.item_name, item.item_quantity]
+
+
+func add_one_item_to_empty_slot(item: Item, slot: InvSlot):
+	inventory[slot.slot_index] = [item.item_name, 1]
+
 
 func remove_item(slot: InvSlot): # Delete from item dictionary
 	inventory.erase(slot.slot_index)

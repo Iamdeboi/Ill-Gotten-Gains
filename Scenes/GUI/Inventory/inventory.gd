@@ -28,7 +28,7 @@ func initialize_inventory(): # Iterates through all inv_slots, searches through 
 func slot_gui_input(event: InputEvent, slot: InvSlot):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT && event.pressed:
-			if held_item != null: # If holding an item...
+			if held_item != null: # If holding an item and pressing left click...
 				if !slot.item: # Place held item into enpty slot
 					place_into_empty_slot(slot)
 				elif held_item.item_name != slot.item.item_name: # Else if the item is different, swap places:
@@ -37,6 +37,13 @@ func slot_gui_input(event: InputEvent, slot: InvSlot):
 					stack_same_item(slot)
 			elif slot.item: # Else, if you are not holding an item when clicking on a slot with an item...
 				pick_up_slot_item(slot)
+		
+		elif event.button_index == MOUSE_BUTTON_MASK_RIGHT && event.pressed:
+			if held_item != null: #If you are holding an item and pressing right click...
+				if !slot.item:
+					place_only_one_item(slot)
+				else:
+					stack_one_of_same_item(slot)
 
 
 func _input(event: InputEvent) -> void: # Update the item's dictionary here
@@ -63,7 +70,7 @@ func swap_held_item_with_different_item(event: InputEvent, slot: InvSlot):
 func stack_same_item(slot: InvSlot):
 	var stack_size = int(JsonData.item_data[slot.item.item_name]["stack_size"]) # Connects the slot item's name in its scene with the JSONData's "stack_size" value in the dictionary
 	var quantity_stackable = stack_size - slot.item.item_quantity
-	if quantity_stackable >= held_item.item_quantity: # If there is still more room on the item's stack_size after merge attempt...ty
+	if quantity_stackable >= held_item.item_quantity: # If there is still more room on the item's stack_size after merge attempt...
 		PlayerInventory.increase_item_quantity(slot, held_item.item_quantity)
 		slot.item.add_item_quantity(held_item.item_quantity)
 		held_item.queue_free()
@@ -79,3 +86,26 @@ func pick_up_slot_item(slot: InvSlot):
 	held_item = slot.item
 	slot.remove_from_slot()
 	held_item.global_position = get_global_mouse_position()
+
+
+func place_only_one_item(slot: InvSlot): # Right CLick Function
+	print("Placing one of held item into slot, removing quantity one from held_item")
+	PlayerInventory.add_one_item_to_empty_slot(held_item, slot)
+	slot.initialize_item(held_item.item_name, 1)
+	held_item.decrease_item_quantity(1)
+	if held_item.item_quantity < 1:
+		held_item.queue_free()
+		held_item = null
+
+
+func stack_one_of_same_item(slot: InvSlot): # Right CLick Function
+	var stack_size = int(JsonData.item_data[slot.item.item_name]["stack_size"]) # Connects the slot item's name in its scene with the JSONData's "stack_size" value in the dictionary
+	var quantity_stackable = stack_size - slot.item.item_quantity
+	if slot.item.item_quantity < stack_size:
+		print("Placing one of held item into slot of same item, removing quantity one from held_item")
+		PlayerInventory.increase_item_quantity(slot, 1)
+		held_item.decrease_item_quantity(1)
+		slot.item.add_item_quantity(1)
+		if held_item.item_quantity < 1:
+			held_item.queue_free()
+			held_item = null
