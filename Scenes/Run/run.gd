@@ -85,8 +85,11 @@ func _setup_event_connections() -> void:
 
 func _setup_top_bar():
 	gold_ui.run_stats = run_stats
-	spellbook_view.ability_list = character.known_abilities
 	top_bar_spell_book.pressed.connect(spellbook_view.show_current_view.bind("Spellbook"))
+	spellbook_view.ability_list = character.known_abilities # Update the ability list export for the spellbook_view with the "known_abilities" of the player
+	spellbook_view._update_view() # Use the _update_view function to update all abilities with their respective slot scenes and their tooltip integration
+	spellbook_view.hide() # cancels out the "show()" at the end of _update_view()
+	# TODO: Determine if theres a better way to update the abilities without making a very similar function for the "AbilityMenuView" script...
 	top_bar_bag.pressed.connect(inventory_view.show)
 
 func _on_battle_won() -> void:

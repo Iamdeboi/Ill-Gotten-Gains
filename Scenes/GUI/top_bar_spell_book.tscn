@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cbe3k3gxc4bnu"]
 
 [ext_resource type="Texture2D" uid="uid://3irjme3yj00b" path="res://Assets/Themes/ButtonLayoutDraft1.png" id="1_a205s"]
-[ext_resource type="Script" uid="uid://buymp1p7fy8uk" path="res://Scenes/GUI/Player/Components/spell_book_button.gd" id="2_jwsyq"]
+[ext_resource type="Script" uid="uid://7by2po2pt085" path="res://Scenes/GUI/top_bar_spell_book.gd" id="2_jwsyq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jwsyq"]
 atlas = ExtResource("1_a205s")

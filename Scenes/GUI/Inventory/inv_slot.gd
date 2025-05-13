@@ -9,19 +9,19 @@ var empty_style: Theme = null
 
 var item_scene = preload("res://Scenes/GUI/Inventory/item.tscn")
 var item: Item = null # variable of item currently in the slot
-
+var slot_index
 
 func _ready() -> void:
 	default_style = DEFAULT_THEME
 	empty_style = EMPTY_THEME
 	
-	if randi() % 2 == 0:
-		item = item_scene.instantiate()
-		add_child(item)
+	#if randi() % 2 == 0:
+		#item = item_scene.instantiate()
+		#add_child(item)
 	refresh_style()
 
 
-func refresh_style(): # Updates the item slot's style between containing an item (default) or being empty
+func refresh_style() -> void: # Updates the item slot's style between containing an item (default) or being empty
 	if item == null:
 		set("theme", empty_style)
 	else:
@@ -42,4 +42,14 @@ func add_to_slot(new_item: Item) -> void: # Put in an item into a slot, repositi
 	var inventory_node = find_parent("Inventory")
 	inventory_node.remove_child(item)
 	add_child(item)
+	refresh_style()
+
+
+func initialize_item(item_name, item_quantity) -> void: # Allows for a per-slot conifguration of items during runtime
+	if item == null:
+		item = item_scene.instantiate()
+		add_child(item)
+		item.set_item(item_name, item_quantity)
+	else:
+		item.set_item(item_name, item_quantity)
 	refresh_style()

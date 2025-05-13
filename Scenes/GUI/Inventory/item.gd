@@ -4,8 +4,8 @@ extends Node2D
 @onready var icon: TextureRect = $MarginContainer/Icon
 @onready var stack_count: Label = $MarginContainer/StackCount
 
-var item_name
-var item_quantity
+var item_name : String
+var item_quantity : int
 
 
 func _ready() -> void:
@@ -30,6 +30,19 @@ func _ready() -> void:
 	if stack_size == 1: # Equipment and Key Items will have only 1 stack_size, and will not show the number
 		stack_count.visible = false
 	else:
+		stack_count.text = str(item_quantity)
+
+
+func set_item(i_name, i_quantity):
+	item_name = i_name
+	item_quantity = i_quantity
+	icon.texture = load("res://Assets/art/IGGItemIcons/" + item_name + ".png")
+	
+	var stack_size = int(JsonData.item_data[item_name]["stack_size"])
+	if stack_size == 1:
+		stack_count.visible = false
+	else:
+		stack_count.visible = true
 		stack_count.text = str(item_quantity)
 
 
