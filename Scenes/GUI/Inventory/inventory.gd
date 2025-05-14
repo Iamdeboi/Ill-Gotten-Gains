@@ -51,13 +51,13 @@ func _input(event: InputEvent) -> void: # Update the item's dictionary here
 		held_item.global_position = get_global_mouse_position()
 
 
-func place_into_empty_slot(slot: InvSlot):
+func place_into_empty_slot(slot: InvSlot): # Left Click Function
 	PlayerInventory.add_item_to_empty_slot(held_item, slot)
 	slot.add_to_slot(held_item)
 	held_item = null
 
 
-func swap_held_item_with_different_item(event: InputEvent, slot: InvSlot):
+func swap_held_item_with_different_item(event: InputEvent, slot: InvSlot): # Left Click Function
 	PlayerInventory.remove_item(slot)
 	PlayerInventory.add_item_to_empty_slot(held_item, slot)
 	var temp_item = slot.item
@@ -67,7 +67,7 @@ func swap_held_item_with_different_item(event: InputEvent, slot: InvSlot):
 	held_item = temp_item
 
 
-func stack_same_item(slot: InvSlot):
+func stack_same_item(slot: InvSlot): # Left Click Function
 	var stack_size = int(JsonData.item_data[slot.item.item_name]["stack_size"]) # Connects the slot item's name in its scene with the JSONData's "stack_size" value in the dictionary
 	var quantity_stackable = stack_size - slot.item.item_quantity
 	if quantity_stackable >= held_item.item_quantity: # If there is still more room on the item's stack_size after merge attempt...
@@ -81,7 +81,7 @@ func stack_same_item(slot: InvSlot):
 		held_item.decrease_item_quantity(quantity_stackable)
 
 
-func pick_up_slot_item(slot: InvSlot):
+func pick_up_slot_item(slot: InvSlot): # Left Click Function
 	PlayerInventory.remove_item(slot)
 	held_item = slot.item
 	slot.remove_from_slot()

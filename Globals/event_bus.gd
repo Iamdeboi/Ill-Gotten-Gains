@@ -23,6 +23,7 @@ signal tooltip_hide_requested
 signal ability_cooldown_started(ability: Ability)
 signal ability_cooldown_ended(ability: Ability)
 
+
 # Map-related Events
 signal map_exited(room: Room)
 

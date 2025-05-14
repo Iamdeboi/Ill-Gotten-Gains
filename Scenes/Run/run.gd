@@ -38,7 +38,25 @@ func _ready() -> void:
 			_start_run()
 		RunStartup.Type.CONTINUED_RUN:
 			print("TODO: load previous RUN")
-
+	await get_tree().create_timer(5.0).timeout
+	PlayerInventory.add_item("Iron Sword", 1) # Test code to see if inventory updates at runtime (Works!)
+	await get_tree().create_timer(1.0).timeout
+	PlayerInventory.add_item("Weak Health Potion", 1)
+	await get_tree().create_timer(1.0).timeout
+	PlayerInventory.add_item("Weak Health Potion", 1)
+	await get_tree().create_timer(1.0).timeout
+	PlayerInventory.add_item("Weak Health Potion", 1)
+	await get_tree().create_timer(1.0).timeout
+	PlayerInventory.add_item("Weak Health Potion", 1)
+	await get_tree().create_timer(1.0).timeout
+	PlayerInventory.add_item("Weak Health Potion", 1)
+	await get_tree().create_timer(1.0).timeout
+	PlayerInventory.add_item("Weak Health Potion", 1)
+	await get_tree().create_timer(1.0).timeout
+	var slots = inventory_view.inventory.inventory_slots.get_children()
+	PlayerInventory.remove_item(slots[0])
+	print(PlayerInventory.inventory)
+	
 
 func _start_run() -> void:
 	run_stats = RunStats.new()

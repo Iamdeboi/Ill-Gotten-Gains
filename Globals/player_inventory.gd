@@ -23,16 +23,27 @@ func add_item(item_name: String, item_quantity: int): # To use: PlayerInventory.
 			var able_to_add = stack_size - inventory[item][1]
 			if able_to_add >= item_quantity:
 				inventory[item][1] += item_quantity
+				update_slot_visual(item, inventory[item][0], inventory[item][1])
 				return
 			else:
 				inventory[item][1] += able_to_add
+				update_slot_visual(item, inventory[item][0], inventory[item][1])
 				item_quantity = item_quantity - able_to_add
 	
 	# If the item doesnt exist in the inventory yet, add it to the next availible empty slot
 	for i in range(NUM_INV_SLOTS):
 		if inventory.has(i) == false:
 			inventory[i] = [item_name, item_quantity] # Assign the slot the item's name and quantity values
+			update_slot_visual(i, inventory[i][0], inventory[i][1])
 			return
+
+
+func update_slot_visual(slot_index, item_name, new_quantity) -> void:
+	var slot = get_tree().root.get_node("/root/Run/InventoryLayer/InventoryView/Inventory/TextureRect/MarginContainer/HBoxContainer/InventorySlots/InvSlot" + str(slot_index + 1))
+	if slot.item != null:
+		slot.item.set_item(item_name, new_quantity)
+	else:
+		slot.initialize_item(item_name, new_quantity)
 
 
 func add_item_to_empty_slot(item: Item, slot: InvSlot): # Add to item dictionary
@@ -45,7 +56,6 @@ func add_one_item_to_empty_slot(item: Item, slot: InvSlot):
 
 func remove_item(slot: InvSlot): # Delete from item dictionary
 	inventory.erase(slot.slot_index)
-
 
 func increase_item_quantity(slot: InvSlot, quantity_to_add: int):
 	inventory[slot.slot_index][1] += quantity_to_add #In the inventory, at the given slot's 2nd value (the quantity), increase it by the passed "quantity_to_add" integer
