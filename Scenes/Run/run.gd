@@ -33,30 +33,12 @@ func _ready() -> void:
 		return
 	
 	match run_startup.type:
-		RunStartup.Type.NEW_RUN:
+		RunStartup.Type.NEW_RUN: # PlayerStats determined by character selection screen choice, an instance is made as your starting stats
 			character = run_startup.selected_character.create_instance()
 			_start_run()
-		RunStartup.Type.CONTINUED_RUN:
+		RunStartup.Type.CONTINUED_RUN: # Continues the progress on your run
 			print("TODO: load previous RUN")
-	await get_tree().create_timer(5.0).timeout
-	PlayerInventory.add_item("Iron Sword", 1) # Test code to see if inventory updates at runtime (Works!)
-	await get_tree().create_timer(1.0).timeout
-	PlayerInventory.add_item("Weak Health Potion", 1)
-	await get_tree().create_timer(1.0).timeout
-	PlayerInventory.add_item("Weak Health Potion", 1)
-	await get_tree().create_timer(1.0).timeout
-	PlayerInventory.add_item("Weak Health Potion", 1)
-	await get_tree().create_timer(1.0).timeout
-	PlayerInventory.add_item("Weak Health Potion", 1)
-	await get_tree().create_timer(1.0).timeout
-	PlayerInventory.add_item("Weak Health Potion", 1)
-	await get_tree().create_timer(1.0).timeout
-	PlayerInventory.add_item("Weak Health Potion", 1)
-	await get_tree().create_timer(1.0).timeout
-	var slots = inventory_view.inventory.inventory_slots.get_children()
-	PlayerInventory.remove_item(slots[0])
-	print(PlayerInventory.inventory)
-	
+
 
 func _start_run() -> void:
 	run_stats = RunStats.new()
@@ -126,3 +108,10 @@ func _on_map_exited(room: Room) -> void:
 			_change_view(SHOP_SCENE)
 		Room.Type.BOSS:
 			_change_view(BATTLE_SCENE)
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("spellbook_button"):
+		spellbook_view.visible = !spellbook_view.visible
+	elif  event.is_action_pressed("bag_button"):
+		inventory_view.visible = !inventory_view.visible

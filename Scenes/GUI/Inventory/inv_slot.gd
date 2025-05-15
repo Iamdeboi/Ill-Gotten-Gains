@@ -1,55 +1,40 @@
 class_name InvSlot
-extends Panel
+extends Control
 
-const DEFAULT_THEME = preload("res://Assets/Themes/GUI_Theme.theme")
-const EMPTY_THEME = preload("res://Assets/Themes/GUI_Theme_2.theme")
+@onready var item_icon: TextureRect = %ItemIcon
+@onready var item_quantity_label: Label = %ItemQuantityLabel
 
-var default_style: Theme = null
-var empty_style: Theme = null
-
-var item_scene = preload("res://Scenes/GUI/Inventory/item.tscn")
-var item: Item = null # variable of item currently in the slot
-var slot_index
+var slot_data: SlotData : set = set_slot_data
 
 func _ready() -> void:
-	default_style = DEFAULT_THEME
-	empty_style = EMPTY_THEME
-	
-	#if randi() % 2 == 0:
-		#item = item_scene.instantiate()
-		#add_child(item)
-	refresh_style()
+	item_icon.texture = null
+	item_quantity_label.text = ""
+	focus_entered.connect(item_focused)
+	focus_exited.connect(item_unfocused)
 
 
-func refresh_style() -> void: # Updates the item slot's style between containing an item (default) or being empty
-	if item == null:
-		set("theme", empty_style)
-	else:
-		set("theme", default_style)
+func set_slot_data(value: SlotData) -> void:
+	slot_data = value
+	if slot_data == null:
+		return
+	item_icon.texture = slot_data.item_data.item_texture
+	item_quantity_label.text = str(slot_data.quantity)
+	if slot_data.item_data.stack_size == 1:
+		item_quantity_label.visible = false
 
 
-func remove_from_slot() -> void: # Take out an item from a slot, refresh tile style
-	remove_child(item)
-	var inventory_node = find_parent("Inventory")
-	inventory_node.add_child(item)
-	item = null
-	refresh_style()
+func _on_gui_input(event: InputEvent) -> void:
+	if event.is_action_pressed("left_mouse"):
+		EventBus.item_clicked.emit(slot_data)
+	elif event.is_action_pressed("right_mouse"):
+		EventBus.item_clicked_away.emit()
 
 
-func add_to_slot(new_item: Item) -> void: # Put in an item into a slot, reposition it properly, refresh tile style
-	item = new_item
-	item.position = Vector2(0, 0)
-	var inventory_node = find_parent("Inventory")
-	inventory_node.remove_child(item)
-	add_child(item)
-	refresh_style()
+func item_focused() -> void:
+	if slot_data != null:
+		if slot_data.item_data != null:
+			EventBus.item_focused.emit(slot_data)
 
 
-func initialize_item(item_name, item_quantity) -> void: # Allows for a per-slot conifguration of items during runtime
-	if item == null:
-		item = item_scene.instantiate()
-		add_child(item)
-		item.set_item(item_name, item_quantity)
-	else:
-		item.set_item(item_name, item_quantity)
-	refresh_style()
+func item_unfocused() -> void:
+	pass

@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://d3p0nkpqqqsmo"]
+
+[ext_resource type="Texture2D" uid="uid://78spqm2lvg10" path="res://Assets/art/IGGItemIcons/Weak Mana Potion.png" id="1_ci1bh"]
+[ext_resource type="Script" uid="uid://devhpw2ek0wrk" path="res://Resources/Templates/ItemData/item_data.gd" id="1_iy0jh"]
+
+[resource]
+script = ExtResource("1_iy0jh")
+item_name = "Weak Mana Potion"
+colored_item_name = "[color = dim_gray]Iron Buckler[/color]]"
+item_texture = ExtResource("1_ci1bh")
+item_rarity = 1
+item_type = 2
+item_type_string = "Consumable"
+item_gold_value = 1
+stack_size = 5
+item_description = "A small, soothing potion which restores 20 mana upon consumption."
+item_effect = "ManaRestore20"
+metadata/_custom_type_script = "uid://devhpw2ek0wrk"

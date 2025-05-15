@@ -50,6 +50,7 @@ script/templates_search_path="res://ScriptTemplates"
 folder_colors={
 "res://Resources/Classes/": "orange",
 "res://Resources/Enemies/": "red",
+"res://Resources/Items/": "green",
 "res://Scenes/Battle/": "red",
 "res://Scenes/GUI/": "green",
 "res://Scenes/Menus/": "blue",

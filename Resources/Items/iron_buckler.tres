@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://6pfban8lkx5a"]
+
+[ext_resource type="Texture2D" uid="uid://brj4nduaybwaw" path="res://Assets/art/IGGItemIcons/Iron Buckler.png" id="1_fyp86"]
+[ext_resource type="Script" uid="uid://devhpw2ek0wrk" path="res://Resources/Templates/ItemData/item_data.gd" id="1_vbulo"]
+
+[resource]
+script = ExtResource("1_vbulo")
+item_name = "Iron Buckler"
+colored_item_name = "[color = dim_gray]Iron Buckler[/color]]"
+item_texture = ExtResource("1_fyp86")
+item_rarity = 0
+item_type = 9
+item_type_string = "Off Hand"
+item_gold_value = 5
+stack_size = 1
+item_description = "A hefty iron buckler."
+item_effect = ""
+metadata/_custom_type_script = "uid://devhpw2ek0wrk"

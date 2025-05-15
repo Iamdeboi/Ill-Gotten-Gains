@@ -31,8 +31,3 @@ func hide_tooltip() -> void:
 		ability.queue_free()
 	
 	hide()
-
-
-func _on_gui_input(event: InputEvent) -> void:
-	if event.is_action_pressed("left_mouse"):
-		hide_tooltip()

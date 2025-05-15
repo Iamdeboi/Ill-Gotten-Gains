@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca51g3r5cdoid"]
+
+[ext_resource type="Texture2D" uid="uid://cy8pnq7fmoqtg" path="res://Assets/Themes/9patchUIOne.png" id="1_635oq"]
+[ext_resource type="Theme" uid="uid://bxj3jchl1trm8" path="res://Assets/Themes/default.tres" id="2_r1ejk"]
+
+[node name="UseMenuLayer" type="CanvasLayer"]
+layer = 2
+visible = false
+
+[node name="ItemUsePanel" type="NinePatchRect" parent="."]
+unique_name_in_owner = true
+offset_left = 37.0
+offset_top = -28.0
+offset_right = 77.0
+offset_bottom = 36.0
+texture = ExtResource("1_635oq")
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="ItemUsePanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBoxContainer" type="VBoxContainer" parent="ItemUsePanel/MarginContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="ItemUsePanel/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 16)
+layout_mode = 2
+theme = ExtResource("2_r1ejk")
+theme_override_font_sizes/font_size = 6
+text = "Use"
+
+[node name="Button2" type="Button" parent="ItemUsePanel/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 16)
+layout_mode = 2
+theme = ExtResource("2_r1ejk")
+theme_override_font_sizes/font_size = 6
+text = "Equip"
+
+[node name="Button3" type="Button" parent="ItemUsePanel/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 16)
+layout_mode = 2
+theme = ExtResource("2_r1ejk")
+theme_override_font_sizes/font_size = 6
+text = "Destroy"

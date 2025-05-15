@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://d4d1jljhotgkl"]
+
+[ext_resource type="Texture2D" uid="uid://dqh4k5f257aqp" path="res://Assets/art/IGGItemIcons/Weak Health Potion.png" id="1_1fywf"]
+[ext_resource type="Script" uid="uid://devhpw2ek0wrk" path="res://Resources/Templates/ItemData/item_data.gd" id="1_qcypy"]
+
+[resource]
+script = ExtResource("1_qcypy")
+item_name = "Weak Health Potion"
+colored_item_name = "[color = dim_gray]Iron Buckler[/color]]"
+item_texture = ExtResource("1_1fywf")
+item_rarity = 1
+item_type = 2
+item_type_string = "Consumable"
+item_gold_value = 1
+stack_size = 5
+item_description = "A small, hearty potion that restores 30 health upon consumption."
+item_effect = "Heal30"
+metadata/_custom_type_script = "uid://devhpw2ek0wrk"

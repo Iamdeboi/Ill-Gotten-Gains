@@ -23,6 +23,10 @@ signal tooltip_hide_requested
 signal ability_cooldown_started(ability: Ability)
 signal ability_cooldown_ended(ability: Ability)
 
+#Inventory-related Events
+signal inventory_changed
+signal item_focused(label_slot_data: SlotData)
+signal item_unfocused
 
 # Map-related Events
 signal map_exited(room: Room)

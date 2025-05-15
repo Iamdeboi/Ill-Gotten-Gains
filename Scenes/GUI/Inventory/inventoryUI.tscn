@@ -1,0 +1,206 @@
+[gd_scene load_steps=21 format=3 uid="uid://c2vuahaak2f83"]
+
+[ext_resource type="Script" uid="uid://bjp87yuq7nw72" path="res://Scenes/GUI/Inventory/inventoryUI.gd" id="1_6h5vw"]
+[ext_resource type="Texture2D" uid="uid://cy8pnq7fmoqtg" path="res://Assets/Themes/9patchUIOne.png" id="2_ev6ng"]
+[ext_resource type="Script" uid="uid://bmbxm2by6js3k" path="res://Scenes/GUI/Inventory/inventory_data.gd" id="2_nmufm"]
+[ext_resource type="Script" uid="uid://bi1ups8t1300h" path="res://Scenes/GUI/Inventory/slot_data.gd" id="3_cnicu"]
+[ext_resource type="Resource" uid="uid://qug0t8scty6d" path="res://Resources/Items/iron_sword.tres" id="4_amrgl"]
+[ext_resource type="Resource" uid="uid://6pfban8lkx5a" path="res://Resources/Items/iron_buckler.tres" id="5_18w37"]
+[ext_resource type="Resource" uid="uid://jsthywwl6jhy" path="res://Resources/Items/weak_energy_potion.tres" id="6_4t74b"]
+[ext_resource type="Resource" uid="uid://d3p0nkpqqqsmo" path="res://Resources/Items/weak_mana_potion.tres" id="7_e4sca"]
+[ext_resource type="Resource" uid="uid://d4d1jljhotgkl" path="res://Resources/Items/weak_health_potion.tres" id="8_wo2qt"]
+[ext_resource type="Resource" uid="uid://bmxfwonxb1x5s" path="res://Resources/Items/mortvine_poison.tres" id="9_e4sca"]
+[ext_resource type="Theme" uid="uid://b845uab77o0un" path="res://Assets/Themes/GUI_Theme.theme" id="10_4t74b"]
+[ext_resource type="Theme" uid="uid://bxj3jchl1trm8" path="res://Assets/Themes/default.tres" id="10_18w37"]
+
+[sub_resource type="Resource" id="Resource_xvops"]
+script = ExtResource("3_cnicu")
+item_data = ExtResource("4_amrgl")
+quantity = 1
+metadata/_custom_type_script = "uid://bi1ups8t1300h"
+
+[sub_resource type="Resource" id="Resource_tla0d"]
+script = ExtResource("3_cnicu")
+item_data = ExtResource("5_18w37")
+quantity = 1
+metadata/_custom_type_script = "uid://bi1ups8t1300h"
+
+[sub_resource type="Resource" id="Resource_vj1pe"]
+script = ExtResource("3_cnicu")
+item_data = ExtResource("6_4t74b")
+quantity = 5
+metadata/_custom_type_script = "uid://bi1ups8t1300h"
+
+[sub_resource type="Resource" id="Resource_yhpmi"]
+script = ExtResource("3_cnicu")
+item_data = ExtResource("7_e4sca")
+quantity = 5
+metadata/_custom_type_script = "uid://bi1ups8t1300h"
+
+[sub_resource type="Resource" id="Resource_oyboi"]
+script = ExtResource("3_cnicu")
+item_data = ExtResource("8_wo2qt")
+quantity = 5
+metadata/_custom_type_script = "uid://bi1ups8t1300h"
+
+[sub_resource type="Resource" id="Resource_wo2qt"]
+script = ExtResource("3_cnicu")
+item_data = ExtResource("9_e4sca")
+quantity = 1
+metadata/_custom_type_script = "uid://bi1ups8t1300h"
+
+[sub_resource type="Resource" id="Resource_chq2u"]
+script = ExtResource("2_nmufm")
+slots = Array[ExtResource("3_cnicu")]([SubResource("Resource_xvops"), SubResource("Resource_tla0d"), SubResource("Resource_vj1pe"), SubResource("Resource_yhpmi"), SubResource("Resource_oyboi"), SubResource("Resource_wo2qt"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+metadata/_custom_type_script = "uid://bmbxm2by6js3k"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1frgc"]
+atlas = ExtResource("2_ev6ng")
+region = Rect2(2, 3, 11, 9)
+
+[node name="InventoryUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_6h5vw")
+data = SubResource("Resource_chq2u")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0.458405, 0.458405, 0.458405, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -240.0
+offset_top = -150.0
+offset_right = 240.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+texture = SubResource("AtlasTexture_1frgc")
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="GridContainer" type="GridContainer" parent="TextureRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 12
+columns = 2
+
+[node name="HBoxContainer" type="Panel" parent="TextureRect/MarginContainer/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("10_4t74b")
+
+[node name="EquipmentAndDesc" type="VBoxContainer" parent="TextureRect/MarginContainer/GridContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_right = 226.0
+offset_bottom = 284.0
+size_flags_horizontal = 3
+
+[node name="EquipmentPanel" type="PanelContainer" parent="TextureRect/MarginContainer/GridContainer/HBoxContainer/EquipmentAndDesc"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="DescriptionPanel" type="PanelContainer" parent="TextureRect/MarginContainer/GridContainer/HBoxContainer/EquipmentAndDesc"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="TextureRect/MarginContainer/GridContainer/HBoxContainer/EquipmentAndDesc/DescriptionPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="ScrollContainer" type="ScrollContainer" parent="TextureRect/MarginContainer/GridContainer/HBoxContainer/EquipmentAndDesc/DescriptionPanel/MarginContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect/MarginContainer/GridContainer/HBoxContainer/EquipmentAndDesc/DescriptionPanel/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/separation = 4
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/MarginContainer/GridContainer/HBoxContainer/EquipmentAndDesc/DescriptionPanel/MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="ItemName" type="RichTextLabel" parent="TextureRect/MarginContainer/GridContainer/HBoxContainer/EquipmentAndDesc/DescriptionPanel/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("10_18w37")
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "Item_name"
+fit_content = true
+autowrap_mode = 0
+vertical_alignment = 3
+
+[node name="PlaceHolder" type="Control" parent="TextureRect/MarginContainer/GridContainer/HBoxContainer/EquipmentAndDesc/DescriptionPanel/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ItemType" type="Label" parent="TextureRect/MarginContainer/GridContainer/HBoxContainer/EquipmentAndDesc/DescriptionPanel/MarginContainer/ScrollContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("10_18w37")
+text = "item_type"
+horizontal_alignment = 3
+vertical_alignment = 3
+
+[node name="ItemDescription" type="RichTextLabel" parent="TextureRect/MarginContainer/GridContainer/HBoxContainer/EquipmentAndDesc/DescriptionPanel/MarginContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("10_18w37")
+bbcode_enabled = true
+text = "This is an iron sword. This is an iron sword. This is an iron sword. This is an iron sword. This is an iron sword. This is an iron sword. This is an iron sword. This is an iron sword. This is an iron sword. This is an iron sword. This is an iron sword.
+"
+fit_content = true
+
+[node name="ItemEffectsOrStats" type="RichTextLabel" parent="TextureRect/MarginContainer/GridContainer/HBoxContainer/EquipmentAndDesc/DescriptionPanel/MarginContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("10_18w37")
+theme_override_constants/table_h_separation = 0
+theme_override_constants/line_separation = 2
+bbcode_enabled = true
+text = "[color=green]+1 Strength[/color]
+[color=salmon]-20 Intellect[/color]"
+fit_content = true
+
+[node name="ItemGoldValue" type="RichTextLabel" parent="TextureRect/MarginContainer/GridContainer/HBoxContainer/EquipmentAndDesc/DescriptionPanel/MarginContainer/ScrollContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("10_18w37")
+bbcode_enabled = true
+text = "Gold Value: [color=gold]300G[/color]
+"
+fit_content = true
+
+[node name="InventorySlots" type="GridContainer" parent="TextureRect/MarginContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(224, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 5
