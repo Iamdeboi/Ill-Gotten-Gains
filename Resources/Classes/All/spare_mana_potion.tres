@@ -1,0 +1,26 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://cvvx6pnppdaex"]
+
+[ext_resource type="Texture2D" uid="uid://78spqm2lvg10" path="res://Assets/art/IGGItemIcons/Weak Mana Potion.png" id="1_gicli"]
+[ext_resource type="AudioStream" uid="uid://x864fh168w00" path="res://Assets/Audio/50_RPG_Heals_Buffs_SFX/09_Buff_01.wav" id="2_s215u"]
+[ext_resource type="Script" uid="uid://ckv10hrmmqd0h" path="res://Resources/Classes/All/spare_mana_potion.gd" id="3_72vek"]
+[ext_resource type="AudioStream" uid="uid://cs6fy5f4jvnqx" path="res://Assets/Audio/click.wav" id="3_s215u"]
+
+[resource]
+script = ExtResource("3_72vek")
+id = "6"
+ability_type = 2
+target = 0
+cost = 0
+cost_type = 0
+cooldown = 0
+primary_scaling = 0
+ps_factor = 1.0
+secondary_scaling = 0
+ss_factor = 1.0
+element_type = 0
+icon = ExtResource("1_gicli")
+title = "Spare Mana Potion"
+tooltip_text = "Hey, a spare potion! Drinking this will restore your mana by [color=light_blue]20[/color]."
+sound = ExtResource("2_s215u")
+pickup_audio = ExtResource("3_s215u")
+metadata/_custom_type_script = "uid://smcmjjy50miu"

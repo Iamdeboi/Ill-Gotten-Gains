@@ -5,6 +5,7 @@ extends Control
 @onready var item_quantity_label: Label = %ItemQuantityLabel
 
 var slot_data: SlotData : set = set_slot_data
+var slot_index: int
 
 func _ready() -> void:
 	item_icon.texture = null

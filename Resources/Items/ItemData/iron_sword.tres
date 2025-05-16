@@ -6,7 +6,6 @@
 [resource]
 script = ExtResource("1_wo4d6")
 item_name = "Iron Sword"
-colored_item_name = "[color = dim_gray]Iron Buckler[/color]]"
 item_texture = ExtResource("1_im4tk")
 item_rarity = 0
 item_type = 8

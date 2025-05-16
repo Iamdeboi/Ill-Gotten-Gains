@@ -6,9 +6,8 @@
 [resource]
 script = ExtResource("1_8dy8h")
 item_name = "Weak Energy Potion"
-colored_item_name = "[color = dim_gray]Iron Buckler[/color]]"
 item_texture = ExtResource("1_2f5bu")
-item_rarity = 1
+item_rarity = 6
 item_type = 2
 item_type_string = "Consumable"
 item_gold_value = 1

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="AbilityList" load_steps=8 format=3 uid="uid://bvh6g13h4j7yv"]
+[gd_resource type="Resource" script_class="AbilityList" load_steps=9 format=3 uid="uid://bvh6g13h4j7yv"]
 
 [ext_resource type="Script" uid="uid://smcmjjy50miu" path="res://Resources/Templates/Abilities/ability.gd" id="1_3ygt2"]
 [ext_resource type="Script" uid="uid://dj0e7vxllw5u7" path="res://Scenes/AbilityUI/ability_list.gd" id="2_o3wee"]
@@ -7,8 +7,9 @@
 [ext_resource type="Resource" uid="uid://coapnwodmdehg" path="res://Resources/Classes/Warrior/Abilities/bash.tres" id="4_pj0hh"]
 [ext_resource type="Resource" uid="uid://ixpdsnnhgoa3" path="res://Resources/Classes/Warrior/Abilities/cleave_through.tres" id="5_lgkk0"]
 [ext_resource type="Resource" uid="uid://dnq7qqmyyubjh" path="res://Resources/Classes/Warrior/Abilities/second_wind.tres" id="6_lgkk0"]
+[ext_resource type="Resource" uid="uid://cvvx6pnppdaex" path="res://Resources/Classes/All/spare_mana_potion.tres" id="7_bil65"]
 
 [resource]
 script = ExtResource("2_o3wee")
-abilities = Array[ExtResource("1_3ygt2")]([ExtResource("2_vpk4p"), ExtResource("3_6kxkb"), ExtResource("4_pj0hh"), ExtResource("5_lgkk0"), ExtResource("6_lgkk0")])
+abilities = Array[ExtResource("1_3ygt2")]([ExtResource("2_vpk4p"), ExtResource("3_6kxkb"), ExtResource("4_pj0hh"), ExtResource("5_lgkk0"), ExtResource("6_lgkk0"), ExtResource("7_bil65")])
 metadata/_custom_type_script = "uid://dj0e7vxllw5u7"

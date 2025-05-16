@@ -25,10 +25,6 @@ SfxPlayer="*res://Globals/sfx_player.tscn"
 JsonData="*res://JSONData.gd"
 PlayerInventory="*res://Globals/player_inventory.gd"
 
-[debug]
-
-settings/stdout/verbose_stdout=true
-
 [display]
 
 window/size/viewport_width=640

@@ -50,7 +50,7 @@ func _on_enemy_turn_ended() -> void:
 
 
 func _on_player_died() -> void:
-	await get_tree().create_timer(0.20).timeout # Delay to ensure all SFX, Tweens, and Animations are done
+	await get_tree().create_timer(1).timeout # Delay to ensure all SFX, Tweens, and Animations are done
 	EventBus.battle_over_screen_requested.emit("Too Greedy...", BattleOverPanel.Type.LOSE)
 	MusicPlayer.stop()
 	MusicPlayer.play(DEFEAT_THEME)

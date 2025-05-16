@@ -7,6 +7,7 @@ const CAMPFIRE_SCENE := preload("res://Scenes/Campfire/campfire.tscn")
 const SHOP_SCENE := preload("res://Scenes/Shop/shop.tscn")
 const TREASURE_ROOM_SCENE := preload("res://Scenes/TreasureRoom/treasure_room.tscn")
 
+
 @export var run_startup: RunStartup
 @onready var map: Map = $Map
 @onready var current_view: Node = $CurrentView
@@ -42,6 +43,7 @@ func _ready() -> void:
 
 func _start_run() -> void:
 	run_stats = RunStats.new()
+	PlayerInventory._set_run_reference(self)
 	
 	_setup_event_connections()
 	_setup_top_bar()
@@ -92,6 +94,7 @@ func _setup_top_bar():
 	# TODO: Determine if theres a better way to update the abilities without making a very similar function for the "AbilityMenuView" script...
 	top_bar_bag.pressed.connect(inventory_view.show)
 
+
 func _on_battle_won() -> void:
 	print("TODO: Conifgure battle_rewards_scene and battle_scene scripts to this one")
 
@@ -115,3 +118,4 @@ func _input(event: InputEvent) -> void:
 		spellbook_view.visible = !spellbook_view.visible
 	elif  event.is_action_pressed("bag_button"):
 		inventory_view.visible = !inventory_view.visible
+		inventory_view.inventory_ui.clear_item_labels()

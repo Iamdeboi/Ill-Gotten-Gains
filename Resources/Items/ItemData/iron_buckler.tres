@@ -6,9 +6,8 @@
 [resource]
 script = ExtResource("1_vbulo")
 item_name = "Iron Buckler"
-colored_item_name = "[color = dim_gray]Iron Buckler[/color]]"
 item_texture = ExtResource("1_fyp86")
-item_rarity = 0
+item_rarity = 5
 item_type = 9
 item_type_string = "Off Hand"
 item_gold_value = 5

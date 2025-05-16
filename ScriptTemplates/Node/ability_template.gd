@@ -2,8 +2,9 @@
 # meta-description: What hapenns when an ability is played.
 extends Ability
 
-@export var optional_sound: AudioStream
-
+func update_tooltip(stats: PlayerStats) -> String:
+	tooltip_text = "This is a sample ability, dealing " + "[color=firebrick]" + str(int(15 + (stats.strength) * ps_factor)) + "[/color]" + " [color=slate_gray]Physical[/color] damage.\n\nAbility Type: [color=firebrick]Attack[/color]\nCost: [color=salmon]10 HP[/color]\nBase: 15\nScaling: (50% STR)"
+	return str(tooltip_text)
 
 func apply_effects(targets: Array[Node], ability: Ability, p_s_mod: float, s_s_mod: float) -> void:
 	print("The ability has been played")
