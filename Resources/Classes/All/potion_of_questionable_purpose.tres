@@ -1,0 +1,32 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://bl0hxgo0vfup5"]
+
+[ext_resource type="Texture2D" uid="uid://bd5lspvi55l7a" path="res://Assets/art/IGGItemIcons/Mortvine Poison.png" id="1_r6aq7"]
+[ext_resource type="Script" uid="uid://dmplb1giasw28" path="res://Resources/Classes/All/potion_of_questionable_purpose.gd" id="2_bspny"]
+[ext_resource type="AudioStream" uid="uid://dr21s105ykuta" path="res://Assets/Audio/LEOHPAZ_OtherwordlyCreatures_SFX/Brainslayer/BrainSlayer_Laugh_1.wav" id="2_ovyyx"]
+[ext_resource type="AudioStream" uid="uid://c4iapr0031fg0" path="res://Assets/Audio/50_RPG_Battle_Magic_SFX/46_Poison_01.wav" id="4_ujab4"]
+
+[resource]
+script = ExtResource("2_bspny")
+id = "7"
+ability_type = 3
+target = 0
+cost = 0
+cost_type = 0
+cooldown = 0
+primary_scaling = 0
+ps_factor = 1.0
+secondary_scaling = 0
+ss_factor = 1.0
+element_type = 0
+icon = ExtResource("1_r6aq7")
+title = "Potion of Questionable Purpose"
+tooltip_text = "[color=crimson]You get the odd feeling that you shouldn't drink this potion...[/color]
+
+Ability Type: [color=purple]Debuff[/color]
+
+Cost: None
+
+Base: [color=crimson]999[/color]"
+sound = ExtResource("4_ujab4")
+pickup_audio = ExtResource("2_ovyyx")
+metadata/_custom_type_script = "uid://smcmjjy50miu"

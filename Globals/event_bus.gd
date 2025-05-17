@@ -6,6 +6,8 @@ signal player_turn_started
 signal player_turn_ended
 signal player_end_turn_delay_elasped
 signal player_died
+signal player_stats_changed
+signal player_attributes_changed
 
 # Enemy-related Events
 signal enemy_action_completed(enemy: Enemy)

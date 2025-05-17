@@ -6,4 +6,5 @@ extends ItemEffect
 
 
 func use() -> void:
-	pass
+	PlayerInventory.run_node.character.heal(healing_amount)
+	SfxPlayer.play(sound)

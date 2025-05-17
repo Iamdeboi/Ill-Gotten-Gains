@@ -9,7 +9,7 @@ const DEFEAT_THEME := preload("res://Assets/Audio/Jingles_Fanfares_SFX_Pack/Jing
 
 @onready var player_handler: Node = $PlayerHandler
 @onready var enemy_handler: Node2D = $EnemyHandler
-@onready var player: Player = $Player
+@onready var player: Player = $BattleUI/Player
 @onready var battle_ui: BattleUI = $BattleUI
 
 

@@ -13,6 +13,7 @@ offset_bottom = 32.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_vsg4y")
+button_mask = 2
 script = ExtResource("2_16du2")
 
 [node name="ItemIcon" type="TextureRect" parent="."]

@@ -1,0 +1,11 @@
+extends Ability
+
+func update_tooltip(stats: PlayerStats) -> String:
+	tooltip_text = "[color=crimson]You get the odd feeling that you shouldn't drink this potion...[/color]\n\nAbility Type: [color=purple]Debuff[/color]\nCost: None\nBase: [color=crimson]999[/color]\nScaling: None"
+	return str(tooltip_text)
+
+func apply_effects(targets: Array[Node], ability: Ability, p_s_mod: float, s_s_mod: float) -> void:
+	var damage_effect = DamageEffect.new()
+	damage_effect.amount = 999
+	damage_effect.sound = sound
+	damage_effect.execute(targets, ability, p_s_mod, s_s_mod)

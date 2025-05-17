@@ -14,10 +14,12 @@ const INV_SLOT_SCENE = preload("res://Scenes/GUI/Inventory/inv_slot.tscn")
 
 @export var data: InventoryData
 var held_item = null
+var focus_index : int = 0
 
 func _ready() -> void:
 	clear_inventory_slots()
 	clear_item_labels()
+	data.changed.connect(on_inventory_changed)
 	EventBus.inventory_changed.connect(update_inventory)
 	EventBus.item_focused.connect(_on_item_focused)
 	EventBus.item_unfocused.connect(_on_item_unfocused)
@@ -27,7 +29,7 @@ func _ready() -> void:
 
 
 # Instantiate new slots, and assign their respective data relative to the recieved data
-func update_inventory() -> void: 
+func update_inventory(i: int = 0) -> void: 
 	clear_inventory_slots()
 	
 	for s in data.slots:
@@ -75,8 +77,18 @@ func clear_item_labels() -> void:
 
 # When an item is focused on the inventory, update all of the labels to show the details
 func _on_item_focused(new_slot_data: SlotData) -> void:
+	for i in get_child_count():
+		if get_child(i).has_focus():
+			focus_index = i
+			return
 	update_item_labels(new_slot_data)
 
 #When an item is unfocused, clear the existing labels to make room for a new instance of lable data
 func _on_item_unfocused() -> void:
 	clear_item_labels()
+
+
+func on_inventory_changed() -> void:
+	var i = focus_index
+	clear_inventory_slots()
+	update_inventory()

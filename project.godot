@@ -24,6 +24,7 @@ MusicPlayer="*res://Globals/music_player.tscn"
 SfxPlayer="*res://Globals/sfx_player.tscn"
 JsonData="*res://JSONData.gd"
 PlayerInventory="*res://Globals/player_inventory.gd"
+PlayerManager="*res://Globals/player_manager.gd"
 
 [display]
 

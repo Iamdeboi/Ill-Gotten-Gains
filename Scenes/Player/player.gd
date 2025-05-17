@@ -1,5 +1,5 @@
 class_name Player
-extends Node
+extends Control
 
 
 const WHITE_SPRITE_MATERIAL := preload("res://Assets/art/white_sprite_material.tres")

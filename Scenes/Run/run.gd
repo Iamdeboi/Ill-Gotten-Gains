@@ -25,8 +25,8 @@ const TREASURE_ROOM_SCENE := preload("res://Scenes/TreasureRoom/treasure_room.ts
 @onready var rewards_button: Button = %RewardsButton
 @onready var campfire_button: Button = %CampfireButton
 
-var run_stats: RunStats
-var character: PlayerStats
+var run_stats: RunStats # Handles things like Gold, Item Drops, Ability Drops, etc.
+var character: PlayerStats # Instance of player's stats throughout the entire run
 
 
 func _ready() -> void:

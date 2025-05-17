@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://feqymksvvm4k" path="res://Scenes/GUI/Player/Components/gui_armor_label.tscn" id="6_rsaa2"]
 [ext_resource type="PackedScene" uid="uid://1in8ljk5xpok" path="res://Scenes/GUI/Player/Components/resource_count.tscn" id="8_pde77"]
 [ext_resource type="PackedScene" uid="uid://bad1g5i0fh84w" path="res://Scenes/GUI/ability_menu_view.tscn" id="9_wuf4o"]
-[ext_resource type="PackedScene" uid="uid://b8xuri88urynr" path="res://Scenes/GUI/inventory_view.tscn" id="10_faeip"]
+[ext_resource type="PackedScene" uid="uid://b8xuri88urynr" path="res://Scenes/GUI/Inventory/inventory_view.tscn" id="10_faeip"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uk8cp"]
 

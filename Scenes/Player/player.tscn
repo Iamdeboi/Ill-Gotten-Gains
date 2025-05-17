@@ -4,8 +4,11 @@
 [ext_resource type="PackedScene" uid="uid://cvy0l0u8nf5oj" path="res://Scenes/GUI/Player/player_stats_ui.tscn" id="1_uvnfx"]
 [ext_resource type="Resource" uid="uid://ls7ennmh2elu" path="res://Resources/Classes/Warrior/warrior_stats.tres" id="2_xpcdj"]
 
-[node name="Player" type="Node" groups=["Player"]]
+[node name="Player" type="Control" groups=["Player"]]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_a3d8c")
 stats = ExtResource("2_xpcdj")
 
 [node name="PlayerStatsUI" parent="." instance=ExtResource("1_uvnfx")]
+layout_mode = 1

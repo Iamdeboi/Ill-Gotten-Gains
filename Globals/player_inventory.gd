@@ -6,6 +6,7 @@ const PLAYER_INVENTORY_DATA: InventoryData = preload("res://Scenes/GUI/Inventory
 
 # Run Scene Dependency + Inventory Slot Scene Ref
 var run_node: Node : set = _set_run_reference
+
 @onready var inventory_slot_scene = preload("res://Scenes/GUI/Inventory/inv_slot.tscn")
 
 func _ready() -> void:
@@ -14,6 +15,6 @@ func _ready() -> void:
 	
 
 # Sets up the reference to the run_scene at the start of a game, includes the player data within it
-func _set_run_reference(run_ref: Node):
+func _set_run_reference(run_ref: Run):
 	run_node = run_ref
 	print("run_node loaded")

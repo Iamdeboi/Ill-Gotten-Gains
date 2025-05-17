@@ -15,9 +15,6 @@ extends Control
 
 func _ready() -> void:
 	pass
-	#gui_corner_buttons.spellbook_button.pressed.connect(spellbook_view.show_current_view.bind("Spellbook"))
-	#gui_corner_buttons.bag_button.pressed.connect(inventory_view.show)
-
 
 func _set_player_stats(value: PlayerStats) -> void:
 	stat_ref = value
