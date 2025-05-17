@@ -49,9 +49,13 @@ func _start_run() -> void:
 	_setup_top_bar()
 	map.generate_new_map()
 	map.unlock_floor(0)
+	
+	await get_tree().create_timer(3).timeout
+	run_stats.gold += 55
+	
 
 
-func _change_view(scene: PackedScene) -> void:
+func _change_view(scene: PackedScene) -> Node:
 	if current_view.get_child_count() > 0:
 		current_view.get_child(0).queue_free()
 	
@@ -59,6 +63,8 @@ func _change_view(scene: PackedScene) -> void:
 	var new_view := scene.instantiate()
 	current_view.add_child(new_view)
 	map.hide_map()
+	
+	return new_view
 
 
 func _show_map() -> void: #Called when exiting most rooms in the game
@@ -70,7 +76,7 @@ func _show_map() -> void: #Called when exiting most rooms in the game
 
 
 func _setup_event_connections() -> void:
-	EventBus.battle_won.connect(_change_view.bind(BATTLE_REWARDS_SCENE))
+	EventBus.battle_won.connect(_on_battle_won)
 	EventBus.battle_reward_exited.connect(_show_map)
 	EventBus.campfire_exited.connect(_show_map)
 	EventBus.map_exited.connect(_on_map_exited)
@@ -96,8 +102,10 @@ func _setup_top_bar():
 
 
 func _on_battle_won() -> void:
-	print("TODO: Conifgure battle_rewards_scene and battle_scene scripts to this one")
-
+	var reward_scene := _change_view(BATTLE_REWARDS_SCENE) as BattleRewards
+	reward_scene.run_stats = run_stats
+	reward_scene.character_stats = character
+# Dependencies are injected HERE
 
 func _on_map_exited(room: Room) -> void:
 	match room.type:

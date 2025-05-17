@@ -10,6 +10,7 @@ const ITEM_ICON := preload("res://Assets/art/tile_0082.png")
 const ITEM_TEXT := "Item Drop"
 
 @export var run_stats : RunStats
+@export var character_stats : PlayerStats
 
 @onready var rewards: VBoxContainer = %Rewards
 

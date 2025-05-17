@@ -12,9 +12,10 @@ func _ready() -> void:
 
 func set_run_stats(new_value: RunStats) -> void:
 	run_stats = new_value
-	
+	print("GoldUI RunStats loaded")
 	if not run_stats.gold_changed.is_connected(_update_gold):
 		run_stats.gold_changed.connect(_update_gold)
+		print("_update_gold is connected with the gold_changed signal")
 		_update_gold()
 
 
