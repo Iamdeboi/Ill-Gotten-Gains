@@ -100,6 +100,7 @@ func play(targets: Array[Node], player_stats: PlayerStats, ability: Ability) -> 
 	else:
 		apply_effects(_get_targets(targets), ability, primary_scaling_mod, secondary_scaling_mod)
 	print("player_stats: " + str(player_stats.health) + " " + str(player_stats.mana) + " " + str(player_stats.armor) + ".")
+	EventBus.any_player_action_done.emit()
 
 
 func apply_effects(_targets: Array[Node], _ability: Ability, _primary_scaling_mod: float, _secondary_scaling_mod: float) -> void:

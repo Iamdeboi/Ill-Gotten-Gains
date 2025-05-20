@@ -7,6 +7,9 @@ signal reparent_requested(which_ability: AbilitySlot)
 @export var player_stats: PlayerStats : set = _set_player_stats
 
 @onready var ability_visuals: AbilityVisuals = $AbilityVisuals
+@onready var cooldown_wrapper: Panel = %CooldownWrapper
+@onready var cooldown_count_label: Label = %CooldownCountLabel
+
 @onready var drop_point_detector: Area2D = $DropPointDetector
 @onready var ability_state_machine: AbilityStateMachine = $AbilityStateMachine as AbilityStateMachine
 @onready var targets: Array[Node] = []
@@ -17,12 +20,14 @@ var parent: Control
 var tween: Tween
 var playable := true: set = _set_playable # Checks if enough resource is available to play ability
 var disabled := false # Locked from interacting via clicking, dragging, moving
+var cooldown_remaining : int
 
 func _ready() -> void:
 	EventBus.ability_targeting_started.connect(_on_ability_drag_or_targeting_started)
 	EventBus.ability_drag_started.connect(_on_ability_drag_or_targeting_started)
 	EventBus.ability_targeting_ended.connect(_on_ability_drag_or_targeting_ended)
 	EventBus.ability_drag_ended.connect(_on_ability_drag_or_targeting_ended)
+	EventBus.any_player_action_done.connect(_tick_down_cooldowns)
 	ability_state_machine.init(self)
 
 
@@ -39,6 +44,7 @@ func play() -> void:
 		return
 	
 	ability.play(targets, player_stats, ability)
+	start_cooldown()
 
 func _on_gui_input(event: InputEvent) -> void:
 	ability_state_machine.on_gui_input(event)
@@ -103,3 +109,21 @@ func _on_ability_drag_or_targeting_ended(_used_ability: AbilitySlot) -> void:
 
 func _on_player_stats_changed() -> void:
 	self.playable = player_stats.can_play_ability(ability)
+
+
+func start_cooldown() -> void:
+	if !ability.cooldown:
+		return
+	cooldown_wrapper.show()
+	cooldown_count_label.text = str(ability.cooldown)
+	cooldown_remaining = ability.cooldown
+
+func _tick_down_cooldowns() -> void:
+	cooldown_remaining -= 1
+	cooldown_count_label.text = str(cooldown_remaining)
+	if cooldown_remaining <= 0:
+		end_cooldown() 
+
+func end_cooldown() -> void:
+	cooldown_wrapper.hide()
+	cooldown_count_label.text = ""

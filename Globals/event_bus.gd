@@ -18,7 +18,7 @@ signal ability_drag_started(ability_slot: AbilitySlot)
 signal ability_drag_ended(ability_slot: AbilitySlot)
 signal ability_targeting_started(ability_slot: AbilitySlot)
 signal ability_targeting_ended(ability_slot: AbilitySlot)
-
+signal any_player_action_done
 signal ability_used(ability: Ability)
 signal ability_tooltip_requested(ability: Ability)
 signal tooltip_hide_requested
