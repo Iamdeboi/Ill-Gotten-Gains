@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=3 uid="uid://cxs40duc01ceu"]
+
+[ext_resource type="PackedScene" uid="uid://ipwgkmpww5uh" path="res://Scenes/GUI/ability_menu_ui.tscn" id="1_p78ix"]
+[ext_resource type="Script" uid="uid://dnove4yk5jfl5" path="res://Scenes/AbilityRewards/ability_rewards.gd" id="1_xwlte"]
+[ext_resource type="Script" uid="uid://smcmjjy50miu" path="res://Resources/Templates/Abilities/ability.gd" id="2_5nd5b"]
+[ext_resource type="PackedScene" uid="uid://du4wficbqnycu" path="res://Scenes/GUI/ability_tooltip_popup.tscn" id="2_enojd"]
+[ext_resource type="Theme" uid="uid://b845uab77o0un" path="res://Assets/Themes/GUI_Theme.theme" id="2_fku2j"]
+[ext_resource type="Resource" uid="uid://dnq7qqmyyubjh" path="res://Resources/Classes/Warrior/Abilities/second_wind.tres" id="3_aywq7"]
+[ext_resource type="Theme" uid="uid://s2qhlxij3t3q" path="res://Assets/Themes/GUI_Theme_2.theme" id="4_fku2j"]
+[ext_resource type="Resource" uid="uid://cvvx6pnppdaex" path="res://Resources/Classes/All/spare_mana_potion.tres" id="4_wm6y6"]
+[ext_resource type="Resource" uid="uid://bl0hxgo0vfup5" path="res://Resources/Classes/All/potion_of_questionable_purpose.tres" id="5_v1xo2"]
+
+[node name="AbilityRewards" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.529412)
+script = ExtResource("1_xwlte")
+rewards = Array[ExtResource("2_5nd5b")]([ExtResource("3_aywq7"), ExtResource("4_wm6y6"), ExtResource("5_v1xo2")])
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -52.0
+offset_top = -30.5
+offset_right = 52.0
+offset_bottom = 30.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="Abilities" type="HBoxContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="AbilityMenuUI" parent="VBoxContainer/Abilities" instance=ExtResource("1_p78ix")]
+layout_mode = 2
+
+[node name="AbilityMenuUI2" parent="VBoxContainer/Abilities" instance=ExtResource("1_p78ix")]
+layout_mode = 2
+
+[node name="AbilityMenuUI3" parent="VBoxContainer/Abilities" instance=ExtResource("1_p78ix")]
+layout_mode = 2
+
+[node name="SkipAbilityReward" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme = ExtResource("2_fku2j")
+text = "Skip Ability"
+
+[node name="AbilityTooltipPopup" parent="." instance=ExtResource("2_enojd")]
+visible = false
+layout_mode = 1
+background_color = Color(0.486289, 0.39615, 0.185455, 0.529412)
+
+[node name="TakeButton" type="Button" parent="AbilityTooltipPopup"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 32)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("4_fku2j")
+text = "Learn Ability"

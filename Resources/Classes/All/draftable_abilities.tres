@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="AbilityList" load_steps=6 format=3 uid="uid://ciy3v6a8b2th4"]
+
+[ext_resource type="Script" uid="uid://smcmjjy50miu" path="res://Resources/Templates/Abilities/ability.gd" id="1_j0i5m"]
+[ext_resource type="Resource" uid="uid://dnq7qqmyyubjh" path="res://Resources/Classes/Warrior/Abilities/second_wind.tres" id="2_gumcm"]
+[ext_resource type="Script" uid="uid://dj0e7vxllw5u7" path="res://Scenes/AbilityUI/ability_list.gd" id="2_xigj5"]
+[ext_resource type="Resource" uid="uid://bl0hxgo0vfup5" path="res://Resources/Classes/All/potion_of_questionable_purpose.tres" id="3_gyacc"]
+[ext_resource type="Resource" uid="uid://cvvx6pnppdaex" path="res://Resources/Classes/All/spare_mana_potion.tres" id="4_1735d"]
+
+[resource]
+script = ExtResource("2_xigj5")
+abilities = Array[ExtResource("1_j0i5m")]([ExtResource("2_gumcm"), ExtResource("2_gumcm"), ExtResource("2_gumcm"), ExtResource("3_gyacc"), ExtResource("3_gyacc"), ExtResource("3_gyacc"), ExtResource("4_1735d"), ExtResource("4_1735d"), ExtResource("4_1735d")])
+metadata/_custom_type_script = "uid://dj0e7vxllw5u7"

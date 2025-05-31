@@ -5,7 +5,7 @@ extends BaseStats
 @export_category("Player Combat Features")
 @export var maximum_action_points : int = 3
 @export var starting_abilities : AbilityList #Abilities given at the start of a run dependant on class selected
-
+@export var draftable_abilities : AbilityList # List of available abilities to be dropped when winning combats as this class
 
 var action_points : int : set = set_action_points
 var known_abilities : AbilityList # All abilities known, starting with the chosen class's starting_abilities
