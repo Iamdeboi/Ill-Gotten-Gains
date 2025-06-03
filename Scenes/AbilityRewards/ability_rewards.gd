@@ -20,7 +20,7 @@ func _ready() -> void:
 	take_button.pressed.connect(
 		func():
 			ability_reward_selected.emit(selected_ability)
-			print("drafted %s" % selected_ability.id)
+			print("Drafted %s" % selected_ability.id)
 			queue_free()
 	)
 	

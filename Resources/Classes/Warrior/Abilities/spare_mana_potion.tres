@@ -9,6 +9,7 @@
 script = ExtResource("3_72vek")
 id = "6"
 ability_type = 2
+rarity = 1
 target = 0
 cost = 0
 cost_type = 0

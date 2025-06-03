@@ -9,6 +9,7 @@
 script = ExtResource("2_bspny")
 id = "7"
 ability_type = 3
+rarity = 1
 target = 0
 cost = 0
 cost_type = 0

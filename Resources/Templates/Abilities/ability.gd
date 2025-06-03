@@ -2,14 +2,22 @@ class_name Ability
 extends Resource
 
 enum AbilityType {ATTACK, DEFENSE, BUFF, DEBUFF}
+enum Rarity {COMMON, UNCOMMON, RARE}
 enum Target {SELF, SINGLE_ENEMY, ALL_ENEMIES, EVERYONE}
 enum CostType {MANA, HEALTH, GOLD}
 enum ElementType {NONE, PHYSICAL, FIRE, FROST, STORM, TOXIC, ARCANE, SHADOW, HOLY}
 enum Scaling {NONE, STRENGTH, DEXTERITY, INTELLECT, WISDOM, CHARISMA, CONSTITUTION}
 
+const RARITY_COLORS := {
+	Ability.Rarity.COMMON: Color.WHITE,
+	Ability.Rarity.UNCOMMON: Color.GREEN,
+	Ability.Rarity.RARE: Color.BLUE
+}
+
 @export_group("Ability Attributes")
 @export var id: String
 @export var ability_type: AbilityType
+@export var rarity: Rarity
 @export var target: Target
 @export var cost: int
 @export var cost_type: CostType

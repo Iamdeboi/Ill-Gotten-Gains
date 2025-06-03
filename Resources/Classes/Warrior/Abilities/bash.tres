@@ -10,6 +10,7 @@
 script = ExtResource("1_exv3l")
 id = "3"
 ability_type = 3
+rarity = 2
 target = 1
 cost = 0
 cost_type = 1

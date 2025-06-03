@@ -9,6 +9,7 @@
 script = ExtResource("1_ufs65")
 id = "4"
 ability_type = 0
+rarity = 2
 target = 2
 cost = 10
 cost_type = 1

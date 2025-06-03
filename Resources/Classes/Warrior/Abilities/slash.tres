@@ -9,6 +9,7 @@
 script = ExtResource("1_sc24d")
 id = "1"
 ability_type = 0
+rarity = 0
 target = 1
 cost = 0
 cost_type = 0

@@ -107,6 +107,11 @@ func _on_battle_won() -> void:
 	reward_scene.character_stats = character
 # Dependencies are injected HERE
 
+# Temporary code to ensure that adding gold rewards and ability rewards are working properly
+# This wil be actually be called from the battle encounters themselves in the future
+	reward_scene.add_gold_reward(70)
+	reward_scene.add_ability_reward()
+
 func _on_map_exited(room: Room) -> void:
 	match room.type:
 		Room.Type.MONSTER:
