@@ -22,8 +22,6 @@ EventBus="*res://Globals/event_bus.gd"
 Shaker="*res://Globals/shaker.gd"
 MusicPlayer="*res://Globals/music_player.tscn"
 SfxPlayer="*res://Globals/sfx_player.tscn"
-JsonData="*res://JSONData.gd"
-PlayerInventory="*res://Globals/player_inventory.gd"
 PlayerManager="*res://Globals/player_manager.gd"
 
 [display]
@@ -47,7 +45,6 @@ script/templates_search_path="res://ScriptTemplates"
 folder_colors={
 "res://Resources/Classes/": "orange",
 "res://Resources/Enemies/": "red",
-"res://Resources/Items/": "green",
 "res://Scenes/Battle/": "red",
 "res://Scenes/GUI/": "green",
 "res://Scenes/Menus/": "blue",

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b6s6sqsv00wkw"]
+[gd_scene load_steps=8 format=3 uid="uid://b6s6sqsv00wkw"]
 
 [ext_resource type="Script" uid="uid://c56iaajfhugxm" path="res://Scenes/Run/run.gd" id="1_m8kbj"]
 [ext_resource type="Resource" uid="uid://c2yni6jomw66r" path="res://Scenes/Run/run_startup.tres" id="2_7g7cm"]
@@ -7,11 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://b0ogpq1vvud04" path="res://Scenes/GUI/gold_ui.tscn" id="5_3lri4"]
 [ext_resource type="PackedScene" uid="uid://cbe3k3gxc4bnu" path="res://Scenes/GUI/top_bar_spell_book.tscn" id="5_vqvxu"]
 [ext_resource type="PackedScene" uid="uid://bad1g5i0fh84w" path="res://Scenes/GUI/ability_menu_view.tscn" id="7_3lri4"]
-[ext_resource type="PackedScene" uid="uid://35xleqyaeykb" path="res://Scenes/GUI/top_bar_bag.tscn" id="9_5riug"]
-[ext_resource type="PackedScene" uid="uid://c3s36bs5qjo35" path="res://Scenes/ItemRewards/item_reward.tscn" id="10_5riug"]
-[ext_resource type="PackedScene" uid="uid://b8xuri88urynr" path="res://Scenes/GUI/Inventory/inventory_view.tscn" id="10_vwusp"]
-[ext_resource type="Resource" uid="uid://qug0t8scty6d" path="res://Resources/Items/ItemData/iron_sword.tres" id="11_r6wr3"]
-[ext_resource type="AudioStream" uid="uid://dd6du82yueagg" path="res://Assets/Audio/Inventory_SFX_Pack/Inventory_SFX/Drops/Metal_Light.wav" id="12_ltpwg"]
 
 [node name="Run" type="Node"]
 script = ExtResource("1_m8kbj")
@@ -93,37 +88,9 @@ size_flags_horizontal = 3
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="TopBarBag" parent="TopBarUI/TopBarElements" instance=ExtResource("9_5riug")]
-unique_name_in_owner = true
-layout_mode = 2
-
 [node name="SpellbookLayer" type="CanvasLayer" parent="."]
 layer = 3
 
 [node name="SpellbookView" parent="SpellbookLayer" instance=ExtResource("7_3lri4")]
 unique_name_in_owner = true
 visible = false
-
-[node name="InventoryLayer" type="CanvasLayer" parent="."]
-layer = 3
-
-[node name="InventoryView" parent="InventoryLayer" instance=ExtResource("10_vwusp")]
-unique_name_in_owner = true
-visible = false
-
-[node name="ItemReward" parent="." instance=ExtResource("10_5riug")]
-offset_left = 1.0
-offset_top = 132.0
-offset_right = 105.0
-offset_bottom = 157.0
-text = "Get Potions"
-count = 1
-
-[node name="ItemReward2" parent="." instance=ExtResource("10_5riug")]
-offset_left = 1.0
-offset_top = 160.0
-offset_right = 160.0
-offset_bottom = 185.0
-item_data = ExtResource("11_r6wr3")
-count = 1
-pick_up_noise = ExtResource("12_ltpwg")

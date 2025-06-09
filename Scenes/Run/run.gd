@@ -14,9 +14,7 @@ const TREASURE_ROOM_SCENE := preload("res://Scenes/TreasureRoom/treasure_room.ts
 #Top-bar UI
 @onready var gold_ui: GoldUI = %GoldUI
 @onready var top_bar_spell_book: TopBarSpellBook = %TopBarSpellBook
-@onready var top_bar_bag: TopBarBag = %TopBarBag
 @onready var spellbook_view: AbilityMenuView = %SpellbookView
-@onready var inventory_view: InventoryView = %InventoryView
 #Debug Buttons
 @onready var map_button: Button = %MapButton
 @onready var battle_button: Button = %BattleButton
@@ -43,7 +41,6 @@ func _ready() -> void:
 
 func _start_run() -> void:
 	run_stats = RunStats.new()
-	PlayerInventory._set_run_reference(self)
 	
 	_setup_event_connections()
 	_setup_top_bar()
@@ -98,7 +95,6 @@ func _setup_top_bar():
 	spellbook_view._update_view() # Use the _update_view function to update all abilities with their respective slot scenes and their tooltip integration
 	spellbook_view.hide() # cancels out the "show()" at the end of _update_view()
 	# TODO: Determine if theres a better way to update the abilities without making a very similar function for the "AbilityMenuView" script...
-	top_bar_bag.pressed.connect(inventory_view.show)
 
 
 func _on_battle_won() -> void:
@@ -129,6 +125,3 @@ func _on_map_exited(room: Room) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("spellbook_button"):
 		spellbook_view.visible = !spellbook_view.visible
-	elif  event.is_action_pressed("bag_button"):
-		inventory_view.visible = !inventory_view.visible
-		inventory_view.inventory_ui.clear_item_labels()

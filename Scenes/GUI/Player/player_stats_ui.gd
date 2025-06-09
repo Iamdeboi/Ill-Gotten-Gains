@@ -5,7 +5,6 @@ extends Control
 
 @onready var portrait: TextureRect = %Portrait
 @onready var spellbook_view: AbilityMenuView = %SpellbookView
-@onready var inventory_view: InventoryView = %InventoryView
 
 @onready var gui_corner_bars: GUICornerBars = %GUICornerBars
 @onready var gui_armor_label: ArmorLabel = %GUIArmorLabel
