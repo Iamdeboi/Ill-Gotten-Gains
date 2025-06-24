@@ -1,26 +1,25 @@
-[gd_scene load_steps=23 format=3 uid="uid://beq6os1qypmat"]
+[gd_scene load_steps=22 format=3 uid="uid://beq6os1qypmat"]
 
-[ext_resource type="Texture2D" uid="uid://cp4iq5fd6j8be" path="res://Assets/art/background.png" id="1_4nlbu"]
 [ext_resource type="Script" uid="uid://i2lqgiy6iiwu" path="res://Scenes/Battle/battle_scene.gd" id="1_lcoea"]
 [ext_resource type="PackedScene" uid="uid://43xkdnm2fpla" path="res://Scenes/Player/player.tscn" id="2_lcoea"]
 [ext_resource type="AudioStream" uid="uid://dpdenqqbovwfq" path="res://Assets/Audio/8_bit_iced_village_lofi.mp3" id="3_ik5sk"]
 [ext_resource type="PackedScene" uid="uid://cc0r5lmc5gi4r" path="res://Scenes/Enemy/enemy.tscn" id="3_jp0ri"]
+[ext_resource type="Texture2D" uid="uid://dkbry1r2rfehu" path="res://Assets/art/BattleBackgrounds/ForestLevel/IGGForestBackgroundOne.png" id="4_4pmf7"]
 [ext_resource type="Script" uid="uid://bgob53ycfxb58" path="res://Scenes/Enemy/enemy_handler.gd" id="5_6tvrj"]
-[ext_resource type="Resource" uid="uid://c1g3jl3xp20b0" path="res://Resources/Enemies/Crab/crab.tres" id="6_68j0i"]
+[ext_resource type="Resource" uid="uid://c1g3jl3xp20b0" path="res://Resources/Enemies/DruidsGrove/Crab/crab.tres" id="6_68j0i"]
 [ext_resource type="PackedScene" uid="uid://cjgiis2rgupwn" path="res://Scenes/AbilityUI/AbilityTargetSelector/ability_target_selector.tscn" id="7_5mge4"]
 [ext_resource type="PackedScene" uid="uid://ba7hfljytxc3x" path="res://Scenes/GUI/Misc/tooltip.tscn" id="7_cbixj"]
 [ext_resource type="Script" uid="uid://b66pvl7x1j7be" path="res://Scenes/Player/player_handler.gd" id="7_n1ain"]
 [ext_resource type="Script" uid="uid://bft6q2ldklwwi" path="res://Scenes/Battle/battle_ui.gd" id="8_sufya"]
 [ext_resource type="PackedScene" uid="uid://brnkqcr6gd3j8" path="res://Scenes/Battle/ability_container.tscn" id="9_02hj4"]
-[ext_resource type="Resource" uid="uid://b400i7oa1687j" path="res://Resources/Enemies/Bat/bat_enemy.tres" id="9_n1ain"]
+[ext_resource type="Resource" uid="uid://b400i7oa1687j" path="res://Resources/Enemies/DruidsGrove/Bat/bat_enemy.tres" id="9_n1ain"]
 [ext_resource type="Resource" uid="uid://ls7ennmh2elu" path="res://Resources/Classes/Warrior/warrior_stats.tres" id="12_ik5sk"]
-[ext_resource type="Theme" uid="uid://bxj3jchl1trm8" path="res://Assets/Themes/default.tres" id="13_4pmf7"]
 [ext_resource type="Texture2D" uid="uid://3irjme3yj00b" path="res://Assets/Themes/ButtonLayoutDraft1.png" id="13_36cr5"]
 [ext_resource type="PackedScene" uid="uid://dujeyjg48m3ys" path="res://Scenes/GUI/Player/Components/action_point_ui.tscn" id="15_ik5sk"]
 [ext_resource type="PackedScene" uid="uid://cgx6m3nsu4lnh" path="res://Scenes/GUI/Misc/battle_over_panel.tscn" id="16_sufya"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cbixj"]
-size = Vector2(640, 238)
+size = Vector2(640, 240)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6tvrj"]
 atlas = ExtResource("13_36cr5")
@@ -49,14 +48,14 @@ offset_right = 640.0
 offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_4nlbu")
+texture = ExtResource("4_4pmf7")
 metadata/_edit_lock_ = true
 
 [node name="AbilityDropArea" type="Area2D" parent="."]
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AbilityDropArea"]
-position = Vector2(320, 119)
+position = Vector2(320, 120)
 shape = SubResource("RectangleShape2D_cbixj")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -67,7 +66,7 @@ scale = Vector2(0.8, 0.8)
 script = ExtResource("5_6tvrj")
 
 [node name="CrabEnemy" parent="EnemyHandler" instance=ExtResource("3_jp0ri")]
-position = Vector2(320, 180)
+position = Vector2(320, 150)
 scale = Vector2(2, 2)
 stats = ExtResource("6_68j0i")
 
@@ -98,34 +97,21 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -190.0
-offset_top = -76.0
+offset_top = -83.0
 offset_right = 180.0
-offset_bottom = -8.0
+offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
-
-[node name="Panel" type="PanelContainer" parent="BattleUI/HotbarUI"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("13_4pmf7")
 
 [node name="AbilityContainer" parent="BattleUI/HotbarUI" instance=ExtResource("9_02hj4")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(362, 60)
 layout_mode = 1
-anchors_preset = 8
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = -182.0
-offset_top = 110.0
-offset_right = 180.0
-offset_bottom = 170.0
-grow_vertical = 2
+offset_left = -181.0
+offset_top = -108.0
+offset_right = 181.0
+offset_bottom = 0.0
 columns = 10
 
 [node name="ActionPointUI" parent="BattleUI" instance=ExtResource("15_ik5sk")]

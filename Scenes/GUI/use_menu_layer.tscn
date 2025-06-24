@@ -1,11 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://ca51g3r5cdoid"]
+[gd_scene load_steps=3 format=3 uid="uid://um63s75gvcgi"]
 
 [ext_resource type="Texture2D" uid="uid://cy8pnq7fmoqtg" path="res://Assets/Themes/9patchUIOne.png" id="1_635oq"]
 [ext_resource type="Theme" uid="uid://bxj3jchl1trm8" path="res://Assets/Themes/default.tres" id="2_r1ejk"]
 
 [node name="UseMenuLayer" type="CanvasLayer"]
 layer = 2
-visible = false
 
 [node name="ItemUsePanel" type="NinePatchRect" parent="."]
 unique_name_in_owner = true

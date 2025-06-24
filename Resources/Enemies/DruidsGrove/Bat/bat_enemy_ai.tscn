@@ -1,0 +1,132 @@
+[gd_scene load_steps=20 format=3 uid="uid://drcv1xta5ebpv"]
+
+[ext_resource type="Script" uid="uid://3v76pa028tf4" path="res://Scenes/Enemy/enemy_action_picker.gd" id="1_apxam"]
+[ext_resource type="Script" uid="uid://bqs1o7pqenmfo" path="res://Resources/Enemies/DruidsGrove/Bat/bat_attack_action.gd" id="2_o0nhy"]
+[ext_resource type="Script" uid="uid://smcmjjy50miu" path="res://Resources/Templates/Abilities/ability.gd" id="3_ynj3i"]
+[ext_resource type="Texture2D" uid="uid://bfvi02kojsa00" path="res://Assets/art/tile_0103.png" id="4_5lq8t"]
+[ext_resource type="Script" uid="uid://75vkhkjo518y" path="res://Resources/Templates/Intent/intent.gd" id="5_n2sx7"]
+[ext_resource type="AudioStream" uid="uid://gso1h4okwr6s" path="res://Assets/Audio/Minifantasy_Creatures_SFX_v3.0/Beasts/Bat/04_Bat_attack_1.wav" id="6_r8h4b"]
+[ext_resource type="Script" uid="uid://vxd02tej2cun" path="res://Resources/Enemies/DruidsGrove/Bat/bat_block_action.gd" id="7_r8h4b"]
+[ext_resource type="Texture2D" uid="uid://bi6pfjs32f820" path="res://Assets/art/tile_0101.png" id="8_5lq8t"]
+[ext_resource type="AudioStream" uid="uid://ghs5gvshwdxi" path="res://Assets/Audio/Retro_RPG_Fight_Effects/37_Block_01.wav" id="9_r8h4b"]
+[ext_resource type="Script" uid="uid://cvv0mdmcwrj5x" path="res://Resources/Enemies/DruidsGrove/Bat/bat_drain_action.gd" id="10_n2sx7"]
+[ext_resource type="Texture2D" uid="uid://cn2c1psh561cc" path="res://Assets/art/tile_0127.png" id="11_r8h4b"]
+[ext_resource type="AudioStream" uid="uid://c0fdjclf40kex" path="res://Assets/Audio/Minifantasy_Magic_Weapons_SFX/Effects/Bleeding/Bleeding_Enchant_On.wav" id="13_masar"]
+
+[sub_resource type="Resource" id="Resource_emr20"]
+script = ExtResource("3_ynj3i")
+id = ""
+ability_type = 0
+rarity = 0
+target = 1
+cost = 0
+cost_type = 0
+cooldown = 0
+primary_scaling = 2
+ps_factor = 0.5
+secondary_scaling = 0
+ss_factor = 1.0
+element_type = 1
+title = ""
+tooltip_text = ""
+metadata/_custom_type_script = "uid://smcmjjy50miu"
+
+[sub_resource type="Resource" id="Resource_masar"]
+script = ExtResource("5_n2sx7")
+number = ""
+icon = ExtResource("4_5lq8t")
+metadata/_custom_type_script = "uid://75vkhkjo518y"
+
+[sub_resource type="Resource" id="Resource_jug4i"]
+script = ExtResource("3_ynj3i")
+id = ""
+ability_type = 1
+rarity = 0
+target = 0
+cost = 0
+cost_type = 0
+cooldown = 0
+primary_scaling = 6
+ps_factor = 0.5
+secondary_scaling = 0
+ss_factor = 1.0
+element_type = 0
+title = ""
+tooltip_text = ""
+metadata/_custom_type_script = "uid://smcmjjy50miu"
+
+[sub_resource type="Resource" id="Resource_r8h4b"]
+script = ExtResource("5_n2sx7")
+number = ""
+icon = ExtResource("8_5lq8t")
+metadata/_custom_type_script = "uid://75vkhkjo518y"
+
+[sub_resource type="Resource" id="Resource_j83um"]
+script = ExtResource("3_ynj3i")
+id = ""
+ability_type = 0
+rarity = 0
+target = 1
+cost = 5
+cost_type = 0
+cooldown = 0
+primary_scaling = 2
+ps_factor = 0.8
+secondary_scaling = 0
+ss_factor = 1.0
+element_type = 0
+title = ""
+tooltip_text = ""
+metadata/_custom_type_script = "uid://smcmjjy50miu"
+
+[sub_resource type="Resource" id="Resource_0ukf5"]
+script = ExtResource("3_ynj3i")
+id = ""
+ability_type = 2
+rarity = 0
+target = 0
+cost = 0
+cost_type = 0
+cooldown = 0
+primary_scaling = 0
+ps_factor = 1.0
+secondary_scaling = 0
+ss_factor = 1.0
+element_type = 0
+title = ""
+tooltip_text = ""
+metadata/_custom_type_script = "uid://smcmjjy50miu"
+
+[sub_resource type="Resource" id="Resource_3gl4t"]
+script = ExtResource("5_n2sx7")
+number = ""
+icon = ExtResource("11_r8h4b")
+metadata/_custom_type_script = "uid://75vkhkjo518y"
+
+[node name="BatEnemyAI" type="Node"]
+script = ExtResource("1_apxam")
+
+[node name="BatAttackAction" type="Node" parent="."]
+script = ExtResource("2_o0nhy")
+damage = 2
+ability_ref = SubResource("Resource_emr20")
+intent = SubResource("Resource_masar")
+sound = ExtResource("6_r8h4b")
+type = 1
+chance_weight = 3.0
+
+[node name="BatBlockAction" type="Node" parent="."]
+script = ExtResource("7_r8h4b")
+armor = 4
+ability_ref = SubResource("Resource_jug4i")
+intent = SubResource("Resource_r8h4b")
+sound = ExtResource("9_r8h4b")
+type = 1
+chance_weight = 1.0
+
+[node name="BatDrainAction" type="Node" parent="."]
+script = ExtResource("10_n2sx7")
+ability_ref = SubResource("Resource_j83um")
+healing_ability_ref = SubResource("Resource_0ukf5")
+intent = SubResource("Resource_3gl4t")
+sound = ExtResource("13_masar")

@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=2 format=3 uid="uid://f67av2qauq5u"]
+
+[ext_resource type="Script" uid="uid://go2fqkkn8066" path="res://Resources/Templates/StatMakers/enemy_stats.gd" id="1_48tyq"]
+
+[resource]
+script = ExtResource("1_48tyq")
+max_health = 1
+starting_armor = 1
+max_mana = 1
+name = ""
+start_strength = 0
+start_dexterity = 0
+start_intellect = 0
+start_wisdom = 0
+start_charisma = 0
+start_constitution = 0
+starting_physical_vuln = 1.0
+starting_fire_vuln = 1.0
+starting_frost_vuln = 1.0
+starting_storm_vuln = 1.0
+starting_toxic_vuln = 1.0
+starting_arcane_vuln = 1.0
+starting_shadow_vuln = 1.0
+starting_holy_vuln = 1.0
+metadata/_custom_type_script = "uid://go2fqkkn8066"

@@ -68,6 +68,7 @@ func _set_enemy(value: Enemy) -> void:
 	for action in get_children():
 		action.enemy = enemy
 
+
 func _set_target(value: Node) -> void: 
 	target = value
 	

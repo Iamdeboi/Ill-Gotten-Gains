@@ -1,0 +1,33 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=6 format=3 uid="uid://c1g3jl3xp20b0"]
+
+[ext_resource type="Script" uid="uid://go2fqkkn8066" path="res://Resources/Templates/StatMakers/enemy_stats.gd" id="1_32ack"]
+[ext_resource type="PackedScene" uid="uid://klehi6llnmgb" path="res://Resources/Enemies/DruidsGrove/Crab/crab_enemy_ai.tscn" id="1_qbglh"]
+[ext_resource type="AudioStream" uid="uid://cgmuvtn07m610" path="res://Assets/Audio/Retro_RPG_Fight_Effects/69_Enemy_death_01.wav" id="2_cqtu0"]
+[ext_resource type="AudioStream" uid="uid://b143a70dpxxp4" path="res://Assets/Audio/Minifantasy_Weapons_SFX/Hits/Hit_Wood_on_flesh.wav" id="3_c8mhe"]
+[ext_resource type="Texture2D" uid="uid://1u3b3hwqd8yh" path="res://Assets/art/tile_0110.png" id="5_cqtu0"]
+
+[resource]
+script = ExtResource("1_32ack")
+ai = ExtResource("1_qbglh")
+hit_sound = ExtResource("3_c8mhe")
+death_sound = ExtResource("2_cqtu0")
+max_health = 40
+starting_armor = 30
+max_mana = 0
+name = "Crab"
+sprite = ExtResource("5_cqtu0")
+start_strength = 6
+start_dexterity = 2
+start_intellect = 2
+start_wisdom = 2
+start_charisma = 4
+start_constitution = 8
+starting_physical_vuln = 0.75
+starting_fire_vuln = 1.0
+starting_frost_vuln = 1.0
+starting_storm_vuln = 1.0
+starting_toxic_vuln = 1.0
+starting_arcane_vuln = 1.0
+starting_shadow_vuln = 1.0
+starting_holy_vuln = 1.0
+metadata/_custom_type_script = "uid://dt260m0mpxt3r"

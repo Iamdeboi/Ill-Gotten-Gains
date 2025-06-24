@@ -11,15 +11,14 @@ var player: PlayerStats
 
 func start_battle(player_stats: PlayerStats) -> void:
 	player = player_stats
-	player.prepared_abilities = player.prepared_abilities.duplicate(true)
-	set_up_hotbar(player.prepared_abilities.abilities.size())
+	set_up_hotbar(player.known_abilities.abilities.size())
 	player.armor = player.starting_armor # At combat start, replenish your armor equal to your starting_armor variable + additional_armor from equipment (TODO)
 	
 	start_turn()
 
 
 func set_up_ability_slot() -> void:
-	ability_container.add_ability(player.prepared_abilities.place_ability_slot())
+	ability_container.add_ability(player.known_abilities.place_ability_slot())
 
 
 func start_turn() -> void:

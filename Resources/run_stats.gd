@@ -9,14 +9,6 @@ const BASE_ABILITY_DROPS := 3 # Number of abilities that will appear when theres
 const BASE_COMMON_ABILITY_WEIGHT := 6.0
 const BASE_UNCOMMON_ABILITY_WEIGHT := 3.7
 const BASE_RARE_ABILITY_WEIGHT := 0.3
-# Item drops and weights based on their rarity
-#const BASE_ITEM_DROPS := 3
-#const BASE_COMMON_WEIGHT := 0
-#const BASE_UNCOMMON_WEIGHT := 0
-#const BASE_RARE_WEIGHT := 0
-#const BASE_EPIC_WEIGHT := 0
-#const BASE_LEGENDARY_WEIGHT := 0
-#const BASE_MYTHIC_WEIGHT := 0
 
 @export var gold := STARTING_GOLD : set = set_gold
 
@@ -26,14 +18,6 @@ const BASE_RARE_ABILITY_WEIGHT := 0.3
 @export_range(0.0, 10.0) var uncommon_ability_weight := BASE_UNCOMMON_ABILITY_WEIGHT
 @export_range(0.0, 10.0) var rare_ability_weight := BASE_RARE_ABILITY_WEIGHT
 
-#@export_category("Item Rewards and Weights")
-#@export var item_rewards := BASE_ITEM_DROPS
-#@export_range(0.0, 100.0) var common_item_weight := BASE_COMMON_WEIGHT
-#@export_range(0.0, 100.0) var uncommon_item_weight := BASE_UNCOMMON_WEIGHT
-#@export_range(0.0, 100.0) var rare_item_weight := BASE_RARE_WEIGHT
-#@export_range(0.0, 100.0) var epic_item_weight := BASE_EPIC_WEIGHT
-#@export_range(0.0, 100.0) var legendary_item_weight := BASE_LEGENDARY_WEIGHT
-#@export_range(0.0, 100.0) var mythic_item_weight := BASE_MYTHIC_WEIGHT
 
 func set_gold(new_amount: int) -> void:
 	gold = new_amount
@@ -44,11 +28,3 @@ func reset_ability_weights() -> void:
 	common_ability_weight = BASE_COMMON_ABILITY_WEIGHT
 	uncommon_ability_weight = BASE_UNCOMMON_ABILITY_WEIGHT
 	rare_ability_weight = BASE_RARE_ABILITY_WEIGHT
-
-#func reset_item_weights() -> void:
-	#common_item_weight = BASE_COMMON_WEIGHT
-	#uncommon_item_weight = BASE_UNCOMMON_WEIGHT
-	#rare_item_weight = BASE_RARE_WEIGHT
-	#epic_item_weight = BASE_EPIC_WEIGHT
-	#legendary_item_weight = BASE_LEGENDARY_WEIGHT
-	#mythic_item_weight = BASE_MYTHIC_WEIGHT
