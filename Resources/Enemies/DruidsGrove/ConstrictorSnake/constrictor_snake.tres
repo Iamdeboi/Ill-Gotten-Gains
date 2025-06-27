@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=5 format=3 uid="uid://cgor66kmfvwx5"]
+
+[ext_resource type="AudioStream" uid="uid://cgmuvtn07m610" path="res://Assets/Audio/Retro_RPG_Fight_Effects/69_Enemy_death_01.wav" id="1_50tm8"]
+[ext_resource type="Script" uid="uid://go2fqkkn8066" path="res://Resources/Templates/StatMakers/enemy_stats.gd" id="1_vyqmc"]
+[ext_resource type="AudioStream" uid="uid://chf03lntbhj31" path="res://Assets/Audio/Minifantasy_Weapons_SFX/Hits/Hit_Metal_on_leather.wav" id="2_0ia78"]
+[ext_resource type="Texture2D" uid="uid://dlxmqa0ogodpk" path="res://Assets/art/IGGEnemyIcons/001-Bat.png" id="2_rdiop"]
+
+[resource]
+script = ExtResource("1_vyqmc")
+hit_sound = ExtResource("2_0ia78")
+death_sound = ExtResource("1_50tm8")
+max_health = 30
+starting_armor = 25
+max_mana = 20
+name = "Constrictor Snake"
+sprite = ExtResource("2_rdiop")
+start_strength = 6
+start_dexterity = 10
+start_intellect = 4
+start_wisdom = 4
+start_charisma = 10
+start_constitution = 6
+starting_physical_vuln = 1.0
+starting_fire_vuln = 1.0
+starting_frost_vuln = 1.0
+starting_storm_vuln = 1.0
+starting_toxic_vuln = 1.0
+starting_arcane_vuln = 1.0
+starting_shadow_vuln = 1.0
+starting_holy_vuln = 1.0
+metadata/_custom_type_script = "uid://go2fqkkn8066"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://beq6os1qypmat"]
+[gd_scene load_steps=23 format=3 uid="uid://beq6os1qypmat"]
 
 [ext_resource type="Script" uid="uid://i2lqgiy6iiwu" path="res://Scenes/Battle/battle_scene.gd" id="1_lcoea"]
 [ext_resource type="PackedScene" uid="uid://43xkdnm2fpla" path="res://Scenes/Player/player.tscn" id="2_lcoea"]
@@ -12,6 +12,7 @@
 [ext_resource type="Script" uid="uid://b66pvl7x1j7be" path="res://Scenes/Player/player_handler.gd" id="7_n1ain"]
 [ext_resource type="Script" uid="uid://bft6q2ldklwwi" path="res://Scenes/Battle/battle_ui.gd" id="8_sufya"]
 [ext_resource type="PackedScene" uid="uid://brnkqcr6gd3j8" path="res://Scenes/Battle/ability_container.tscn" id="9_02hj4"]
+[ext_resource type="Resource" uid="uid://f67av2qauq5u" path="res://Resources/Enemies/DruidsGrove/Wolf/wolf.tres" id="9_4pmf7"]
 [ext_resource type="Resource" uid="uid://b400i7oa1687j" path="res://Resources/Enemies/DruidsGrove/Bat/bat_enemy.tres" id="9_n1ain"]
 [ext_resource type="Resource" uid="uid://ls7ennmh2elu" path="res://Resources/Classes/Warrior/warrior_stats.tres" id="12_ik5sk"]
 [ext_resource type="Texture2D" uid="uid://3irjme3yj00b" path="res://Assets/Themes/ButtonLayoutDraft1.png" id="13_36cr5"]
@@ -75,10 +76,10 @@ position = Vector2(191, 150)
 scale = Vector2(2, 2)
 stats = ExtResource("9_n1ain")
 
-[node name="BatEnemy2" parent="EnemyHandler" instance=ExtResource("3_jp0ri")]
+[node name="WolfEnemy" parent="EnemyHandler" instance=ExtResource("3_jp0ri")]
 position = Vector2(449, 150)
 scale = Vector2(2, 2)
-stats = ExtResource("9_n1ain")
+stats = ExtResource("9_4pmf7")
 
 [node name="PlayerHandler" type="Node" parent="." node_paths=PackedStringArray("ability_container")]
 script = ExtResource("7_n1ain")

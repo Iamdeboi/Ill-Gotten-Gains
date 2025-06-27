@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=5 format=3 uid="uid://bhadbutfjt7ex"]
+
+[ext_resource type="AudioStream" uid="uid://cgmuvtn07m610" path="res://Assets/Audio/Retro_RPG_Fight_Effects/69_Enemy_death_01.wav" id="1_7w7al"]
+[ext_resource type="Script" uid="uid://go2fqkkn8066" path="res://Resources/Templates/StatMakers/enemy_stats.gd" id="1_o6h8q"]
+[ext_resource type="AudioStream" uid="uid://dcv3y0vyfqb8l" path="res://Assets/Audio/LEOHPAZ_ForestAnimals_SFX_Pack/Wild_Boar/Wild_Boar_Damage.wav" id="2_6d5av"]
+[ext_resource type="Texture2D" uid="uid://dlxmqa0ogodpk" path="res://Assets/art/IGGEnemyIcons/001-Bat.png" id="4_evn5i"]
+
+[resource]
+script = ExtResource("1_o6h8q")
+hit_sound = ExtResource("2_6d5av")
+death_sound = ExtResource("1_7w7al")
+max_health = 70
+starting_armor = 60
+max_mana = 0
+name = "Boar"
+sprite = ExtResource("4_evn5i")
+start_strength = 8
+start_dexterity = 8
+start_intellect = 2
+start_wisdom = 2
+start_charisma = 6
+start_constitution = 14
+starting_physical_vuln = 1.0
+starting_fire_vuln = 1.0
+starting_frost_vuln = 1.0
+starting_storm_vuln = 1.0
+starting_toxic_vuln = 1.0
+starting_arcane_vuln = 1.0
+starting_shadow_vuln = 1.0
+starting_holy_vuln = 1.0
+metadata/_custom_type_script = "uid://go2fqkkn8066"

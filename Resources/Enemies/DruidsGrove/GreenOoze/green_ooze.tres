@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=5 format=3 uid="uid://chvkjqvmp6s3r"]
+
+[ext_resource type="Script" uid="uid://go2fqkkn8066" path="res://Resources/Templates/StatMakers/enemy_stats.gd" id="1_cw0np"]
+[ext_resource type="AudioStream" uid="uid://c5c8df8mmx7i6" path="res://Assets/Audio/Minifantasy_Creatures_SFX_v3.0/Monsters/Slime/02_Slime_death.wav" id="1_mmnhp"]
+[ext_resource type="AudioStream" uid="uid://ch8cm4ym127mk" path="res://Assets/Audio/Minifantasy_Creatures_SFX_v3.0/Monsters/Slime/01_Slime_damage.wav" id="2_px207"]
+[ext_resource type="Texture2D" uid="uid://cgopx2ponr1qi" path="res://Assets/art/tile_0121.png" id="4_psytr"]
+
+[resource]
+script = ExtResource("1_cw0np")
+hit_sound = ExtResource("2_px207")
+death_sound = ExtResource("1_mmnhp")
+max_health = 30
+starting_armor = 20
+max_mana = 20
+name = "Green Ooze"
+sprite = ExtResource("4_psytr")
+start_strength = 4
+start_dexterity = 2
+start_intellect = 4
+start_wisdom = 4
+start_charisma = 15
+start_constitution = 6
+starting_physical_vuln = 1.0
+starting_fire_vuln = 1.0
+starting_frost_vuln = 1.0
+starting_storm_vuln = 1.0
+starting_toxic_vuln = 0.5
+starting_arcane_vuln = 1.0
+starting_shadow_vuln = 1.0
+starting_holy_vuln = 1.0
+metadata/_custom_type_script = "uid://go2fqkkn8066"

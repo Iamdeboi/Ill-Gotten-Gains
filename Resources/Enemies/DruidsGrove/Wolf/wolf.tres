@@ -1,19 +1,27 @@
-[gd_resource type="Resource" script_class="EnemyStats" load_steps=2 format=3 uid="uid://f67av2qauq5u"]
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=6 format=3 uid="uid://f67av2qauq5u"]
 
 [ext_resource type="Script" uid="uid://go2fqkkn8066" path="res://Resources/Templates/StatMakers/enemy_stats.gd" id="1_48tyq"]
+[ext_resource type="PackedScene" uid="uid://38rw6ghvmyut" path="res://Resources/Enemies/DruidsGrove/Wolf/wolf_enemy_ai.tscn" id="1_vqql7"]
+[ext_resource type="AudioStream" uid="uid://bdjgoe82klce5" path="res://Assets/Audio/Minifantasy_Creatures_SFX_v3.0/Beasts/Wolf/07_Wolf_death.wav" id="2_bollk"]
+[ext_resource type="AudioStream" uid="uid://crfo52r8tcs0" path="res://Assets/Audio/Minifantasy_Creatures_SFX_v3.0/Beasts/Wolf/08_Wolf_damage_1.wav" id="3_i2nmo"]
+[ext_resource type="Texture2D" uid="uid://cg6ue5s8ho4yg" path="res://Assets/art/IGGEnemyIcons/002-Wolf.png" id="5_sr0oi"]
 
 [resource]
 script = ExtResource("1_48tyq")
-max_health = 1
-starting_armor = 1
-max_mana = 1
-name = ""
-start_strength = 0
-start_dexterity = 0
-start_intellect = 0
-start_wisdom = 0
-start_charisma = 0
-start_constitution = 0
+ai = ExtResource("1_vqql7")
+hit_sound = ExtResource("3_i2nmo")
+death_sound = ExtResource("2_bollk")
+max_health = 30
+starting_armor = 20
+max_mana = 10
+name = "Wolf"
+sprite = ExtResource("5_sr0oi")
+start_strength = 4
+start_dexterity = 8
+start_intellect = 4
+start_wisdom = 2
+start_charisma = 2
+start_constitution = 6
 starting_physical_vuln = 1.0
 starting_fire_vuln = 1.0
 starting_frost_vuln = 1.0

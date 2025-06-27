@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=5 format=3 uid="uid://bci6c30j8pu4g"]
+
+[ext_resource type="AudioStream" uid="uid://cgmuvtn07m610" path="res://Assets/Audio/Retro_RPG_Fight_Effects/69_Enemy_death_01.wav" id="1_q2lym"]
+[ext_resource type="AudioStream" uid="uid://cfj1t7x0str7o" path="res://Assets/Audio/Minifantasy_Weapons_SFX/Hits/Hit_Metal_on_metal.wav" id="2_7i5fo"]
+[ext_resource type="Script" uid="uid://go2fqkkn8066" path="res://Resources/Templates/StatMakers/enemy_stats.gd" id="3_smk2e"]
+[ext_resource type="Texture2D" uid="uid://cgopx2ponr1qi" path="res://Assets/art/tile_0121.png" id="4_lu8ls"]
+
+[resource]
+script = ExtResource("3_smk2e")
+hit_sound = ExtResource("2_7i5fo")
+death_sound = ExtResource("1_q2lym")
+max_health = 80
+starting_armor = 70
+max_mana = 0
+name = "Bandit Bruiser"
+sprite = ExtResource("4_lu8ls")
+start_strength = 16
+start_dexterity = 4
+start_intellect = 2
+start_wisdom = 2
+start_charisma = 6
+start_constitution = 16
+starting_physical_vuln = 0.75
+starting_fire_vuln = 1.0
+starting_frost_vuln = 1.0
+starting_storm_vuln = 1.0
+starting_toxic_vuln = 1.0
+starting_arcane_vuln = 1.0
+starting_shadow_vuln = 1.0
+starting_holy_vuln = 1.0
+metadata/_custom_type_script = "uid://go2fqkkn8066"

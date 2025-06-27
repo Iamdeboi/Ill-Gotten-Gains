@@ -1,0 +1,78 @@
+[gd_scene load_steps=13 format=3 uid="uid://38rw6ghvmyut"]
+
+[ext_resource type="Script" uid="uid://3v76pa028tf4" path="res://Scenes/Enemy/enemy_action_picker.gd" id="1_m1t3l"]
+[ext_resource type="Script" uid="uid://did2pn3s800a" path="res://Resources/Enemies/DruidsGrove/Wolf/wolf_attack_action.gd" id="2_q3gr8"]
+[ext_resource type="Script" uid="uid://smcmjjy50miu" path="res://Resources/Templates/Abilities/ability.gd" id="3_bawur"]
+[ext_resource type="Texture2D" uid="uid://c6rme2o6dyaoj" path="res://Assets/art/tile_0104.png" id="4_l4k7r"]
+[ext_resource type="Script" uid="uid://75vkhkjo518y" path="res://Resources/Templates/Intent/intent.gd" id="5_pom5j"]
+[ext_resource type="AudioStream" uid="uid://diipca8wkuynh" path="res://Assets/Audio/Minifantasy_Creatures_SFX_v3.0/Beasts/Wolf/05_Wolf_growl_1.wav" id="6_vupur"]
+[ext_resource type="Script" uid="uid://b4rgoxvykm4pd" path="res://Resources/Enemies/DruidsGrove/Wolf/wolf_block_action.gd" id="7_5bpuc"]
+[ext_resource type="Texture2D" uid="uid://bi6pfjs32f820" path="res://Assets/art/tile_0101.png" id="8_06hw4"]
+
+[sub_resource type="Resource" id="Resource_f73ml"]
+script = ExtResource("3_bawur")
+id = ""
+ability_type = 0
+rarity = 0
+target = 1
+cost = 0
+cost_type = 0
+cooldown = 0
+primary_scaling = 2
+ps_factor = 1.0
+secondary_scaling = 0
+ss_factor = 1.0
+element_type = 1
+title = ""
+tooltip_text = ""
+metadata/_custom_type_script = "uid://smcmjjy50miu"
+
+[sub_resource type="Resource" id="Resource_yjxvi"]
+script = ExtResource("5_pom5j")
+number = ""
+icon = ExtResource("4_l4k7r")
+metadata/_custom_type_script = "uid://75vkhkjo518y"
+
+[sub_resource type="Resource" id="Resource_c17gj"]
+script = ExtResource("3_bawur")
+id = ""
+ability_type = 1
+rarity = 0
+target = 0
+cost = 0
+cost_type = 0
+cooldown = 0
+primary_scaling = 6
+ps_factor = 1.0
+secondary_scaling = 0
+ss_factor = 1.0
+element_type = 0
+title = ""
+tooltip_text = ""
+metadata/_custom_type_script = "uid://smcmjjy50miu"
+
+[sub_resource type="Resource" id="Resource_sm03e"]
+script = ExtResource("5_pom5j")
+number = ""
+icon = ExtResource("8_06hw4")
+metadata/_custom_type_script = "uid://75vkhkjo518y"
+
+[node name="WolfEnemyAI" type="Node"]
+script = ExtResource("1_m1t3l")
+
+[node name="AttackAction" type="Node" parent="."]
+script = ExtResource("2_q3gr8")
+damage = 4
+ability_ref = SubResource("Resource_f73ml")
+intent = SubResource("Resource_yjxvi")
+sound = ExtResource("6_vupur")
+type = 1
+chance_weight = 0.75
+
+[node name="BlockAction" type="Node" parent="."]
+script = ExtResource("7_5bpuc")
+armor = 3
+ability_ref = SubResource("Resource_c17gj")
+intent = SubResource("Resource_sm03e")
+type = 1
+chance_weight = 0.25
