@@ -100,6 +100,7 @@ chance_weight = 1.0
 [node name="BlockAction" type="Node" parent="."]
 script = ExtResource("3_rd5hf")
 armor = 8
+effect_count = 2
 ability_ref = SubResource("Resource_rd5hf")
 intent = SubResource("Resource_51jku")
 sound = ExtResource("9_400le")

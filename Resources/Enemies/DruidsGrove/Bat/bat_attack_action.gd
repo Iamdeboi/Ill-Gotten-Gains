@@ -3,7 +3,7 @@ extends EnemyAction
 # DamageEffect will occur twice
 
 @export var damage := 1
-@export var effect_count := 2
+@export var effect_count := 1
 @export var ability_ref: Ability
 
 var p_s_mod : float 
@@ -13,6 +13,7 @@ var s_s_mod : float
 func perform_action() -> void:
 	if not enemy or not target:
 		return
+
 	# Creation of effect scene
 	var tween := create_tween().set_trans(Tween.TRANS_QUINT)
 	var start := enemy.global_position
@@ -24,15 +25,12 @@ func perform_action() -> void:
 	# Calculating ability modifier values compared to the user enemy's stats
 	p_s_mod = calculate_primary_scaling_mod(ability_ref)
 	s_s_mod = calculate_secondary_scaling_mod(ability_ref)
-	# Animation for ability: Double Strike-Down
-	tween.tween_property(enemy, "global_position", end, 0.4)
-	tween.tween_interval(0.15)
-	tween.tween_property(enemy, "global_position", start, 0.4)
-	tween.tween_callback(damage_effect.execute.bind(target_array, ability_ref, p_s_mod, s_s_mod))
-	tween.tween_property(enemy, "global_position", end, 0.4)
-	tween.tween_interval(0.15)
-	tween.tween_property(enemy, "global_position", start, 0.4)
-	tween.tween_callback(damage_effect.execute.bind(target_array, ability_ref, p_s_mod, s_s_mod))
+	
+	for i in range(effect_count):
+		tween.tween_property(enemy, "global_position", end, 0.4)
+		tween.tween_interval(0.15)
+		tween.tween_property(enemy, "global_position", start, 0.4)
+		tween.tween_callback(damage_effect.execute.bind(target_array, ability_ref, p_s_mod, s_s_mod))
 	
 	tween.finished.connect(
 		func():

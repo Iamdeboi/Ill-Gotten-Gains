@@ -12,14 +12,17 @@ func perform_action() -> void:
 	if not enemy or not target:
 		return
 	
-	var armor_effect := ArmorEffect.new()
-	armor_effect.sound = sound
-	armor_effect.amount = armor
-	
-	calculate_primary_scaling_mod(ability_ref)
-	calculate_secondary_scaling_mod(ability_ref)
-	armor_effect.execute([enemy], ability_ref, p_s_mod, s_s_mod)
-	
+	for i in range(effect_count):
+		var armor_effect := ArmorEffect.new()
+		armor_effect.sound = sound
+		armor_effect.amount = armor
+		
+		calculate_primary_scaling_mod(ability_ref)
+		calculate_secondary_scaling_mod(ability_ref)
+		
+		armor_effect.execute([enemy], ability_ref, p_s_mod, s_s_mod)
+		await get_tree().create_timer(0.6).timeout
+		
 	get_tree().create_timer(0.6, false).timeout.connect(
 		func():
 			EventBus.enemy_action_completed.emit(enemy)

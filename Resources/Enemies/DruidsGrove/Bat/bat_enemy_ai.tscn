@@ -109,11 +109,12 @@ script = ExtResource("1_apxam")
 [node name="BatAttackAction" type="Node" parent="."]
 script = ExtResource("2_o0nhy")
 damage = 2
+effect_count = 2
 ability_ref = SubResource("Resource_emr20")
 intent = SubResource("Resource_masar")
 sound = ExtResource("6_r8h4b")
 type = 1
-chance_weight = 3.0
+chance_weight = 2.0
 
 [node name="BatBlockAction" type="Node" parent="."]
 script = ExtResource("7_r8h4b")

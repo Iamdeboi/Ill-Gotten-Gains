@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bca0omxou2265"]
+
+[ext_resource type="Script" uid="uid://3v76pa028tf4" path="res://Scenes/Enemy/enemy_action_picker.gd" id="1_tsd2d"]
+
+[node name="BanditArsonistEnemyAI" type="Node"]
+script = ExtResource("1_tsd2d")
