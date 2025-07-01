@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dii5g42rkvdxa"]
+
+[ext_resource type="PackedScene" uid="uid://cc0r5lmc5gi4r" path="res://Scenes/Enemy/enemy.tscn" id="1_m6pcd"]
+[ext_resource type="Resource" uid="uid://c1g3jl3xp20b0" path="res://Resources/Enemies/DruidsGrove/Crab/crab.tres" id="2_0hwjo"]
+
+[node name="Tier1Crabs2" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_m6pcd")]
+position = Vector2(191, 150)
+scale = Vector2(2, 2)
+stats = ExtResource("2_0hwjo")
+
+[node name="Enemy2" parent="." instance=ExtResource("1_m6pcd")]
+position = Vector2(449, 150)
+scale = Vector2(2, 2)
+stats = ExtResource("2_0hwjo")

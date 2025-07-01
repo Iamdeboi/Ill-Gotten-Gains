@@ -67,12 +67,12 @@ scale = Vector2(0.8, 0.8)
 script = ExtResource("5_6tvrj")
 
 [node name="CrabEnemy" parent="EnemyHandler" instance=ExtResource("3_jp0ri")]
-position = Vector2(320, 150)
+position = Vector2(191, 150)
 scale = Vector2(2, 2)
 stats = ExtResource("6_68j0i")
 
 [node name="BatEnemy" parent="EnemyHandler" instance=ExtResource("3_jp0ri")]
-position = Vector2(191, 150)
+position = Vector2(320, 150)
 scale = Vector2(2, 2)
 stats = ExtResource("9_n1ain")
 

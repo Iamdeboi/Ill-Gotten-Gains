@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://lax0j1lhn02y"]
+
+[ext_resource type="PackedScene" uid="uid://cc0r5lmc5gi4r" path="res://Scenes/Enemy/enemy.tscn" id="1_80dok"]
+[ext_resource type="Resource" uid="uid://f67av2qauq5u" path="res://Resources/Enemies/DruidsGrove/Wolf/wolf.tres" id="2_o1l4k"]
+
+[node name="Tier0Wolves2" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_80dok")]
+position = Vector2(191, 150)
+scale = Vector2(2, 2)
+stats = ExtResource("2_o1l4k")
+
+[node name="Enemy2" parent="." instance=ExtResource("1_80dok")]
+position = Vector2(449, 150)
+scale = Vector2(2, 2)
+stats = ExtResource("2_o1l4k")

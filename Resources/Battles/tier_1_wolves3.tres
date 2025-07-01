@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BattleStats" load_steps=3 format=3 uid="uid://btjvvhyrf4tqh"]
+
+[ext_resource type="PackedScene" uid="uid://bo56pvyinlxhv" path="res://Resources/Battles/tier_1_wolves3.tscn" id="1_16sb7"]
+[ext_resource type="Script" uid="uid://bxhlbgqqcxsqs" path="res://Resources/battle_stats.gd" id="1_wbl2h"]
+
+[resource]
+script = ExtResource("1_wbl2h")
+battle_tier = 1
+weight = 2.0
+gold_reward_min = 90
+gold_reward_max = 120
+enemies = ExtResource("1_16sb7")
+metadata/_custom_type_script = "uid://bxhlbgqqcxsqs"
