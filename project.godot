@@ -43,6 +43,7 @@ script/templates_search_path="res://ScriptTemplates"
 [file_customization]
 
 folder_colors={
+"res://Resources/Battles/": "purple",
 "res://Resources/Classes/": "orange",
 "res://Resources/Enemies/": "red",
 "res://Scenes/Battle/": "red",

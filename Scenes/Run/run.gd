@@ -44,12 +44,9 @@ func _start_run() -> void:
 	
 	_setup_event_connections()
 	_setup_top_bar()
+	
 	map.generate_new_map()
 	map.unlock_floor(0)
-	
-	await get_tree().create_timer(3).timeout
-	run_stats.gold += 55
-	
 
 
 func _change_view(scene: PackedScene) -> Node:

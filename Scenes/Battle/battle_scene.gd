@@ -1,9 +1,10 @@
+class_name Battle
 extends Node2D
 
 const VICTORY_THEME := preload("res://Assets/Audio/Jingles_Fanfares_SFX_Pack/Jingles_and_Fanfares/Battle/Battle_Victory_Fanfare.wav")
 const DEFEAT_THEME := preload("res://Assets/Audio/Jingles_Fanfares_SFX_Pack/Jingles_and_Fanfares/Battle/Defeat.wav")
 
-
+@export var battle_stats: BattleStats
 @export var player_stats: PlayerStats #Only place where character stats needs to be for the rest of the scene
 @export var music: AudioStream
 
