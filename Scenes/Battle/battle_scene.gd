@@ -17,25 +17,29 @@ const DEFEAT_THEME := preload("res://Assets/Audio/Jingles_Fanfares_SFX_Pack/Jing
 func _ready() -> void:
 	# Temporary debug solution to loading stats; should be done in the Run.gd script once done
 	
-	var new_stats: PlayerStats = player_stats.create_instance()
-	player.stats = new_stats
-	battle_ui.player_stats = new_stats
+	#var new_stats: PlayerStats = player_stats.create_instance()
+	#player.stats = new_stats
+	#battle_ui.player_stats = new_stats
 	
 	enemy_handler.child_order_changed.connect(_on_enemies_child_order_changed)
 	EventBus.enemy_turn_ended.connect(_on_enemy_turn_ended)
 	EventBus.player_turn_ended.connect(player_handler.end_turn)
 	EventBus.player_end_turn_delay_elasped.connect(enemy_handler.start_turn)
 	EventBus.player_died.connect(_on_player_died)
-	
-	start_battle(new_stats)
-	player.player_stats_ui.update_ability_view_ui(new_stats)
 
 
-func start_battle(stats: PlayerStats) -> void:
+func start_battle() -> void:
 	get_tree().paused = false
 	MusicPlayer.play(music, true)
+	
+	battle_ui.player_stats = player_stats
+	player.stats = player_stats
+	
+	enemy_handler.setup_enemies(battle_stats)
 	enemy_handler.reset_enemy_actions()
-	player_handler.start_battle(stats)
+	
+	player_handler.start_battle(player_stats)
+	player.player_stats_ui.update_ability_view_ui(player_stats)
 
 
 func _on_enemies_child_order_changed() -> void:

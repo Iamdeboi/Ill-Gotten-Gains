@@ -1,6 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://brnkqcr6gd3j8"]
+[gd_scene load_steps=10 format=3 uid="uid://brnkqcr6gd3j8"]
 
 [ext_resource type="Script" uid="uid://bn5xivf7rao85" path="res://Scenes/Battle/ability_container.gd" id="1_osr0m"]
+[ext_resource type="Resource" uid="uid://ls7ennmh2elu" path="res://Resources/Classes/Warrior/warrior_stats.tres" id="2_2jrik"]
+[ext_resource type="Script" uid="uid://smcmjjy50miu" path="res://Resources/Templates/Abilities/ability.gd" id="2_ji27j"]
+[ext_resource type="Resource" uid="uid://coapnwodmdehg" path="res://Resources/Classes/Warrior/Abilities/bash.tres" id="3_2jrik"]
+[ext_resource type="Resource" uid="uid://ixpdsnnhgoa3" path="res://Resources/Classes/Warrior/Abilities/cleave_through.tres" id="4_rr86q"]
+[ext_resource type="Resource" uid="uid://dnq7qqmyyubjh" path="res://Resources/Classes/Warrior/Abilities/second_wind.tres" id="5_2dcsp"]
+[ext_resource type="Resource" uid="uid://cvvx6pnppdaex" path="res://Resources/Classes/Warrior/Abilities/spare_mana_potion.tres" id="6_bktlh"]
+[ext_resource type="Script" uid="uid://dj0e7vxllw5u7" path="res://Scenes/AbilityUI/ability_list.gd" id="7_c4obt"]
+
+[sub_resource type="Resource" id="Resource_typo5"]
+script = ExtResource("7_c4obt")
+abilities = Array[ExtResource("2_ji27j")]([ExtResource("3_2jrik"), ExtResource("4_rr86q"), ExtResource("5_2dcsp"), ExtResource("6_bktlh")])
+metadata/_custom_type_script = "uid://dj0e7vxllw5u7"
 
 [node name="AbilityContainer" type="GridContainer"]
 top_level = true
@@ -20,3 +32,5 @@ size_flags_horizontal = 4
 size_flags_vertical = 10
 columns = 5
 script = ExtResource("1_osr0m")
+player_stats = ExtResource("2_2jrik")
+sample_ability_list = SubResource("Resource_typo5")

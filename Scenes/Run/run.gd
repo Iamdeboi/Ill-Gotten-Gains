@@ -94,21 +94,26 @@ func _setup_top_bar():
 	# TODO: Determine if theres a better way to update the abilities without making a very similar function for the "AbilityMenuView" script...
 
 
+func _on_battle_room_entered(room: Room) -> void:
+	var battle_scene: Battle = _change_view(BATTLE_SCENE) as Battle
+	battle_scene.player_stats = character
+	battle_scene.battle_stats = room.battle_stats
+	battle_scene.start_battle()
+
+
 func _on_battle_won() -> void:
 	var reward_scene := _change_view(BATTLE_REWARDS_SCENE) as BattleRewards
 	reward_scene.run_stats = run_stats
 	reward_scene.character_stats = character
-# Dependencies are injected HERE
-
-# Temporary code to ensure that adding gold rewards and ability rewards are working properly
-# This wil be actually be called from the battle encounters themselves in the future
-	reward_scene.add_gold_reward(70)
+# Battle Rewards Time! Uses gold reward data from last_room.battle_stats
+	reward_scene.add_gold_reward(map.last_room.battle_stats.roll_gold_reward())
 	reward_scene.add_ability_reward()
+
 
 func _on_map_exited(room: Room) -> void:
 	match room.type:
 		Room.Type.MONSTER:
-			_change_view(BATTLE_SCENE)
+			_on_battle_room_entered(room)
 		Room.Type.TREASURE:
 			_change_view(TREASURE_ROOM_SCENE)
 		Room.Type.CAMPFIRE:
@@ -116,7 +121,7 @@ func _on_map_exited(room: Room) -> void:
 		Room.Type.SHOP:
 			_change_view(SHOP_SCENE)
 		Room.Type.BOSS:
-			_change_view(BATTLE_SCENE)
+			_on_battle_room_entered(room)
 
 
 func _input(event: InputEvent) -> void:

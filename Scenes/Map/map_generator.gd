@@ -11,6 +11,8 @@ const MONSTER_ROOM_WEIGHT := 10.0
 const SHOP_ROOM_WEIGHT := 2.5
 const CAMPFIRE_ROOM_WEIGHT := 4.0
 
+@export var battle_stats_pool : BattleStatsPool # Enemy encounters for the map
+
 var random_room_type_weights = {
 	Room.Type.MONSTER: 0.0,
 	Room.Type.CAMPFIRE: 0.0,
@@ -30,6 +32,8 @@ func generate_map() -> Array[Array]:
 		var current_j := j
 		for i in FLOORS - 1: #Loops from index 0 to 14
 			current_j = _setup_connection(i, current_j)
+			
+	battle_stats_pool.setup()
 	
 	# Once generated, setup respective rooms and their types from node network
 	_setup_boss_room()
@@ -134,6 +138,7 @@ func _setup_boss_room() -> void:
 			current_room.next_rooms.append(boss_room)
 			
 	boss_room.type = Room.Type.BOSS
+	boss_room.battle_stats = battle_stats_pool.get_random_battle_for_tier(2)
 
 
 func _setup_random_room_weights() -> void: #Assigns weights to the assignment of room types, total weight would be the SHOP assignment
@@ -149,11 +154,13 @@ func _setup_room_types() -> void:
 	for room: Room in map_data[0]:
 		if room.next_rooms.size() > 0:
 			room.type = Room.Type.MONSTER
+			room.battle_stats = battle_stats_pool.get_random_battle_for_tier(0)
 	
 	# 5th floor is always a treasure room
 	for room: Room in map_data[4]:
 		if room.next_rooms.size() > 0:
 			room.type = Room.Type.TREASURE
+	
 	
 	# 10th floor is always a treasure room
 	for room: Room in map_data[9]:
@@ -200,6 +207,14 @@ func _set_room_randomly(room_to_set: Room) -> void:
 		campfire_on_last_room = is_campfire and room_to_set.row == int(FLOORS-3)
 	
 	room_to_set.type = type_candidate
+	
+	if type_candidate == Room.Type.MONSTER:
+		var tier_for_monster_rooms := 0
+		
+		if room_to_set.row > 2: # If the battle room is above floor 3, then make the BattleStatsPool tier to 1 instead of 0
+			tier_for_monster_rooms = 1
+		
+		room_to_set.battle_stats = battle_stats_pool.get_random_battle_for_tier(tier_for_monster_rooms)
 
 func _room_has_parent_of_type(room: Room, type: Room.Type) -> bool: #Edge Cases: no parents on first floor, no parent at leftmost and rightmost sides of grid
 	var parents: Array[Room] = []

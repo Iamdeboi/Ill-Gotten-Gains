@@ -75,6 +75,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 16.0
 grow_horizontal = 2
+theme_override_constants/separation = 0
 
 [node name="GoldUI" parent="TopBarUI/TopBarElements" instance=ExtResource("5_3lri4")]
 unique_name_in_owner = true

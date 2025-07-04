@@ -11,8 +11,10 @@ var player: PlayerStats
 
 func start_battle(player_stats: PlayerStats) -> void:
 	player = player_stats
-	set_up_hotbar(player.known_abilities.abilities.size())
-	player.armor = player.starting_armor # At combat start, replenish your armor equal to your starting_armor variable + additional_armor from equipment (TODO)
+	player.armor = player.starting_armor
+	# Setting up AbilityContainer(Hotbar)
+	ability_container.read_ability_list(player_stats.known_abilities)
+	EventBus.player_hotbar_loaded.emit()
 	
 	start_turn()
 
@@ -33,13 +35,13 @@ func end_turn() -> void:
 	await get_tree().create_timer(1).timeout
 	EventBus.player_end_turn_delay_elasped.emit()
 
-
-func set_up_hotbar(amount: int) -> void:
-	var tween := create_tween()
-	for i in range(amount):
-		tween.tween_callback(set_up_ability_slot)
-		tween.tween_interval(HOTBAR_PLACEMENT_INTERVAL)
-		
-	tween.finished.connect(
-		func(): EventBus.player_hotbar_loaded.emit()
-	)
+#
+#func set_up_hotbar(amount: int) -> void:
+	#var tween := create_tween()
+	#for i in range(amount):
+		#tween.tween_callback(set_up_ability_slot)
+		#tween.tween_interval(HOTBAR_PLACEMENT_INTERVAL)
+		#
+	#tween.finished.connect(
+		#func(): EventBus.player_hotbar_loaded.emit()
+	#)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://beq6os1qypmat"]
+[gd_scene load_steps=22 format=3 uid="uid://beq6os1qypmat"]
 
 [ext_resource type="Script" uid="uid://i2lqgiy6iiwu" path="res://Scenes/Battle/battle_scene.gd" id="1_lcoea"]
 [ext_resource type="PackedScene" uid="uid://43xkdnm2fpla" path="res://Scenes/Player/player.tscn" id="2_lcoea"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://brnkqcr6gd3j8" path="res://Scenes/Battle/ability_container.tscn" id="9_02hj4"]
 [ext_resource type="Resource" uid="uid://f67av2qauq5u" path="res://Resources/Enemies/DruidsGrove/Wolf/wolf.tres" id="9_4pmf7"]
 [ext_resource type="Resource" uid="uid://b400i7oa1687j" path="res://Resources/Enemies/DruidsGrove/Bat/bat_enemy.tres" id="9_n1ain"]
-[ext_resource type="Resource" uid="uid://ls7ennmh2elu" path="res://Resources/Classes/Warrior/warrior_stats.tres" id="12_ik5sk"]
 [ext_resource type="Texture2D" uid="uid://3irjme3yj00b" path="res://Assets/Themes/ButtonLayoutDraft1.png" id="13_36cr5"]
 [ext_resource type="PackedScene" uid="uid://dujeyjg48m3ys" path="res://Scenes/GUI/Player/Components/action_point_ui.tscn" id="15_ik5sk"]
 [ext_resource type="PackedScene" uid="uid://cgx6m3nsu4lnh" path="res://Scenes/GUI/Misc/battle_over_panel.tscn" id="16_sufya"]
@@ -36,7 +35,6 @@ region = Rect2(80, 32, 32, 16)
 
 [node name="BattleScene" type="Node2D"]
 script = ExtResource("1_lcoea")
-player_stats = ExtResource("12_ik5sk")
 music = ExtResource("3_ik5sk")
 metadata/_edit_lock_ = true
 

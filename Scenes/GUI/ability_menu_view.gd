@@ -1,6 +1,6 @@
 class_name AbilityMenuView
 extends Control
-
+# This is the "Spellbook" of the game, also can be used in other menus for similar purposes of displaying abilities with tooltips.
 const ABILITY_MENU_UI_SCENE := preload("res://Scenes/GUI/ability_menu_ui.tscn")
 
 @export var ability_list: AbilityList

@@ -5,15 +5,24 @@ extends GridContainer
 
 
 @export var player_stats: PlayerStats
+@export var sample_ability_list: AbilityList
 
 @onready var ability_container: AbilityContainer = %AbilityContainer
 @onready var ability_slot := preload("res://Scenes/AbilityUI/ability_slot.tscn")
+
 
 var abilities_played_this_turn := 0
 
 
 func _ready() -> void:
 	EventBus.ability_used.connect(_on_ability_used)
+	#read_ability_list(sample_ability_list)
+
+
+func read_ability_list(ability_list: AbilityList) -> void:
+	var list_size: int = ability_list.abilities.size()
+	for i in range(list_size):
+		add_ability(ability_list.abilities[i])
 
 
 func add_ability(ability: Ability) -> void:
