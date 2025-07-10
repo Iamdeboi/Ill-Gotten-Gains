@@ -22,6 +22,9 @@ func _ready() -> void:
 
 
 func _input(event: InputEvent) -> void:
+	if not visible: # Do not read scroll inputs if the map scene is not meant to be visible (no scrolling in combat, shop, treaasure rooms, etc.)
+		return
+	
 	if event.is_action_pressed("scroll_up"):
 		camera_2d.position.y -= SCROLL_SPEED
 	elif event.is_action_pressed("scroll_down"):

@@ -15,13 +15,6 @@ const TREASURE_ROOM_SCENE := preload("res://Scenes/TreasureRoom/treasure_room.ts
 @onready var gold_ui: GoldUI = %GoldUI
 @onready var top_bar_spell_book: TopBarSpellBook = %TopBarSpellBook
 @onready var spellbook_view: AbilityMenuView = %SpellbookView
-#Debug Buttons
-@onready var map_button: Button = %MapButton
-@onready var battle_button: Button = %BattleButton
-@onready var shop_button: Button = %ShopButton
-@onready var treasure_button: Button = %TreasureButton
-@onready var rewards_button: Button = %RewardsButton
-@onready var campfire_button: Button = %CampfireButton
 
 var run_stats: RunStats # Handles things like Gold, Item Drops, Ability Drops, etc.
 var character: PlayerStats # Instance of player's stats throughout the entire run
@@ -76,13 +69,6 @@ func _setup_event_connections() -> void:
 	EventBus.map_exited.connect(_on_map_exited)
 	EventBus.shop_exited.connect(_show_map)
 	EventBus.treasure_room_exited.connect(_show_map)
-	
-	battle_button.pressed.connect(_change_view.bind(BATTLE_SCENE))
-	campfire_button.pressed.connect(_change_view.bind(CAMPFIRE_SCENE))
-	map_button.pressed.connect(_show_map)
-	rewards_button.pressed.connect(_change_view.bind(BATTLE_REWARDS_SCENE))
-	shop_button.pressed.connect(_change_view.bind(SHOP_SCENE))
-	treasure_button.pressed.connect(_change_view.bind(TREASURE_ROOM_SCENE))
 
 
 func _setup_top_bar():
@@ -101,6 +87,11 @@ func _on_battle_room_entered(room: Room) -> void:
 	battle_scene.start_battle()
 
 
+func _on_campfire_room_entered() -> void:
+	var campfire: Campfire = _change_view(CAMPFIRE_SCENE) as Campfire
+	campfire.player_stats = character
+
+
 func _on_battle_won() -> void:
 	var reward_scene := _change_view(BATTLE_REWARDS_SCENE) as BattleRewards
 	reward_scene.run_stats = run_stats
@@ -117,7 +108,7 @@ func _on_map_exited(room: Room) -> void:
 		Room.Type.TREASURE:
 			_change_view(TREASURE_ROOM_SCENE)
 		Room.Type.CAMPFIRE:
-			_change_view(CAMPFIRE_SCENE)
+			_on_campfire_room_entered()
 		Room.Type.SHOP:
 			_change_view(SHOP_SCENE)
 		Room.Type.BOSS:
