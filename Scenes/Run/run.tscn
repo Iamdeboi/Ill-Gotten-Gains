@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6s6sqsv00wkw"]
+[gd_scene load_steps=9 format=3 uid="uid://b6s6sqsv00wkw"]
 
 [ext_resource type="Script" uid="uid://c56iaajfhugxm" path="res://Scenes/Run/run.gd" id="1_m8kbj"]
 [ext_resource type="Resource" uid="uid://c2yni6jomw66r" path="res://Scenes/Run/run_startup.tres" id="2_7g7cm"]
 [ext_resource type="PackedScene" uid="uid://do6vp5o7wugt" path="res://Scenes/Map/map.tscn" id="2_q1vqy"]
+[ext_resource type="PackedScene" uid="uid://6mtoyp1hbxd5" path="res://Scenes/GUI/Player/health_ui.tscn" id="4_3lri4"]
 [ext_resource type="PackedScene" uid="uid://b0ogpq1vvud04" path="res://Scenes/GUI/gold_ui.tscn" id="5_3lri4"]
+[ext_resource type="PackedScene" uid="uid://6egm241trbjq" path="res://Scenes/GUI/Player/mana_ui.tscn" id="5_gomxk"]
 [ext_resource type="PackedScene" uid="uid://cbe3k3gxc4bnu" path="res://Scenes/GUI/top_bar_spell_book.tscn" id="5_vqvxu"]
 [ext_resource type="PackedScene" uid="uid://bad1g5i0fh84w" path="res://Scenes/GUI/ability_menu_view.tscn" id="7_3lri4"]
 
@@ -32,11 +34,25 @@ offset_bottom = 16.0
 grow_horizontal = 2
 theme_override_constants/separation = 0
 
+[node name="HealthUI" parent="TopBarUI/TopBarElements" instance=ExtResource("4_3lri4")]
+unique_name_in_owner = true
+layout_mode = 2
+show_max_hp = true
+
+[node name="ManaUI" parent="TopBarUI/TopBarElements" instance=ExtResource("5_gomxk")]
+unique_name_in_owner = true
+layout_mode = 2
+show_max_mana = true
+
+[node name="Spacer" type="Control" parent="TopBarUI/TopBarElements"]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+
 [node name="GoldUI" parent="TopBarUI/TopBarElements" instance=ExtResource("5_3lri4")]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="Placeholder" type="Control" parent="TopBarUI/TopBarElements"]
+[node name="Spacer2" type="Control" parent="TopBarUI/TopBarElements"]
 layout_mode = 2
 size_flags_horizontal = 3
 

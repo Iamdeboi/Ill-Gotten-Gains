@@ -12,6 +12,8 @@ const TREASURE_ROOM_SCENE := preload("res://Scenes/TreasureRoom/treasure_room.ts
 @onready var map: Map = $Map
 @onready var current_view: Node = $CurrentView
 #Top-bar UI
+@onready var health_ui: HealthUI = %HealthUI
+@onready var mana_ui: ManaUI = %ManaUI
 @onready var gold_ui: GoldUI = %GoldUI
 @onready var top_bar_spell_book: TopBarSpellBook = %TopBarSpellBook
 @onready var spellbook_view: AbilityMenuView = %SpellbookView
@@ -72,6 +74,10 @@ func _setup_event_connections() -> void:
 
 
 func _setup_top_bar():
+	character.stats_changed.connect(health_ui.update_stats.bind(character))
+	character.stats_changed.connect(mana_ui.update_stats.bind(character))
+	health_ui.update_stats(character)
+	mana_ui.update_stats(character)
 	gold_ui.run_stats = run_stats
 	top_bar_spell_book.pressed.connect(spellbook_view.show_current_view.bind("Spellbook"))
 	spellbook_view.ability_list = character.known_abilities # Update the ability list export for the spellbook_view with the "known_abilities" of the player

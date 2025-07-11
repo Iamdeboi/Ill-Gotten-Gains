@@ -59,7 +59,7 @@ text = "Skip Ability"
 [node name="AbilityTooltipPopup" parent="." instance=ExtResource("2_enojd")]
 visible = false
 layout_mode = 1
-background_color = Color(0.486289, 0.39615, 0.185455, 0.529412)
+background_color = Color(0, 0, 0, 0.647059)
 
 [node name="TakeButton" type="Button" parent="AbilityTooltipPopup"]
 unique_name_in_owner = true

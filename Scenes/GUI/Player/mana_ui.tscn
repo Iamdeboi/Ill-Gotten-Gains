@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://6egm241trbjq"]
+
+[ext_resource type="Script" uid="uid://de1a6do54vj08" path="res://Scenes/GUI/Player/mana_ui.gd" id="1_ag40d"]
+[ext_resource type="Texture2D" uid="uid://c7xx3uproscj" path="res://Assets/art/tile_0128.png" id="1_qmcpn"]
+
+[node name="Mana" type="HBoxContainer"]
+theme_override_constants/separation = 0
+script = ExtResource("1_ag40d")
+
+[node name="ManaImage" type="TextureRect" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = ExtResource("1_qmcpn")
+stretch_mode = 5
+
+[node name="ManaLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 6
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MaxManaLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 6
+text = "/100"
+horizontal_alignment = 1
+vertical_alignment = 1

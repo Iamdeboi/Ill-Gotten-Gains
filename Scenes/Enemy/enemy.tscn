@@ -51,8 +51,10 @@ rotation = -1.57079
 texture = ExtResource("3_dmwl5")
 
 [node name="StatsUI" parent="." instance=ExtResource("3_d40jh")]
-offset_top = 18.0
-offset_bottom = 34.0
+offset_left = -32.0
+offset_top = 24.0
+offset_right = 96.0
+offset_bottom = 40.0
 
 [node name="IntentUI" parent="." instance=ExtResource("5_d40jh")]
 offset_top = -36.0

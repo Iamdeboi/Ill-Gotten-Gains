@@ -4,20 +4,15 @@ extends HBoxContainer
 @onready var armor: HBoxContainer = $Armor
 @onready var armor_image: TextureRect = %ArmorImage
 @onready var armor_label: Label = %ArmorLabel
-@onready var health: HBoxContainer = $Health
-@onready var health_image: TextureRect = %HealthImage
-@onready var health_label: Label = %HealthLabel
-@onready var mana: HBoxContainer = $Mana
-@onready var mana_image: TextureRect = %ManaImage
-@onready var mana_label: Label = %ManaLabel
+@onready var health: HealthUI = $Health
+@onready var mana: ManaUI = $Mana
+
 
 
 func update_stats(stats: BaseStats) -> void:
-	health_label.text = str(stats.health)
 	armor_label.text = str(stats.armor)
-	mana_label.text = str(stats.mana)
+	health.update_stats(stats)
+	mana.update_stats(stats)
 
 	armor_label.visible = stats.armor > 0
 	armor_image.visible = armor_label.visible
-	mana_label.visible = stats.mana > 0
-	mana_image.visible = mana_label.visible

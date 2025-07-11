@@ -3,8 +3,8 @@
 [ext_resource type="FontFile" uid="uid://dskmdk146n4rq" path="res://Assets/Font/pixel_rpg.ttf" id="1_tj7sk"]
 [ext_resource type="Script" uid="uid://ro3nvchgm1vh" path="res://Scenes/GUI/Enemies/stats_ui.gd" id="2_ap273"]
 [ext_resource type="Texture2D" uid="uid://oe7v35ii8vrs" path="res://Assets/art/tile_0102.png" id="3_y0l2x"]
-[ext_resource type="Texture2D" uid="uid://d0edy7thj8ce6" path="res://Assets/art/heart.png" id="4_ntgrm"]
-[ext_resource type="Texture2D" uid="uid://c7xx3uproscj" path="res://Assets/art/tile_0128.png" id="5_ap273"]
+[ext_resource type="PackedScene" uid="uid://6mtoyp1hbxd5" path="res://Scenes/GUI/Player/health_ui.tscn" id="4_ap273"]
+[ext_resource type="PackedScene" uid="uid://6egm241trbjq" path="res://Scenes/GUI/Player/mana_ui.tscn" id="5_y0l2x"]
 
 [sub_resource type="Theme" id="Theme_8g032"]
 default_font = ExtResource("1_tj7sk")
@@ -12,13 +12,17 @@ default_font = ExtResource("1_tj7sk")
 [node name="StatsUI" type="HBoxContainer"]
 light_mask = 2
 visibility_layer = 2
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -15.0
-offset_right = 45.0
-offset_bottom = 16.0
+anchor_bottom = 0.5
+offset_left = -49.5
+offset_top = -8.0
+offset_right = 70.5
+offset_bottom = 8.0
 grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 theme = SubResource("Theme_8g032")
 theme_override_constants/separation = 1
@@ -31,6 +35,7 @@ theme_override_constants/separation = 0
 
 [node name="ArmorImage" type="TextureRect" parent="Armor"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
 layout_mode = 2
 texture = ExtResource("3_y0l2x")
 stretch_mode = 5
@@ -44,36 +49,10 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Health" type="HBoxContainer" parent="."]
+[node name="Health" parent="." instance=ExtResource("4_ap273")]
 layout_mode = 2
-theme_override_constants/separation = 2
+show_max_hp = true
 
-[node name="HealthImage" type="TextureRect" parent="Health"]
-unique_name_in_owner = true
+[node name="Mana" parent="." instance=ExtResource("5_y0l2x")]
 layout_mode = 2
-texture = ExtResource("4_ntgrm")
-stretch_mode = 5
-
-[node name="HealthLabel" type="Label" parent="Health"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_font_sizes/font_size = 6
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Mana" type="HBoxContainer" parent="."]
-layout_mode = 2
-theme_override_constants/separation = 0
-
-[node name="ManaImage" type="TextureRect" parent="Mana"]
-unique_name_in_owner = true
-layout_mode = 2
-texture = ExtResource("5_ap273")
-
-[node name="ManaLabel" type="Label" parent="Mana"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_font_sizes/font_size = 6
-text = "0"
+show_max_mana = true

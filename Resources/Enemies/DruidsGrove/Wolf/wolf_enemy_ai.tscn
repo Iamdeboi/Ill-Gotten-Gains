@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://38rw6ghvmyut"]
+[gd_scene load_steps=14 format=3 uid="uid://38rw6ghvmyut"]
 
 [ext_resource type="Script" uid="uid://3v76pa028tf4" path="res://Scenes/Enemy/enemy_action_picker.gd" id="1_m1t3l"]
 [ext_resource type="Script" uid="uid://did2pn3s800a" path="res://Resources/Enemies/DruidsGrove/Wolf/wolf_attack_action.gd" id="2_q3gr8"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://diipca8wkuynh" path="res://Assets/Audio/Minifantasy_Creatures_SFX_v3.0/Beasts/Wolf/05_Wolf_growl_1.wav" id="6_vupur"]
 [ext_resource type="Script" uid="uid://b4rgoxvykm4pd" path="res://Resources/Enemies/DruidsGrove/Wolf/wolf_block_action.gd" id="7_5bpuc"]
 [ext_resource type="Texture2D" uid="uid://bi6pfjs32f820" path="res://Assets/art/tile_0101.png" id="8_06hw4"]
+[ext_resource type="AudioStream" uid="uid://k8m4o3hlwm7l" path="res://Assets/Audio/enemy_block.ogg" id="9_q3gr8"]
 
 [sub_resource type="Resource" id="Resource_f73ml"]
 script = ExtResource("3_bawur")
@@ -74,5 +75,6 @@ script = ExtResource("7_5bpuc")
 armor = 3
 ability_ref = SubResource("Resource_c17gj")
 intent = SubResource("Resource_sm03e")
+sound = ExtResource("9_q3gr8")
 type = 1
 chance_weight = 0.25
