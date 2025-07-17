@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Status" load_steps=2 format=3 uid="uid://c0ua8d40kb5rd"]
+
+[ext_resource type="Script" uid="uid://c3qvt5utxx5jd" path="res://Resources/status.gd" id="1_k1yc8"]
+
+[resource]
+script = ExtResource("1_k1yc8")
+id = ""
+type = 0
+stack_type = 0
+can_expire = false
+duration = 0
+stacks = 0
+tooltip = ""
+metadata/_custom_type_script = "uid://c3qvt5utxx5jd"

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0ymq8dp0hjdb"]
+
+[ext_resource type="Theme" uid="uid://bxj3jchl1trm8" path="res://Assets/Themes/default.tres" id="1_j20o2"]
+[ext_resource type="Script" uid="uid://cj0rspnx7x04b" path="res://Scenes/status_handler.gd" id="1_ljlxs"]
+
+[node name="StatusHandler" type="GridContainer"]
+theme = ExtResource("1_j20o2")
+theme_override_constants/h_separation = 0
+theme_override_constants/v_separation = 0
+columns = 6
+script = ExtResource("1_ljlxs")

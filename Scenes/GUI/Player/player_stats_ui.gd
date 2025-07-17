@@ -14,6 +14,7 @@ extends Control
 func _ready() -> void:
 	pass
 
+
 func _set_player_stats(value: PlayerStats) -> void:
 	stat_ref = value
 	update_stats(stat_ref)

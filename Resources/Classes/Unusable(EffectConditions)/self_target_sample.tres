@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="Ability" load_steps=2 format=3 uid="uid://n4l3xxuffl52"]
+
+[ext_resource type="Script" uid="uid://smcmjjy50miu" path="res://Resources/Templates/Abilities/ability.gd" id="1_b7g46"]
+
+[resource]
+script = ExtResource("1_b7g46")
+id = "SelfTS"
+ability_type = 0
+rarity = 0
+target = 0
+cost = 0
+cost_type = 0
+cooldown = 0
+primary_scaling = 0
+ps_factor = 1.0
+secondary_scaling = 0
+ss_factor = 1.0
+element_type = 0
+title = ""
+tooltip_text = ""
+metadata/_custom_type_script = "uid://smcmjjy50miu"

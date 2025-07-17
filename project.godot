@@ -49,7 +49,10 @@ folder_colors={
 "res://Scenes/Battle/": "red",
 "res://Scenes/GUI/": "green",
 "res://Scenes/Menus/": "blue",
-"res://Scenes/Utility/": "purple"
+"res://Scenes/Utility/": "purple",
+"res://Statuses/Ailments/": "red",
+"res://Statuses/AttributeModifiers/": "orange",
+"res://Statuses/MiscBuffs/": "teal"
 }
 
 [global_group]
@@ -59,7 +62,8 @@ Enemy=""
 
 [gui]
 
-theme/custom_font="res://Assets/art/pixel_rpg.ttf"
+theme/custom="uid://bxj3jchl1trm8"
+theme/custom_font="uid://dskmdk146n4rq"
 
 [importer_defaults]
 

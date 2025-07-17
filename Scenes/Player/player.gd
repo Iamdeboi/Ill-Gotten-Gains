@@ -8,6 +8,11 @@ const RED_SPRITE_MATERIAL :=preload("res://Assets/art/red_sprite_material.tres")
 @export var stats: PlayerStats : set = set_player_stats #Attach the statblock resource
 # GUI Collection
 @onready var player_stats_ui: PlayerStatsUI = $PlayerStatsUI
+@onready var status_handler: StatusHandler = $StatusHandler
+
+
+func _ready() -> void:
+	status_handler.status_owner = self
 
 
 func set_player_stats(value: PlayerStats) -> void:

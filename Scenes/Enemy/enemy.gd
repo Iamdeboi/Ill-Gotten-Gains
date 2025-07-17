@@ -12,11 +12,14 @@ const WHITE_SPRITE_MATERIAL := preload("res://Assets/art/white_sprite_material.t
 @onready var stats_ui: StatsUI = $StatsUI
 @onready var target_arrow: Sprite2D = %TargetArrow
 @onready var intent_ui: IntentUI = $IntentUI
-
+@onready var status_handler: StatusHandler = $StatusHandler
 
 var enemy_action_picker: EnemyActionPicker
 var current_action: EnemyAction: set = set_current_action
 
+
+func _ready() -> void:
+	status_handler.status_owner = self
 
 func set_current_action(value: EnemyAction) -> void:
 	current_action = value
@@ -107,7 +110,8 @@ func take_damage(amount: int) -> void:
 			enemy_sprite.material = null
 			
 			if stats.health <= 0:
-				await SfxPlayer.play(stats.death_sound)
+				SfxPlayer.play(stats.death_sound)
+				EventBus.enemy_died.emit(self)
 				queue_free()
 	)
 

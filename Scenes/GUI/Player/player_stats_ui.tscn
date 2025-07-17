@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cvy0l0u8nf5oj"]
+[gd_scene load_steps=10 format=3 uid="uid://cvy0l0u8nf5oj"]
 
 [ext_resource type="Script" uid="uid://do03ojrvk5joa" path="res://Scenes/GUI/Player/player_stats_ui.gd" id="1_2cjtq"]
+[ext_resource type="Theme" uid="uid://bxj3jchl1trm8" path="res://Assets/Themes/default.tres" id="1_pde77"]
 [ext_resource type="Texture2D" uid="uid://qn173bqpjgpd" path="res://Assets/art/IGG_Gromm.png" id="3_2cjtq"]
 [ext_resource type="PackedScene" uid="uid://d052i5tw5ian" path="res://Scenes/GUI/Player/Components/gui_corner_bars.tscn" id="4_wuf4o"]
 [ext_resource type="Script" uid="uid://fj43g82rbvti" path="res://Scenes/GUI/Player/Components/gui_armor_label.gd" id="5_pde77"]
@@ -18,6 +19,7 @@ anchor_bottom = 1.0
 grow_vertical = 0
 size_flags_horizontal = 0
 size_flags_vertical = 8
+theme = ExtResource("1_pde77")
 script = ExtResource("1_2cjtq")
 
 [node name="Panel" type="Panel" parent="."]

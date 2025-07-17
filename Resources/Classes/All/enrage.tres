@@ -1,0 +1,37 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://dwfyvbsyea2nj"]
+
+[ext_resource type="Texture2D" uid="uid://dqh4k5f257aqp" path="res://Assets/art/IGGItemIcons/Weak Health Potion.png" id="1_nft38"]
+[ext_resource type="AudioStream" uid="uid://diipca8wkuynh" path="res://Assets/Audio/Minifantasy_Creatures_SFX_v3.0/Beasts/Wolf/05_Wolf_growl_1.wav" id="2_0wv0o"]
+[ext_resource type="Script" uid="uid://k7b8yvynmsfd" path="res://Resources/Classes/All/enrage.gd" id="3_pxypr"]
+[ext_resource type="AudioStream" uid="uid://b3pq3w3l3qecf" path="res://Assets/Audio/Minifantasy_TrueHeroes_SFX/Barbarian/General_Sounds/Barbarian_BattleCry.wav" id="4_0wv0o"]
+
+[resource]
+script = ExtResource("3_pxypr")
+id = "8"
+ability_type = 2
+rarity = 2
+target = 0
+cost = 20
+cost_type = 1
+cooldown = 5
+primary_scaling = 0
+ps_factor = 1.0
+secondary_scaling = 0
+ss_factor = 1.0
+element_type = 0
+icon = ExtResource("1_nft38")
+title = "Enrage"
+tooltip_text = "[color=crimson]RAGE CONSUMES YOU[/color]
+Apply 2 [color=crimson]Empowered[/color] to yourself.
+
+Ability Type: [color=lime_green]Buff[/color]
+Targets: Self
+Duration: Permanent
+Cost: [color=salmon] 20 HP[/color]
+Scaling: None
+
+
+"
+sound = ExtResource("4_0wv0o")
+pickup_audio = ExtResource("2_0wv0o")
+metadata/_custom_type_script = "uid://smcmjjy50miu"

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ExposedStatus" load_steps=3 format=3 uid="uid://bp1l1preylxvg"]
+
+[ext_resource type="Script" uid="uid://cwn73ymmxkp8q" path="res://Statuses/Ailments/exposed.gd" id="1_h1l76"]
+[ext_resource type="Texture2D" uid="uid://cylug7ejxgd04" path="res://Assets/art/expose.png" id="2_5ytnt"]
+
+[resource]
+script = ExtResource("1_h1l76")
+id = "exposed"
+type = 0
+stack_type = 2
+can_expire = true
+duration = 1
+stacks = 0
+icon = ExtResource("2_5ytnt")
+tooltip = "TODO"
+metadata/_custom_type_script = "uid://c3qvt5utxx5jd"

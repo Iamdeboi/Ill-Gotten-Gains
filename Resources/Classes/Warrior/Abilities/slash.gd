@@ -1,5 +1,10 @@
 extends Ability
 
+const BURN_STATUS = preload("res://Statuses/Ailments/burn.tres")
+
+var base_damage := 1
+var burn_duration := 5
+
 
 func update_tooltip(stats: PlayerStats) -> String:
 	tooltip_text = "Slash your enemy, dealing " + "[color=firebrick]" + str(int(5 + (stats.strength) * ps_factor)) + "[/color]" + " neutral damage.\n\nAbility Type: [color=firebrick]Attack[/color]\nCost: None\nBase: 5\nScaling: (50% STR)"

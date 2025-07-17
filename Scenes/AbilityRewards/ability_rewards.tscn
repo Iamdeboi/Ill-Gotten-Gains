@@ -7,7 +7,7 @@
 [ext_resource type="Theme" uid="uid://b845uab77o0un" path="res://Assets/Themes/GUI_Theme.theme" id="2_fku2j"]
 [ext_resource type="Resource" uid="uid://dnq7qqmyyubjh" path="res://Resources/Classes/Warrior/Abilities/second_wind.tres" id="3_aywq7"]
 [ext_resource type="Theme" uid="uid://s2qhlxij3t3q" path="res://Assets/Themes/GUI_Theme_2.theme" id="4_fku2j"]
-[ext_resource type="Resource" uid="uid://cvvx6pnppdaex" path="res://Resources/Classes/Warrior/Abilities/spare_mana_potion.tres" id="4_wm6y6"]
+[ext_resource type="Resource" uid="uid://cvvx6pnppdaex" path="res://Resources/Classes/All/spare_mana_potion.tres" id="4_wm6y6"]
 [ext_resource type="Resource" uid="uid://bl0hxgo0vfup5" path="res://Resources/Classes/All/potion_of_questionable_purpose.tres" id="5_v1xo2"]
 
 [node name="AbilityRewards" type="ColorRect"]

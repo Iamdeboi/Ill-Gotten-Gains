@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://beq6os1qypmat"]
+[gd_scene load_steps=23 format=3 uid="uid://beq6os1qypmat"]
 
 [ext_resource type="Script" uid="uid://i2lqgiy6iiwu" path="res://Scenes/Battle/battle_scene.gd" id="1_lcoea"]
 [ext_resource type="PackedScene" uid="uid://43xkdnm2fpla" path="res://Scenes/Player/player.tscn" id="2_lcoea"]
+[ext_resource type="Theme" uid="uid://bxj3jchl1trm8" path="res://Assets/Themes/default.tres" id="3_4pmf7"]
 [ext_resource type="AudioStream" uid="uid://dpdenqqbovwfq" path="res://Assets/Audio/8_bit_iced_village_lofi.mp3" id="3_ik5sk"]
 [ext_resource type="PackedScene" uid="uid://cc0r5lmc5gi4r" path="res://Scenes/Enemy/enemy.tscn" id="3_jp0ri"]
 [ext_resource type="Texture2D" uid="uid://dkbry1r2rfehu" path="res://Assets/art/BattleBackgrounds/ForestLevel/IGGForestBackgroundOne.png" id="4_4pmf7"]
@@ -47,6 +48,7 @@ offset_right = 640.0
 offset_bottom = 360.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_4pmf7")
 texture = ExtResource("4_4pmf7")
 metadata/_edit_lock_ = true
 
@@ -79,8 +81,9 @@ position = Vector2(449, 150)
 scale = Vector2(2, 2)
 stats = ExtResource("9_4pmf7")
 
-[node name="PlayerHandler" type="Node" parent="." node_paths=PackedStringArray("ability_container")]
+[node name="PlayerHandler" type="Node" parent="." node_paths=PackedStringArray("player", "ability_container")]
 script = ExtResource("7_n1ain")
+player = NodePath("../BattleUI/Player")
 ability_container = NodePath("../BattleUI/HotbarUI/AbilityContainer")
 
 [node name="AbilityTargetSelector" parent="." instance=ExtResource("7_5mge4")]
@@ -102,6 +105,7 @@ offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
+theme = ExtResource("3_4pmf7")
 
 [node name="AbilityContainer" parent="BattleUI/HotbarUI" instance=ExtResource("9_02hj4")]
 unique_name_in_owner = true
@@ -134,9 +138,10 @@ unique_name_in_owner = true
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -120.0
-offset_right = 32.0
-offset_bottom = -104.0
+offset_left = 67.0
+offset_top = -115.0
+offset_right = 99.0
+offset_bottom = -99.0
 grow_vertical = 0
 scale = Vector2(2, 2)
 disabled = true

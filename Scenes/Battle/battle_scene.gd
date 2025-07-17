@@ -50,6 +50,7 @@ func _on_enemies_child_order_changed() -> void:
 
 
 func _on_enemy_turn_ended() -> void:
+	await get_tree().create_timer(0.5).timeout
 	player_handler.start_turn()
 	enemy_handler.reset_enemy_actions()
 

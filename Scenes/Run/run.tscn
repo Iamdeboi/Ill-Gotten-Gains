@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6s6sqsv00wkw"]
+[gd_scene load_steps=10 format=3 uid="uid://b6s6sqsv00wkw"]
 
 [ext_resource type="Script" uid="uid://c56iaajfhugxm" path="res://Scenes/Run/run.gd" id="1_m8kbj"]
 [ext_resource type="Resource" uid="uid://c2yni6jomw66r" path="res://Scenes/Run/run_startup.tres" id="2_7g7cm"]
 [ext_resource type="PackedScene" uid="uid://do6vp5o7wugt" path="res://Scenes/Map/map.tscn" id="2_q1vqy"]
 [ext_resource type="PackedScene" uid="uid://6mtoyp1hbxd5" path="res://Scenes/GUI/Player/health_ui.tscn" id="4_3lri4"]
+[ext_resource type="Theme" uid="uid://bxj3jchl1trm8" path="res://Assets/Themes/default.tres" id="4_gomxk"]
 [ext_resource type="PackedScene" uid="uid://b0ogpq1vvud04" path="res://Scenes/GUI/gold_ui.tscn" id="5_3lri4"]
 [ext_resource type="PackedScene" uid="uid://6egm241trbjq" path="res://Scenes/GUI/Player/mana_ui.tscn" id="5_gomxk"]
 [ext_resource type="PackedScene" uid="uid://cbe3k3gxc4bnu" path="res://Scenes/GUI/top_bar_spell_book.tscn" id="5_vqvxu"]
@@ -32,6 +33,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 16.0
 grow_horizontal = 2
+theme = ExtResource("4_gomxk")
 theme_override_constants/separation = 0
 
 [node name="HealthUI" parent="TopBarUI/TopBarElements" instance=ExtResource("4_3lri4")]

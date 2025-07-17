@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="BurnStatus" load_steps=3 format=3 uid="uid://btwn2jhxowrvw"]
+
+[ext_resource type="Texture2D" uid="uid://dqh4k5f257aqp" path="res://Assets/art/IGGItemIcons/Weak Health Potion.png" id="1_d4lnu"]
+[ext_resource type="Script" uid="uid://chm2omvkg8we8" path="res://Statuses/Ailments/burn.gd" id="1_du6sq"]
+
+[resource]
+script = ExtResource("1_du6sq")
+id = "burn"
+type = 0
+stack_type = 2
+can_expire = true
+duration = 1
+stacks = 0
+icon = ExtResource("1_d4lnu")
+tooltip = "TODO"
+metadata/_custom_type_script = "uid://c3qvt5utxx5jd"
