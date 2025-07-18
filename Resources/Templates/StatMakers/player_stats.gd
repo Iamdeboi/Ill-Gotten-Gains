@@ -20,6 +20,9 @@ func reset_action_points() -> void:
 	self.action_points = maximum_action_points
 
 
+func reset_temporary_stats() -> void:
+	self.temp_strength = 0
+
 func can_play_ability(ability: Ability) -> bool:
 	if self.action_points <= 0:
 		return false

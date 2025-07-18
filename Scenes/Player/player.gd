@@ -37,7 +37,17 @@ func update_player() -> void:
 
 
 func update_stats() -> void:
+	await count_attribute_modifiers()
 	player_stats_ui.update_stats(stats)
+
+
+func count_attribute_modifiers() -> void:
+	stats.strength = modifier_handler.get_modified_value(stats.base_strength, Modifier.Type.STR_MOD)
+	stats.dexterity = modifier_handler.get_modified_value(stats.base_dexterity, Modifier.Type.DEX_MOD)
+	stats.intellect = modifier_handler.get_modified_value(stats.base_intellect, Modifier.Type.INT_MOD)
+	stats.wisdom = modifier_handler.get_modified_value(stats.base_wisdom, Modifier.Type.WIS_MOD)
+	stats.charisma = modifier_handler.get_modified_value(stats.base_charisma, Modifier.Type.CHA_MOD)
+	stats.constitution = modifier_handler.get_modified_value(stats.base_constitution, Modifier.Type.CON_MOD)
 
 
 func take_damage(damage: int, which_modifier: Modifier.Type) -> void:

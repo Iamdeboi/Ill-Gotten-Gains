@@ -40,3 +40,21 @@ type = 2
 
 [node name="ManaCostModifier" parent="ModifierHandler" instance=ExtResource("7_0u5uq")]
 type = 3
+
+[node name="StrMod" parent="ModifierHandler" instance=ExtResource("7_0u5uq")]
+type = 4
+
+[node name="DexMod" parent="ModifierHandler" instance=ExtResource("7_0u5uq")]
+type = 5
+
+[node name="IntMod" parent="ModifierHandler" instance=ExtResource("7_0u5uq")]
+type = 6
+
+[node name="WisMod" parent="ModifierHandler" instance=ExtResource("7_0u5uq")]
+type = 7
+
+[node name="ChaMod" parent="ModifierHandler" instance=ExtResource("7_0u5uq")]
+type = 8
+
+[node name="ConMod" parent="ModifierHandler" instance=ExtResource("7_0u5uq")]
+type = 9
