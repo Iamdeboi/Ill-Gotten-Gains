@@ -107,7 +107,7 @@ grow_vertical = 0
 size_flags_horizontal = 4
 theme = ExtResource("3_4pmf7")
 
-[node name="AbilityContainer" parent="BattleUI/HotbarUI" instance=ExtResource("9_02hj4")]
+[node name="AbilityContainer" parent="BattleUI/HotbarUI" node_paths=PackedStringArray("player") instance=ExtResource("9_02hj4")]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(362, 60)
 layout_mode = 1
@@ -116,6 +116,7 @@ offset_top = -108.0
 offset_right = 181.0
 offset_bottom = 0.0
 columns = 10
+player = NodePath("../../Player")
 
 [node name="ActionPointUI" parent="BattleUI" instance=ExtResource("15_ik5sk")]
 unique_name_in_owner = true

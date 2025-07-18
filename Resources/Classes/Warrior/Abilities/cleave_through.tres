@@ -21,7 +21,7 @@ ss_factor = 1.0
 element_type = 1
 icon = ExtResource("1_p5oua")
 title = "Cleave Through"
-tooltip_text = "Carve through all enemies, dealing [color=firebrick]20 + 150% STR[/color] [color=slate_gray]Physical[/color] damage to all targets.
+tooltip_text = "Carve through all enemies, dealing [color=firebrick]15 + 150% STR[/color] [color=slate_gray]Physical[/color] damage to all targets.
 
 Ability Type: [color=firebrick]Attack[/color]
 

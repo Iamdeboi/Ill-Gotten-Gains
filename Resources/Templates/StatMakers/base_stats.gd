@@ -50,6 +50,13 @@ var intellect: int : set = set_int
 var wisdom: int : set = set_wis
 var charisma: int : set = set_cha
 var constitution: int : set = set_con
+# Base Attributes
+var base_strength : int
+var base_dexterity : int
+var base_intellect: int
+var base_wisdom : int
+var base_charisma : int
+var base_constitution: int
 
 # Setter Functions: Core Stats amd Attributes
 func set_health(value : int) -> void:
@@ -172,4 +179,10 @@ func create_instance() -> Resource: #Allows for individual instances of the stat
 	instance.wisdom = start_wisdom
 	instance.charisma = start_charisma
 	instance.constitution = start_constitution
+	instance.base_strength = start_strength
+	instance.base_dexterity = start_dexterity
+	instance.base_intellect = start_intellect
+	instance.base_wisdom = start_wisdom
+	instance.base_charisma = start_charisma
+	instance.base_constitution = start_constitution
 	return instance

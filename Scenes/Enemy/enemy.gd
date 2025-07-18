@@ -13,6 +13,7 @@ const WHITE_SPRITE_MATERIAL := preload("res://Assets/art/white_sprite_material.t
 @onready var target_arrow: Sprite2D = %TargetArrow
 @onready var intent_ui: IntentUI = $IntentUI
 @onready var status_handler: StatusHandler = $StatusHandler
+@onready var modifier_handler: ModifierHandler = $ModifierHandler
 
 var enemy_action_picker: EnemyActionPicker
 var current_action: EnemyAction: set = set_current_action
@@ -90,19 +91,20 @@ func calculate_damage(amount: int, dmg_mod: float, primary_scaling_mod: float, s
 	return stats.calculate_damage(amount, dmg_mod, primary_scaling_mod, secondary_scaling_mod)
 
 
-func take_damage(amount: int) -> void:
+func take_damage(amount: int, which_modifier: Modifier.Type) -> void:
 	if stats.health <= 0:
 		return
-		
+	
 	if stats.armor <= amount: # Damage will reduce health
 		enemy_sprite.material = RED_SPRITE_MATERIAL
 	else: # Damage will be fully absorbed by armor before reducing health
 		enemy_sprite.material = WHITE_SPRITE_MATERIAL
 	
+	var modified_damage := modifier_handler.get_modified_value(amount, which_modifier)
 	var tween := create_tween()
 	SfxPlayer.play(stats.hit_sound)
 	tween.tween_callback(Shaker.shake.bind(self, 16, 0.15))
-	tween.tween_callback(stats.take_damage.bind(amount))
+	tween.tween_callback(stats.take_damage.bind(modified_damage))
 	tween.tween_interval(0.15)
 	
 	tween.finished.connect(

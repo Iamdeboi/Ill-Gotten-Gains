@@ -2,6 +2,7 @@ class_name DamageEffect
 extends Effect
 
 var amount := 0
+var receiver_modifier_type := Modifier.Type.DMG_TAKEN
 
 func execute(targets: Array[Node], ability: Ability, primary_scaling_mod: float, secondary_scaling_mod: float) -> void:
 	for target in targets:
@@ -10,7 +11,7 @@ func execute(targets: Array[Node], ability: Ability, primary_scaling_mod: float,
 			
 		if target is Enemy or target is Player:
 			var dmg_mod: float = 1
-			var element = ability.element_type
+			var _element = ability.element_type
 			
 			# Elemental Damage Mod
 			match ability.element_type:
@@ -40,5 +41,5 @@ func execute(targets: Array[Node], ability: Ability, primary_scaling_mod: float,
 			print("Secondary Scaling Mod: " + str(secondary_scaling_mod))
 			print("Calculated Damage: " + str(damage))
 			print("====-----------------====")
-			target.take_damage(damage)
+			target.take_damage(damage, receiver_modifier_type)
 			SfxPlayer.play(sound)

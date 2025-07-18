@@ -3,6 +3,7 @@ extends Control
 
 signal reparent_requested(which_ability: AbilitySlot)
 
+@export var player_modifiers: ModifierHandler
 @export var ability: Ability: set = _set_ability
 @export var player_stats: PlayerStats : set = _set_player_stats
 
@@ -43,7 +44,7 @@ func play() -> void:
 	if not ability:
 		return
 	
-	ability.play(targets, player_stats, ability)
+	ability.play(targets, player_stats, ability, player_modifiers)
 	start_cooldown()
 
 func _on_gui_input(event: InputEvent) -> void:

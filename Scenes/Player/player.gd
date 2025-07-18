@@ -4,11 +4,13 @@ extends Control
 
 const WHITE_SPRITE_MATERIAL := preload("res://Assets/art/white_sprite_material.tres")
 const RED_SPRITE_MATERIAL :=preload("res://Assets/art/red_sprite_material.tres")
-#Statblocks
+# PlayerStats (Player Class Stat Block)
 @export var stats: PlayerStats : set = set_player_stats #Attach the statblock resource
 # GUI Collection
 @onready var player_stats_ui: PlayerStatsUI = $PlayerStatsUI
+# Status and Modifier Handler Nodes
 @onready var status_handler: StatusHandler = $StatusHandler
+@onready var modifier_handler: ModifierHandler = $ModifierHandler
 
 
 func _ready() -> void:
@@ -38,7 +40,7 @@ func update_stats() -> void:
 	player_stats_ui.update_stats(stats)
 
 
-func take_damage(damage: int) -> void:
+func take_damage(damage: int, which_modifier: Modifier.Type) -> void:
 	if stats.health <= 0:
 		return
 		
@@ -46,10 +48,11 @@ func take_damage(damage: int) -> void:
 		player_stats_ui.portrait.material = RED_SPRITE_MATERIAL
 	else: # Armor will block damage before reducing health
 		player_stats_ui.portrait.material = WHITE_SPRITE_MATERIAL
-		
+	
+	var modified_damage := modifier_handler.get_modified_value(damage, which_modifier)
 	var tween := create_tween()
 	tween.tween_callback(Shaker.control_node_shake.bind(player_stats_ui.portrait, 16, 0.15))
-	tween.tween_callback(stats.take_damage.bind(damage))
+	tween.tween_callback(stats.take_damage.bind(modified_damage))
 	tween.tween_interval(0.15)
 	
 	tween.finished.connect(

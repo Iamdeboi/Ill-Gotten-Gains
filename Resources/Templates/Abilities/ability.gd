@@ -39,6 +39,7 @@ const RARITY_COLORS := {
 var primary_scaling_mod: float = 0
 var secondary_scaling_mod: float = 0
 
+
 func is_single_targeted() -> bool:
 	return target == Target.SINGLE_ENEMY
 
@@ -60,7 +61,7 @@ func _get_targets(targets: Array[Node]) -> Array[Node]:
 			return []
 
 
-func play(targets: Array[Node], player_stats: PlayerStats, ability: Ability) -> void:
+func play(targets: Array[Node], player_stats: PlayerStats, ability: Ability, modifiers: ModifierHandler) -> void:
 	EventBus.ability_used.emit(self)
 	player_stats.action_points -= 1
 	match cost_type:
@@ -70,6 +71,7 @@ func play(targets: Array[Node], player_stats: PlayerStats, ability: Ability) -> 
 			player_stats.health -= cost
 		CostType.GOLD:
 			print("You will spend %s gold pieces" % cost)
+	
 	# Calculate Primary Scaling Damage Mod
 	match primary_scaling:
 		Scaling.NONE:
@@ -104,14 +106,14 @@ func play(targets: Array[Node], player_stats: PlayerStats, ability: Ability) -> 
 			secondary_scaling_mod = player_stats.constitution * ss_factor
 			
 	if is_single_targeted():
-		apply_effects(targets, ability, primary_scaling_mod, secondary_scaling_mod)
+		apply_effects(targets, ability, primary_scaling_mod, secondary_scaling_mod, modifiers)
 	else:
-		apply_effects(_get_targets(targets), ability, primary_scaling_mod, secondary_scaling_mod)
+		apply_effects(_get_targets(targets), ability, primary_scaling_mod, secondary_scaling_mod, modifiers)
 	print("player_stats: " + str(player_stats.health) + " " + str(player_stats.mana) + " " + str(player_stats.armor) + ".")
 	EventBus.any_player_action_done.emit()
 
 
-func apply_effects(_targets: Array[Node], _ability: Ability, _primary_scaling_mod: float, _secondary_scaling_mod: float) -> void:
+func apply_effects(_targets: Array[Node], _ability: Ability, _primary_scaling_mod: float, _secondary_scaling_mod: float, _modifiers: ModifierHandler) -> void:
 	pass #Each individual ability has their own overidden version of this function, this is a "virtual function"
 
 

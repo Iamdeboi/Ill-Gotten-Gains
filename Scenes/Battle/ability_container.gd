@@ -4,6 +4,7 @@ extends GridContainer
 # This node makes new ability_slot nodes from a given [AbilityList] and their individual [Ability]s
 
 
+@export var player: Player
 @export var player_stats: PlayerStats
 @export var sample_ability_list: AbilityList
 
@@ -33,7 +34,7 @@ func add_ability(ability: Ability) -> void:
 	new_ability_slot.ability.tooltip_text = new_ability_slot.ability.update_tooltip(player_stats)
 	new_ability_slot.parent = self
 	new_ability_slot.player_stats = player_stats #Dependency from own
-
+	new_ability_slot.player_modifiers = player.modifier_handler
 
 func disable_hotbar() -> void:
 	for ability_slot in get_children():
