@@ -8,6 +8,7 @@ var acting_enemies: Array[Enemy] = [] # An array that refreshes each enemy-turn 
 func _ready() -> void:
 	EventBus.enemy_died.connect(_on_enemy_died)
 	EventBus.enemy_action_completed.connect(_on_enemy_action_completed)
+	EventBus.any_player_action_done.connect(_on_any_player_action_done)
 
 
 func setup_enemies(battle_stats: BattleStats) -> void:
@@ -64,6 +65,7 @@ func _on_enemy_statuses_applied(type: Status.Type, enemy: Enemy) -> void:
 
 
 func _on_enemy_died(enemy: Enemy) -> void:
+	remove_child(enemy)
 	var is_enemy_turn := acting_enemies.size() > 0
 	acting_enemies.erase(enemy)
 	
@@ -73,3 +75,8 @@ func _on_enemy_died(enemy: Enemy) -> void:
 
 func _on_enemy_action_completed(enemy: Enemy) -> void:
 	enemy.status_handler.apply_statuses_by_type(Status.Type.END_OF_TURN)
+
+
+func _on_any_player_action_done() -> void:
+	for enemy: Enemy in get_children():
+		enemy.update_intent()

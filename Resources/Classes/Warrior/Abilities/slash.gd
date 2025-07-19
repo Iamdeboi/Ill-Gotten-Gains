@@ -3,9 +3,19 @@ extends Ability
 
 var base_damage := 5
 
-func update_tooltip(stats: PlayerStats) -> String:
-	tooltip_text = "Slash your enemy, dealing " + "[color=firebrick]" + str(int(5 + (stats.base_strength) * ps_factor)) + "[/color]" + " neutral damage.\n\nAbility Type: [color=firebrick]Attack[/color]\nCost: None\nBase: 5\nScaling: (50% STR)"
-	return str(tooltip_text)
+
+func get_default_tooltip() -> String:
+	return tooltip_text
+
+
+func update_tooltip(stats: PlayerStats, player_modifiers: ModifierHandler, enemy_modifiers: ModifierHandler) -> String:
+	var pre_mod_dmg = base_damage + (player_modifiers.get_modified_value(stats.base_strength, Modifier.Type.STR_MOD)) * (ps_factor)
+	var final_dmg = player_modifiers.get_modified_value(pre_mod_dmg, Modifier.Type.DMG_TAKEN)
+	if enemy_modifiers:
+		final_dmg = enemy_modifiers.get_modified_value(final_dmg, Modifier.Type.DMG_TAKEN)
+	
+	var updated_tooltip = "Slash your enemy, dealing " + "[color=firebrick]" + str(final_dmg) + "[/color]" + " neutral damage.\n\nAbility Type: [color=firebrick]Attack[/color]\nCost: None\nBase: " + str(base_damage) + "\nScaling: (50% STR)"
+	return str(updated_tooltip)
 
 
 func apply_effects(targets: Array[Node], ability: Ability, p_s_mod: float, s_s_mod: float, modifiers: ModifierHandler) -> void:

@@ -23,7 +23,7 @@ func show_tooltip(ability: Ability) -> void:
 	tooltip_ability.add_child(new_ability)
 	new_ability.ability = ability
 	new_ability.tooltip_requested.connect(hide_tooltip.unbind(1))
-	ability_description.text = ability.tooltip_text
+	ability_description.text = ability.get_default_tooltip()
 	show()
 
 

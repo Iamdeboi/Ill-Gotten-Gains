@@ -30,7 +30,7 @@ metadata/_custom_type_script = "uid://smcmjjy50miu"
 
 [sub_resource type="Resource" id="Resource_yjxvi"]
 script = ExtResource("5_pom5j")
-number = ""
+base_text = ""
 icon = ExtResource("4_l4k7r")
 metadata/_custom_type_script = "uid://75vkhkjo518y"
 
@@ -54,7 +54,7 @@ metadata/_custom_type_script = "uid://smcmjjy50miu"
 
 [sub_resource type="Resource" id="Resource_sm03e"]
 script = ExtResource("5_pom5j")
-number = ""
+base_text = ""
 icon = ExtResource("8_06hw4")
 metadata/_custom_type_script = "uid://75vkhkjo518y"
 

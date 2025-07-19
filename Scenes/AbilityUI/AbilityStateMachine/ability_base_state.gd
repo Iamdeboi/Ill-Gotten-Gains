@@ -27,6 +27,8 @@ func on_mouse_entered() -> void:
 		return
 	
 	EventBus.ability_tooltip_requested.emit(ability_slot.ability.icon, ability_slot.ability.title, ability_slot.ability.tooltip_text)
+	ability_slot.request_tooltip()
+
 
 func on_mouse_exited() -> void:
 	if not ability_slot.playable or ability_slot.disabled:

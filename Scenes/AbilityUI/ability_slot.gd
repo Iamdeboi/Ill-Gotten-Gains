@@ -47,6 +47,20 @@ func play() -> void:
 	ability.play(targets, player_stats, ability, player_modifiers)
 	start_cooldown()
 
+
+func get_active_enemy_modifiers() -> ModifierHandler:
+	if targets.is_empty() or targets.size() > 1 or not targets[0] is Enemy:
+		return null
+	
+	return targets[0].modifier_handler
+
+
+func request_tooltip() -> void:
+	var enemy_modifiers := get_active_enemy_modifiers()
+	var updated_tooltip := ability.update_tooltip(player_stats, player_modifiers, enemy_modifiers)
+	EventBus.ability_tooltip_requested.emit(ability.icon, ability.title, updated_tooltip)
+
+
 func _on_gui_input(event: InputEvent) -> void:
 	ability_state_machine.on_gui_input(event)
 
@@ -58,12 +72,14 @@ func _on_mouse_entered() -> void:
 func _on_mouse_exited() -> void:
 	ability_state_machine.on_mouse_exited()
 
+
 func _set_ability(value: Ability) -> void:
 	if not is_node_ready():
 		await ready
 	
 	ability = value
 	ability_visuals.set_ability(ability)
+
 
 func _set_playable(value: bool) -> void:
 	playable = value

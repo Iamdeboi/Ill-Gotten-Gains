@@ -25,12 +25,7 @@ func _ready() -> void:
 
 func set_current_action(value: EnemyAction) -> void:
 	current_action = value
-	if current_action:
-		if current_action.has_method("calculate_action") and current_action.effect_count > 1:
-			current_action.intent.set_number(str(current_action.calculate_action()) + " x " + str(current_action.effect_count))
-		elif current_action.has_method("calculate_action"):
-			current_action.intent.set_number(str(current_action.calculate_action()))
-		intent_ui.update_intent(current_action.intent)
+	update_intent()
 
 
 func set_enemy_stats(value: EnemyStats) -> void:
@@ -75,6 +70,15 @@ func update_enemy() -> void:
 	enemy_sprite.texture = stats.sprite
 	setup_ai()
 	update_stats()
+
+
+func update_intent() -> void:
+	if current_action:
+		if current_action.has_method("calculate_action") and current_action.effect_count > 1:
+			current_action.intent.set_text(str(current_action.calculate_action()) + " x " + str(current_action.effect_count))
+		elif current_action.has_method("calculate_action"):
+			current_action.intent.set_text(str(current_action.calculate_action()))
+		intent_ui.update_intent(current_action.intent)
 
 
 func do_turn() -> void:

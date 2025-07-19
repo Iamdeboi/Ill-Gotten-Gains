@@ -37,7 +37,6 @@ func perform_action() -> void:
 	)
 
 
-
 # Calculation Methods
 func calculate_primary_scaling_mod(ability_ref: Ability) -> float:
 	match ability_ref.primary_scaling:
@@ -107,6 +106,7 @@ func calculate_action() -> int: # For Intent "Number" string updating
 				calc_dmg_mod = target.stats.shadow_vuln
 			8: # Holy
 				calc_dmg_mod = target.stats.holy_vuln
-			
-	var calculation = calc_dmg_mod * ((damage) + (calc_p_s_mod) + (calc_s_s_mod))
-	return int(calculation)
+	# Final Damage Calculation: (Including DMG_TAKEN Modifier)
+	var pre_mod_dmg = calc_dmg_mod * ((damage) + (calc_p_s_mod) + (calc_s_s_mod))
+	var final_dmg = target.modifier_handler.get_modified_value(pre_mod_dmg, Modifier.Type.DMG_TAKEN)
+	return int(final_dmg)

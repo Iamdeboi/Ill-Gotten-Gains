@@ -22,6 +22,7 @@ func on_input(event: InputEvent) -> void:
 	var mouse_at_bottom := ability_slot.get_global_mouse_position().y > MOUSE_Y_SNAPBACK_THRESHOLD
 	
 	if (mouse_motion and mouse_at_bottom) or event.is_action_pressed("right_mouse"):
+		ability_slot.targets.clear()
 		transition_requested.emit(self, AbilityState.State.BASE)
 	elif event.is_action_released("left_mouse") or event.is_action_pressed("left_mouse"):
 		get_viewport().set_input_as_handled()

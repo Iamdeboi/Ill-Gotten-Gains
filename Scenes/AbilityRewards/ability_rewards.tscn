@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cxs40duc01ceu"]
+[gd_scene load_steps=12 format=3 uid="uid://cxs40duc01ceu"]
 
 [ext_resource type="PackedScene" uid="uid://ipwgkmpww5uh" path="res://Scenes/GUI/ability_menu_ui.tscn" id="1_p78ix"]
 [ext_resource type="Script" uid="uid://dnove4yk5jfl5" path="res://Scenes/AbilityRewards/ability_rewards.gd" id="1_xwlte"]
@@ -9,6 +9,8 @@
 [ext_resource type="Theme" uid="uid://s2qhlxij3t3q" path="res://Assets/Themes/GUI_Theme_2.theme" id="4_fku2j"]
 [ext_resource type="Resource" uid="uid://cvvx6pnppdaex" path="res://Resources/Classes/All/spare_mana_potion.tres" id="4_wm6y6"]
 [ext_resource type="Resource" uid="uid://bl0hxgo0vfup5" path="res://Resources/Classes/All/potion_of_questionable_purpose.tres" id="5_v1xo2"]
+[ext_resource type="Resource" uid="uid://b6034lga1hc4g" path="res://Resources/Classes/Warrior/Abilities/slash.tres" id="6_aywq7"]
+[ext_resource type="Resource" uid="uid://coapnwodmdehg" path="res://Resources/Classes/Warrior/Abilities/bash.tres" id="7_wm6y6"]
 
 [node name="AbilityRewards" type="ColorRect"]
 anchors_preset = 15
@@ -18,7 +20,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.529412)
 script = ExtResource("1_xwlte")
-rewards = Array[ExtResource("2_5nd5b")]([ExtResource("3_aywq7"), ExtResource("4_wm6y6"), ExtResource("5_v1xo2")])
+rewards = Array[ExtResource("2_5nd5b")]([ExtResource("3_aywq7"), ExtResource("4_wm6y6"), ExtResource("5_v1xo2"), ExtResource("6_aywq7"), ExtResource("7_wm6y6")])
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

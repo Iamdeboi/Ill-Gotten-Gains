@@ -20,3 +20,7 @@ func is_performable() -> bool: #Must be overwritten through checks on attacks or
 
 func perform_action() -> void: #All logic behind enemy actions is done here; tweens, animations, etc.
 	pass
+
+
+func update_intent_text(_pre_modifier_calc: int) -> void:
+	intent.current_text = intent.base_text

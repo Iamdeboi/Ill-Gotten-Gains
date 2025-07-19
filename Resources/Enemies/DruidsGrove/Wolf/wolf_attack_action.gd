@@ -104,5 +104,18 @@ func calculate_action() -> int: # For Intent "Number" string updating
 			8: # Holy
 				calc_dmg_mod = target.stats.holy_vuln
 			
-	var calculation = calc_dmg_mod * ((damage) + (calc_p_s_mod) + (calc_s_s_mod))
-	return int(calculation)
+	var pre_mod_dmg = calc_dmg_mod * ((damage) + (calc_p_s_mod) + (calc_s_s_mod))
+	var final_dmg = target.modifier_handler.get_modified_value(pre_mod_dmg, Modifier.Type.DMG_TAKEN)
+	return int(final_dmg)
+
+
+#func update_intent_text(pre_modifier_calc: int) -> void:
+	#var player := target as Player
+	#if not player:
+		#return
+	#
+	#var modified_dmg := player.modifier_handler.get_modified_value(pre_modifier_calc, Modifier.Type.DMG_TAKEN)
+	#if effect_count > 1:
+		#intent.current_text = intent.base_text % modified_dmg + " x %q" % effect_count
+		#return
+	#intent.current_text = intent.base_text % modified_dmg
