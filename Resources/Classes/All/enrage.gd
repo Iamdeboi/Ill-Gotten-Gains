@@ -7,7 +7,7 @@ func get_default_tooltip() -> String:
 	return tooltip_text
 
 
-func update_tooltip(stats: PlayerStats, _player_modifiers: ModifierHandler, _enemy_modifiers: ModifierHandler) -> String:
+func update_tooltip(_stats: PlayerStats, _player_modifiers: ModifierHandler, _enemy_modifiers: ModifierHandler) -> String:
 	var updated_tooltip = "[color=crimson]RAGE CONSUMES YOU![/color] Apply 2 [color=crimson]Empowered[/color] to yourself.\n\nAbility Type: [color=lime_green]Buff[/color]\nTargets: Self\nCost:[color=salmon] 20 HP[/color]\nBase: 20\nScaling: None"
 	return str(updated_tooltip)
 

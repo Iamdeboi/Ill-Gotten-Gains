@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SagaciousStatus" load_steps=4 format=3 uid="uid://cd0rt0yu45ewf"]
+
+[ext_resource type="Script" uid="uid://csk5wghxpys1m" path="res://Statuses/AttributeModifiers/sagacious.gd" id="1_6x5s5"]
+[ext_resource type="Texture2D" uid="uid://cj313v3fv4jw7" path="res://Assets/art/IGGStatusIcons/StatusSpriteSheet.png" id="1_jffy2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nitrb"]
+atlas = ExtResource("1_jffy2")
+region = Rect2(48, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_6x5s5")
+id = "sagacious"
+type = 2
+stack_type = 1
+can_expire = false
+duration = 0
+stacks = 1
+icon = SubResource("AtlasTexture_nitrb")
+tooltip = "TODO"
+metadata/_custom_type_script = "uid://c3qvt5utxx5jd"

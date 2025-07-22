@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="QuickenedStatus" load_steps=4 format=3 uid="uid://dmsxaj50ey7nu"]
+
+[ext_resource type="Script" uid="uid://dvoy0jo3wggkv" path="res://Statuses/AttributeModifiers/quickened.gd" id="1_5u64x"]
+[ext_resource type="Texture2D" uid="uid://cj313v3fv4jw7" path="res://Assets/art/IGGStatusIcons/StatusSpriteSheet.png" id="1_acssy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h510g"]
+atlas = ExtResource("1_acssy")
+region = Rect2(16, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_5u64x")
+id = "quickened"
+type = 2
+stack_type = 1
+can_expire = false
+duration = 0
+stacks = 1
+icon = SubResource("AtlasTexture_h510g")
+tooltip = "TODO"
+metadata/_custom_type_script = "uid://c3qvt5utxx5jd"

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="TenaciousStatus" load_steps=4 format=3 uid="uid://1itb7mulhtlp"]
+
+[ext_resource type="Texture2D" uid="uid://cj313v3fv4jw7" path="res://Assets/art/IGGStatusIcons/StatusSpriteSheet.png" id="1_jal32"]
+[ext_resource type="Script" uid="uid://bugkfai5xyyeu" path="res://Statuses/AttributeModifiers/tenacious.gd" id="1_rk4mu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_libou"]
+atlas = ExtResource("1_jal32")
+region = Rect2(80, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_rk4mu")
+id = "tenacious"
+type = 2
+stack_type = 1
+can_expire = false
+duration = 0
+stacks = 1
+icon = SubResource("AtlasTexture_libou")
+tooltip = "TODO"
+metadata/_custom_type_script = "uid://c3qvt5utxx5jd"

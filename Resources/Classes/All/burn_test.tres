@@ -1,0 +1,27 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://difp3muobofqu"]
+
+[ext_resource type="Texture2D" uid="uid://dwwohw571cr2a" path="res://Assets/art/tile_0092.png" id="1_jktxu"]
+[ext_resource type="AudioStream" uid="uid://bo57ky273v6sr" path="res://Assets/Audio/Minifantasy_MagicAndSorcery_SFX/Spells/Fire/01_Fire_Cast.wav" id="2_5fy67"]
+[ext_resource type="Script" uid="uid://bhf2luejh11fa" path="res://Resources/Classes/All/burn_test.gd" id="3_swyvs"]
+[ext_resource type="AudioStream" uid="uid://lt2bpd1vnxph" path="res://Assets/Audio/50_RPG_Battle_Magic_SFX/07_Fireball_01.wav" id="4_ghrhp"]
+
+[resource]
+script = ExtResource("3_swyvs")
+id = "10"
+ability_type = 0
+rarity = 0
+target = 1
+cost = 5
+cost_type = 0
+cooldown = 0
+primary_scaling = 3
+ps_factor = 0.5
+secondary_scaling = 4
+ss_factor = 0.5
+element_type = 2
+icon = ExtResource("1_jktxu")
+title = "Burn Test"
+tooltip_text = "Burn Test, whatup"
+sound = ExtResource("4_ghrhp")
+pickup_audio = ExtResource("2_5fy67")
+metadata/_custom_type_script = "uid://smcmjjy50miu"

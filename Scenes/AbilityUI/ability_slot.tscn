@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bfw2fydvlmuqa"]
+[gd_scene load_steps=11 format=3 uid="uid://bfw2fydvlmuqa"]
 
 [ext_resource type="Script" uid="uid://elf3bnr3nlw0" path="res://Scenes/AbilityUI/ability_slot.gd" id="1_63x3o"]
 [ext_resource type="PackedScene" uid="uid://7mar8xfbofgo" path="res://Scenes/GUI/ability_visuals.tscn" id="2_7y7um"]
@@ -8,6 +8,9 @@
 [ext_resource type="Script" uid="uid://ugvo2ri73wwy" path="res://Scenes/AbilityUI/AbilityStateMachine/ability_dragging_state.gd" id="6_3vy14"]
 [ext_resource type="Script" uid="uid://bratox4jig5wo" path="res://Scenes/AbilityUI/AbilityStateMachine/ability_released_state.gd" id="7_mw30w"]
 [ext_resource type="Script" uid="uid://dsoeqsr3f0c4g" path="res://Scenes/AbilityUI/AbilityStateMachine/ability_aiming_state.gd" id="8_7y7um"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7y7um"]
+bg_color = Color(0.32, 0.0256, 0.0256, 0.490196)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qc6sc"]
 size = Vector2(32, 32)
@@ -38,6 +41,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7y7um")
 
 [node name="CooldownCountLabel" type="Label" parent="CooldownWrapper"]
 unique_name_in_owner = true

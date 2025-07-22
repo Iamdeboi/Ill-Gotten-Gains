@@ -1,8 +1,12 @@
-[gd_resource type="Resource" script_class="ExposedStatus" load_steps=4 format=3 uid="uid://bp1l1preylxvg"]
+[gd_resource type="Resource" script_class="ExposedStatus" load_steps=5 format=3 uid="uid://bp1l1preylxvg"]
 
 [ext_resource type="Script" uid="uid://cwn73ymmxkp8q" path="res://Statuses/Ailments/exposed.gd" id="1_h1l76"]
 [ext_resource type="AudioStream" uid="uid://c5hb8bcuiaclf" path="res://Assets/Audio/50_RPG_Battle_Magic_SFX/35_Dark_01.wav" id="1_sq5ob"]
-[ext_resource type="Texture2D" uid="uid://cylug7ejxgd04" path="res://Assets/art/expose.png" id="2_5ytnt"]
+[ext_resource type="Texture2D" uid="uid://cj313v3fv4jw7" path="res://Assets/art/IGGStatusIcons/StatusSpriteSheet.png" id="2_sq5ob"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ytnt"]
+atlas = ExtResource("2_sq5ob")
+region = Rect2(32, 16, 16, 16)
 
 [resource]
 script = ExtResource("1_h1l76")
@@ -12,7 +16,7 @@ stack_type = 2
 can_expire = true
 duration = 1
 stacks = 0
-icon = ExtResource("2_5ytnt")
+icon = SubResource("AtlasTexture_5ytnt")
 audio = ExtResource("1_sq5ob")
 tooltip = "TODO"
 metadata/_custom_type_script = "uid://c3qvt5utxx5jd"

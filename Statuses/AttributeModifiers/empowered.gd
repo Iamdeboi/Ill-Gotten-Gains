@@ -13,7 +13,7 @@ func _on_status_changed(target: Node) -> void:
 	# Assert if the target has a strength_modifier node in their modifier_handler node:
 	var strength_modifier: Modifier = target.modifier_handler.get_modifier(Modifier.Type.STR_MOD)
 	assert(strength_modifier, "No strength modifier on %s" % target)
-	# Extract a status_modifier variable value of the strength_modifier node's "[status_name_string_id]" to confirm that it exists
+	# Extract a status_modifier variable value of the appropriate modifier_handler's modifier node: "[status_name_string_id]" to confirm that it exists
 	var empowered_modfier_value := strength_modifier.get_value("empowered")
 	# If this status_modifier has no value, create a new one and assign its ModifierValue Type (either percentage-based or a flat value)
 	# Ultlize static function in ModifierValue to create a new modifier away from this script

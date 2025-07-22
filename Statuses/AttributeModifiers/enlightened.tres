@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EnlightenedStatus" load_steps=4 format=3 uid="uid://na3ww21j2rid"]
+
+[ext_resource type="Texture2D" uid="uid://cj313v3fv4jw7" path="res://Assets/art/IGGStatusIcons/StatusSpriteSheet.png" id="1_1hdhl"]
+[ext_resource type="Script" uid="uid://cxvxs1v4qx40d" path="res://Statuses/AttributeModifiers/enlightened.gd" id="1_msbgg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yb883"]
+atlas = ExtResource("1_1hdhl")
+region = Rect2(32, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_msbgg")
+id = "enlightened"
+type = 2
+stack_type = 1
+can_expire = false
+duration = 0
+stacks = 1
+icon = SubResource("AtlasTexture_yb883")
+tooltip = "TODO"
+metadata/_custom_type_script = "uid://c3qvt5utxx5jd"

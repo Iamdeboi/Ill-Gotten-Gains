@@ -14,7 +14,7 @@ func _ready() -> void:
 	EventBus.ability_targeting_ended.connect(_on_ability_targeting_ended)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not targeting:
 		return
 	
@@ -69,7 +69,7 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 	
 	if not current_ability.targets.has(area):
 		current_ability.targets.append(area)
-		current_ability.request_tooltip()
+		current_ability.request_tooltip() # Change ability stats to match the damage recieved modifiers and ability damage type modifiers of the enemy
 
 
 func _on_area_2d_area_exited(area: Area2D) -> void:
@@ -77,4 +77,4 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 		return
 	
 	current_ability.targets.erase(area)
-	current_ability.request_tooltip()
+	current_ability.request_tooltip() # Return to no-enemy modifier stats

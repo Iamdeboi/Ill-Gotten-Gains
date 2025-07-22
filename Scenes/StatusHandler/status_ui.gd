@@ -14,8 +14,21 @@ func set_status(new_status: Status) -> void:
 	
 	status = new_status
 	icon.texture = status.icon
-	duration.visible = status.stack_type == Status.StackType.DURATION
-	stacks.visible = status.stack_type ==  Status.StackType.INTENSITY
+	match status.stack_type:
+		Status.StackType.DURATION:
+			duration.visible = true
+			stacks.visible = false
+		Status.StackType.INTENSITY:
+			duration.visible = false
+			stacks.visible = true
+		Status.StackType.BOTH:
+			duration.visible = true
+			stacks.visible = true
+		_:
+			duration.visible = false
+			stacks.visible = false
+	#duration.visible = status.stack_type == Status.StackType.DURATION or Status.StackType.BOTH
+	#stacks.visible = status.stack_type ==  Status.StackType.INTENSITY or Status.StackType.BOTH
 	custom_minimum_size = icon.size
 	
 	if duration.visible:
@@ -32,10 +45,16 @@ func set_status(new_status: Status) -> void:
 func _on_status_changed() -> void:
 	if not status:
 		return
-	
-	if status.can_expire and status.duration <= 0:
+		
+	# Status Type: Both
+	if status.can_expire and status.stack_type == Status.StackType.BOTH and status.duration <= 0:
+		queue_free()
+		
+	#Status Type: Duration
+	if status.can_expire and status.stack_type == Status.StackType.DURATION and status.duration <= 0:
 		queue_free()
 	
+	# Status Type: Intensity
 	if status.stack_type == Status.StackType.INTENSITY and status.stacks == 0: # Negative Values possible (Debuff)
 		queue_free()
 	

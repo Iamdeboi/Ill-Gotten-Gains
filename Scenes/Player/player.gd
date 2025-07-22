@@ -71,8 +71,6 @@ func take_damage(damage: int, which_modifier: Modifier.Type) -> void:
 			
 			if stats.health <= 0:
 				EventBus.player_died.emit()
-				await get_tree().create_timer(0.05).timeout
-				queue_free()
 	)
 
 

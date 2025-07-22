@@ -11,7 +11,7 @@ func get_default_tooltip() -> String:
 
 
 func update_tooltip(stats: PlayerStats, _player_modifiers: ModifierHandler, _enemy_modifiers: ModifierHandler) -> String:
-	tooltip_text = "This is a sample ability, dealing " + "[color=firebrick]" + str(int(15 + (stats.strength) * ps_factor)) + "[/color]" + " [color=slate_gray]Physical[/color] damage.\n\nAbility Type: [color=firebrick]Attack[/color]\nCost: [color=salmon]10 HP[/color]\nBase: 15\nScaling: (50% STR)"
+	tooltip_text = "This is a sample ability, dealing " + "[color=firebrick]" + str(int(15 + (stats.strength) * ps_factor)) + "[/color]" + " [color=slate_gray]Physical[/color] damage.\n\nAbility Type: [color=firebrick]Attack[/color]\nTargets: Single Enemy\nCost: [color=salmon]10 HP[/color]\nBase: 15\nScaling: (50% STR)"
 	return str(tooltip_text)
 
 

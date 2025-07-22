@@ -25,7 +25,7 @@ offset_left = 1.0
 offset_top = -130.0
 offset_right = 65.0
 offset_bottom = -66.0
-theme_override_constants/h_separation = 8
+theme_override_constants/h_separation = 4
 columns = 3
 status_owner = NodePath("..")
 

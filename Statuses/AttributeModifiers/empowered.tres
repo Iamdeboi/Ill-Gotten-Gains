@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="EmpoweredStatus" load_steps=4 format=3 uid="uid://dbs1tj0blmym3"]
+
+[ext_resource type="Texture2D" uid="uid://cj313v3fv4jw7" path="res://Assets/art/IGGStatusIcons/StatusSpriteSheet.png" id="2_sdgtg"]
+[ext_resource type="Script" uid="uid://brnd3fgho010o" path="res://Statuses/AttributeModifiers/empowered.gd" id="3_icr8b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pre2i"]
+atlas = ExtResource("2_sdgtg")
+region = Rect2(0, 0, 16, 16)
+
+[resource]
+script = ExtResource("3_icr8b")
+id = "empowered"
+type = 2
+stack_type = 1
+can_expire = false
+duration = 0
+stacks = 1
+icon = SubResource("AtlasTexture_pre2i")
+tooltip = "TODO"
+metadata/_custom_type_script = "uid://c3qvt5utxx5jd"

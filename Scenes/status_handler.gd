@@ -45,12 +45,17 @@ func add_status(status: Status) -> void:
 	if not status.can_expire and not stackable:
 		return
 	
-	# If it's duration-stackable, expand it
+	# If it's both duration and intensity-stackable, increase duration and stacks
+	if status.can_expire and status.stack_type == Status.StackType.BOTH:
+		_get_status(status.id).duration += status.duration
+		_get_status(status.id).stacks += status.stacks
+	
+	# If it's only duration-stackable, expand it
 	if status.can_expire and status.stack_type == Status.StackType.DURATION:
 		_get_status(status.id).duration += status.duration
 		return
 	
-	# If it's stackable, stack it
+	# If it's only intensity-stackable, stack it
 	if status.stack_type == Status.StackType.INTENSITY:
 		_get_status(status.id).stacks += status.stacks
 

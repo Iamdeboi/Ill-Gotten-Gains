@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharmingStatus" load_steps=4 format=3 uid="uid://c1so0x8vqoo0a"]
+
+[ext_resource type="Script" uid="uid://cl25lp3w0w6ph" path="res://Statuses/AttributeModifiers/charming.gd" id="1_iygrr"]
+[ext_resource type="Texture2D" uid="uid://cj313v3fv4jw7" path="res://Assets/art/IGGStatusIcons/StatusSpriteSheet.png" id="1_kw2ww"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fr3iw"]
+atlas = ExtResource("1_kw2ww")
+region = Rect2(64, 0, 16, 16)
+
+[resource]
+script = ExtResource("1_iygrr")
+id = "charming"
+type = 2
+stack_type = 1
+can_expire = false
+duration = 0
+stacks = 1
+icon = SubResource("AtlasTexture_fr3iw")
+tooltip = "TODO"
+metadata/_custom_type_script = "uid://c3qvt5utxx5jd"

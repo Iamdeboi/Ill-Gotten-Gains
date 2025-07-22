@@ -1,7 +1,11 @@
-[gd_resource type="Resource" script_class="EnragedStatus" load_steps=3 format=3 uid="uid://ugk67jli48dx"]
+[gd_resource type="Resource" script_class="EnragedStatus" load_steps=4 format=3 uid="uid://ugk67jli48dx"]
 
-[ext_resource type="Texture2D" uid="uid://dqh4k5f257aqp" path="res://Assets/art/IGGItemIcons/Weak Health Potion.png" id="2_juy4a"]
+[ext_resource type="Texture2D" uid="uid://cj313v3fv4jw7" path="res://Assets/art/IGGStatusIcons/StatusSpriteSheet.png" id="1_dr15h"]
 [ext_resource type="Script" uid="uid://hnh31shqvbpr" path="res://Statuses/MiscBuffs/enraged.gd" id="3_juy4a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_juy4a"]
+atlas = ExtResource("1_dr15h")
+region = Rect2(0, 48, 16, 16)
 
 [resource]
 script = ExtResource("3_juy4a")
@@ -11,6 +15,6 @@ stack_type = 0
 can_expire = false
 duration = 0
 stacks = 0
-icon = ExtResource("2_juy4a")
+icon = SubResource("AtlasTexture_juy4a")
 tooltip = "TODO"
 metadata/_custom_type_script = "uid://c3qvt5utxx5jd"

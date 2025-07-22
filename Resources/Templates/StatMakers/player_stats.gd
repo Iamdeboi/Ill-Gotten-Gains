@@ -31,7 +31,7 @@ func can_play_ability(ability: Ability) -> bool:
 			ability.CostType.MANA:
 				return mana >= ability.cost
 			ability.CostType.HEALTH:
-				return health >= ability.cost
+				return health > ability.cost
 			ability.CostType.GOLD:
 				return true
 			_:

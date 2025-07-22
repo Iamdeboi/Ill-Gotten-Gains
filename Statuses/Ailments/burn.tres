@@ -1,16 +1,22 @@
-[gd_resource type="Resource" script_class="BurnStatus" load_steps=3 format=3 uid="uid://btwn2jhxowrvw"]
+[gd_resource type="Resource" script_class="BurnStatus" load_steps=5 format=3 uid="uid://btwn2jhxowrvw"]
 
-[ext_resource type="Texture2D" uid="uid://dqh4k5f257aqp" path="res://Assets/art/IGGItemIcons/Weak Health Potion.png" id="1_d4lnu"]
 [ext_resource type="Script" uid="uid://chm2omvkg8we8" path="res://Statuses/Ailments/burn.gd" id="1_du6sq"]
+[ext_resource type="AudioStream" uid="uid://b6p0sd54vfitw" path="res://Assets/Audio/Minifantasy_Creatures_SFX_v3.0/Monsters/Wildfire/01_Wildfire_Damage.wav" id="1_erunv"]
+[ext_resource type="Texture2D" uid="uid://cj313v3fv4jw7" path="res://Assets/art/IGGStatusIcons/StatusSpriteSheet.png" id="2_0icu1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k1mc7"]
+atlas = ExtResource("2_0icu1")
+region = Rect2(0, 16, 16, 16)
 
 [resource]
 script = ExtResource("1_du6sq")
 id = "burn"
 type = 0
-stack_type = 2
+stack_type = 3
 can_expire = true
 duration = 1
-stacks = 0
-icon = ExtResource("1_d4lnu")
+stacks = 1
+icon = SubResource("AtlasTexture_k1mc7")
+audio = ExtResource("1_erunv")
 tooltip = "TODO"
 metadata/_custom_type_script = "uid://c3qvt5utxx5jd"

@@ -1,6 +1,6 @@
 extends Ability
 
-const EMPOWERED_STATUS = preload("res://Statuses/AttributeModifiers/AttributeBuff/empowered.tres")
+const EMPOWERED_STATUS = preload("res://Statuses/AttributeModifiers/empowered.tres")
 
 var empowered_stacks := -1
 
