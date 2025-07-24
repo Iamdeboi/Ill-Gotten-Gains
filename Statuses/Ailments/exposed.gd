@@ -2,7 +2,10 @@ class_name ExposedStatus
 extends Status
 
 const MODIFIER := 0.5
-const SINGLE_TARGET_SAMPLE = preload("res://Resources/Classes/Unusable(EffectConditions)/single_target_sample.tres")
+
+
+func get_tooltip() -> String:
+	return tooltip % duration
 
 
 func initialize_status(target: Node) -> void:

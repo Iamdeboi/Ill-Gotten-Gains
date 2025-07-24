@@ -19,12 +19,14 @@ stats = ExtResource("2_xpcdj")
 layout_mode = 1
 
 [node name="StatusHandler" parent="." node_paths=PackedStringArray("status_owner") instance=ExtResource("4_htcer")]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
 offset_left = 1.0
-offset_top = -130.0
+offset_top = -67.0
 offset_right = 65.0
-offset_bottom = -66.0
+offset_bottom = -67.0
 theme_override_constants/h_separation = 4
 columns = 3
 status_owner = NodePath("..")

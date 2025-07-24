@@ -16,5 +16,5 @@ can_expire = false
 duration = 0
 stacks = 1
 icon = SubResource("AtlasTexture_pre2i")
-tooltip = "TODO"
+tooltip = "Empowered: Target's [color=crimson]Strength[/color] is increased by [color=d486ed]%s[/color]."
 metadata/_custom_type_script = "uid://c3qvt5utxx5jd"

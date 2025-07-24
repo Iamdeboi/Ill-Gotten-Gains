@@ -36,6 +36,7 @@ signal shop_exited
 # Combat-related Events
 signal battle_over_screen_requested(text: String, type: BattleOverPanel.Type)
 signal battle_won
+signal status_effect_toolip_requested(statuses: Array[Status])
 
 # Combat-rewards Events
 signal battle_reward_exited

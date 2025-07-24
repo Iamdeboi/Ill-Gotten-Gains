@@ -1,16 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpq1p0rs4jv42"]
+[gd_scene load_steps=5 format=3 uid="uid://cpq1p0rs4jv42"]
 
-[ext_resource type="Texture2D" uid="uid://dmnh5xxe2xne0" path="res://Assets/art/player_heart.png" id="1_bypba"]
 [ext_resource type="Script" uid="uid://csq37n0q22s6t" path="res://Scenes/StatusHandler/status_ui.gd" id="1_lbh66"]
-[ext_resource type="Resource" uid="uid://dbs1tj0blmym3" path="res://Statuses/AttributeModifiers/empowered.tres" id="2_pcenv"]
+[ext_resource type="Resource" uid="uid://btwn2jhxowrvw" path="res://Statuses/Ailments/burn.tres" id="2_pcenv"]
+[ext_resource type="Texture2D" uid="uid://cj313v3fv4jw7" path="res://Assets/art/IGGStatusIcons/StatusSpriteSheet.png" id="3_pcenv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hhhqe"]
+atlas = ExtResource("3_pcenv")
+region = Rect2(80, 16, 16, 16)
 
 [node name="StatusUI" type="Control"]
+custom_minimum_size = Vector2(16, 16)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -624.0
+offset_bottom = -344.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_lbh66")
 status = ExtResource("2_pcenv")
 
@@ -19,8 +27,9 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 0
 offset_right = 12.0
 offset_bottom = 12.0
-texture = ExtResource("1_bypba")
-expand_mode = 1
+texture = SubResource("AtlasTexture_hhhqe")
+expand_mode = 3
+stretch_mode = 3
 
 [node name="Duration" type="Label" parent="."]
 layout_mode = 1

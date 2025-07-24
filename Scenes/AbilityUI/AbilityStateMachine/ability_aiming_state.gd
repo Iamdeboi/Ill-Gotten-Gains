@@ -17,6 +17,7 @@ func exit() -> void:
 	EventBus.ability_targeting_ended.emit(ability_slot)
 	SfxPlayer.stop()
 
+
 func on_input(event: InputEvent) -> void:
 	var mouse_motion := event is InputEventMouseMotion
 	var mouse_at_bottom := ability_slot.get_global_mouse_position().y > MOUSE_Y_SNAPBACK_THRESHOLD

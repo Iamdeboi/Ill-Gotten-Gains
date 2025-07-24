@@ -16,5 +16,5 @@ can_expire = false
 duration = 0
 stacks = 0
 icon = SubResource("AtlasTexture_juy4a")
-tooltip = "TODO"
+tooltip = "Enraged: Target recieves 2 [color=crimson]Empowered[/color] at the start of their turn."
 metadata/_custom_type_script = "uid://c3qvt5utxx5jd"

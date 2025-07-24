@@ -18,5 +18,5 @@ duration = 1
 stacks = 0
 icon = SubResource("AtlasTexture_5ytnt")
 audio = ExtResource("1_sq5ob")
-tooltip = "TODO"
+tooltip = "Exposed: Target recieves 50%% more damage from abilities for [color=f5cd1b]%s[/color] turns."
 metadata/_custom_type_script = "uid://c3qvt5utxx5jd"

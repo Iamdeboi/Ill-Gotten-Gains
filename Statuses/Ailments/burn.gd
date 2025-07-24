@@ -1,14 +1,18 @@
 class_name BurnStatus
 extends Status
 
-const SINGLE_TARGET_SAMPLE = preload("res://Resources/Classes/Unusable(EffectConditions)/single_target_sample.tres")
+
+func get_tooltip() -> String:
+	return tooltip % [stacks, duration]
 
 
 func apply_status(target: Node) -> void:
-	print("My Burn status targets %s" % [target])
+	# Sample Ability with Fire Element
+	var sample_fire_ability = Ability.new()
+	sample_fire_ability.element_type = sample_fire_ability.ElementType.FIRE
 	
 	var unmod_damage_effect := UnmodifiedDamageEffect.new()
 	unmod_damage_effect.amount = stacks
-	unmod_damage_effect.execute([target], SINGLE_TARGET_SAMPLE, 0, 0)
+	unmod_damage_effect.execute([target], sample_fire_ability, 0, 0)
 	
 	status_applied.emit(self)

@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dinkcbg2okqvt"]
+
+[ext_resource type="Script" uid="uid://c7wj30qngp1eo" path="res://status_tooltip.gd" id="1_g2mi7"]
+[ext_resource type="Texture2D" uid="uid://cj313v3fv4jw7" path="res://Assets/art/IGGStatusIcons/StatusSpriteSheet.png" id="2_i3gft"]
+[ext_resource type="Resource" uid="uid://dbs1tj0blmym3" path="res://Statuses/AttributeModifiers/empowered.tres" id="2_r6gi4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6gi4"]
+atlas = ExtResource("2_i3gft")
+region = Rect2(32, 16, 16, 16)
+
+[node name="StatusTooltip" type="HBoxContainer"]
+custom_minimum_size = Vector2(180, 0)
+offset_right = 180.0
+offset_bottom = 16.0
+size_flags_vertical = 3
+script = ExtResource("1_g2mi7")
+status = ExtResource("2_r6gi4")
+
+[node name="Icon" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+texture = SubResource("AtlasTexture_r6gi4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+text = "Exposed: Target recieves 50% more damage from abilities for %s turns."
+fit_content = true
+vertical_alignment = 1

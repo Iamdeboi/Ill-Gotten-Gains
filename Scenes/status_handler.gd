@@ -1,5 +1,5 @@
 class_name StatusHandler
-extends GridContainer
+extends Container
 
 signal statuses_applied(type: Status.Type)
 
@@ -87,3 +87,8 @@ func _get_all_statuses() -> Array[Status]:
 func _on_status_applied(status: Status) -> void:
 	if status.can_expire:
 		status.duration -= 1
+
+# On left clicking the statushandler UI, send a signal globally containing the Array[Status] of that status handler; used for StatusTooltips
+func _on_gui_input(event: InputEvent) -> void: 
+	if event.is_action_pressed("left_mouse"):
+		EventBus.status_effect_toolip_requested.emit(_get_all_statuses())

@@ -27,14 +27,6 @@ func set_status(new_status: Status) -> void:
 		_:
 			duration.visible = false
 			stacks.visible = false
-	#duration.visible = status.stack_type == Status.StackType.DURATION or Status.StackType.BOTH
-	#stacks.visible = status.stack_type ==  Status.StackType.INTENSITY or Status.StackType.BOTH
-	custom_minimum_size = icon.size
-	
-	if duration.visible:
-		custom_minimum_size = duration.size + duration.position
-	elif stacks.visible:
-		custom_minimum_size = stacks.size + stacks.position
 	
 	if not status.status_changed.is_connected(_on_status_changed):
 		status.status_changed.connect(_on_status_changed)
@@ -45,7 +37,7 @@ func set_status(new_status: Status) -> void:
 func _on_status_changed() -> void:
 	if not status:
 		return
-		
+	
 	# Status Type: Both
 	if status.can_expire and status.stack_type == Status.StackType.BOTH and status.duration <= 0:
 		queue_free()
