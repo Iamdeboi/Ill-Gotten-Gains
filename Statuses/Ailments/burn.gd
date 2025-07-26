@@ -7,10 +7,10 @@ func get_tooltip() -> String:
 
 
 func apply_status(target: Node) -> void:
-	# Sample Ability with Fire Element
+	# Attaching Fire Element to incoming Damage
 	var sample_fire_ability = Ability.new()
 	sample_fire_ability.element_type = sample_fire_ability.ElementType.FIRE
-	
+	# Unmodified Damage Effect (Does not benefit from DMG_TAKEN modifier of target)
 	var unmod_damage_effect := UnmodifiedDamageEffect.new()
 	unmod_damage_effect.amount = stacks
 	unmod_damage_effect.execute([target], sample_fire_ability, 0, 0)

@@ -12,11 +12,11 @@ func get_default_tooltip() -> String:
 
 func update_tooltip(stats: PlayerStats, player_modifiers: ModifierHandler, enemy_modifiers: ModifierHandler) -> String:
 	var pre_mod_dmg = base_damage + (player_modifiers.get_modified_value(stats.base_strength, Modifier.Type.STR_MOD)) * (ps_factor)
-	var final_dmg = player_modifiers.get_modified_value(pre_mod_dmg, Modifier.Type.DMG_TAKEN)
+	var final_dmg = player_modifiers.get_modified_value(pre_mod_dmg, Modifier.Type.DMG_DEALT)
 	if enemy_modifiers:
 		final_dmg = enemy_modifiers.get_modified_value(final_dmg, Modifier.Type.DMG_TAKEN)
 		
-	var updated_tooltip = "Whack an enemy on the head, dealing " + "[color=firebrick]" + str(final_dmg) + "[/color]" + " [color=slate_gray]Physical[/color] damage and inflicting 2 Exposed.\n\nAbility Type: [color=purple]Debuff[/color]\nCost: [color=salmon]10 HP[/color]\nBase: 15\nScaling: (50% STR)"
+	var updated_tooltip = "Bash an enemy on the head, dealing " + "[color=firebrick]" + str(final_dmg) + "[/color]" + " [color=slate_gray]Physical[/color] damage and inflicting 2 Exposed.\n\nAbility Type: [color=purple]Debuff[/color]\nTargets: Single Enemy\nCost: [color=salmon]10 HP[/color]\nBase: 15\nScaling: (50% STR)"
 	return str(updated_tooltip)
 
 

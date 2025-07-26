@@ -1,0 +1,54 @@
+Ill Gotten Gains Ability Tooltip Template: Updated as of 7/25/2025
+
+Components to a Ability Description (Written in the Editor Text): 
+* "Description of Ability and damage/healing/defense/etc. calculation amount" (see 'Burn Ability Example' below...)
+* \n Ability Type: {Attack, Defense, Buff, Debuff}
+* \n Targets: {Self, Single Enemy, All Enemies, Everyone}
+* \n Cost: {MP, HP, G}
+* \n Base: x
+* \n Scaling: (00% STAT)
+
+====================================================================================================================================================================
+
+Color Key (BBCodes):
+
+Attack Ability Type: [color=firebrick]
+Defense Ability Type: [color=blue]
+Debuff Ability Type: [color=indigo]
+Buff Ability Type: [color=lime_green]
+
+Damage Number BBCode: [color=firebrick]
+Defense Number BBCode: [color=blue]
+Health Number BBCode: [color=salmon]
+
+MP (Mana) Cost BBCode: [color=cyan]
+HP (Health) Cost BBCode: [color=salmon]
+G (Gold) Cost BBCode: [color=gold]
+
+Status Duration BBCode: [color=f5cd1b] (yellow)
+Status Intensity BBCode: [color=d486ed] (lavender/purple)
+
+====================================================================================================================================================================
+
+Elemental Type Damage Color BBCode Key:
+* Neutral(None): [color=white]
+* Physical: [color=slate_gray]
+* Fire: [color=orange_red]
+* Frost: [color=pale_turquoise]
+* Storm: [color=pale_goldenrod]
+* Toxic: [color=dark_violet]
+* Arcane: [color=deep_pink]
+* Shadow: [color=dark_slate_blue]
+* Holy: [color=moccasin]
+
+====================================================================================================================================================================
+
+Burn Ability Example: 
+
+"This is a burn ability, dealing " + "[color=firebrick]" + str(final_dmg) + "[/color]" + " [color=orange_red]Fire[/color] damage.\n\nAbility Type: [color=firebrick]Attack[/color]\nTargets: Single Enemy\nCost: [color=cyan]5 MP[/color]\nBase: 15\nScaling: (50% STR)"
+
+====================================================================================================================================================================
+
+Burn Status Tooltip Example: 
+
+Burn: Target takes [color=d486ed]%s[/color] [color=orange]Fire[/color] damage at the start of their turn for the next [color=f5cd1b]%s[/color] turns.

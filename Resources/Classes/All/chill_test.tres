@@ -1,0 +1,31 @@
+[gd_resource type="Resource" load_steps=6 format=3 uid="uid://pc6wyco20ors"]
+
+[ext_resource type="AudioStream" uid="uid://de17rsklkyr4v" path="res://Assets/Audio/Minifantasy_MagicAndSorcery_SFX/Spells/Ice/02_Ice_Hold.wav" id="1_7260e"]
+[ext_resource type="Script" uid="uid://fdbvrk08ij1g" path="res://Resources/Classes/All/chill_test.gd" id="1_vacd7"]
+[ext_resource type="Texture2D" uid="uid://cj313v3fv4jw7" path="res://Assets/art/IGGStatusIcons/StatusSpriteSheet.png" id="2_r8yoa"]
+[ext_resource type="AudioStream" uid="uid://2kxeogoqgamf" path="res://Assets/Audio/Minifantasy_Magic_Weapons_SFX/Hits/Ice_Hit.wav" id="4_525iq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2msc"]
+atlas = ExtResource("2_r8yoa")
+region = Rect2(16, 16, 16, 16)
+
+[resource]
+script = ExtResource("1_vacd7")
+id = "chill_test"
+ability_type = 0
+rarity = 0
+target = 1
+cost = 5
+cost_type = 0
+cooldown = 0
+primary_scaling = 3
+ps_factor = 0.5
+secondary_scaling = 4
+ss_factor = 0.5
+element_type = 3
+icon = SubResource("AtlasTexture_l2msc")
+title = "Chill Test"
+tooltip_text = "Chill Test, whatup again"
+sound = ExtResource("4_525iq")
+aiming_audio = ExtResource("1_7260e")
+metadata/_custom_type_script = "uid://smcmjjy50miu"

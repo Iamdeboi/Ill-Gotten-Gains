@@ -18,5 +18,5 @@ duration = 1
 stacks = 1
 icon = SubResource("AtlasTexture_k1mc7")
 audio = ExtResource("1_erunv")
-tooltip = "Burn: Target takes [color=d486ed]%s[/color] [color=orange]Fire[/color] damage at the start of their turn for the next [color=f5cd1b]%s[/color] turns."
+tooltip = "Burn: Target takes [color=d486ed]%s[/color] [color=orange_red]Fire[/color] damage at the start of their turn for the next [color=f5cd1b]%s[/color] turns."
 metadata/_custom_type_script = "uid://c3qvt5utxx5jd"

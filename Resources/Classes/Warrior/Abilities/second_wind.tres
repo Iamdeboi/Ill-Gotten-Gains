@@ -23,8 +23,9 @@ icon = ExtResource("1_7ie3o")
 title = "Second Wind"
 tooltip_text = "Catch your breath, restoring [color=salmon]15 + 50% STR + 50% CON[/color] health.
 
+Rarity: Rare
 Ability Type: [color=lime_green]Buff[/color]
-
+Targets: Self
 Cost: [color=cyan]5 MP[/color]"
 sound = ExtResource("4_7ie3o")
 pickup_audio = ExtResource("3_8jqcl")

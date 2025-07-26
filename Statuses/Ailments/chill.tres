@@ -1,14 +1,22 @@
-[gd_resource type="Resource" script_class="Status" load_steps=2 format=3 uid="uid://b0de8224up7be"]
+[gd_resource type="Resource" script_class="ChillStatus" load_steps=5 format=3 uid="uid://b0de8224up7be"]
 
-[ext_resource type="Script" uid="uid://c3qvt5utxx5jd" path="res://Resources/status.gd" id="1_dlvul"]
+[ext_resource type="AudioStream" uid="uid://d0wvwnfl1x1cf" path="res://Assets/Audio/50_RPG_Battle_Magic_SFX/13_Ice_explosion_01.wav" id="1_745tb"]
+[ext_resource type="Texture2D" uid="uid://cj313v3fv4jw7" path="res://Assets/art/IGGStatusIcons/StatusSpriteSheet.png" id="2_mnk5o"]
+[ext_resource type="Script" uid="uid://ceo0mctaxkxc5" path="res://Statuses/Ailments/chill.gd" id="3_745tb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnk5o"]
+atlas = ExtResource("2_mnk5o")
+region = Rect2(16, 16, 16, 16)
 
 [resource]
-script = ExtResource("1_dlvul")
-id = ""
-type = 0
-stack_type = 0
-can_expire = false
-duration = 0
-stacks = 0
-tooltip = ""
+script = ExtResource("3_745tb")
+id = "chill"
+type = 1
+stack_type = 3
+can_expire = true
+duration = 1
+stacks = 1
+icon = SubResource("AtlasTexture_mnk5o")
+audio = ExtResource("1_745tb")
+tooltip = "Chill: Reduces target's damage dealt by [color=d486ed]%s[/color] for [color=f5cd1b]%s[/color] turns."
 metadata/_custom_type_script = "uid://c3qvt5utxx5jd"

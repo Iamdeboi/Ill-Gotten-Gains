@@ -1,9 +1,12 @@
 # meta-name: Status
 # meta-description: Template for a Status, an effect that can be applied to a target (Enemy or Player)
-class_name MyStatus
+class_name DaStatus
 extends Status
 
 var member_var := 0
+
+func get_tooltip() -> String:
+	return tooltip
 
 
 func initialize_status(target: Node) -> void:

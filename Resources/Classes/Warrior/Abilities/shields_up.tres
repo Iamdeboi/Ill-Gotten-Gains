@@ -23,8 +23,9 @@ icon = ExtResource("1_gxrv3")
 title = "Shields Up"
 tooltip_text = "Raise your shield, increasing armor by [color=blue]10 + 50% CON[/color].
 
+Rarity: Common
 Ability Type: [color=blue]Defense[/color]
-
+Targets: Self
 Cost: None
 "
 sound = ExtResource("4_8ytuq")

@@ -10,7 +10,7 @@
 [ext_resource type="Resource" uid="uid://cvvx6pnppdaex" path="res://Resources/Classes/All/spare_mana_potion.tres" id="4_wm6y6"]
 [ext_resource type="Resource" uid="uid://bl0hxgo0vfup5" path="res://Resources/Classes/All/potion_of_questionable_purpose.tres" id="5_v1xo2"]
 [ext_resource type="Resource" uid="uid://b6034lga1hc4g" path="res://Resources/Classes/Warrior/Abilities/slash.tres" id="6_aywq7"]
-[ext_resource type="Resource" uid="uid://coapnwodmdehg" path="res://Resources/Classes/Warrior/Abilities/bash.tres" id="7_wm6y6"]
+[ext_resource type="Resource" uid="uid://coapnwodmdehg" path="res://Resources/Classes/Warrior/Abilities/breakdown.tres" id="7_wm6y6"]
 
 [node name="AbilityRewards" type="ColorRect"]
 anchors_preset = 15

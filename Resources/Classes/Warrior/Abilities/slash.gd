@@ -9,12 +9,12 @@ func get_default_tooltip() -> String:
 
 
 func update_tooltip(stats: PlayerStats, player_modifiers: ModifierHandler, enemy_modifiers: ModifierHandler) -> String:
-	var pre_mod_dmg = base_damage + (player_modifiers.get_modified_value(stats.base_strength, Modifier.Type.STR_MOD)) * (ps_factor)
-	var final_dmg = player_modifiers.get_modified_value(pre_mod_dmg, Modifier.Type.DMG_TAKEN)
+	var pre_mod_dmg = base_damage + (player_modifiers.get_modified_value(stats.base_strength, Modifier.Type.STR_MOD)) * (ps_factor) # Initial Scalings
+	var final_dmg = player_modifiers.get_modified_value(pre_mod_dmg, Modifier.Type.DMG_DEALT)
 	if enemy_modifiers:
 		final_dmg = enemy_modifiers.get_modified_value(final_dmg, Modifier.Type.DMG_TAKEN)
 	
-	var updated_tooltip = "Slash your enemy, dealing " + "[color=firebrick]" + str(final_dmg) + "[/color]" + " neutral damage.\n\nAbility Type: [color=firebrick]Attack[/color]\nCost: None\nBase: " + str(base_damage) + "\nScaling: (50% STR)"
+	var updated_tooltip = "Slash your enemy, dealing " + "[color=firebrick]" + str(final_dmg) + "[/color]" + " neutral damage.\n\nAbility Type: [color=firebrick]Attack[/color]\nTargets: Single Enemy\nCost: None\nBase: " + str(base_damage) + "\nScaling: (50% STR)"
 	return str(updated_tooltip)
 
 

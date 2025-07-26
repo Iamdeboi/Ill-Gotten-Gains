@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://bl0hxgo0vfup5" path="res://Resources/Classes/All/potion_of_questionable_purpose.tres" id="3_gyacc"]
 [ext_resource type="Resource" uid="uid://b6034lga1hc4g" path="res://Resources/Classes/Warrior/Abilities/slash.tres" id="5_n5oqc"]
 [ext_resource type="Resource" uid="uid://ixpdsnnhgoa3" path="res://Resources/Classes/Warrior/Abilities/cleave_through.tres" id="6_srctj"]
-[ext_resource type="Resource" uid="uid://coapnwodmdehg" path="res://Resources/Classes/Warrior/Abilities/bash.tres" id="7_rvhsp"]
+[ext_resource type="Resource" uid="uid://coapnwodmdehg" path="res://Resources/Classes/Warrior/Abilities/breakdown.tres" id="7_rvhsp"]
 [ext_resource type="Resource" uid="uid://ja3in6craswg" path="res://Resources/Classes/Warrior/Abilities/shields_up.tres" id="8_ipatw"]
 [ext_resource type="Resource" uid="uid://cvvx6pnppdaex" path="res://Resources/Classes/All/spare_mana_potion.tres" id="8_n5oqc"]
 

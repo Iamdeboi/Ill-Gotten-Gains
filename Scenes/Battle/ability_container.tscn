@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bn5xivf7rao85" path="res://Scenes/Battle/ability_container.gd" id="1_osr0m"]
 [ext_resource type="Resource" uid="uid://ls7ennmh2elu" path="res://Resources/Classes/Warrior/warrior_stats.tres" id="2_2jrik"]
 [ext_resource type="Script" uid="uid://smcmjjy50miu" path="res://Resources/Templates/Abilities/ability.gd" id="2_ji27j"]
-[ext_resource type="Resource" uid="uid://coapnwodmdehg" path="res://Resources/Classes/Warrior/Abilities/bash.tres" id="3_2jrik"]
+[ext_resource type="Resource" uid="uid://coapnwodmdehg" path="res://Resources/Classes/Warrior/Abilities/breakdown.tres" id="3_2jrik"]
 [ext_resource type="Resource" uid="uid://ixpdsnnhgoa3" path="res://Resources/Classes/Warrior/Abilities/cleave_through.tres" id="4_rr86q"]
 [ext_resource type="Resource" uid="uid://dnq7qqmyyubjh" path="res://Resources/Classes/Warrior/Abilities/second_wind.tres" id="5_2dcsp"]
 [ext_resource type="Resource" uid="uid://cvvx6pnppdaex" path="res://Resources/Classes/All/spare_mana_potion.tres" id="6_bktlh"]

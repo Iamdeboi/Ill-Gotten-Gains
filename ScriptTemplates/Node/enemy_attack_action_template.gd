@@ -108,5 +108,6 @@ func calculate_action() -> int: # For Intent "Number" string updating
 				calc_dmg_mod = target.stats.holy_vuln
 	# Final Damage Calculation: (Including DMG_TAKEN Modifier)
 	var pre_mod_dmg = calc_dmg_mod * ((damage) + (calc_p_s_mod) + (calc_s_s_mod))
+	var mod_dmg = enemy.modifier_handler.get_modified_value(pre_mod_dmg, Modifier.Type.DMG_DEALT)
 	var final_dmg = target.modifier_handler.get_modified_value(pre_mod_dmg, Modifier.Type.DMG_TAKEN)
 	return int(final_dmg)

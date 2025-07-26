@@ -1,17 +1,18 @@
-[gd_resource type="Resource" script_class="AbilityList" load_steps=11 format=3 uid="uid://bvh6g13h4j7yv"]
+[gd_resource type="Resource" script_class="AbilityList" load_steps=12 format=3 uid="uid://bvh6g13h4j7yv"]
 
 [ext_resource type="Script" uid="uid://smcmjjy50miu" path="res://Resources/Templates/Abilities/ability.gd" id="1_ryoxu"]
 [ext_resource type="Resource" uid="uid://b6034lga1hc4g" path="res://Resources/Classes/Warrior/Abilities/slash.tres" id="2_rsgjj"]
 [ext_resource type="Resource" uid="uid://ja3in6craswg" path="res://Resources/Classes/Warrior/Abilities/shields_up.tres" id="3_vqqlk"]
-[ext_resource type="Resource" uid="uid://coapnwodmdehg" path="res://Resources/Classes/Warrior/Abilities/bash.tres" id="4_cxf83"]
+[ext_resource type="Resource" uid="uid://coapnwodmdehg" path="res://Resources/Classes/Warrior/Abilities/breakdown.tres" id="4_cxf83"]
 [ext_resource type="Resource" uid="uid://ixpdsnnhgoa3" path="res://Resources/Classes/Warrior/Abilities/cleave_through.tres" id="5_w087t"]
 [ext_resource type="Resource" uid="uid://dnq7qqmyyubjh" path="res://Resources/Classes/Warrior/Abilities/second_wind.tres" id="6_pt5b1"]
 [ext_resource type="Resource" uid="uid://dwfyvbsyea2nj" path="res://Resources/Classes/All/enrage.tres" id="7_s3dwo"]
 [ext_resource type="Resource" uid="uid://claff8m4cx4cj" path="res://Resources/Classes/All/strength_up_test.tres" id="8_lvnqf"]
 [ext_resource type="Resource" uid="uid://difp3muobofqu" path="res://Resources/Classes/All/burn_test.tres" id="9_2y3sa"]
 [ext_resource type="Script" uid="uid://dj0e7vxllw5u7" path="res://Scenes/AbilityUI/ability_list.gd" id="10_7ono1"]
+[ext_resource type="Resource" uid="uid://pc6wyco20ors" path="res://Resources/Classes/All/chill_test.tres" id="10_qbw2u"]
 
 [resource]
 script = ExtResource("10_7ono1")
-abilities = Array[ExtResource("1_ryoxu")]([ExtResource("2_rsgjj"), ExtResource("3_vqqlk"), ExtResource("4_cxf83"), ExtResource("5_w087t"), ExtResource("6_pt5b1"), ExtResource("7_s3dwo"), ExtResource("8_lvnqf"), ExtResource("9_2y3sa")])
+abilities = Array[ExtResource("1_ryoxu")]([ExtResource("2_rsgjj"), ExtResource("3_vqqlk"), ExtResource("4_cxf83"), ExtResource("5_w087t"), ExtResource("6_pt5b1"), ExtResource("7_s3dwo"), ExtResource("8_lvnqf"), ExtResource("9_2y3sa"), ExtResource("10_qbw2u")])
 metadata/_custom_type_script = "uid://dj0e7vxllw5u7"

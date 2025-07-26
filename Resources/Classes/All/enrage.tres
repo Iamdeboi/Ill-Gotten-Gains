@@ -22,11 +22,10 @@ element_type = 0
 icon = ExtResource("1_nft38")
 title = "Enrage"
 tooltip_text = "[color=crimson]RAGE CONSUMES YOU[/color]
-Apply 2 [color=crimson]Empowered[/color] to yourself.
+At the start of your turn apply 2 [color=crimson]Empowered[/color] to yourself. This effect remains for the rest of combat.
 
 Ability Type: [color=lime_green]Buff[/color]
 Targets: Self
-Duration: Permanent
 Cost: [color=salmon] 20 HP[/color]
 Scaling: None
 

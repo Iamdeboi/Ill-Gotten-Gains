@@ -1,11 +1,10 @@
 extends Ability
 # Remember to consider the ModifierHandler components to the ability if needed, remove the "_" from the parameters to ultlize them!
+const CHILL_STATUS := preload("res://Statuses/Ailments/chill.tres")
 
-const BURN_STATUS = preload("res://Statuses/Ailments/burn.tres")
-
-var base_damage : int = 5
-var burn_stack_value : int = 5
-var burn_duration_value : int = 1
+var base_damage : int = 2
+var chill_stack_value : int = 1
+var chill_duration_value : int = 2
 
 
 func get_default_tooltip() -> String:
@@ -18,7 +17,7 @@ func update_tooltip(stats: PlayerStats, player_modifiers: ModifierHandler, enemy
 	var final_dmg = player_modifiers.get_modified_value(pre_mod_dmg, Modifier.Type.DMG_TAKEN)
 	if enemy_modifiers:
 		final_dmg = enemy_modifiers.get_modified_value(final_dmg, Modifier.Type.DMG_TAKEN)
-	var updated_tooltip = "This is a burn ability, dealing " + "[color=firebrick]" + str(final_dmg) + "[/color]" + " [color=orange_red]Fire[/color] damage.\n\nAbility Type: [color=firebrick]Attack[/color]\nTargets: Single Enemy\nCost: [color=cyan]5 MP[/color]\nBase: 15\nScaling: (50% STR)"
+	var updated_tooltip = "This is a chill ability, dealing " + "[color=firebrick]" + str(final_dmg) + "[/color]" + " [color=pale_turquoise]Frost[/color] damage.\n\nAbility Type: [color=firebrick]Attack[/color]\nTargets: Single Enemy\nCost: [color=cyan]5 MP[/color]\nBase: 15\nScaling: (50% STR)"
 	return str(updated_tooltip)
 
 
@@ -30,8 +29,8 @@ func apply_effects(targets: Array[Node], ability: Ability, p_s_mod: float, s_s_m
 	damage_effect.execute(targets, ability, p_s_mod, s_s_mod)
 	# Status Effect Component:
 	var status_effect := StatusEffect.new()
-	var burn := BURN_STATUS.duplicate()
-	burn.duration = burn_duration_value
-	burn.stacks = burn_stack_value
-	status_effect.status = burn
+	var chill := CHILL_STATUS.duplicate()
+	chill.duration = chill_duration_value
+	chill.stacks = chill_stack_value
+	status_effect.status = chill
 	status_effect.execute(targets, ability, p_s_mod, s_s_mod)
