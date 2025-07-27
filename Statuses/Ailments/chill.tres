@@ -14,8 +14,8 @@ id = "chill"
 type = 1
 stack_type = 3
 can_expire = true
-duration = 1
-stacks = 1
+duration = 0
+stacks = 0
 icon = SubResource("AtlasTexture_mnk5o")
 audio = ExtResource("1_745tb")
 tooltip = "Chill: Reduces target's damage dealt by [color=d486ed]%s[/color] for [color=f5cd1b]%s[/color] turns."

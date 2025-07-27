@@ -175,6 +175,7 @@ anchor_bottom = 1.0
 grow_vertical = 0
 
 [node name="BattleOverLayer" type="CanvasLayer" parent="."]
+layer = 5
 
 [node name="BattleOverPanel" parent="BattleOverLayer" instance=ExtResource("16_sufya")]
 visible = false

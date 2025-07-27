@@ -14,7 +14,7 @@ func get_default_tooltip() -> String:
 func update_tooltip(stats: PlayerStats, player_modifiers: ModifierHandler, enemy_modifiers: ModifierHandler) -> String:
 	var pre_mod_dmg = base_damage + (player_modifiers.get_modified_value(stats.base_intellect, Modifier.Type.INT_MOD)) * (ps_factor)
 	pre_mod_dmg += (player_modifiers.get_modified_value(stats.base_wisdom, Modifier.Type.WIS_MOD) * (ss_factor))
-	var final_dmg = player_modifiers.get_modified_value(pre_mod_dmg, Modifier.Type.DMG_TAKEN)
+	var final_dmg = player_modifiers.get_modified_value(pre_mod_dmg, Modifier.Type.DMG_DEALT)
 	if enemy_modifiers:
 		final_dmg = enemy_modifiers.get_modified_value(final_dmg, Modifier.Type.DMG_TAKEN)
 	var updated_tooltip = "This is a chill ability, dealing " + "[color=firebrick]" + str(final_dmg) + "[/color]" + " [color=pale_turquoise]Frost[/color] damage.\n\nAbility Type: [color=firebrick]Attack[/color]\nTargets: Single Enemy\nCost: [color=cyan]5 MP[/color]\nBase: 15\nScaling: (50% STR)"

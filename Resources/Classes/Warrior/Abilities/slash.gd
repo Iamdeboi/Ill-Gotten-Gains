@@ -20,6 +20,6 @@ func update_tooltip(stats: PlayerStats, player_modifiers: ModifierHandler, enemy
 
 func apply_effects(targets: Array[Node], ability: Ability, p_s_mod: float, s_s_mod: float, modifiers: ModifierHandler) -> void:
 	var damage_effect := DamageEffect.new()
-	damage_effect.amount = modifiers.get_modified_value(base_damage ,Modifier.Type.DMG_DEALT)
+	damage_effect.amount = modifiers.get_modified_value(base_damage, Modifier.Type.DMG_DEALT)
 	damage_effect.sound = sound
 	damage_effect.execute(targets, ability, p_s_mod, s_s_mod)

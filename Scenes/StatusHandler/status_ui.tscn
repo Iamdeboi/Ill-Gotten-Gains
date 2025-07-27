@@ -33,23 +33,23 @@ stretch_mode = 3
 
 [node name="Duration" type="Label" parent="."]
 layout_mode = 1
-offset_left = -1.0
-offset_top = 11.0
-offset_right = 9.0
-offset_bottom = 17.0
-theme_override_colors/font_color = Color(0.96, 0.80336, 0.1056, 1)
-theme_override_font_sizes/font_size = 6
-text = "99"
-vertical_alignment = 1
-
-[node name="Stacks" type="Label" parent="."]
-layout_mode = 1
 offset_left = 9.0
 offset_top = 11.0
 offset_right = 19.0
 offset_bottom = 17.0
-theme_override_colors/font_color = Color(0.829601, 0.526922, 0.930197, 1)
+theme_override_colors/font_color = Color(0.96, 0.80336, 0.1056, 1)
 theme_override_font_sizes/font_size = 6
 text = "99"
 horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Stacks" type="Label" parent="."]
+layout_mode = 1
+offset_left = -1.0
+offset_top = 11.0
+offset_right = 9.0
+offset_bottom = 17.0
+theme_override_colors/font_color = Color(0.829601, 0.526922, 0.930197, 1)
+theme_override_font_sizes/font_size = 6
+text = "99"
 vertical_alignment = 1

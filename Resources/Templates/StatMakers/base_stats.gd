@@ -133,7 +133,8 @@ func set_holy_vuln(value: float) -> void:
 # (Original Damage * Elemental_Vulnerability_Mod) + (Primary Scaling * Primary Scaling Factor) + (Secondary Scaling * Secondary Scaling Factor)
 func calculate_damage(amount: int, dmg_mod: float, primary_scaling_mod: float, secondary_scaling_mod: float) -> int:
 	var new_damage = dmg_mod * ((amount) + (primary_scaling_mod) + (secondary_scaling_mod))
-	return new_damage
+	print(new_damage)
+	return floori(new_damage)
 
 
 func take_damage(damage : int) -> void: # Processes armor before taking the true amount of damage to the entity's health

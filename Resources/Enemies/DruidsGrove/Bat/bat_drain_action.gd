@@ -29,7 +29,7 @@ func perform_action() -> void:
 	var end := enemy.global_position + Vector2.UP * 32
 	var damage_effect := DamageEffect.new()
 	var target_array : Array[Node] = [target] # Targets player
-	damage_effect.amount = calculate_action()
+	damage_effect.amount = enemy.modifier_handler.get_modified_value(damage, Modifier.Type.DMG_DEALT)
 	damage_effect.sound = sound
 	# Calculating ability modifier values compared to the user enemy's stats
 	p_s_mod = calculate_primary_scaling_mod(ability_ref)
@@ -40,7 +40,7 @@ func perform_action() -> void:
 	tween.tween_property(enemy, "global_position", start, 0.4)
 	tween.tween_callback(damage_effect.execute.bind(target_array, ability_ref, p_s_mod, s_s_mod))
 	enemy.stats.mana -= ability_ref.cost
-	damage_dealt = calculate_action()
+	damage_dealt = calculate_action() # Set a variable for the damage dealt with the damage_effect component to use for the secondary healing effect 
 	tween.finished.connect(perform_second_action)
 
 
@@ -127,6 +127,6 @@ func calculate_action() -> int: # For Intent "Number" string updating
 				calc_dmg_mod = target.stats.holy_vuln
 			
 	var pre_mod_dmg = calc_dmg_mod * ((damage) + (calc_p_s_mod) + (calc_s_s_mod))
-	var mod_dmg = enemy.modifier_handler.get_modified_value(pre_mod_dmg, Modifier.Type.DMG_DEALT)
+	var mod_dmg = pre_mod_dmg + enemy.modifier_handler.get_modified_value(0, Modifier.Type.DMG_DEALT)
 	var final_dmg = target.modifier_handler.get_modified_value(mod_dmg, Modifier.Type.DMG_TAKEN)
-	return int(final_dmg)
+	return floori(final_dmg)
