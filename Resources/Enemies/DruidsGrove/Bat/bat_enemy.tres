@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://drcv1xta5ebpv" path="res://Resources/Enemies/DruidsGrove/Bat/bat_enemy_ai.tscn" id="1_c2wjr"]
 [ext_resource type="AudioStream" uid="uid://cgmuvtn07m610" path="res://Assets/Audio/Retro_RPG_Fight_Effects/69_Enemy_death_01.wav" id="2_bgcwx"]
 [ext_resource type="AudioStream" uid="uid://dmrvnhcjs7cqi" path="res://Assets/Audio/Minifantasy_Creatures_SFX_v3.0/Beasts/Bat/03_Bat_cry_long.wav" id="3_51rcq"]
-[ext_resource type="Texture2D" uid="uid://dlxmqa0ogodpk" path="res://Assets/art/IGGEnemyIcons/001-Bat.png" id="5_bgcwx"]
+[ext_resource type="Texture2D" uid="uid://dlxmqa0ogodpk" path="res://Assets/art/IGGEnemyIcons/001-Bat.png" id="5_jhmqs"]
 
 [resource]
 script = ExtResource("1_4uit6")
@@ -15,7 +15,7 @@ max_health = 20
 starting_armor = 10
 max_mana = 20
 name = "Bat"
-sprite = ExtResource("5_bgcwx")
+sprite = ExtResource("5_jhmqs")
 start_strength = 2
 start_dexterity = 8
 start_intellect = 4
