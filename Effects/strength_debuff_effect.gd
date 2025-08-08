@@ -9,6 +9,7 @@ func execute(targets: Array[Node], _ability: Ability, _p_s_mod: float, _s_s_mod:
 	for target in targets:
 		if not target:
 			continue
+			
 		if target is Enemy or target is Player:
 			target.stats.strength -= amount
 			target.stats.stats_changed.emit()

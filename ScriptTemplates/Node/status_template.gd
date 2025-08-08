@@ -1,6 +1,6 @@
 # meta-name: Status
 # meta-description: Template for a Status, an effect that can be applied to a target (Enemy or Player)
-class_name DaStatus
+class_name DaStatus # Rename this class name to the intended Status
 extends Status
 
 var member_var := 0

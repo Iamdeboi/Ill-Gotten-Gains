@@ -8,6 +8,7 @@ func execute(targets: Array[Node], ability: Ability, primary_scaling_mod: float,
 	for target in targets:
 		if not target:
 			continue
+			
 		if target is Enemy or target is Player:
 			target.stats.mana -= amount
-			SfxPlayer.play(sound)
+			await SfxPlayer.play(sound)

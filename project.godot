@@ -37,7 +37,7 @@ window/snap/snap_2d_transforms_to_pixel=false
 
 [editor]
 
-script/templates_search_path="res://ScriptTemplates"
+script/templates_search_path="res://ScriptTemplates/Node"
 
 [file_customization]
 

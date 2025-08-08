@@ -47,6 +47,7 @@ texture = ExtResource("1_iljvx")
 
 [node name="WarriorButton" type="Button" parent="HBoxContainer/Warrior"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_font_sizes/font_size = 6
 text = "Select"
 
@@ -60,6 +61,7 @@ texture = ExtResource("1_iljvx")
 
 [node name="MageButton" type="Button" parent="HBoxContainer/Mage"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_font_sizes/font_size = 6
 text = "Select"
 
@@ -73,6 +75,7 @@ texture = ExtResource("1_iljvx")
 
 [node name="ThiefButton" type="Button" parent="HBoxContainer/Thief"]
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_font_sizes/font_size = 6
 text = "Select"
 

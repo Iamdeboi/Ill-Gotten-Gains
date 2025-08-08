@@ -42,4 +42,4 @@ func execute(targets: Array[Node], ability: Ability, primary_scaling_mod: float,
 			print("Calculated Damage: " + str(damage))
 			print("====-----------------====")
 			target.take_damage(damage, receiver_modifier_type)
-			SfxPlayer.play(sound)
+			await SfxPlayer.play(sound)

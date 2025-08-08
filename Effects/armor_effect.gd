@@ -8,6 +8,7 @@ func execute(targets: Array[Node], ability: Ability, primary_scaling_mod: float,
 	for target in targets:
 		if not target:
 			continue
+			
 		if target is Enemy or target is Player:
 			print("Amount: " + str(amount))
 			amount += primary_scaling_mod + secondary_scaling_mod
@@ -15,4 +16,4 @@ func execute(targets: Array[Node], ability: Ability, primary_scaling_mod: float,
 			print("Secondary Scaling Mod: " + str(secondary_scaling_mod))
 			print("Calculated Amount: " + str(amount))
 			target.stats.restore_armor(amount)
-			SfxPlayer.play(sound)
+			await SfxPlayer.play(sound)
